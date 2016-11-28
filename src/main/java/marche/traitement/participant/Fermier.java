@@ -33,4 +33,6 @@ public class Fermier extends Acteur{
         //TODO compléter constructeur
         this.solde = solde;
     }
+
+    //TODO Ajouter méthode d'ajout de produit dans l'inventaire
 }
