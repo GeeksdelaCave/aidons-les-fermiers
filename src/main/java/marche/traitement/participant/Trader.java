@@ -1,6 +1,11 @@
 package marche.traitement.participant;
 
-public class Trader implements IActeur {
+public class Trader extends Acteur {
+
+    public Trader() {
+        super();
+    }
+
     public double getSolde() {
         //TODO getSolde
         return 0;

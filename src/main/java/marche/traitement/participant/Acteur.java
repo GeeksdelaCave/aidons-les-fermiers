@@ -9,7 +9,7 @@ public abstract class Acteur {
     /**
      * Empêchement d'instancier un acteur
      */
-    private Acteur() { }
+    protected Acteur() { }
 
     /**
      * Getter du solde de l'acteur courant
