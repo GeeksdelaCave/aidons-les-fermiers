@@ -1,7 +1,12 @@
 package marche.traitement.participant;
 
-/**
- * Created by pyrrha on 28/11/2016.
- */
-public class Trader {
+public class Trader implements IActeur {
+    public double getSolde() {
+        //TODO getSolde
+        return 0;
+    }
+
+    public void ajouterSolde(double montant) {
+        //TODO ajouterSolde
+    }
 }
