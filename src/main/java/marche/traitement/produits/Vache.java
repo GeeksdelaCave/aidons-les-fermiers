@@ -3,44 +3,67 @@ package marche.traitement.produits;
 import java.util.Date;
 
 /**
- * Created by Thibaud on 28/11/2016.
+ * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
+ * @version 1.0
  */
 public class Vache extends ProduitFermier {
 
     /**
      * L'identifiant d'une vache. Elle n'est pas modifiable
-     * @see Vache#getIdvache()
+     * @see Vache#getIdVache()
      */
-    private int idvache;
-    private String nomvache;
-    private float poidsvache;
+    private int idVache;
+
+    /**
+     * Le nom d'une vache. Il n'est pas modifiable
+     * @see Vache#getNomVache()
+     */
+    private String nomVache;
+
+    /**
+     * Le poids d'une vache. Elle n'est pas modifiable
+     * @see Vache#getPoidsVache()
+     */
+    private float poidsVache;
     /**
      * Constructeur d'une Vache
      *
-     * @param idvache identifiant d'une vache
-     * @param nomvache Nom de la vache
-     * @param poidsvache Poids d'une vach en kg
+     * @param idVache identifiant d'une vache
+     * @param nomVache Nom de la vache
+     * @param poidsVache Poids d'une vach en kg
      * @param prix           désigne le prix du produit
-     * @param dateperemption désigne la date de péremption du produit
+     * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
      */
-    public Vache(int idvache,String nomvache,float poidsvache,float prix, Date dateperemption, short qualite) {
-        super(prix, dateperemption, qualite);
-        this.idvache = idvache;
-        this.nomvache = nomvache;
-        this.poidsvache = poidsvache;
+    public Vache(int idVache,String nomVache,float poidsVache,float prix, Date datePeremption, short qualite) {
+        super(prix, datePeremption, qualite);
+        this.idVache = idVache;
+        this.nomVache = nomVache;
+        this.poidsVache = poidsVache;
 
     }
 
-    public int getIdvache() {
-        return idvache;
+    /** Renvoie l'identifiant d'une vache
+     *
+     * @return l'identifiant de la vache
+     */
+    public int getIdVache() {
+        return idVache;
     }
 
-    public String getNomvache() {
-        return nomvache;
+    /** Renvoie le nom d'une vache
+     *
+     * @return le nom d'une vache
+     */
+    public String getNomVache() {
+        return nomVache;
     }
 
-    public float getPoidsvache() {
-        return poidsvache;
+    /** Renvoie le poids d'une vache
+     *
+     * @return le poids d'une vache
+     */
+    public float getPoidsVache() {
+        return poidsVache;
     }
 }
