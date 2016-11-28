@@ -9586,7 +9586,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFYniv7F7KeLUc="
 											},
-											"visible": true,
+											"visible": false,
 											"enabled": true,
 											"lineColor": "#000000",
 											"fillColor": "#ffffff",
@@ -9601,7 +9601,6 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "«abstract»",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -9621,12 +9620,12 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 573,
-											"top": 196,
+											"top": 183,
 											"width": 337.8095703125,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "IActeur",
+											"text": "Acteur",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -9692,7 +9691,7 @@
 									"left": 568,
 									"top": 176,
 									"width": 347.8095703125,
-									"height": 38,
+									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFYniv7F7Kf2uQ="
@@ -9726,7 +9725,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 568,
-									"top": 214,
+									"top": 201,
 									"width": 347.8095703125,
 									"height": 10,
 									"autoResize": false
@@ -9760,7 +9759,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 573,
-											"top": 229,
+											"top": 216,
 											"width": 337.8095703125,
 											"height": 13,
 											"autoResize": false,
@@ -9788,7 +9787,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 573,
-											"top": 244,
+											"top": 231,
 											"width": 337.8095703125,
 											"height": 13,
 											"autoResize": false,
@@ -9808,7 +9807,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 568,
-									"top": 224,
+									"top": 211,
 									"width": 347.8095703125,
 									"height": 38,
 									"autoResize": false
@@ -19904,7 +19903,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "IActeur",
+					"name": "Acteur",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -20132,7 +20131,6 @@
 							"isDerived": false
 						}
 					],
-					"stereotype": "abstract",
 					"visibility": "public",
 					"operations": [
 						{
