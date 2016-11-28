@@ -9601,7 +9601,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "«interface»",
+											"text": "«abstract»",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -20132,7 +20132,7 @@
 							"isDerived": false
 						}
 					],
-					"stereotype": "interface",
+					"stereotype": "abstract",
 					"visibility": "public",
 					"operations": [
 						{
