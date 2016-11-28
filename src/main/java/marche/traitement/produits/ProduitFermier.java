@@ -20,9 +20,9 @@ public abstract class ProduitFermier {
     /**
      * La date de peremption du produit. Elle n'est pas modifiable
      *
-     * @see ProduitFermier#getDateperemption()
+     * @see ProduitFermier#getDatePeremption()
      */
-    private Date dateperemption;
+    private Date datePeremption;
 
     /**
      * La qualité du produit sur une échelle de 1 à 100.Elle n'est pas modifiable.
@@ -37,17 +37,17 @@ public abstract class ProduitFermier {
      *
      * @see ProduitFermier#isCommercialise()
      */
-    protected boolean commercialise;
+    private boolean commercialise;
 
     /** Constructeur d'un Produit Fermier
      *
      * @param prix désigne le prix du produit
-     * @param dateperemption désigne la date de péremption du produit
+     * @param datePeremption désigne la date de péremption du produit
      * @param qualite désigne la qualité du produit sur une échelle de 1 à 100
      */
-    public ProduitFermier(float prix, Date dateperemption, short qualite) {
+    public ProduitFermier(float prix, Date datePeremption, short qualite) {
         this.prix = prix;
-        this.dateperemption = dateperemption;
+        this.datePeremption = datePeremption;
         this.qualite = qualite;
     }
 
@@ -62,16 +62,16 @@ public abstract class ProduitFermier {
         return prix;
     }
 
-    /**
+    /** Retourne la date de peremption
      *
      * @return la date de peremption
      */
-    public Date getDateperemption()
+    public Date getDatePeremption()
     {
-        return dateperemption;
+        return datePeremption;
     }
 
-    /**
+    /** Retourne la qualité du produit
      *
      * @return la qualité du produit
      */
@@ -80,7 +80,7 @@ public abstract class ProduitFermier {
         return qualite;
     }
 
-    /**
+    /** Retourne si le produit est commercialisable ou pas
      *
      * @return si le produit est commercialisable ou pas
      */
