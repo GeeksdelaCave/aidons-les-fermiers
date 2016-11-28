@@ -1,6 +1,7 @@
 package marche.traitement.produits;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 /**
  *
@@ -22,7 +23,7 @@ public abstract class ProduitFermier {
      *
      * @see ProduitFermier#getDatePeremption()
      */
-    private Date datePeremption;
+    private LocalDate datePeremption;
 
     /**
      * La qualité du produit sur une échelle de 1 à 100.Elle n'est pas modifiable.
@@ -45,7 +46,7 @@ public abstract class ProduitFermier {
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite désigne la qualité du produit sur une échelle de 1 à 100
      */
-    public ProduitFermier(float prix, Date datePeremption, short qualite) {
+    public ProduitFermier(float prix, LocalDate datePeremption, short qualite) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
@@ -66,7 +67,7 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public Date getDatePeremption()
+    public LocalDate getDatePeremption()
     {
         return datePeremption;
     }
