@@ -1,6 +1,6 @@
 package marche.traitement.produits;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
@@ -27,15 +27,14 @@ public class Vache extends ProduitFermier {
     private float poidsVache;
     /**
      * Constructeur d'une Vache
-     *
-     * @param idVache identifiant d'une vache
-     * @param nomVache Nom de la vache
-     * @param poidsVache Poids d'une vach en kg
-     * @param prix           désigne le prix du produit
+     *  @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
+     * @param idVache identifiant d'une vache
+     * @param nomVache Nom de la vache
+     * @param poidsVache Poids d'une vache en kg
      */
-    public Vache(int idVache,String nomVache,float poidsVache,float prix, Date datePeremption, short qualite) {
+    public Vache(float prix, LocalDate datePeremption, short qualite, int idVache, String nomVache, float poidsVache) {
         super(prix, datePeremption, qualite);
         this.idVache = idVache;
         this.nomVache = nomVache;
