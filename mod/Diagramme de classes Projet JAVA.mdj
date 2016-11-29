@@ -3636,7 +3636,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-unitedeproduction: IUniteDeProduction",
+											"text": "-unitedeproduction: UniteDeProduction",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -5641,7 +5641,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "«interface»",
+											"text": "«abstract»",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -5666,7 +5666,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "IUniteDeProduction",
+											"text": "UniteDeProduction",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -18433,7 +18433,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "IUniteDeProduction",
+					"name": "UniteDeProduction",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -18529,7 +18529,7 @@
 							"isDerived": false
 						}
 					],
-					"stereotype": "interface",
+					"stereotype": "abstract",
 					"visibility": "public",
 					"attributes": [
 						{
