@@ -1,5 +1,6 @@
 # Aidons les fermiers
 
+[![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=master)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) master
 [![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=develop)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) develop
 
 <a href="https://github.com/GeeksdelaCave/aidons-les-fermiers"><img src="https://informaix.com/ressources/dromedary-looking-right-2.png" align="left" hspace="10" vspace="6" /></a>
