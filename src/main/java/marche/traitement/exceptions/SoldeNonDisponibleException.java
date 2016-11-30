@@ -1,6 +1,6 @@
 package marche.traitement.exceptions;
 
-public class SoldeNonDisponible extends Exception {
+public class SoldeNonDisponibleException extends Exception {
     @Override
     public String toString() {
         return "Erreur : le montant n'est pas disponible sur le compte de cet acteur.";

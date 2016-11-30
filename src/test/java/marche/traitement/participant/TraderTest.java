@@ -1,10 +1,7 @@
 package marche.traitement.participant;
 
-import marche.traitement.exceptions.SoldeNonDisponible;
+import marche.traitement.exceptions.SoldeNonDisponibleException;
 import org.junit.Test;
-
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 public class TraderTest {
 
@@ -30,14 +27,13 @@ public class TraderTest {
         assert tradeur.getSolde() == 50.0;
     }
 
-    @Test
+    @Test(expected = SoldeNonDisponibleException.class)
     /**
      * Test d'enlever du solde, supérieur à ce qui est possible
      */
-    public void testEnleverSolde() {
+    public void testEnleverSolde() throws SoldeNonDisponibleException {
         Acteur trader = new Trader();
         trader.ajouterSolde(30.0);
-        //TODO test d'exception pour enlever 50.0
+        trader.enleverSolde(50.0);
     }
-
 }

@@ -9,11 +9,6 @@ public class Fermier extends Acteur{
     //TODO ajouter donnée membre inventaire
 
     /**
-     * Argent possédé par le fermier
-     */
-    private double solde;
-
-    /**
      * Liste des unités de productions possédé par le fermier
      */
     //TODO ajouter donnée membre unitesDeProduction
@@ -27,9 +22,10 @@ public class Fermier extends Acteur{
     }
 
     /**
-     * Constructeur de la classe
+     * Constructeur du fermier avec caractéristiques
+     * @param solde Solde à attribuer au fermier lors de sa création
      */
-    public Fermier (double solde) {
+    public Fermier (float solde) {
         //TODO compléter constructeur
         this.solde = solde;
     }
