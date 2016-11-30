@@ -1,5 +1,7 @@
 # Aidons les fermiers
 
+[![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=develop)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) develop
+
 <a href="https://github.com/GeeksdelaCave/aidons-les-fermiers"><img src="https://informaix.com/ressources/dromedary-looking-right-2.png" align="left" hspace="10" vspace="6" /></a>
 
 **Dromadaire Corporation** est l'équipe 2 du Groupe 2, de 2ème année. Elle est composée des meilleurs éléments de cette
@@ -25,7 +27,7 @@ cycle de vie du logiciel, et Travis CI pour vérifier l'état sain du code produ
 ## Remerciements
 
 - Guillaume Rastoul : un mec de chimie qui est passé le 25 nov. 2016 en TD2
-- Félicien Wicquart : colocataire de Thibaud, qui est passé donner une idée dans le salon le 15 nov.2016
+- Félicien Wicquart : colocataire de Thibaud, qui est passé donner une idée dans le salon le 25 nov.2016
 
 
 
