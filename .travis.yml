@@ -1,0 +1,8 @@
+language: java
+sudo: false
+
+script:
+  - mvn validate
+  - mvn compile
+  - mvn test
+  - mvn verify
