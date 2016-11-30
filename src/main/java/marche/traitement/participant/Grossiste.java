@@ -1,8 +1,9 @@
 package marche.traitement.participant;
 
-public class Trader extends Acteur {
+public class Grossiste extends Acteur {
 
-    public Trader() {
+    public Grossiste() {
         super();
     }
+
 }
