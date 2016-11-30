@@ -29,17 +29,26 @@ public class Offre {
     /**
      * Constructeur de la classe
      */
-    //TODO constructeur
+    public Offre(){
+        //TODO ajouter le corps du constructeur
+    }
 
     /**
      * Méthode valider
      */
-    //TODO ajouter la méthode valider
+    public boolean valider(){
+
+        //TODO ajouter le corps de la fonction
+        return true;// TODO modifer le return en fonction du corps
+    }
 
     /**
      * Méthode acheter
      */
-    //TODO ajouter la méthode acheter
+    public void acheter(){ // prend en paramètre : acheteur Acheteur
+
+        //TODO ajouter le corps de la fonction
+    }
 
 
 }
