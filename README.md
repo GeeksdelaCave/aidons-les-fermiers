@@ -1,14 +1,16 @@
 # Aidons les fermiers
 
-[![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=master)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) master
-[![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=develop)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) develop
-
 <a href="https://github.com/GeeksdelaCave/aidons-les-fermiers"><img src="https://informaix.com/ressources/dromedary-looking-right-2.png" align="left" hspace="10" vspace="6" /></a>
 
 **Dromadaire Corporation** est l'équipe 2 du Groupe 2, de 2ème année. Elle est composée des meilleurs éléments de cette
 promotion, qui ont pour but d'avoir le meilleur simulateur pour ce projet. Le projet **Aidons les fermiers** se veut
 simple d'utilisation, respectant les normes J2EE et celles du développement SOLID. Nous utilisons Maven comme système de
 cycle de vie du logiciel, et Travis CI pour vérifier l'état sain du code produit.
+
+## Builds
+
+- [![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=master)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) master
+- [![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=develop)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) develop
 
 ## Changelog
 
