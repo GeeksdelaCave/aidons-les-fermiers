@@ -18,3 +18,7 @@ branches:
   only:
   - master
   - develop
+
+# Spécification des JDK avec lesquels compiler
+jdk:
+  - oraclejdk8
