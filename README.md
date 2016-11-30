@@ -1,5 +1,7 @@
 # Aidons les fermiers
 
+[![Build Status](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers.svg?token=DbBJmzHop5opuLRphgPC&branch=develop)](https://travis-ci.com/GeeksdelaCave/aidons-les-fermiers) develop
+
 <a href="https://github.com/GeeksdelaCave/aidons-les-fermiers"><img src="https://informaix.com/ressources/dromedary-looking-right-2.png" align="left" hspace="10" vspace="6" /></a>
 
 **Dromadaire Corporation** est l'équipe 2 du Groupe 2, de 2ème année. Elle est composée des meilleurs éléments de cette
