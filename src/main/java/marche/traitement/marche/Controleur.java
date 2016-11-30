@@ -26,35 +26,35 @@ public class Controleur {
     /**
      * Méthode permettant de selectionner les acheteurs
      */
-    public void choisirAcheteur(){ //prend en paramètre : acheteurs Collection<IAcheteur>
+    public void choisirAcheteur(){ //prend en paramètre : Collection<IAcheteur> acheteurs
         //TODO implémenter la méthode
     }
 
     /**
      * Méthode permettant le transfert de biens
      */
-    public void transfererBiens(){ // prend en paramètre : offre Offre
+    public void transfererBiens(){ // prend en paramètre : Offre offre
         //TODO  implémenter la méthode
     }
 
     /**
      * Méthode permettant de créditer une somme par rapport à une offre
      */
-    public void crediterSomme(){ // prend en paramètre : offre Offre
+    public void crediterSomme(){ // prend en paramètre : Offre offre
         //TODO implémenter la méthode
     }
 
     /**
      * Méthode permettant de réguler les prix des produits en fonction du seuil définit
      */
-    public void regulerPrix(){ // prend en paramètre : produit ProduitFermier
+    public void regulerPrix(){ // prend en paramètre : ProduitFermier produit
         //TODO implémenter la méthode
     }
 
     /**
      * Méthode permettant d'ajouter une offre à un marché
      */
-    public void ajouterOffre(){ //prend en paramètre : offre Offre, marche Marche
+    public void ajouterOffre(){ //prend en paramètre : Offre offre, Marche marche
         //TODO implémenter la méthode
     }
 }

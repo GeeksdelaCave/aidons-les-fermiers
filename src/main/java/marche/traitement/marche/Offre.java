@@ -45,7 +45,7 @@ public class Offre {
     /**
      * Méthode acheter
      */
-    public void acheter(){ // prend en paramètre : acheteur Acheteur
+    public void acheter(){ // prend en paramètre : Acheteur acheteur
 
         //TODO ajouter le corps de la fonction
     }
