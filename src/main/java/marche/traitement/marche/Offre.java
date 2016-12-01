@@ -7,7 +7,7 @@ package marche.traitement.marche;
 public class Offre {
 
     /**
-     * Nom du fermier à qui appartient l'offre
+     * Nom du fermier à qui propose l'offre
      */
     //TODO ajouter donnée membre fermier
 
