@@ -29,6 +29,7 @@ public class Pomme extends ProduitFermier {
      * Le nombre de pommes dans une cagette. Il est modifiable.
      */
     private int nbPommes;
+
     /**
      * Constructeur d'une cagette de pommes
      *
