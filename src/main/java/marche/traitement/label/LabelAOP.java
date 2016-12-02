@@ -1,4 +1,4 @@
-package marche.traitement.identificationproduit;
+package marche.traitement.label;
 
 /**
  * Création de la classe LabelAOP désignant un label qui est attribué en fonction du nom de produit attribué

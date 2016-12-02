@@ -1,4 +1,4 @@
-package marche.traitement.identificationproduit;
+package marche.traitement.label;
 
 /**
  * Created by Thibaud on 01/12/2016.

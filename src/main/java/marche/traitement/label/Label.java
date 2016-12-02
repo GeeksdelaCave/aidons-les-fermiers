@@ -1,4 +1,4 @@
-package marche.traitement.identificationproduit;
+package marche.traitement.label;
 
 /**
  * Creation de la classe abstraite Label représentant une idée de qu'on peut être représenté un label
