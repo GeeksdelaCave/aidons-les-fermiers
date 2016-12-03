@@ -7,6 +7,7 @@ package marche.traitement.label;
 public class LabelAOP extends Label {
     /**
      * Nom du lieu d'où provient le produit fermier associé. Il n'est pas modifiable.
+     * @see LabelAOP#getNomLieuCreation()
      */
     private String nomLieuCreation;
 
