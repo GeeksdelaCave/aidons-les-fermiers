@@ -13,7 +13,7 @@ public class LabelAOCTest {
      * Teste la région où a été créé le produit
      */
     @Test
-    public void getRegionCreationProduit()
+    public void testGetRegionCreationProduit()
     {
         LabelAOC labelAOC = new LabelAOC(950,"Alsace",true);
         assertTrue(labelAOC.getRegionCreationProduit().equals("Alsace"));
@@ -23,7 +23,7 @@ public class LabelAOCTest {
      * Teste si le produit est authentique
      */
     @Test
-    public void getIsAuthenticiteProduit()
+    public void testGetIsAuthenticiteProduit()
     {
         LabelAOC labelAOC = new LabelAOC(900,"Alsace",true);
         assertTrue(labelAOC.isAuthenticiteProduit() == true);

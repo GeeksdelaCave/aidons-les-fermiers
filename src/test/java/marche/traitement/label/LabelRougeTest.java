@@ -13,7 +13,7 @@ public class LabelRougeTest {
      * Teste si le produit a une qualité supérieure ou non
      */
     @Test
-    public void getIsQualiteSuperieureProduit()
+    public void testGetIsQualiteSuperieureProduit()
     {
         LabelRouge labelRouge = new LabelRouge(750,true);
         assertTrue(labelRouge.isQualiteSuperieureProduit() == true);
