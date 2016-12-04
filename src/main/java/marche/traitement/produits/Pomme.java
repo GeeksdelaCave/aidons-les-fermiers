@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  *  Classe Pomme qui représentera en réalité une cagette de pommes
- *  @version 1.0
+ *  @version 1.1
  */
 public class Pomme extends ProduitFermier {
     /**
@@ -35,13 +35,14 @@ public class Pomme extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
+     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idCagette      désigne l'identifiant d'une cagette de pomme
      * @param poidsCagette   désigne le poids de la cagette de poids
      * @param typePomme      désigne le type des pommes de la cagette
      * @param nbPommes       désigne le nbre de pommes dans une cagette
      */
-    public Pomme(float prix, LocalDate datePeremption, short qualite,int idCagette,float poidsCagette,String typePomme,int nbPommes) {
-        super(prix, datePeremption, qualite);
+    public Pomme(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idCagette, float poidsCagette, String typePomme, int nbPommes) {
+        super(prix, datePeremption, qualite, lieuCreation);
         this.idCagette = idCagette;
         this.poidsCagette = poidsCagette;
         this.typePomme = typePomme;

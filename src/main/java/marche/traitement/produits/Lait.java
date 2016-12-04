@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Lait qui représentera en réalité un pack de lait
- * @version 1.0
+ * @version 1.1
  */
 public class Lait extends ProduitFermier {
     /**
@@ -31,12 +31,13 @@ public class Lait extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
+     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idPackLait     désigne l'identifiant d'un pack de lait
      * @param poidsPackLait  désigne le poids d'un pack de lait
      * @param nbBouteilles   désigne le nombre de bouteilles d'un pack de lait
      */
-    public Lait(float prix, LocalDate datePeremption, short qualite,int idPackLait,float poidsPackLait,int nbBouteilles) {
-        super(prix, datePeremption, qualite);
+    public Lait(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idPackLait, float poidsPackLait, int nbBouteilles) {
+        super(prix, datePeremption, qualite, lieuCreation);
         this.idPackLait = idPackLait;
         this.poidsPackLait = poidsPackLait;
         this.nbBouteilles = nbBouteilles;

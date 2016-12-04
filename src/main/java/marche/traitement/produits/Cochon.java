@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Cochon représentant un cochon
- * @version 1.0
+ * @version 1.1
  */
 public class Cochon extends ProduitFermier {
 
@@ -32,12 +32,13 @@ public class Cochon extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
+     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idCochon       désigne l'identifiant d'un cochon
      * @param poidsCochon    désigne le poids d'un cochon en kg
      * @param typeDeCochon   désigne le type d'un cochon
      */
-    public Cochon(float prix, LocalDate datePeremption, short qualite,int idCochon,float poidsCochon,String typeDeCochon) {
-        super(prix, datePeremption, qualite);
+    public Cochon(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idCochon, float poidsCochon, String typeDeCochon) {
+        super(prix, datePeremption, qualite, lieuCreation);
         this.idCochon = idCochon;
         this.poidsCochon = poidsCochon;
         this.typeDeCochon = typeDeCochon;

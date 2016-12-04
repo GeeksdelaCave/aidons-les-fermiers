@@ -7,7 +7,7 @@ import java.time.LocalDate;
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.0
+ * @version 1.1
  */
 public abstract class ProduitFermier {
 
@@ -40,24 +40,30 @@ public abstract class ProduitFermier {
      */
     private boolean commercialise;
 
+    /**
+     * Lieu où a été crée un produit fermier. Il n'est pas modifiable.
+     * @see ProduitFermier#getLieuCreation()
+     */
+    private String lieuCreation;
+
     /** Constructeur d'un Produit Fermier
      *
      * @param prix désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite désigne la qualité du produit sur une échelle de 1 à 100
+     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      */
-    public ProduitFermier(float prix, LocalDate datePeremption, short qualite) {
+    public ProduitFermier(float prix, LocalDate datePeremption, short qualite,String lieuCreation) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
+        this.lieuCreation = lieuCreation;
     }
 
     /** Retourne le prix du produit
      *
      * @return le prix du produit
      */
-
-
     public float getPrix()
     {
         return prix;
@@ -93,5 +99,13 @@ public abstract class ProduitFermier {
             commercialise = false;
 
         return commercialise;
+    }
+
+    /** Renvoie le lieu où a été crée un produit fermier
+     *
+     * @return le lieu où a été crée un produit fermier
+     */
+    public String getLieuCreation() {
+        return lieuCreation;
     }
 }
