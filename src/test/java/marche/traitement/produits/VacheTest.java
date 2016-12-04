@@ -9,7 +9,7 @@ import java.time.Month;
 
 /**
  * VacheTest désigne le test unitaire effectué sur la classe Vache sur tous ces getter() crées
- * @version 1.1
+ * @version 1.2
  */
 public class VacheTest {
 
@@ -19,7 +19,7 @@ public class VacheTest {
     @Test
     public void testGetPrix()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.getPrix() == 150.0f);
     }
 
@@ -29,7 +29,7 @@ public class VacheTest {
     @Test
     public void testGetDatePeremption()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         LocalDate ld = LocalDate.of(2016, Month.NOVEMBER,28);
         assertTrue(vache.getDatePeremption().equals(ld));
     }
@@ -40,7 +40,7 @@ public class VacheTest {
     @Test
     public void testGetQualite()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.getQualite() == (short) 55.0);
     }
 
@@ -50,22 +50,30 @@ public class VacheTest {
     @Test
     public void testGetIsCommercialise()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.isCommercialise() == true);
 
-        Vache vache1 = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 20.0,1200,"vachetest",50.0f);
+        Vache vache1 = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 20.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache1.isCommercialise() == false);
-
-
     }
 
+    /**
+     * Teste le lieu de création de la vache
+     */
+    @Test
+    public void testGetLieuCreation()
+    {
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
+        assertTrue(vache.getLieuCreation().equals("Landes"));
+
+    }
     /**
      * Teste l'identifiant de la vache
      */
     @Test
     public void testGetIdVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.getIdVache() == 1200);
     }
 
@@ -75,7 +83,7 @@ public class VacheTest {
     @Test
     public void testGetNomVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,"Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.getNomVache() == "vachetest");
     }
 
@@ -85,7 +93,7 @@ public class VacheTest {
     @Test
     public void testGetPoidsVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Landes", 1200,"vachetest",50.0f);
         assertTrue(vache.getPoidsVache() == 50.0f);
     }
 }

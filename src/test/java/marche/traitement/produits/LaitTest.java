@@ -18,7 +18,7 @@ public class LaitTest {
     @Test
     public void testGetIdLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f,8);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Normandie", 1300,3.0f,8);
         assertTrue(lait.getIdPackLait() == 1300);
     }
 
@@ -28,7 +28,7 @@ public class LaitTest {
     @Test
     public void testGetPoidsPackLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f,8);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Normandie", 1300,3.0f,8);
         assertTrue(lait.getPoidsPackLait() == 3.0f);
     }
 
@@ -38,7 +38,7 @@ public class LaitTest {
     @Test
     public void testGetNbBouteilles()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f,8);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Normandie" ,1300,3.0f,8);
         assertTrue(lait.getNbBouteilles() == 8);
     }
 }
