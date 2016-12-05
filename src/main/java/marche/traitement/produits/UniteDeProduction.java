@@ -1,22 +1,30 @@
 package marche.traitement.produits;
 
-
+/**
+ * Classe abstraite de l'unité de production représentant une idée d'une unitée de production
+ * @version 1.1
+ */
 public abstract class UniteDeProduction {
 
     /**
-     * capacité de production (en nombre de lots vendable, exemple pour le lait: 1 = 3l de lait)
+     *  Capacitée maximale qu'une unitée de production peut accueillir. Elle n'est pas modifiable
      */
-    private int capaciteProduction;
-
-    //TODO Ajouter la liste des fermiers proprietaires
+   protected int capaciteeProduction;
 
     /**
-     * Constructeur par défault
+     *  Région française où les unitées de production créent leurs produits. Elle n'est pas modifiable
      */
-    public UniteDeProduction () {
-        capaciteProduction = 100;
-        //TODO initialiser liste des proprio
+   protected String regionCreationProduit;
+
+    /**
+     * Classe par défaut de Unité de Production
+     */
+    protected UniteDeProduction() {
     }
 
+    /** Retourne le produit fermier crée
+     *
+     * @return le produit fermier crée par une unité de production
+     */
     public abstract ProduitFermier creerProduitFermier();
 }
