@@ -1,6 +1,9 @@
 package marche.traitement.participant;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.produits.ProduitFermier;
+
+import java.util.Collection;
 
 /**
  * Interface générale désignant les acteurs
@@ -8,7 +11,15 @@ import marche.traitement.exceptions.SoldeNonDisponibleException;
 
 public abstract class Acteur {
 
+    /**
+     * Argent possédé par les acteurs
+     */
     protected double solde;
+
+    /**
+     * Liste des produits fermiers possédé par les acteurs
+     */
+    protected Collection<ProduitFermier> inventaire;
 
     /**
      * Empêchement d'instancier un acteur
@@ -16,19 +27,19 @@ public abstract class Acteur {
     protected Acteur() { }
 
     /**
-     * Getter du solde de l'acteur courant
-     * @return Solde de l'acteur
-     */
-    public double getSolde() {
-        return solde;
-    }
-
-    /**
      * Fonction d'ajout du solde de l'acteur courant. Utile lors du crédit après une vente d'une offre
      * @param montant Montant à ajouter au solde de l'acteur
      */
     public void ajouterSolde(double montant) {
         solde += montant;
+    }
+
+    /**
+     * Methode d'ajout de produit dans l'inventaire
+     * @param produit Produit a ajouter a l'inventaire du fermier
+     */
+    public void ajoutProduit (ProduitFermier produit) {
+        inventaire.add(produit);
     }
 
     /**
@@ -41,5 +52,21 @@ public abstract class Acteur {
             solde -= montant;
         else
             throw new SoldeNonDisponibleException();
+    }
+
+    /**
+     * Getter du solde de l'acteur courant
+     * @return Solde de l'acteur
+     */
+    public double getSolde() {
+        return solde;
+    }
+
+    /**
+     * Getter de l'inventaire de l'acteur
+     * @return Inventaire de l'acteur
+     */
+    public Collection<ProduitFermier> getInventaire() {
+        return inventaire;
     }
 }

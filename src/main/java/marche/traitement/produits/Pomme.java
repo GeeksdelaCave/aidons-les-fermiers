@@ -37,7 +37,7 @@ public class Pomme extends ProduitFermier {
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
      * @param idCagette      désigne l'identifiant d'une cagette de pomme
-     * @param poidsCagette   désigne le poids de la cagette de poids
+     * @param poidsCagette   désigne le poids de la cagette de pomme en kilo
      * @param typePomme      désigne le type des pommes de la cagette
      * @param nbPommes       désigne le nbre de pommes dans une cagette
      */
