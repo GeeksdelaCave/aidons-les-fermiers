@@ -29,7 +29,9 @@ public class Lait extends ProduitFermier {
      * @param poidsPackLait  désigne le poids d'un pack de lait
      */
     public Lait(float prix, LocalDate datePeremption, short qualite, int idPackLait, float poidsPackLait) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idPackLait = idPackLait;
         this.poidsPackLait = poidsPackLait;
     }

@@ -22,7 +22,9 @@ public class Oeuf extends ProduitFermier {
      * @param idPackOeuf     correspond a l'identifiant du pack d'oeuf
      */
     public Oeuf(float prix, LocalDate datePeremption, short qualite, int idPackOeuf) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idPackOeuf = idPackOeuf;
     }
 }

@@ -35,7 +35,9 @@ public class Vache extends ProduitFermier {
      * @param poidsVache Poids d'une vache en kg
      */
     public Vache(float prix, LocalDate datePeremption, short qualite, int idVache, String nomVache, float poidsVache) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idVache = idVache;
         this.nomVache = nomVache;
         this.poidsVache = poidsVache;

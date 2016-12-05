@@ -37,7 +37,9 @@ public class Miel extends ProduitFermier {
      * @param typeDeMiel     désigne le type de miel
      */
     public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idSeauMiel = idSeauMiel;
         this.poidsSeauMiel = poidsSeauMiel;
         this.typeDeMiel = typeDeMiel;

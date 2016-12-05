@@ -37,7 +37,9 @@ public class Cochon extends ProduitFermier {
      * @param typeDeCochon   désigne le type d'un cochon
      */
     public Cochon(float prix, LocalDate datePeremption, short qualite, int idCochon, float poidsCochon, String typeDeCochon) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idCochon = idCochon;
         this.poidsCochon = poidsCochon;
         this.typeDeCochon = typeDeCochon;

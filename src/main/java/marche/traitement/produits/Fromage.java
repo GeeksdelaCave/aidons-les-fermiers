@@ -36,7 +36,9 @@ public class Fromage extends ProduitFermier {
      * @param poidsFromage   désigne le poids d'un fromage en kg
      */
     public Fromage(float prix, LocalDate datePeremption, short qualite, int idFromage, String nomFromage, float poidsFromage) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idFromage = idFromage;
         this.nomFromage = nomFromage;
         this.poidsFromage = poidsFromage;

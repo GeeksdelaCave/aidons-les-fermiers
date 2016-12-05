@@ -42,7 +42,9 @@ public class Pomme extends ProduitFermier {
      * @param nbPommes       désigne le nbre de pommes dans une cagette
      */
     public Pomme(float prix, LocalDate datePeremption, short qualite, int idCagette,float poidsCagette,String typePomme,int nbPommes) {
-        super(prix, datePeremption, qualite);
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idCagette = idCagette;
         this.poidsCagette = poidsCagette;
         this.typePomme = typePomme;
