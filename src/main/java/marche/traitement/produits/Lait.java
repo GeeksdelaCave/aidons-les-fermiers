@@ -20,12 +20,6 @@ public class Lait extends ProduitFermier {
     private float poidsPackLait;
 
     /**
-     * Le nbre de bouteilles d'un pack de lait. Il est modifiable
-     * @see Lait#getNbBouteilles()
-     */
-    private int nbBouteilles;
-
-    /**
      * Constructeur d'un pack de lait
      *
      * @param prix           désigne le prix du produit
@@ -34,13 +28,11 @@ public class Lait extends ProduitFermier {
      * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idPackLait     désigne l'identifiant d'un pack de lait
      * @param poidsPackLait  désigne le poids d'un pack de lait
-     * @param nbBouteilles   désigne le nombre de bouteilles d'un pack de lait
      */
-    public Lait(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idPackLait, float poidsPackLait, int nbBouteilles) {
+    public Lait(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idPackLait, float poidsPackLait) {
         super(prix, datePeremption, qualite, lieuCreation);
         this.idPackLait = idPackLait;
         this.poidsPackLait = poidsPackLait;
-        this.nbBouteilles = nbBouteilles;
     }
 
     /** Retourne l'identifiant d'un pack de lait
@@ -57,13 +49,5 @@ public class Lait extends ProduitFermier {
      */
     public float getPoidsPackLait() {
         return poidsPackLait;
-    }
-
-    /** Retourne le nbre de bouteilles d'un pack de lait
-     *
-     * @return le nbre de bouteilles d'un pack de lait
-     */
-    public int getNbBouteilles() {
-        return nbBouteilles;
     }
 }
