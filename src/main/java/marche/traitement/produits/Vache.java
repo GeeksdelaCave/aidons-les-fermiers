@@ -27,14 +27,14 @@ public class Vache extends ProduitFermier {
     private float poidsVache;
     /**
      * Constructeur d'une Vache
-     * @param prix           désigne le prix du produit
+     *  @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
      * @param idVache identifiant d'une vache
      * @param nomVache Nom de la vache
      * @param poidsVache Poids d'une vache en kg
      */
-    public Vache(float prix, LocalDate datePeremption, short qualite, int idVache, String nomVache, float poidsVache) {
+    public Vache(float prix, LocalDate datePeremption, short qualite,int idVache, String nomVache, float poidsVache) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
