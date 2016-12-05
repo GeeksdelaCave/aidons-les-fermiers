@@ -1,4 +1,6 @@
-package marche.traitement.produits;
+package marche.traitement.production;
+
+import marche.traitement.produits.ProduitFermier;
 
 /**
  * Classe abstraite de l'unité de production représentant une idée d'une unitée de production
