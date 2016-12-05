@@ -1,6 +1,9 @@
 package marche.traitement.participant;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.produits.ProduitFermier;
+
+import java.util.Collection;
 
 /**
  * Interface générale désignant les acteurs
@@ -8,7 +11,15 @@ import marche.traitement.exceptions.SoldeNonDisponibleException;
 
 public abstract class Acteur {
 
+    /**
+     * Argent possédé par l'acteur
+     */
     protected double solde;
+
+    /**
+     * Liste des produits fermiers possédé par le fermier
+     */
+    protected Collection<ProduitFermier> inventaire;
 
     /**
      * Empêchement d'instancier un acteur
@@ -41,5 +52,13 @@ public abstract class Acteur {
             solde -= montant;
         else
             throw new SoldeNonDisponibleException();
+    }
+
+    /**
+     * Méthode d'ajout de produit fermier dans l'inventaire
+     * @param produit Produit à ajouter a l'inventaire du fermier
+     */
+    public void ajoutProduitFermier(ProduitFermier produit) {
+        inventaire.add(produit);
     }
 }

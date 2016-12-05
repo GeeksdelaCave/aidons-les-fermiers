@@ -3,14 +3,11 @@ package marche.traitement.participant;
 
 import marche.traitement.produits.ProduitFermier;
 import marche.traitement.produits.UniteDeProduction;
+
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Fermier extends Acteur{
-
-    /**
-     * Liste des produits fermiers possédé par le fermier
-     */
-    private Collection<ProduitFermier> inventaire;
 
     /**
      * Liste des unités de productions possédé par le fermier
@@ -21,8 +18,8 @@ public class Fermier extends Acteur{
      * Constructeur par défault de la classe
      */
     public Fermier () {
-        inventaire = null;
-        uniteDeProductions = null;
+        inventaire = new ArrayList<ProduitFermier>();
+        uniteDeProductions = new ArrayList<UniteDeProduction>();
         solde = 0;
     }
 
@@ -36,13 +33,5 @@ public class Fermier extends Acteur{
         this.inventaire = inventaire;
         this.uniteDeProductions = uniteDeProductions;
         this.solde = solde;
-    }
-
-    /**
-     * Méthode d'ajout de produit fermier dans l'inventaire
-     * @param produit Produit à ajouter a l'inventaire du fermier
-     */
-    public void ajoutProduitFermier(ProduitFermier produit) {
-        inventaire.add(produit);
     }
 }
