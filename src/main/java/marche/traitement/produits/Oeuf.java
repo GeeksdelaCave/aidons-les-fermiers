@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Oeuf représentant un oeuf
- * @version 1.2
+ * @version 1.3
  */
 public class Oeuf extends ProduitFermier {
 
