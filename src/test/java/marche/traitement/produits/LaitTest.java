@@ -9,7 +9,7 @@ import java.time.Month;
 
 /**
  * LaitTest désigne le test unitaire effectué sur la classe Lait sur tous ces getter() crées
- * @version 1.2
+ * @version 1.3
  */
 public class LaitTest {
     /**
@@ -18,7 +18,7 @@ public class LaitTest {
     @Test
     public void testGetIdLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Normandie", 1300,3.0f);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f);
         assertTrue(lait.getIdPackLait() == 1300);
     }
 
@@ -28,7 +28,7 @@ public class LaitTest {
     @Test
     public void testGetPoidsPackLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Normandie", 1300,3.0f);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1300,3.0f);
         assertTrue(lait.getPoidsPackLait() == 3.0f);
     }
 

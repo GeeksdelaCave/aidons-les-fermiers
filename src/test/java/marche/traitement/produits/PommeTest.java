@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.Month;
 /**
  * PommeTest désigne le test unitaire effectué sur la classe Pomme sur tous ces getter() crées
- * @version 1.4
+ * @version 1.5
  */
 public class PommeTest {
     /**
@@ -17,7 +17,7 @@ public class PommeTest {
     @Test
     public void testGetIdCagette()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Garonne", 1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
         assertTrue(pomme.getIdCagette() == 1500);
     }
 
@@ -27,7 +27,7 @@ public class PommeTest {
     @Test
     public void testGetPoidsCagette()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Garonne", 1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
         assertTrue(pomme.getPoidsCagette() == 6.0f);
     }
 
@@ -37,14 +37,17 @@ public class PommeTest {
     @Test
     public void testGetTypePomme()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Garonne", 1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
         assertTrue(pomme.getTypePomme().equals("Reinette"));
     }
 
+    /**
+     * Teste le nbre de pommes dans une cagette
+     */
     @Test
     public void testGetNbPommes()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "Garonne", 1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
         assertTrue(pomme.getNbPommes() == 8);
 
     }
