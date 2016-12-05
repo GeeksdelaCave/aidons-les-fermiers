@@ -26,10 +26,6 @@ public class Pomme extends ProduitFermier {
     private String typePomme;
 
     /**
-     * Le nombre de pommes dans une cagette. Il est modifiable.
-     */
-    private int nbPommes;
-    /**
      * Constructeur d'une cagette de pommes
      *
      * @param prix           désigne le prix du produit
@@ -39,14 +35,12 @@ public class Pomme extends ProduitFermier {
      * @param idCagette      désigne l'identifiant d'une cagette de pomme
      * @param poidsCagette   désigne le poids de la cagette de poids
      * @param typePomme      désigne le type des pommes de la cagette
-     * @param nbPommes       désigne le nbre de pommes dans une cagette
      */
-    public Pomme(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idCagette, float poidsCagette, String typePomme, int nbPommes) {
+    public Pomme(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idCagette, float poidsCagette, String typePomme) {
         super(prix, datePeremption, qualite, lieuCreation);
         this.idCagette = idCagette;
         this.poidsCagette = poidsCagette;
         this.typePomme = typePomme;
-        this.nbPommes = nbPommes;
     }
 
     /** Retourne l'identifiant d'une cagette
@@ -72,14 +66,4 @@ public class Pomme extends ProduitFermier {
     public String getTypePomme() {
         return typePomme;
     }
-
-    /** Retourne le nbre de pommes dans une cagette
-     *
-     * @return le nbre de pommes dans une cagette
-     */
-    public int getNbPommes() {
-        return nbPommes;
-    }
-
-    //ToDo est ce qu'un fermier peut vendre une partie des pommes dans une cagette ?
 }
