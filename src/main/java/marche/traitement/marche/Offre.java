@@ -14,12 +14,12 @@ public class Offre {
     /**
      * Fermier qui propose l'offre
      */
-    private Fermier vendeur;
+    //private Fermier vendeur;
 
     /**
      * Acheteur
      */
-    private Fermier acheteur;
+    //private Fermier acheteur;
 
     /**
      *  Le prix de l'offre
@@ -34,11 +34,11 @@ public class Offre {
     /**
      * Constructeur de la classe
      */
-    public Offre(Fermier vendeur, Fermier acheteur, float prix, Collection<ProduitFermier> produits){
-        this.vendeur = vendeur;
-        this.acheteur = acheteur;
-        this.prix = prix;
-        this.produits = produits;
+    public Offre(/*Vendeur vendeur , Acheteur acheteur, float prix, Collection<ProduitFermier> produits */){
+        //this.vendeur = vendeur;
+        //this.acheteur = acheteur;
+        //this.prix = prix;
+        //this.produits = produits;
     }
 
     /**
