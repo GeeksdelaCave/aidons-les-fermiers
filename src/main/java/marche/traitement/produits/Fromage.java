@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Fromage représentant un fromage
- * @version 1.1
+ * @version 1.2
  */
 public class Fromage extends ProduitFermier {
     /**
@@ -31,13 +31,12 @@ public class Fromage extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idFromage      désigne l'identifiant d'un fromage
      * @param nomFromage     désigne le nom d'un fromage
      * @param poidsFromage   désigne le poids d'un fromage en kg
      */
-    public Fromage(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idFromage, String nomFromage, float poidsFromage) {
-        super(prix, datePeremption, qualite, lieuCreation);
+    public Fromage(float prix, LocalDate datePeremption, short qualite, int idFromage, String nomFromage, float poidsFromage) {
+        super(prix, datePeremption, qualite);
         this.idFromage = idFromage;
         this.nomFromage = nomFromage;
         this.poidsFromage = poidsFromage;

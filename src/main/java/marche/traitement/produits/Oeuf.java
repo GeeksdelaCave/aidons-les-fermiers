@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Oeuf représentant un oeuf
- * @version 1.1
+ * @version 1.2
  */
 public class Oeuf extends ProduitFermier {
 
@@ -16,14 +16,13 @@ public class Oeuf extends ProduitFermier {
     /**
      * Constructeur d'un Oeuf
      *
-     * @param prix           correspond au pris du pack d'oeufs
-     * @param datePeremption désigne la date de péremption des oeufs contenu dans le pack
+     * @param prix           désigne le prix du produit
+     * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param lieuCreation   correspond au lieu de ponte des oeufs
      * @param idPackOeuf     correspond a l'identifiant du pack d'oeuf
      */
-    public Oeuf(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idPackOeuf) {
-        super(prix, datePeremption, qualite, lieuCreation);
+    public Oeuf(float prix, LocalDate datePeremption, short qualite, int idPackOeuf) {
+        super(prix, datePeremption, qualite);
         this.idPackOeuf = idPackOeuf;
     }
 }

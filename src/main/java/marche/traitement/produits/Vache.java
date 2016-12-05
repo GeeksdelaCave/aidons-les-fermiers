@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
- * @version 1.1
+ * @version 1.2
  */
 public class Vache extends ProduitFermier {
 
@@ -27,16 +27,15 @@ public class Vache extends ProduitFermier {
     private float poidsVache;
     /**
      * Constructeur d'une Vache
-     *  @param prix           désigne le prix du produit
+     * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param lieuCreation désigne le lieu où a été crée un produit fermier
      * @param idVache identifiant d'une vache
      * @param nomVache Nom de la vache
      * @param poidsVache Poids d'une vache en kg
      */
-    public Vache(float prix, LocalDate datePeremption, short qualite, String lieuCreation, int idVache, String nomVache, float poidsVache) {
-        super(prix, datePeremption, qualite, lieuCreation);
+    public Vache(float prix, LocalDate datePeremption, short qualite, int idVache, String nomVache, float poidsVache) {
+        super(prix, datePeremption, qualite);
         this.idVache = idVache;
         this.nomVache = nomVache;
         this.poidsVache = poidsVache;
