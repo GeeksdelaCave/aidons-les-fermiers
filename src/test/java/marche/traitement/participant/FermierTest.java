@@ -1,7 +1,16 @@
 package marche.traitement.participant;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.produits.Pomme;
+import marche.traitement.produits.ProduitFermier;
 import org.junit.Test;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class FermierTest {
 
@@ -35,5 +44,21 @@ public class FermierTest {
         Acteur fermier = new Fermier();
         fermier.ajouterSolde(30.0);
         fermier.enleverSolde(50.0);
+    }
+
+    @Test
+    /**
+     * Test d'ajout du produit fermier dans l'inventaire d'un acteur
+     */
+    public void testAjouterProduit() {
+        Acteur fermier = new Fermier();
+        ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, 10, "Reinette", 15);
+
+        List<ProduitFermier> test = new ArrayList<ProduitFermier>();
+
+        fermier.ajoutProduit(pomme);
+        test.add(pomme);
+
+        assertEquals (fermier.getInventaire(), test);
     }
 }

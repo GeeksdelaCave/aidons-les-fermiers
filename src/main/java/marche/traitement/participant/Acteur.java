@@ -35,6 +35,14 @@ public abstract class Acteur {
     }
 
     /**
+     * Getter de l'inventaire de l'acteur
+     * @return Inventaire de l'acteur
+     */
+    public Collection<ProduitFermier> getInventaire () {
+        return inventaire;
+    }
+
+    /**
      * Fonction d'ajout du solde de l'acteur courant. Utile lors du crédit après une vente d'une offre
      * @param montant Montant à ajouter au solde de l'acteur
      */
@@ -58,7 +66,7 @@ public abstract class Acteur {
      * Méthode d'ajout de produit fermier dans l'inventaire
      * @param produit Produit à ajouter a l'inventaire du fermier
      */
-    public void ajoutProduitFermier(ProduitFermier produit) {
+    public void ajoutProduit(ProduitFermier produit) {
         inventaire.add(produit);
     }
 }
