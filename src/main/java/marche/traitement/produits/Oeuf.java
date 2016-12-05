@@ -3,10 +3,11 @@ package marche.traitement.produits;
 import java.time.LocalDate;
 
 /**
- * Classe Fromage représentant un fromage
+ * Classe Oeuf représentant un oeuf
  * @version 1.1
  */
 public class Oeuf extends ProduitFermier {
+
     /**
      * L'identifiant d'un pack d'oeufs Il n'est pas modifiable
      */
