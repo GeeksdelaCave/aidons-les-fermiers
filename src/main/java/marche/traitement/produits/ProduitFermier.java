@@ -29,16 +29,16 @@ public abstract class ProduitFermier {
      * La qualité du produit sur une échelle de 1 à 100.Elle n'est pas modifiable.
      *
      * @see ProduitFermier#getQualite()
-     * @see ProduitFermier#isCommercialise()
+     * @see ProduitFermier#isCommercialisable()
      */
     private short qualite;
 
     /**
      * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
      *
-     * @see ProduitFermier#isCommercialise()
+     * @see ProduitFermier#isCommercialisable()
      */
-    private boolean commercialise;
+    private boolean commercialisable;
 
     /**
      * Lieu où a été crée un produit fermier. Il n'est pas modifiable.
@@ -91,14 +91,14 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialise()
+    public boolean isCommercialisable()
     {
         if(getQualite() >= 30 && getQualite() <= 100)
-            commercialise = true;
+            commercialisable = true;
         else
-            commercialise = false;
+            commercialisable = false;
 
-        return commercialise;
+        return commercialisable;
     }
 
     /** Renvoie le lieu où a été crée un produit fermier
