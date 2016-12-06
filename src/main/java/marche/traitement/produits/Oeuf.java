@@ -3,13 +3,14 @@ package marche.traitement.produits;
 import java.time.LocalDate;
 
 /**
- * Classe Oeuf représentant un oeuf
- * @version 1.2
+ * Classe Oeuf représentant un pack d'oeuf
+ * @version 1.3
  */
 public class Oeuf extends ProduitFermier {
 
     /**
      * L'identifiant d'un pack d'oeufs Il n'est pas modifiable
+     * @see Oeuf#getIdPackOeuf()
      */
     private int idPackOeuf;
 
@@ -26,5 +27,13 @@ public class Oeuf extends ProduitFermier {
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idPackOeuf = idPackOeuf;
+    }
+
+    /** Retourne l'identifiant d'un pack d'oeuf
+     *
+     * @return l'identifiant d'un pack d'oeuf
+     */
+    public int getIdPackOeuf() {
+        return idPackOeuf;
     }
 }

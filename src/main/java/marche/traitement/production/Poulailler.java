@@ -12,7 +12,7 @@ public class Poulailler extends UniteDeProduction {
 
     /**
      * Identifiant d'un oeuf à la naissance statique par défaut à 100 qui s'incrémentera à chaque fois qu'on créera un oeuf pour identifiant unique.
-     * @see Poulailler#creerOeuf(float, LocalDate, short)
+     * @see Poulailler#creerPackOeuf(float, LocalDate, short)
      */
     private static int idOeufNaissance = 100;
 
@@ -33,7 +33,7 @@ public class Poulailler extends UniteDeProduction {
      * @param qualite désigne la qualité d'un oeuf lorsqu'il est née
      * @return un oeuf qui est née et a été ajoutée à l'inventaire
      */
-    public Oeuf creerOeuf(float prix, LocalDate datePeremption, short qualite) {
+    public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
         Oeuf oeuf = new Oeuf(prix,datePeremption,qualite,idOeufNaissance);
        idOeufNaissance += 100;
         ajoutInventaire(oeuf);
