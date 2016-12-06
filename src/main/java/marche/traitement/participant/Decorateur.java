@@ -1,7 +1,7 @@
 package marche.traitement.participant;
 
 /**
- * Classe décorateur
+ * Classe Decorateur
  */
 public class Decorateur {
     /**
