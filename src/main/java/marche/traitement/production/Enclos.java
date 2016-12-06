@@ -1,8 +1,9 @@
 package marche.traitement.production;
 
 /**
- * Created by Thibaud on 05/12/2016.
+ * Classe abstraite Enclos désignant un endroit abstrait où accueillir les animaux bovins ou porcs comme le cohon ou la vache
+ * @version 1.0
  */
-public class Enclos {
+public abstract class Enclos extends UniteDeProduction {
 
 }
