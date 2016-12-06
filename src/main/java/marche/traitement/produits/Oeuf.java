@@ -27,4 +27,8 @@ public class Oeuf extends ProduitFermier {
         this.qualite = qualite;
         this.idPackOeuf = idPackOeuf;
     }
+
+    public int getIdPackOeuf() {
+        return idPackOeuf;
+    }
 }
