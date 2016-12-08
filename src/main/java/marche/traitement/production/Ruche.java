@@ -37,7 +37,7 @@ public class Ruche extends UniteDeProduction{
      * @return un poids de miel crée et ajouté à l'inventaire
      */
     public Miel creerPotMiel(float prixPot,LocalDate datePeremption,short qualite,float poidsPot,String typeMiel){
-        Miel potMiel = new Miel(prixPot,datePeremption,qualite,idPotMielCree,poidsPot,typeMiel);
+        Miel potMiel = new Miel(prixPot,datePeremption,qualite,idPotMielCree,poidsPot,typeMiel,this);
         idPotMielCree += 100;
         ajoutInventaire(potMiel);
         return potMiel;
