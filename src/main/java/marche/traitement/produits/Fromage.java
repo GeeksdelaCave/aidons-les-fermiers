@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Fromage représentant un fromage
- * @version 1.5
+ * @version 1.6
  */
 public class Fromage extends ProduitFermier {
     /**

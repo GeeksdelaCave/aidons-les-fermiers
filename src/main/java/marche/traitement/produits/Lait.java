@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Lait qui représentera en réalité un pack de lait
- * @version 1.5
+ * @version 1.6
  */
 public class Lait extends ProduitFermier {
     /**

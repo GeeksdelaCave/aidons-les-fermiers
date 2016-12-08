@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Oeuf représentant un pack d'oeuf
- * @version 1.5
+ * @version 1.6
  */
 public class Oeuf extends ProduitFermier {
 
