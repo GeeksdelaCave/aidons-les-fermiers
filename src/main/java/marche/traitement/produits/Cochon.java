@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Cochon représentant un cochon
- * @version 1.4
+ * @version 1.5
  */
 public class Cochon extends ProduitFermier {
 

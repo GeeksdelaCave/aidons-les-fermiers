@@ -9,7 +9,7 @@ import java.time.LocalDate;
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.5
+ * @version 1.6
  */
 public abstract class ProduitFermier {
 
