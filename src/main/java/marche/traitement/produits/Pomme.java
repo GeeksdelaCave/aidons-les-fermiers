@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  *  Classe Pomme qui représentera en réalité une cagette de pommes
- *  @version 1.0
+ *  @version 1.4
  */
 public class Pomme extends ProduitFermier {
     /**
@@ -41,8 +41,10 @@ public class Pomme extends ProduitFermier {
      * @param typePomme      désigne le type des pommes de la cagette
      * @param nbPommes       désigne le nbre de pommes dans une cagette
      */
-    public Pomme(float prix, LocalDate datePeremption, short qualite,int idCagette,float poidsCagette,String typePomme,int nbPommes) {
-        super(prix, datePeremption, qualite);
+    public Pomme(float prix, LocalDate datePeremption, short qualite, int idCagette,float poidsCagette,String typePomme,int nbPommes) {
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idCagette = idCagette;
         this.poidsCagette = poidsCagette;
         this.typePomme = typePomme;
@@ -81,5 +83,4 @@ public class Pomme extends ProduitFermier {
         return nbPommes;
     }
 
-    //ToDo est ce qu'un fermier peut vendre une partie des pommes dans une cagette ?
 }

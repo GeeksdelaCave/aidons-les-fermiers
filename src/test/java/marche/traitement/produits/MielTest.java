@@ -9,7 +9,7 @@ import java.time.Month;
 
 /**
  * MielTest désigne les tests unitaires effectués sur la classe Miel
- * @version 1.0
+ * @version 1.3
  */
 public class MielTest {
     /**
@@ -18,7 +18,7 @@ public class MielTest {
     @Test
     public void testGetIdMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30),(short) 55.0,  1000,5.0f,"Mieldechataignier");
         assertTrue(miel.getIdSeauMiel() == 1000);
     }
 
@@ -28,7 +28,7 @@ public class MielTest {
     @Test
     public void testGetPoidsSeauMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier");
         assertTrue(miel.getPoidsSeauMiel() == 5.0f);
     }
 
@@ -38,7 +38,7 @@ public class MielTest {
     @Test
     public void testGetTypeMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier");
         assertTrue(miel.getTypeDeMiel() == "Mieldechataignier");
     }
 }
