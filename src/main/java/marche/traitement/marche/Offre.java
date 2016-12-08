@@ -1,5 +1,10 @@
 package marche.traitement.marche;
 
+import marche.traitement.participant.Fermier;
+import marche.traitement.produits.ProduitFermier;
+
+import java.util.Collection;
+
 /**
  * Classe Offre
  *
@@ -7,14 +12,14 @@ package marche.traitement.marche;
 public class Offre {
 
     /**
-     * Nom du fermier à qui propose l'offre
+     * Fermier qui propose l'offre
      */
-    //TODO ajouter donnée membre fermier
+    //private Fermier vendeur;
 
     /**
-     * Nom de l'acheteur
+     * Acheteur
      */
-    //TODO ajouter donnée membre acheteur
+    //private Fermier acheteur;
 
     /**
      *  Le prix de l'offre
@@ -22,15 +27,18 @@ public class Offre {
     private float prix;
 
     /**
-     * Nom du produit
+     * Produits concernés par l'offre
      */
-    //TODO ajouter donnée membre produits
+    private Collection<ProduitFermier> produits;
 
     /**
      * Constructeur de la classe
      */
-    public Offre(){
-        //TODO ajouter le corps du constructeur
+    public Offre(/*Vendeur vendeur , Acheteur acheteur, float prix, Collection<ProduitFermier> produits */){
+        //this.vendeur = vendeur;
+        //this.acheteur = acheteur;
+        //this.prix = prix;
+        //this.produits = produits;
     }
 
     /**

@@ -18,7 +18,7 @@ public class FermierTest {
     /**
      * Test du solde du trader avec le bon type
      */
-    public void testDuSoldeDuFermier () {
+    public void testDuSoldeDuFermier() {
         Acteur fermier = new Fermier();
         fermier.ajouterSolde(50.0);
 
@@ -29,7 +29,7 @@ public class FermierTest {
     /**
      * Test du solde du trader avec un int (test du cast implicite)
      */
-    public void testDuSoldeDuFermierAvecInt () {
+    public void testDuSoldeDuFermierAvecInt() {
         Acteur fermier = new Fermier();
         fermier.ajouterSolde(50);
 
@@ -40,7 +40,7 @@ public class FermierTest {
     /**
      * Test d'enlever du solde supérieur à ce qui est possible : soulève une exception SoldeNonDisponibleException
      */
-    public void testEnleverSolde () throws SoldeNonDisponibleException {
+    public void testEnleverSolde() throws SoldeNonDisponibleException {
         Acteur fermier = new Fermier();
         fermier.ajouterSolde(30.0);
         fermier.enleverSolde(50.0);
@@ -48,14 +48,15 @@ public class FermierTest {
 
     @Test
     /**
-     * Test d'ajout de produit dans l'inventaire
+     * Test d'ajout du produit fermier dans l'inventaire d'un acteur
      */
-    public void testAjoutProduit () {
+    public void testAjouterProduit() {
         Acteur fermier = new Fermier();
-        ProduitFermier pomme = new Pomme(10,LocalDate.of(1996, Month.SEPTEMBER, 13), (short)87, 1, 10, "Reinette", 15);
-        fermier.ajoutProduit(pomme);
+        ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, 10, "Reinette", 15);
 
         List<ProduitFermier> test = new ArrayList<ProduitFermier>();
+
+        fermier.ajoutProduit(pomme);
         test.add(pomme);
 
         assertEquals (fermier.getInventaire(), test);

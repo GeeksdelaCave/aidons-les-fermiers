@@ -7,7 +7,7 @@ import java.time.LocalDate;
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.0
+ * @version 1.4
  */
 public abstract class ProduitFermier {
 
@@ -16,48 +16,42 @@ public abstract class ProduitFermier {
      *
      * @see ProduitFermier#getPrix()
      */
-    private float prix;
+    protected float prix;
 
     /**
      * La date de peremption du produit. Elle n'est pas modifiable
      *
      * @see ProduitFermier#getDatePeremption()
      */
-    private LocalDate datePeremption;
+    protected LocalDate datePeremption;
 
     /**
      * La qualité du produit sur une échelle de 1 à 100.Elle n'est pas modifiable.
      *
      * @see ProduitFermier#getQualite()
-     * @see ProduitFermier#isCommercialise()
+     * @see ProduitFermier#isCommercialisable()
      */
-    private short qualite;
+    protected short qualite;
 
     /**
      * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
      *
-     * @see ProduitFermier#isCommercialise()
+     * @see ProduitFermier#isCommercialisable()
      */
-    private boolean commercialise;
+    protected boolean commercialisable;
 
-    /** Constructeur d'un Produit Fermier
+
+
+    /** Constructeur par défaut d'un Produit Fermier
      *
-     * @param prix désigne le prix du produit
-     * @param datePeremption désigne la date de péremption du produit
-     * @param qualite désigne la qualité du produit sur une échelle de 1 à 100
      */
-    public ProduitFermier(float prix, LocalDate datePeremption, short qualite) {
-        this.prix = prix;
-        this.datePeremption = datePeremption;
-        this.qualite = qualite;
-    }
+
+    protected ProduitFermier() {}
 
     /** Retourne le prix du produit
      *
      * @return le prix du produit
      */
-
-
     public float getPrix()
     {
         return prix;
@@ -85,13 +79,15 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialise()
+    public boolean isCommercialisable()
     {
         if(getQualite() >= 30 && getQualite() <= 100)
-            commercialise = true;
+            commercialisable = true;
         else
-            commercialise = false;
+            commercialisable = false;
 
-        return commercialise;
+        return commercialisable;
     }
+
+
 }

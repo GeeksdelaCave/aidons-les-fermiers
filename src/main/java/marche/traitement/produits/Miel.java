@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe Miel représentant un pot de miel
- * @version 1.0
+ * @version 1.3
  */
 public class Miel extends ProduitFermier {
     /**
@@ -36,8 +36,10 @@ public class Miel extends ProduitFermier {
      * @param poidsSeauMiel  désigne le poids d'un seau de miel en kg
      * @param typeDeMiel     désigne le type de miel
      */
-    public Miel(float prix, LocalDate datePeremption, short qualite,int idSeauMiel,float poidsSeauMiel,String typeDeMiel) {
-        super(prix, datePeremption, qualite);
+    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel) {
+        this.prix = prix;
+        this.datePeremption = datePeremption;
+        this.qualite = qualite;
         this.idSeauMiel = idSeauMiel;
         this.poidsSeauMiel = poidsSeauMiel;
         this.typeDeMiel = typeDeMiel;
