@@ -28,7 +28,7 @@ public abstract class UniteDeProduction {
      * Rangée de produits fermiers dans l'unité de production où chaque produit sera trié en fonction de sa qualité. Elle est modfiable tant qu'on est pas à la capacitée maximale
      * @see UniteDeProduction#ajoutInventaire(ProduitFermier)
      */
-    protected PriorityQueue<ProduitFermier> inventaireUdp = new PriorityQueue<ProduitFermier>(new Comparator<ProduitFermier>() {
+    protected PriorityQueue<ProduitFermier> inventaireUniteDeProduction = new PriorityQueue<ProduitFermier>(new Comparator<ProduitFermier>() {
         public int compare(ProduitFermier o1, ProduitFermier o2) {
             return o2.getQualite() < o1.getQualite() ? -1 : 1;
         }
@@ -42,19 +42,16 @@ public abstract class UniteDeProduction {
 
 
     /** Permet d'ajouter à l'inventaire Udp un produit fermier crée sauf si l'unité de production est pleine
-     *
      * @param produitFermier désigne un produit fermier crée à partir de la methode creerProduitFermier()
      */
-    public void ajoutInventaire (ProduitFermier produitFermier)
-    {
-        if(getCapaciteeProduction() != inventaireUdp.size())
-            inventaireUdp.add(produitFermier);
-        System.out.println("Ajout impossible, taille maximale atteinte");
-        return;
+    public void ajoutInventaire (ProduitFermier produitFermier) {
+        if(getCapaciteeProduction() != inventaireUniteDeProduction.size())
+            inventaireUniteDeProduction.add(produitFermier);
+        //System.out.println("Ajout impossible, taille maximale atteinte");
+        //TODO GESTION EXCEPTION
     }
 
     /** Retourne la capacitée maximale de produit fermier à accueillir
-     *
      * @return la capacitée maximale de produit fermier à accueillir
      */
     public int getCapaciteeProduction() {
@@ -62,7 +59,6 @@ public abstract class UniteDeProduction {
     }
 
     /** Retourne la région où est implanté l'unité de production
-     *
      * @return la région où est implanté l'unité de production
      */
     public String getRegionCreationProduit() {

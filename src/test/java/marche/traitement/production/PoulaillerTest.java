@@ -15,23 +15,21 @@ public class PoulaillerTest {
     /**
      * Teste de créer deux packs d'oeufs et vérifie leur identification à la création
      */
-    @Test
-    public void testCreerOeuf()
-    {
+    /*@Test
+    public void testCreerOeuf() {
         Poulailler poulailler = new Poulailler(10,"Limoges");
         Oeuf packoeuf = poulailler.creerPackOeuf(3.0f, LocalDate.of(2016,10,28),(short)50.0);
         assertTrue(packoeuf.getIdPackOeuf() == 100);
 
         Oeuf packoeuf2 = poulailler.creerPackOeuf(4.0f,LocalDate.of(2016,10,28),(short) 75.0);
         assertTrue(packoeuf2.getIdPackOeuf() == 200);
-    }
+    }//*/
 
     /**
      *  Teste si l'ajout à l'inventaire est possible
      */
     @Test
-    public void testAjouterInventaire()
-    {
+    public void testAjouterInventaire() {
         Poulailler poulailler = new Poulailler(1,"Limoges");
         Oeuf packoeuf = poulailler.creerPackOeuf(3.0f, LocalDate.of(2016,10,28),(short)50.0);
 
