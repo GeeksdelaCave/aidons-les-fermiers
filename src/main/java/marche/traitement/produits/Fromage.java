@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.Fromagerie;
+
 import java.time.LocalDate;
 
 /**
  * Classe Fromage représentant un fromage
- * @version 1.3
+ * @version 1.4
  */
 public class Fromage extends ProduitFermier {
     /**
@@ -34,14 +36,16 @@ public class Fromage extends ProduitFermier {
      * @param idFromage      désigne l'identifiant d'un fromage
      * @param nomFromage     désigne le nom d'un fromage
      * @param poidsFromage   désigne le poids d'un fromage en kg
+     * @param fromagerie     désigne une fromagerie associè à un fromage
      */
-    public Fromage(float prix, LocalDate datePeremption, short qualite, int idFromage, String nomFromage, float poidsFromage) {
+    public Fromage(float prix, LocalDate datePeremption, short qualite, int idFromage, String nomFromage, float poidsFromage, Fromagerie fromagerie) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idFromage = idFromage;
         this.nomFromage = nomFromage;
         this.poidsFromage = poidsFromage;
+        this.uniteDeProduction = fromagerie;
     }
 
     /** Retourne l'identifiant du fromage

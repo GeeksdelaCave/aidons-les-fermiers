@@ -1,13 +1,15 @@
 package marche.traitement.produits;
 
 
+import marche.traitement.production.UniteDeProduction;
+
 import java.time.LocalDate;
 
 /**
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.4
+ * @version 1.5
  */
 public abstract class ProduitFermier {
 
@@ -40,7 +42,11 @@ public abstract class ProduitFermier {
      */
     protected boolean commercialisable;
 
-
+    /**
+     * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
+     * @see ProduitFermier#getUniteDeProduction()
+     */
+    protected UniteDeProduction uniteDeProduction;
 
     /** Constructeur par défaut d'un Produit Fermier
      *
@@ -89,5 +95,11 @@ public abstract class ProduitFermier {
         return commercialisable;
     }
 
-
+    /** Retourne l'unité de production associé à un produit fermier
+     *
+     * @return l'unité de production associé à un produit fermier
+     */
+    public UniteDeProduction getUniteDeProduction() {
+        return uniteDeProduction;
+    }
 }

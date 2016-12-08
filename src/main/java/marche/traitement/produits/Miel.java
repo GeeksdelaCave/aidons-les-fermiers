@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.Ruche;
+
 import java.time.LocalDate;
 
 /**
  * Classe Miel représentant un pot de miel
- * @version 1.3
+ * @version 1.4
  */
 public class Miel extends ProduitFermier {
     /**
@@ -35,14 +37,16 @@ public class Miel extends ProduitFermier {
      * @param idSeauMiel     désigne l'identifiant d'un seau de miel
      * @param poidsSeauMiel  désigne le poids d'un seau de miel en kg
      * @param typeDeMiel     désigne le type de miel
+     * @param ruche          désigne la ruche associé à un pot de miel
      */
-    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel) {
+    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel,Ruche ruche) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idSeauMiel = idSeauMiel;
         this.poidsSeauMiel = poidsSeauMiel;
         this.typeDeMiel = typeDeMiel;
+        this.uniteDeProduction = ruche;
     }
 
     /** Retourne l'identifiant d'un seau de miel

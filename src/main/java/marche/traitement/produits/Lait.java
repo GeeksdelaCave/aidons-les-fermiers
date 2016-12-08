@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.Laiterie;
+
 import java.time.LocalDate;
 
 /**
  * Classe Lait qui représentera en réalité un pack de lait
- * @version 1.3
+ * @version 1.4
  */
 public class Lait extends ProduitFermier {
     /**
@@ -27,13 +29,15 @@ public class Lait extends ProduitFermier {
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
      * @param idPackLait     désigne l'identifiant d'un pack de lait
      * @param poidsPackLait  désigne le poids d'un pack de lait
+     * @param laiterie       désigne la laiterie associé avec un pack de lait
      */
-    public Lait(float prix, LocalDate datePeremption, short qualite, int idPackLait, float poidsPackLait) {
+    public Lait(float prix, LocalDate datePeremption, short qualite, int idPackLait, float poidsPackLait, Laiterie laiterie) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idPackLait = idPackLait;
         this.poidsPackLait = poidsPackLait;
+        this.uniteDeProduction = laiterie;
     }
 
     /** Retourne l'identifiant d'un pack de lait
