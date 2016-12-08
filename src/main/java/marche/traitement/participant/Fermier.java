@@ -1,8 +1,8 @@
 package marche.traitement.participant;
 
 
+import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
-import marche.traitement.produits.UniteDeProduction;
 
 import java.util.ArrayList;
 import java.util.Collection;
