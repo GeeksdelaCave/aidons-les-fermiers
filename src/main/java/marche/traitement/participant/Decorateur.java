@@ -1,8 +1,11 @@
 package marche.traitement.participant;
 
 /**
- * Created by nicolas on 05/12/2016.
+ * Classe Decorateur
  */
-public class Decorateur extends Acteur {
+public class Decorateur {
+    /**
+     * Donnée membre acteur
+     */
     private Acteur acteur;
 }
