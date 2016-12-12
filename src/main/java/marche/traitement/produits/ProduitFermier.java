@@ -3,10 +3,6 @@ package marche.traitement.produits;
 import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
-
-import marche.traitement.label.Label;
-import marche.traitement.production.UniteDeProduction;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -62,6 +58,7 @@ public abstract class ProduitFermier {
      * @return le prix du produit
      */
     public float getPrix(){
+
         return prix;
     }
 
@@ -69,8 +66,7 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption() throws ProduitPerimeException
-    {
+    public LocalDate getDatePeremption() throws ProduitPerimeException {
         if (datePeremption.isAfter(LocalDate.now()))
             return datePeremption;
         else
@@ -82,6 +78,7 @@ public abstract class ProduitFermier {
      * @return la qualité du produit
      */
     public short getQualite() {
+
         return qualite;
     }
 
@@ -98,6 +95,7 @@ public abstract class ProduitFermier {
      * @return l'unité de production associé à un produit fermier
      */
     public UniteDeProduction getUniteDeProduction() {
+
         return uniteDeProduction;
     }
 }

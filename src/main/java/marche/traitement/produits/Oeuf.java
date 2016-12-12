@@ -38,6 +38,7 @@ public class Oeuf extends ProduitFermier {
      * @return l'identifiant d'un pack d'oeuf
      */
     public int getIdPackOeuf() {
+
         return idPackOeuf;
     }
 }
