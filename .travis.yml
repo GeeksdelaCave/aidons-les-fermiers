@@ -25,4 +25,5 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - javadoc -sourcepath src/mail/java/*.java -d doc/ marche
+  #- javadoc -sourcepath src/mail/java/*.java -d doc/ marche
+  - javadoc -private -splitindex -d /Users/pyrrha/IdeaProjects/aidons-les-fermiers/doc
