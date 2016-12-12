@@ -25,4 +25,4 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - javadoc -d doc/
+  - javadoc -d doc/ marche
