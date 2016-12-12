@@ -31,7 +31,6 @@ public class VacheTest {
     public void testGetDatePeremption()
     {
         Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
-        LocalDate ld = LocalDate.of(2016, Month.NOVEMBER,28);
         assert vache.getDatePeremption().isAfter(LocalDate.now());
     }
 
