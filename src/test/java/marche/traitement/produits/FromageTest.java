@@ -10,7 +10,7 @@ import java.time.Month;
 
 /**
  * FromageTest désigne les tests unitaires effectués sur la classe Fromage
- * @version 1.2
+ * @version 1.3
  */
 public class FromageTest {
     /**

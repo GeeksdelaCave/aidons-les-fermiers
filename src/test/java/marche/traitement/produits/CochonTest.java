@@ -10,7 +10,7 @@ import java.time.Month;
 
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
- * @version 1.2
+ * @version 1.3
  */
 
 public class CochonTest {

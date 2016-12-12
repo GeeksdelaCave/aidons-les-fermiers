@@ -55,6 +55,7 @@ public class FermierTest {
         Acteur fermier = new Fermier();
         ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, 10, "Reinette", 15, new Verger(50,"Normandie"));
 
+
         List<ProduitFermier> test = new ArrayList<ProduitFermier>();
 
         fermier.ajoutProduit(pomme);

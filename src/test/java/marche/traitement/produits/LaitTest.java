@@ -10,7 +10,7 @@ import java.time.Month;
 
 /**
  * LaitTest désigne le test unitaire effectué sur la classe Lait sur tous ces getter() crées
- * @version 1.3
+ * @version 1.4
  */
 public class LaitTest {
     /**

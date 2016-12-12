@@ -4,6 +4,9 @@ import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
 
+import marche.traitement.label.Label;
+import marche.traitement.production.UniteDeProduction;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -37,6 +40,7 @@ public abstract class ProduitFermier {
      */
     protected short qualite;
 
+    
     /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
      * @see ProduitFermier#getUniteDeProduction()

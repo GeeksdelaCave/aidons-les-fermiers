@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.Month;
 /**
  * PommeTest désigne le test unitaire effectué sur la classe Pomme sur tous ces getter() crées
- * @version 1.5
+ * @version 1.6
  */
 public class PommeTest {
     /**

@@ -10,7 +10,7 @@ import java.time.Month;
 
 /**
  * MielTest désigne les tests unitaires effectués sur la classe Miel
- * @version 1.3
+ * @version 1.4
  */
 public class MielTest {
     /**
