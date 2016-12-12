@@ -1,15 +1,12 @@
 package marche.traitement.marche;
 
 import marche.traitement.participant.Acheteur;
-import marche.traitement.participant.Fermier;
-import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.Collection;
 
 /**
  * Classe Offre
- *
  */
 public class Offre {
 
@@ -50,8 +47,8 @@ public class Offre {
     }
 
     /**
-     * Peremet de retourner la collection de produit
-     * @return Collection<ProduitFermier> ProduitFermier produits
+     * Permet de retourner la collection de produit
+     * @return la collection des produits fermiers
      */
     public Collection<ProduitFermier> getProduits(){
         return this.produits;
