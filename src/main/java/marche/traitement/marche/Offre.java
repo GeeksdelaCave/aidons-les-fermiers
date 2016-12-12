@@ -48,7 +48,7 @@ public class Offre {
      */
     public boolean valider(){
 
-        //TODO ajouter le corps de la fonction
+
         return true;// TODO modifer le return en fonction du corps
     }
 
@@ -58,6 +58,14 @@ public class Offre {
     public void acheter(){ // prend en paramètre : Acheteur acheteur
 
         //TODO ajouter le corps de la fonction
+    }
+
+    /**
+     * Peremt de retourner la collection de produit
+     * @return Collection<ProduitFermier> ProduitFermier produits
+     */
+    public Collection<ProduitFermier> getProduits(){
+        return this.produits;
     }
 
 
