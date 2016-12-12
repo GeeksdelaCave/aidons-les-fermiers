@@ -2,6 +2,7 @@ package marche.traitement.produits;
 
 import static org.junit.Assert.assertTrue;
 
+import marche.traitement.production.Ruche;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ public class MielTest {
     @Test
     public void testGetIdMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30),(short) 55.0,  1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30),(short) 55.0,  1000,5.0f,"Mieldechataignier",new Ruche(20,"Loire"));
         assertTrue(miel.getIdSeauMiel() == 1000);
     }
 
@@ -28,7 +29,7 @@ public class MielTest {
     @Test
     public void testGetPoidsSeauMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
         assertTrue(miel.getPoidsSeauMiel() == 5.0f);
     }
 
@@ -38,7 +39,7 @@ public class MielTest {
     @Test
     public void testGetTypeMiel()
     {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier");
+        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
         assertTrue(miel.getTypeDeMiel() == "Mieldechataignier");
     }
 }

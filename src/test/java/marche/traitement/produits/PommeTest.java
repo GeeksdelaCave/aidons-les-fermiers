@@ -2,6 +2,7 @@ package marche.traitement.produits;
 
 import static org.junit.Assert.assertTrue;
 
+import marche.traitement.production.Verger;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -17,7 +18,7 @@ public class PommeTest {
     @Test
     public void testGetIdCagette()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8, new Verger(50,"Normandie"));
         assertTrue(pomme.getIdCagette() == 1500);
     }
 
@@ -27,7 +28,7 @@ public class PommeTest {
     @Test
     public void testGetPoidsCagette()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8, new Verger(50,"Normandie"));
         assertTrue(pomme.getPoidsCagette() == 6.0f);
     }
 
@@ -37,7 +38,7 @@ public class PommeTest {
     @Test
     public void testGetTypePomme()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8, new Verger(50,"Normandie"));
         assertTrue(pomme.getTypePomme().equals("Reinette"));
     }
 
@@ -47,7 +48,7 @@ public class PommeTest {
     @Test
     public void testGetNbPommes()
     {
-        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8);
+        Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1500,6.0f,"Reinette",8, new Verger(50,"Normandie"));
         assertTrue(pomme.getNbPommes() == 8);
 
     }

@@ -39,7 +39,7 @@ public class Etable extends Enclos {
      */
     public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache)
     {
-        Vache vacheNee = new Vache(prixVache,datePeremption,qualite,idVacheNee,nomVache,poidsVache);
+        Vache vacheNee = new Vache(prixVache,datePeremption,qualite,idVacheNee,nomVache,poidsVache,this);
         idVacheNee += 100;
         ajoutInventaire(vacheNee);
         return vacheNee;

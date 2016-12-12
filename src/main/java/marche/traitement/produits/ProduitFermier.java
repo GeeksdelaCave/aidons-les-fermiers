@@ -1,13 +1,17 @@
 package marche.traitement.produits;
 
 
+import marche.traitement.label.Label;
+import marche.traitement.production.UniteDeProduction;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.4
+ * @version 1.8
  */
 public abstract class ProduitFermier {
 
@@ -40,20 +44,27 @@ public abstract class ProduitFermier {
      */
     protected boolean commercialisable;
 
+    /**
+     * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
+     * @see ProduitFermier#getUniteDeProduction()
+     */
+    protected UniteDeProduction uniteDeProduction;
 
+    /**
+     * Labels qu'un produit fermier peut avoir. Non modifiable.
+     */
+    protected ArrayList<Label> labels;
 
     /** Constructeur par défaut d'un Produit Fermier
      *
      */
-
     protected ProduitFermier() {}
 
     /** Retourne le prix du produit
      *
      * @return le prix du produit
      */
-    public float getPrix()
-    {
+    public float getPrix(){
         return prix;
     }
 
@@ -61,8 +72,7 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption()
-    {
+    public LocalDate getDatePeremption() {
         return datePeremption;
     }
 
@@ -70,8 +80,7 @@ public abstract class ProduitFermier {
      *
      * @return la qualité du produit
      */
-    public short getQualite()
-    {
+    public short getQualite() {
         return qualite;
     }
 
@@ -79,8 +88,7 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialisable()
-    {
+    public boolean isCommercialisable() {
         if(getQualite() >= 30 && getQualite() <= 100)
             commercialisable = true;
         else
@@ -89,5 +97,11 @@ public abstract class ProduitFermier {
         return commercialisable;
     }
 
-
+    /** Retourne l'unité de production associé à un produit fermier
+     *
+     * @return l'unité de production associé à un produit fermier
+     */
+    public UniteDeProduction getUniteDeProduction() {
+        return uniteDeProduction;
+    }
 }

@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.Verger;
+
 import java.time.LocalDate;
 
 /**
  *  Classe Pomme qui représentera en réalité une cagette de pommes
- *  @version 1.4
+ *  @version 1.7
  */
 public class Pomme extends ProduitFermier {
     /**
@@ -40,8 +42,10 @@ public class Pomme extends ProduitFermier {
      * @param poidsCagette   désigne le poids de la cagette de poids
      * @param typePomme      désigne le type des pommes de la cagette
      * @param nbPommes       désigne le nbre de pommes dans une cagette
+     * @param verger         désigne le verger associé à la cagette de pommes
+     *
      */
-    public Pomme(float prix, LocalDate datePeremption, short qualite, int idCagette,float poidsCagette,String typePomme,int nbPommes) {
+    public Pomme(float prix, LocalDate datePeremption, short qualite, int idCagette, float poidsCagette, String typePomme, int nbPommes, Verger verger) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
@@ -49,6 +53,7 @@ public class Pomme extends ProduitFermier {
         this.poidsCagette = poidsCagette;
         this.typePomme = typePomme;
         this.nbPommes = nbPommes;
+        this.uniteDeProduction = verger;
     }
 
     /** Retourne l'identifiant d'une cagette
@@ -56,6 +61,7 @@ public class Pomme extends ProduitFermier {
      * @return l'identifiant d'une cagette
      */
     public int getIdCagette() {
+
         return idCagette;
     }
 
@@ -64,6 +70,7 @@ public class Pomme extends ProduitFermier {
      * @return le poids d'une cagette
      */
     public float getPoidsCagette() {
+
         return poidsCagette;
     }
 
@@ -72,6 +79,7 @@ public class Pomme extends ProduitFermier {
      * @return le type de pomme dans une cagette
      */
     public String getTypePomme() {
+
         return typePomme;
     }
 
@@ -80,6 +88,7 @@ public class Pomme extends ProduitFermier {
      * @return le nbre de pommes dans une cagette
      */
     public int getNbPommes() {
+
         return nbPommes;
     }
 

@@ -2,6 +2,7 @@ package marche.traitement.produits;
 
 import static org.junit.Assert.assertTrue;
 
+import marche.traitement.production.Laiterie;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ public class LaitTest {
     @Test
     public void testGetIdLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f, new Laiterie(30,"Paris"));
         assertTrue(lait.getIdPackLait() == 1300);
     }
 
@@ -28,7 +29,7 @@ public class LaitTest {
     @Test
     public void testGetPoidsPackLait()
     {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1300,3.0f);
+        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1300,3.0f, new Laiterie(30,"Paris"));
         assertTrue(lait.getPoidsPackLait() == 3.0f);
     }
 
