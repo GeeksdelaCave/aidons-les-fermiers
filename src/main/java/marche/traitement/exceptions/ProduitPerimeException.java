@@ -1,14 +1,14 @@
 package marche.traitement.exceptions;
 
-public class SoldeNonDisponibleException extends Exception {
+public class ProduitPerimeException extends RuntimeException {
 
     /**
-     * Texte d'erreur de dépassement du montant sur le solde de l'acteur.
+     * Texte d'erreur de dépassement de la date de péremption.
      * @return Le texte d'erreur
      */
     @Override
     public String toString() {
-        return "Erreur : le montant n'est pas disponible sur le compte de cet acteur.";
+        return "Erreur : le produit est périmé.";
     }
 
     /**

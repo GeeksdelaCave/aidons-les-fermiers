@@ -1,5 +1,6 @@
 package marche.traitement.production;
 
+import marche.traitement.exceptions.InventairePleinException;
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.Comparator;
@@ -41,14 +42,15 @@ public abstract class UniteDeProduction {
     }
 
 
-    /** Permet d'ajouter à l'inventaire Udp un produit fermier crée sauf si l'unité de production est pleine
+    /** Permet d'ajouter à l'inventaire de l'unité de production un produit fermier nouvellement crée sauf si l'unité de production est pleine. Le cas échéant, renvoit une InventairePleinException().
      * @param produitFermier désigne un produit fermier crée à partir de la methode creerProduitFermier()
+     * @see InventairePleinException
      */
-    public void ajoutInventaire (ProduitFermier produitFermier) {
+    public void ajoutInventaire (ProduitFermier produitFermier) throws InventairePleinException {
         if(getCapaciteeProduction() != inventaireUniteDeProduction.size())
             inventaireUniteDeProduction.add(produitFermier);
-        //System.out.println("Ajout impossible, taille maximale atteinte");
-        //TODO GESTION EXCEPTION
+        else
+            throw new InventairePleinException();
     }
 
     /** Retourne la capacitée maximale de produit fermier à accueillir

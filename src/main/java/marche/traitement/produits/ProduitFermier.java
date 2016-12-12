@@ -1,6 +1,6 @@
 package marche.traitement.produits;
 
-
+import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
 
@@ -38,13 +38,6 @@ public abstract class ProduitFermier {
     protected short qualite;
 
     /**
-     * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
-     *
-     * @see ProduitFermier#isCommercialisable()
-     */
-    protected boolean commercialisable;
-
-    /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
      * @see ProduitFermier#getUniteDeProduction()
      */
@@ -72,8 +65,12 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption() {
-        return datePeremption;
+    public LocalDate getDatePeremption() throws ProduitPerimeException
+    {
+        if (datePeremption.isAfter(LocalDate.now()))
+            return datePeremption;
+        else
+            throw new ProduitPerimeException();
     }
 
     /** Retourne la qualité du produit
@@ -89,12 +86,7 @@ public abstract class ProduitFermier {
      * @return si le produit est commercialisable ou pas
      */
     public boolean isCommercialisable() {
-        if(getQualite() >= 30 && getQualite() <= 100)
-            commercialisable = true;
-        else
-            commercialisable = false;
-
-        return commercialisable;
+        return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
     }
 
     /** Retourne l'unité de production associé à un produit fermier
