@@ -22,3 +22,7 @@ branches:
 # Spécification des JDK avec lesquels compiler
 jdk:
   - oraclejdk8
+
+#Génération de la JavaDoc
+after_success:
+  - javadoc -d doc/ marche
