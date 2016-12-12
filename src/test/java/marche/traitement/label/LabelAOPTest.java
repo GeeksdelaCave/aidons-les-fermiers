@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelAOP
- * @version 1.0
+ * @version 1.1
  */
 public class LabelAOPTest {
     /**
@@ -16,7 +16,7 @@ public class LabelAOPTest {
     public void testGetIdLabel()
    {
        Label label = new LabelAOP(1000,"Roquefort");
-       assertTrue(label.getIdLabel() == 1000);
+       assert label.getIdLabel() == 1000;
    }
 
     /**
@@ -26,6 +26,6 @@ public class LabelAOPTest {
     public void testGetNomLieuCreation()
    {
        LabelAOP labelAOP = new LabelAOP(1100,"Champagne");
-       assertTrue(labelAOP.getNomLieuCreation().equals("Champagne"));
+       assert labelAOP.getNomLieuCreation().equals("Champagne");
    }
 }

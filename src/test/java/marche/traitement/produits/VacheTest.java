@@ -1,12 +1,13 @@
 package marche.traitement.produits;
 
-import static org.junit.Assert.assertTrue;
-
+import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.production.Etable;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * VacheTest désigne le test unitaire effectué sur la classe Vache sur tous ces getter() crées
@@ -27,12 +28,11 @@ public class VacheTest {
     /**
      * Teste la date de peremption de la vache
      */
-    @Test
+    @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f,  new Etable(200,"Pyrénées"));
-        LocalDate ld = LocalDate.of(2016, Month.NOVEMBER,28);
-        assertTrue(vache.getDatePeremption().equals(ld));
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
+        assert vache.getDatePeremption().isAfter(LocalDate.now());
     }
 
     /**
@@ -48,14 +48,10 @@ public class VacheTest {
     /**
      * Teste si la vache est commercialisable
      */
-    @Test
-    public void testGetIsCommercialise()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
-        assertTrue(vache.isCommercialisable() == true);
-
-        Vache vache1 = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 20.0,  1200,"vachetest",50.0f,new Etable(200,"Pyrénées"));
-        assertTrue(vache1.isCommercialisable() == false);
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetIsCommercialise() throws ProduitPerimeException {
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
+        assertTrue(vache.isCommercialisable());
     }
 
     /**
