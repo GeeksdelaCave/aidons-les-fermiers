@@ -1,5 +1,9 @@
 package marche.traitement.marche;
 
+import marche.traitement.produits.ProduitFermier;
+
+import java.util.Collection;
+
 /**
  * Classe abstraite marche
  */
@@ -13,4 +17,9 @@ public abstract class Marche {
      * Donnée membre permettant d'identifier un marché
       */
     private String nomMarche;
+
+    /**
+     * Catalogue peremttant de répertorier les offres
+     */
+    private Collection<Offre> catalogue;
 }
