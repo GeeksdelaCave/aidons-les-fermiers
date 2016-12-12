@@ -47,14 +47,10 @@ public class VacheTest {
     /**
      * Teste si la vache est commercialisable
      */
-    @Test
-    public void testGetIsCommercialise()
-    {
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetIsCommercialise() throws ProduitPerimeException {
         Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
-        assertTrue(vache.isCommercialisable() == true);
-
-        Vache vache1 = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 20.0,  1200,"vachetest",50.0f);
-        assertTrue(vache1.isCommercialisable() == false);
+        assertTrue(vache.isCommercialisable());
     }
 
     /**
