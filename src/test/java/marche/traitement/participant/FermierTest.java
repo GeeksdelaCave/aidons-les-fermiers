@@ -1,6 +1,7 @@
 package marche.traitement.participant;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.production.Verger;
 import marche.traitement.produits.Pomme;
 import marche.traitement.produits.ProduitFermier;
 import org.junit.Test;
@@ -52,7 +53,8 @@ public class FermierTest {
      */
     public void testAjouterProduit() {
         Acteur fermier = new Fermier();
-        ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, 10, "Reinette", 15);
+        ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, 10, "Reinette", 15, new Verger(50,"Normandie"));
+
 
         List<ProduitFermier> test = new ArrayList<ProduitFermier>();
 

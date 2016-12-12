@@ -1,6 +1,8 @@
 package marche.traitement.marche;
 
+import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Fermier;
+import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.Collection;
@@ -12,19 +14,9 @@ import java.util.Collection;
 public class Offre {
 
     /**
-     * Fermier qui propose l'offre
-     */
-    //private Fermier vendeur;
-
-    /**
-     * Acheteur
-     */
-    //private Fermier acheteur;
-
-    /**
      *  Le prix de l'offre
      */
-    private float prix;
+    private double prix;
 
     /**
      * Produits concernés par l'offre
@@ -34,11 +26,9 @@ public class Offre {
     /**
      * Constructeur de la classe
      */
-    public Offre(/*Vendeur vendeur , Acheteur acheteur, float prix, Collection<ProduitFermier> produits */){
-        //this.vendeur = vendeur;
-        //this.acheteur = acheteur;
-        //this.prix = prix;
-        //this.produits = produits;
+    public Offre( double prix, Collection<ProduitFermier> produits ){
+        this.prix = prix;
+        this.produits = produits;
     }
 
     /**
@@ -46,16 +36,29 @@ public class Offre {
      */
     public boolean valider(){
 
-        //TODO ajouter le corps de la fonction
+
         return true;// TODO modifer le return en fonction du corps
     }
 
     /**
      * Méthode acheter
      */
-    public void acheter(){ // prend en paramètre : Acheteur acheteur
+    public void acheter(Acheteur acheteur){
 
-        //TODO ajouter le corps de la fonction
+        //TODO implémenter la méthdoe
+
+    }
+
+    /**
+     * Peremet de retourner la collection de produit
+     * @return Collection<ProduitFermier> ProduitFermier produits
+     */
+    public Collection<ProduitFermier> getProduits(){
+        return this.produits;
+    }
+
+    public double getPrix(){
+        return this.prix;
     }
 
 

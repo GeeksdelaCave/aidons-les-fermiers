@@ -38,7 +38,7 @@ public class EnclosCochon extends Enclos {
      */
     public Cochon creerCochon(float prixCochon,LocalDate datePeremption,short qualite,float poidsCochon,String typeCochon)
     {
-        Cochon cochonNee = new Cochon(prixCochon,datePeremption,qualite,idCochonNee,poidsCochon,typeCochon);
+        Cochon cochonNee = new Cochon(prixCochon,datePeremption,qualite,idCochonNee,poidsCochon,typeCochon,this);
         idCochonNee += 100;
         ajoutInventaire(cochonNee);
         return cochonNee;

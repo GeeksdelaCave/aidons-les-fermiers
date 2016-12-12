@@ -1,15 +1,20 @@
 package marche.traitement.produits;
 
+import marche.traitement.exceptions.ProduitPerimeException;
+import marche.traitement.label.Label;
+import marche.traitement.production.UniteDeProduction;
 
+import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.7
+ * @version 1.8
  */
 public abstract class ProduitFermier {
 
@@ -35,31 +40,28 @@ public abstract class ProduitFermier {
      */
     protected short qualite;
 
-    /**
-     * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
-     *
-     * @see ProduitFermier#isCommercialisable()
-     */
-    protected boolean commercialisable;
-
+    
     /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
      * @see ProduitFermier#getUniteDeProduction()
      */
     protected UniteDeProduction uniteDeProduction;
 
+    /**
+     * Labels qu'un produit fermier peut avoir. Non modifiable.
+     */
+    protected ArrayList<Label> labels;
+
     /** Constructeur par défaut d'un Produit Fermier
      *
      */
-
     protected ProduitFermier() {}
 
     /** Retourne le prix du produit
      *
      * @return le prix du produit
      */
-    public float getPrix()
-    {
+    public float getPrix(){
         return prix;
     }
 
@@ -67,17 +69,19 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption()
+    public LocalDate getDatePeremption() throws ProduitPerimeException
     {
-        return datePeremption;
+        if (datePeremption.isAfter(LocalDate.now()))
+            return datePeremption;
+        else
+            throw new ProduitPerimeException();
     }
 
     /** Retourne la qualité du produit
      *
      * @return la qualité du produit
      */
-    public short getQualite()
-    {
+    public short getQualite() {
         return qualite;
     }
 
@@ -85,14 +89,8 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialisable()
-    {
-        if(getQualite() >= 30 && getQualite() <= 100)
-            commercialisable = true;
-        else
-            commercialisable = false;
-
-        return commercialisable;
+    public boolean isCommercialisable() {
+        return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
     }
 
     /** Retourne l'unité de production associé à un produit fermier

@@ -61,6 +61,7 @@ public class Pomme extends ProduitFermier {
      * @return l'identifiant d'une cagette
      */
     public int getIdCagette() {
+
         return idCagette;
     }
 
@@ -69,6 +70,7 @@ public class Pomme extends ProduitFermier {
      * @return le poids d'une cagette
      */
     public float getPoidsCagette() {
+
         return poidsCagette;
     }
 
@@ -77,6 +79,7 @@ public class Pomme extends ProduitFermier {
      * @return le type de pomme dans une cagette
      */
     public String getTypePomme() {
+
         return typePomme;
     }
 
@@ -85,6 +88,7 @@ public class Pomme extends ProduitFermier {
      * @return le nbre de pommes dans une cagette
      */
     public int getNbPommes() {
+
         return nbPommes;
     }
 

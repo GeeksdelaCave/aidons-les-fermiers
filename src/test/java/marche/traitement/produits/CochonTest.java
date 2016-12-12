@@ -2,6 +2,7 @@ package marche.traitement.produits;
 
 import static org.junit.Assert.assertTrue;
 
+import marche.traitement.production.EnclosCochon;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.time.Month;
 
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
- * @version 1.2
+ * @version 1.3
  */
 
 public class CochonTest {
@@ -19,7 +20,7 @@ public class CochonTest {
     @Test
     public void testGetIdCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1200,5.0f,"Cochondelait");
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1200,5.0f,"Cochondelait",new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getIdCochon() == 1200);
     }
 
@@ -29,7 +30,7 @@ public class CochonTest {
     @Test
     public void testGetPoidsCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1200,5.0f,"Cochondelait");
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getPoidsCochon() == 5.0f);
     }
 
@@ -39,7 +40,7 @@ public class CochonTest {
     @Test
     public void testGetTypeCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1200,5.0f,"Cochondelait");
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getTypeDeCochon() == "Cochondelait");
     }
 }
