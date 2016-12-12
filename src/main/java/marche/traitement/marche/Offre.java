@@ -21,7 +21,13 @@ public class Offre {
     /**
      * Produits concernés par l'offre
      */
+
     private Collection<ProduitFermier> produits;
+
+    /**
+     * Attribut peremettant d'identifier une offre
+     */
+    private int IDOffre;
 
     /**
      * Constructeur de la classe
@@ -31,6 +37,13 @@ public class Offre {
         this.produits = produits;
     }
 
+    /**
+     * Méthode permettant de récupérer l'id de l'offre
+     * @return int IDOffre
+     */
+    public int getIDOffre(){
+        return this.IDOffre;
+    }
     /**
      * Méthode valider
      */
