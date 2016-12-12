@@ -1,5 +1,8 @@
 package marche.traitement.produits;
 
+import marche.traitement.exceptions.ProduitPerimeException;
+import marche.traitement.label.Label;
+import marche.traitement.production.UniteDeProduction;
 
 import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
@@ -37,13 +40,7 @@ public abstract class ProduitFermier {
      */
     protected short qualite;
 
-    /**
-     * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
-     *
-     * @see ProduitFermier#isCommercialisable()
-     */
-    protected boolean commercialisable;
-
+    
     /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
      * @see ProduitFermier#getUniteDeProduction()
@@ -51,7 +48,7 @@ public abstract class ProduitFermier {
     protected UniteDeProduction uniteDeProduction;
 
     /**
-     * Labels qu'un produit fermier peut obtenir. Il n'est pas modifiable
+     * Labels qu'un produit fermier peut avoir. Non modifiable.
      */
     protected ArrayList<Label> labels;
 
@@ -64,8 +61,7 @@ public abstract class ProduitFermier {
      *
      * @return le prix du produit
      */
-    public float getPrix()
-    {
+    public float getPrix(){
         return prix;
     }
 
@@ -73,17 +69,19 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption()
+    public LocalDate getDatePeremption() throws ProduitPerimeException
     {
-        return datePeremption;
+        if (datePeremption.isAfter(LocalDate.now()))
+            return datePeremption;
+        else
+            throw new ProduitPerimeException();
     }
 
     /** Retourne la qualité du produit
      *
      * @return la qualité du produit
      */
-    public short getQualite()
-    {
+    public short getQualite() {
         return qualite;
     }
 
@@ -91,14 +89,8 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialisable()
-    {
-        if(getQualite() >= 30 && getQualite() <= 100)
-            commercialisable = true;
-        else
-            commercialisable = false;
-
-        return commercialisable;
+    public boolean isCommercialisable() {
+        return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
     }
 
     /** Retourne l'unité de production associé à un produit fermier
@@ -106,7 +98,6 @@ public abstract class ProduitFermier {
      * @return l'unité de production associé à un produit fermier
      */
     public UniteDeProduction getUniteDeProduction() {
-
         return uniteDeProduction;
     }
 }

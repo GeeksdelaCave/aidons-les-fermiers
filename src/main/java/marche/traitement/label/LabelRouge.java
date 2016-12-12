@@ -9,7 +9,7 @@ public class LabelRouge extends Label {
      * Désigne le fait qu'un produit soit de qualité supérieure ou non. Il n'est pas modifiable.
      * @see LabelRouge#isQualiteSuperieureProduit()
      */
-    boolean qualiteSuperieureProduit;
+    private boolean qualiteSuperieureProduit;
 
     /**
      * Constructeur de la classe LabelRouge

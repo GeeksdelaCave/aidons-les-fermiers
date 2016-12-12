@@ -1,5 +1,9 @@
 package marche.traitement.marche;
 
+import marche.traitement.participant.Acheteur;
+import marche.traitement.participant.Vendeur;
+import marche.traitement.produits.ProduitFermier;
+
 /**
  * Singleton Controleur représentant le système
  */
@@ -33,15 +37,21 @@ public class Controleur {
     /**
      * Méthode permettant le transfert de biens
      */
-    public void transfererBiens(){ // prend en paramètre : Offre offre
-        //TODO  implémenter la méthode
+    public void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
+        for ( ProduitFermier p : offre.getProduits() ){
+            //acheteur.addItem(p);
+            //vendeur.enleverItem(p);
+        }
     }
 
     /**
      * Méthode permettant de créditer une somme par rapport à une offre
      */
-    public void crediterSomme(){ // prend en paramètre : Offre offre
-        //TODO implémenter la méthode
+    public void crediterSomme(Acheteur acheteur,Vendeur vendeur, Offre offre){
+        for(ProduitFermier p : offre.getProduits()){
+            //acheteur.enleverSolde(Offre.getPrix());
+            //vendeur.ajouterSolde(Offre.getPrix());
+        }
     }
 
     /**

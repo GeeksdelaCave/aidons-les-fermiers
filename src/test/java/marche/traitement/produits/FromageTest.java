@@ -19,7 +19,7 @@ public class FromageTest {
     @Test
     public void testGetIdFromage()
     {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(10,"Auvergne"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f,new Fromagerie(50,"Normandie"));
         assertTrue(fromage.getIdFromage() == 1100);
     }
 
@@ -29,7 +29,7 @@ public class FromageTest {
     @Test
     public void testGetNomFromage()
     {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1100,"Fromagedechevre",3.0f, new Fromagerie(10,"Auvergne"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertTrue(fromage.getNomFromage() == "Fromagedechevre");
     }
 
@@ -39,7 +39,7 @@ public class FromageTest {
     @Test
     public void testGetPoidsFromage()
     {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(10,"Auvergne"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertTrue(fromage.getPoidsFromage() == 3.0f);
     }
 }

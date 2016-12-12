@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelAOC
- * @version 1.0
+ * @version 1.1
  */
 public class LabelAOCTest {
     /**
@@ -16,7 +16,7 @@ public class LabelAOCTest {
     public void testGetRegionCreationProduit()
     {
         LabelAOC labelAOC = new LabelAOC(950,"Alsace",true);
-        assertTrue(labelAOC.getRegionCreationProduit().equals("Alsace"));
+        assert labelAOC.getRegionCreationProduit().equals("Alsace");
     }
 
     /**
@@ -26,6 +26,6 @@ public class LabelAOCTest {
     public void testGetIsAuthenticiteProduit()
     {
         LabelAOC labelAOC = new LabelAOC(900,"Alsace",true);
-        assertTrue(labelAOC.isAuthenticiteProduit() == true);
+        assert labelAOC.isAuthenticiteProduit();
     }
 }

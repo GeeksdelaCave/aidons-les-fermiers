@@ -20,7 +20,7 @@ public class CochonTest {
     @Test
     public void testGetIdCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1200,5.0f,"Cochondelait", new EnclosCochon(50,"Alsace"));
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1200,5.0f,"Cochondelait",new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getIdCochon() == 1200);
     }
 
@@ -30,7 +30,7 @@ public class CochonTest {
     @Test
     public void testGetPoidsCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1200,5.0f,"Cochondelait", new EnclosCochon(50,"Alsace"));
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getPoidsCochon() == 5.0f);
     }
 
@@ -40,7 +40,7 @@ public class CochonTest {
     @Test
     public void testGetTypeCochon()
     {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1200,5.0f,"Cochondelait", new EnclosCochon(50,"Alsace"));
+        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getTypeDeCochon() == "Cochondelait");
     }
 }
