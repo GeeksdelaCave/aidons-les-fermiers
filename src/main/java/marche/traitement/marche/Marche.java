@@ -22,4 +22,20 @@ public abstract class Marche {
      * Catalogue peremttant de répertorier les offres
      */
     private Collection<Offre> catalogue;
+
+    /**
+     * Constructeur
+     */
+    public void Marche(String nom){
+        this.nomMarche = nom;
+        this.catalogue = null;
+    }
+
+    /**
+     * Méthode permettant d'ajouter une offre au catalogue
+     * @param offre
+     */
+    public void ajouterOffre(Offre offre){
+        catalogue.add(offre);
+    }
 }
