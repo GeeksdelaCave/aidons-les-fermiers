@@ -84,14 +84,8 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    public boolean isCommercialisable()
-    {
-        if(getQualite() >= 30 && getQualite() <= 100)
-            commercialisable = true;
-        else
-            commercialisable = false;
-
-        return commercialisable;
+    public boolean isCommercialisable() {
+        return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
     }
 
 
