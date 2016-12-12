@@ -16,6 +16,6 @@ public class LabelRougeTest {
     public void testGetIsQualiteSuperieureProduit()
     {
         LabelRouge labelRouge = new LabelRouge(750,true);
-        assertTrue(labelRouge.isQualiteSuperieureProduit() == true);
+        assert labelRouge.isQualiteSuperieureProduit();
     }
 }

@@ -37,6 +37,4 @@ public class PoulaillerTest {
 
         Oeuf packoeuf2 = poulailler.creerPackOeuf(4.0f,LocalDate.of(2016,10,28),(short) 75.0);
     }
-
-
 }
