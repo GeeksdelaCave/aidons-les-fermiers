@@ -38,7 +38,7 @@ public class Laiterie extends UniteDeProduction {
      */
     public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait)
     {
-        Lait packLait = new Lait(prixPack,datePeremption,qualite, idPackLaitCree,poidsPackLait);
+        Lait packLait = new Lait(prixPack,datePeremption,qualite, idPackLaitCree,poidsPackLait,this);
         idPackLaitCree += 100;
         ajoutInventaire(packLait);
         return packLait;

@@ -1,6 +1,8 @@
 package marche.traitement.produits;
 
 import marche.traitement.exceptions.ProduitPerimeException;
+import marche.traitement.production.Etable;
+
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -20,7 +22,7 @@ public class VacheTest {
     @Test
     public void testGetPrix()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
         assertTrue(vache.getPrix() == 150.0f);
     }
 
@@ -40,7 +42,7 @@ public class VacheTest {
     @Test
     public void testGetQualite()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
         assertTrue(vache.getQualite() == (short) 55.0);
     }
 
@@ -59,7 +61,7 @@ public class VacheTest {
     @Test
     public void testGetIdVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
         assertTrue(vache.getIdVache() == 1200);
     }
 
@@ -69,7 +71,7 @@ public class VacheTest {
     @Test
     public void testGetNomVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
         assertTrue(vache.getNomVache() == "vachetest");
     }
 
@@ -79,7 +81,7 @@ public class VacheTest {
     @Test
     public void testGetPoidsVache()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(200,"Pyrénées"));
         assertTrue(vache.getPoidsVache() == 50.0f);
     }
 }

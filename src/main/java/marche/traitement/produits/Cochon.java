@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.EnclosCochon;
+
 import java.time.LocalDate;
 
 /**
  * Classe Cochon représentant un cochon
- * @version 1.3
+ * @version 1.6
  */
 public class Cochon extends ProduitFermier {
 
@@ -35,14 +37,16 @@ public class Cochon extends ProduitFermier {
      * @param idCochon       désigne l'identifiant d'un cochon
      * @param poidsCochon    désigne le poids d'un cochon en kg
      * @param typeDeCochon   désigne le type d'un cochon
+     * @param enclosCochon   désigne l'enclos pour cochon associé au cochon
      */
-    public Cochon(float prix, LocalDate datePeremption, short qualite, int idCochon, float poidsCochon, String typeDeCochon) {
+    public Cochon(float prix, LocalDate datePeremption, short qualite, int idCochon, float poidsCochon, String typeDeCochon, EnclosCochon enclosCochon) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idCochon = idCochon;
         this.poidsCochon = poidsCochon;
         this.typeDeCochon = typeDeCochon;
+        this.uniteDeProduction = enclosCochon;
     }
 
     /** Retourne l'identifiant d'un cochon

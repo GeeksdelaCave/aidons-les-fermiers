@@ -1,10 +1,12 @@
 package marche.traitement.produits;
 
+import marche.traitement.production.Etable;
+
 import java.time.LocalDate;
 
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
- * @version 1.3
+ * @version 1.6
  */
 public class Vache extends ProduitFermier {
 
@@ -33,14 +35,16 @@ public class Vache extends ProduitFermier {
      * @param idVache identifiant d'une vache
      * @param nomVache Nom de la vache
      * @param poidsVache Poids d'une vache en kg
+     * @param etable     désigne l'étable associé à la vache
      */
-    public Vache(float prix, LocalDate datePeremption, short qualite,int idVache, String nomVache, float poidsVache) {
+    public Vache(float prix, LocalDate datePeremption, short qualite, int idVache, String nomVache, float poidsVache, Etable etable) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
         this.idVache = idVache;
         this.nomVache = nomVache;
         this.poidsVache = poidsVache;
+        this.uniteDeProduction = etable;
 
     }
 
