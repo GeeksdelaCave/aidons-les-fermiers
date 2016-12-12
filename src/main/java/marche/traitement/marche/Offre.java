@@ -14,19 +14,9 @@ import java.util.Collection;
 public class Offre {
 
     /**
-     * Fermier qui propose l'offre
-     */
-    private Vendeur vendeur;
-
-    /**
-     * Acheteur
-     */
-    private Acheteur acheteur;
-
-    /**
      *  Le prix de l'offre
      */
-    private float prix;
+    private double prix;
 
     /**
      * Produits concernés par l'offre
@@ -36,9 +26,7 @@ public class Offre {
     /**
      * Constructeur de la classe
      */
-    public Offre(Vendeur vendeur , Acheteur acheteur, float prix, Collection<ProduitFermier> produits ){
-        this.vendeur = vendeur;
-        this.acheteur = acheteur;
+    public Offre( double prix, Collection<ProduitFermier> produits ){
         this.prix = prix;
         this.produits = produits;
     }
@@ -55,17 +43,22 @@ public class Offre {
     /**
      * Méthode acheter
      */
-    public void acheter(){ // prend en paramètre : Acheteur acheteur
+    public void acheter(Acheteur acheteur){
 
-        //TODO ajouter le corps de la fonction
+        //TODO implémenter la méthdoe
+
     }
 
     /**
-     * Peremt de retourner la collection de produit
+     * Peremet de retourner la collection de produit
      * @return Collection<ProduitFermier> ProduitFermier produits
      */
     public Collection<ProduitFermier> getProduits(){
         return this.produits;
+    }
+
+    public double getPrix(){
+        return this.prix;
     }
 
 
