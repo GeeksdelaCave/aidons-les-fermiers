@@ -40,7 +40,7 @@ public class Fromagerie extends UniteDeProduction {
      */
     public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage)
     {
-        Fromage fromageCree = new Fromage(prixFromage,datePeremption,qualite,idFromageFabriquee,nomFromage,poidsFromage);
+        Fromage fromageCree = new Fromage(prixFromage,datePeremption,qualite,idFromageFabriquee,nomFromage,poidsFromage,this);
         idFromageFabriquee+= 100;
         ajoutInventaire(fromageCree);
         return fromageCree;
