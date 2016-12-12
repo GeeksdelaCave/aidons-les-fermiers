@@ -1,6 +1,8 @@
 package marche.traitement.produits;
 
 
+import marche.traitement.exceptions.ProduitPerimeException;
+
 import java.time.LocalDate;
 
 /**
@@ -61,9 +63,12 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    public LocalDate getDatePeremption()
+    public LocalDate getDatePeremption() throws ProduitPerimeException
     {
-        return datePeremption;
+        if (datePeremption.isAfter(LocalDate.now()))
+            return datePeremption;
+        else
+            throw new ProduitPerimeException();
     }
 
     /** Retourne la qualité du produit
