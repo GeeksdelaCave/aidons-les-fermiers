@@ -17,6 +17,14 @@ public class EnclosCochonTest {
     }
 
     @Test
+    public void testCreerfromage_IdFromageEgal250 () {
+        EnclosCochon enclos = new EnclosCochon(100, "PACA");
+        Cochon cochon = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96,245, "Nain");
+
+        assert (cochon.getIdCochon() == 2000);
+    }
+
+    @Test
     public void testCreerCochon_verifIdCochon () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
         Cochon cochon1 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
