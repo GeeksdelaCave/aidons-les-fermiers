@@ -1,15 +1,17 @@
 package marche.traitement.produits;
 
 
+import marche.traitement.label.Label;
 import marche.traitement.production.UniteDeProduction;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- * @version 1.7
+ * @version 1.8
  */
 public abstract class ProduitFermier {
 
@@ -48,10 +50,14 @@ public abstract class ProduitFermier {
      */
     protected UniteDeProduction uniteDeProduction;
 
+    /**
+     * Labels qu'un produit fermier peut avoir. Non modifiable.
+     */
+    protected ArrayList<Label> labels;
+
     /** Constructeur par défaut d'un Produit Fermier
      *
      */
-
     protected ProduitFermier() {}
 
     /** Retourne le prix du produit
