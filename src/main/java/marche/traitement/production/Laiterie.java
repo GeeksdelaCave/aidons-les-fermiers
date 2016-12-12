@@ -22,8 +22,7 @@ public class Laiterie extends UniteDeProduction {
      * @param capaciteeProduction désigne la capacitée maximale de packs de lait à accueillir
      * @param regionCreationProduit désigne la région où est implantée la laiterie
      */
-    public Laiterie(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Laiterie(int capaciteeProduction,String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -36,8 +35,7 @@ public class Laiterie extends UniteDeProduction {
      * @param poidsPackLait désigne le poids d'un pack de lait
      * @return un pack de lait crée et ajouté à l'inventaire
      */
-    public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait)
-    {
+    public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait) {
         Lait packLait = new Lait(prixPack,datePeremption,qualite, idPackLaitCree,poidsPackLait,this);
         idPackLaitCree += 100;
         ajoutInventaire(packLait);

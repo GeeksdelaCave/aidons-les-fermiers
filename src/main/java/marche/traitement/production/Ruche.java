@@ -21,8 +21,7 @@ public class Ruche extends UniteDeProduction{
      * @param capaciteeProduction désigne la capacitée maximale de pots de miels à accueillir
      * @param regionCreationProduit désigne la région où la ruche est implantée
      */
-    public Ruche(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Ruche(int capaciteeProduction,String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }

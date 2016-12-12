@@ -22,8 +22,7 @@ public class Etable extends Enclos {
      * @param capaciteeProduction désigne la capacitée maximale de vaches à accueillir dans l'etable
      * @param regionCreationProduit désigne la région où est situé l'étable
      */
-    public Etable(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Etable(int capaciteeProduction,String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -37,8 +36,7 @@ public class Etable extends Enclos {
      * @param poidsVache désigne le poids d'une vache
      * @return une vache crée et l'ajoute à l'inventaire
      */
-    public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache)
-    {
+    public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache) {
         Vache vacheNee = new Vache(prixVache,datePeremption,qualite,idVacheNee,nomVache,poidsVache,this);
         idVacheNee += 100;
         ajoutInventaire(vacheNee);

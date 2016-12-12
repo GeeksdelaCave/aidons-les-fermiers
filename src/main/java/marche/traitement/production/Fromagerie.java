@@ -23,8 +23,7 @@ public class Fromagerie extends UniteDeProduction {
      * @param capaciteeProduction désignant la capacitée maximale de fromages à accueillir
      * @param regionCreationProduit désignant la région où est implanté la fromagerie
      */
-    public Fromagerie(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Fromagerie(int capaciteeProduction,String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -38,8 +37,7 @@ public class Fromagerie extends UniteDeProduction {
      * @param poidsFromage désigne le poids d'un fromage
      * @return un fromage créé et ajouté à l'inventaire
      */
-    public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage)
-    {
+    public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage) {
         Fromage fromageCree = new Fromage(prixFromage,datePeremption,qualite,idFromageFabriquee,nomFromage,poidsFromage,this);
         idFromageFabriquee+= 100;
         ajoutInventaire(fromageCree);
