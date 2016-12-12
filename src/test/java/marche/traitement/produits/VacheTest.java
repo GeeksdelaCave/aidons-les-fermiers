@@ -2,7 +2,6 @@ package marche.traitement.produits;
 
 import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.production.Etable;
-
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -32,7 +31,7 @@ public class VacheTest {
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption()
     {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
         assert vache.getDatePeremption().isAfter(LocalDate.now());
     }
 
@@ -51,7 +50,7 @@ public class VacheTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetIsCommercialise() throws ProduitPerimeException {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f);
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
         assertTrue(vache.isCommercialisable());
     }
 
