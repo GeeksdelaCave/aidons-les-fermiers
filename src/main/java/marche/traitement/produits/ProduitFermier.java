@@ -35,13 +35,6 @@ public abstract class ProduitFermier {
      */
     protected short qualite;
 
-    /**
-     * Verifie si le produit peut être commercialisable. Il n'est pas modifiable.
-     *
-     * @see ProduitFermier#isCommercialisable()
-     */
-    protected boolean commercialisable;
-
 
 
     /** Constructeur par défaut d'un Produit Fermier
