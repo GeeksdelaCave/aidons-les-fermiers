@@ -28,8 +28,7 @@ public class EtableTest {
     @Test
     public void testCreerVache_inventaireIsNotNull () {
         Etable etable = new Etable(100, "PACA");
-        Vache vache1 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
-        Vache vache2 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
+        etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
 
         assert (etable.getInventaireUniteDeProduction() != null);
     }
@@ -37,8 +36,8 @@ public class EtableTest {
     @Test
     public void testCreerVache_tailleInventaireEgal2 () {
         Etable etable = new Etable(100, "PACA");
-        Vache vache1 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
-        Vache vache2 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
+        etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
+        etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
 
         assert (etable.getInventaireUniteDeProduction().size() == 2);
     }

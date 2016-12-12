@@ -13,7 +13,7 @@ public class FromagerieTest {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
         Fromage fromage = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Camember", 245);
 
-        assert (fromagerie != null);
+        assert (fromage != null);
     }
 
     @Test
@@ -29,7 +29,6 @@ public class FromagerieTest {
     public void testCreerfromage_inventaireIsNotNull () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
         Fromage fromage1 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
-        Fromage fromage2 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
 
         assert (fromagerie.getInventaireUniteDeProduction() != null);
     }
@@ -37,8 +36,8 @@ public class FromagerieTest {
     @Test
     public void testCreerfromage_tailleInventaireEgal2 () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
-        Fromage fromage1 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
-        Fromage fromage2 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
+        fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
+        fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);
 
         assert (fromagerie.getInventaireUniteDeProduction().size() == 2);
     }

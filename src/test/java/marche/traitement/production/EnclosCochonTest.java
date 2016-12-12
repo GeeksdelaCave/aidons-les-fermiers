@@ -28,8 +28,7 @@ public class EnclosCochonTest {
     @Test
     public void testCreerCochon_inventaireIsNotNull () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
-        Cochon cochon1 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
-        Cochon cochon2 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 300, "cochon");
+        enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
 
         assert (enclos.getInventaireUniteDeProduction() != null);
     }
@@ -37,8 +36,8 @@ public class EnclosCochonTest {
     @Test
     public void testCreerCochon_tailleInventaireEgal2 () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
-        Cochon cochon1 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
-        Cochon cochon2 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 300, "cochon");
+        enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
+        enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 300, "cochon");
 
         assert (enclos.getInventaireUniteDeProduction().size() == 2);
     }
