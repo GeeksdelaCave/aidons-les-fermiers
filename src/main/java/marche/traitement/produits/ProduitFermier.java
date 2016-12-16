@@ -2,18 +2,30 @@ package marche.traitement.produits;
 
 import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.label.Label;
+import marche.traitement.label.LabelAOC;
+import marche.traitement.label.LabelRouge;
 import marche.traitement.production.UniteDeProduction;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
- *
- * @version 1.8
+ *@author Thibaud CENENT
+ * @version 2.0
  */
 public abstract class ProduitFermier {
 
+    private static final HashMap<String, String> associationProduitRegion = new HashMap<String, String>() {{
+       put("Pomme", "Bretagne");
+       put("Fromage", "Normandie");
+       put("Lait", "Aquitaine");
+       put("Miel", "Occitanie");
+       put("Oeuf", "Auvergne");
+       put("Vache", "PACA");
+       put("Cochon", "Corse");
+    }};
     /**
      * le prix du produit.Il n'est pas modifiable
      *
@@ -98,4 +110,25 @@ public abstract class ProduitFermier {
 
         return uniteDeProduction;
     }
+
+    /**
+     * Valider le choix d'un label en fonction des caractéristiques du produit fermier
+     */
+    public void validerLabel() {
+        if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()) {
+            if(this.isCommercialisable())
+                this.ajouterLabel(new LabelAOC(12,this.getUniteDeProduction().getRegionCreationProduit(),this.isCommercialisable()));
+            if(this.getQualite() > 70)
+                this.ajouterLabel(new LabelRouge(15,true));
+        }
+    }
+
+    /** Ajoute un label à un produit fermier
+     *
+     * @param label désigne le label qu'on va ajouter à un produit fermier
+     */
+    public void ajouterLabel(Label label) {
+        labels.add(label);
+    }
+
 }

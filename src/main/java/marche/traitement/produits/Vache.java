@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Vache extends ProduitFermier {
 
