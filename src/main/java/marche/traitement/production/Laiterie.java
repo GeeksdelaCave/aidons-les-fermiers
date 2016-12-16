@@ -8,6 +8,7 @@ import java.time.LocalDate;
 /**
  * Classe Laiterie désignant le lieu de fabrication des packs de lait
  * @version 1.1
+ * @author Thibaud CENENT
  */
 public class Laiterie extends UniteDeProduction {
 

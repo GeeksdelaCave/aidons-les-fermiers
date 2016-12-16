@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe EnclosCochon désignant le lieu où vont être naître et être stockés les cochons nés
  * @version 1.0
+ * @author Thibaud CENENT
  */
 public class EnclosCochon extends Enclos {
 

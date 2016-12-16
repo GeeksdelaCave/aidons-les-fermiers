@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Poulailler représentant un poulailler gérant le produit fermier Oeuf
  * @version 1.2
+ * @author Thibaud CENENT
  */
 public class Poulailler extends UniteDeProduction {
 

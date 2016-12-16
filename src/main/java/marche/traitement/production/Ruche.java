@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Ruche désignant une ruche nécessaire à la création de pots de miels
  * @version 1.1
+ * @author Thibaud CENENT
  */
 public class Ruche extends UniteDeProduction{
 

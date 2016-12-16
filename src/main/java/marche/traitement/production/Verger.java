@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Verger désignant un verger où on gérera le remplissage des cagettes de pommes crées
  * @version 1.1
+ * @author Thibaud CENENT
  */
 public class Verger extends UniteDeProduction {
 

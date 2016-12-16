@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
 /**
  * Classe abstraite de l'unité de production représentant une idée d'une unitée de production
  * @version 1.2
+ * @author Thibaud CENENT
  */
 public abstract class UniteDeProduction {
 

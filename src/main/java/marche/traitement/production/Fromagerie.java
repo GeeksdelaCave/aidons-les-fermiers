@@ -9,6 +9,7 @@ import java.time.LocalDate;
 /**
  * Classe Fromagerie désignant le lieu de fabrication de fromages fermiers
  * @version 1.0
+ * @author Thibaud CENENT
  */
 public class Fromagerie extends UniteDeProduction {
 

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 /**
  * Classe Etable représentant le lieu où vont être stockés les vaches à naître
  * @version 1.0
+ * @author Thibaud CENENT
  */
 public class Etable extends Enclos {
 
