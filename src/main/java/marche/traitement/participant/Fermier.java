@@ -7,6 +7,10 @@ import marche.traitement.produits.ProduitFermier;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe fermier (étand la classe Acteur)
+ * @author Romain COLONNA D'ISTRIA
+ */
 public class Fermier extends Acteur{
 
     /**
