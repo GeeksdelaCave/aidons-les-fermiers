@@ -9,6 +9,7 @@ import java.util.Collection;
 
 /**
  * Classe Offre
+ * @author Nicolas Guigou
  *
  */
 public class Offre {

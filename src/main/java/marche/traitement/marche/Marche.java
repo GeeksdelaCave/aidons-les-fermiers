@@ -6,6 +6,7 @@ import java.util.Collection;
 
 /**
  * Classe abstraite marche
+ * @author Nicolas Guigou
  */
 public abstract class Marche {
 
@@ -19,7 +20,7 @@ public abstract class Marche {
     private String nomMarche;
 
     /**
-     * Catalogue peremttant de répertorier les offres
+     * Catalogue peremttant de répertorier les offre
      */
     private Collection<Offre> catalogue;
 

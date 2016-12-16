@@ -6,6 +6,7 @@ import marche.traitement.produits.ProduitFermier;
 
 /**
  * Singleton Controleur représentant le système
+ * @author Nicolas Guigou
  */
 public class Controleur {
     /**
