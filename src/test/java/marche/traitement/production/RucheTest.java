@@ -1,7 +1,8 @@
 package marche.traitement.production;
 
 /**
- * Created by Thibaud on 06/12/2016.
+ * Classe test de la classe Ruche
+ * @author Romain COLONNA D'ISTRIA
  */
 public class RucheTest {
 }

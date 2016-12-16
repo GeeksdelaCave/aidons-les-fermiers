@@ -6,6 +6,10 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.Month;
 
+/**
+ * Classe test de la classe Enclos
+ * @author Romain COLONNA D'ISTRIA
+ */
 public class EnclosCochonTest {
 
     @Test
