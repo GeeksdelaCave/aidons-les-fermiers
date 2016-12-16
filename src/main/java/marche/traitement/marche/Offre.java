@@ -71,6 +71,10 @@ public class Offre {
         return this.produits;
     }
 
+    /**
+     * Reourne le prix d'une offre
+     * @return double prix
+     */
     public double getPrix(){
         return this.prix;
     }

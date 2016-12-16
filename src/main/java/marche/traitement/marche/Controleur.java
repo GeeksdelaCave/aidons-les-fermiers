@@ -1,5 +1,6 @@
 package marche.traitement.marche;
 
+import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
@@ -40,18 +41,18 @@ public class Controleur {
      */
     public void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
         for ( ProduitFermier p : offre.getProduits() ){
-            //acheteur.addItem(p);
-            //vendeur.enleverItem(p);
+            acheteur.ajoutProduit(p);
+            vendeur.enleverProduit(p);
         }
     }
 
     /**
      * Méthode permettant de créditer une somme par rapport à une offre
      */
-    public void crediterSomme(Acheteur acheteur,Vendeur vendeur, Offre offre){
+    public void crediterSomme(Acheteur acheteur,Vendeur vendeur, Offre offre) throws SoldeNonDisponibleException {
         for(ProduitFermier p : offre.getProduits()){
-            //acheteur.enleverSolde(Offre.getPrix());
-            //vendeur.ajouterSolde(Offre.getPrix());
+            acheteur.enleverSolde(offre.getPrix());
+            vendeur.ajouterSolde(offre.getPrix());
         }
     }
 

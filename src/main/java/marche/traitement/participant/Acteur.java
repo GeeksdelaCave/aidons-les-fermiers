@@ -62,11 +62,18 @@ public abstract class Acteur {
             throw new SoldeNonDisponibleException();
     }
 
+
     /**
      * Méthode d'ajout de produit fermier dans l'inventaire
-     * @param produit Produit à ajouter a l'inventaire du fermier
+     * @param produit Produit à ajouter a l'inventaire de l'acteur
      */
     public void ajoutProduit(ProduitFermier produit) {
         inventaire.add(produit);
     }
+
+    /**
+     * Méthode permettant d'envelever un produit de l'inventaire
+     * @param produit Produit à enlever de l'inventaire de l'acteur
+     */
+    public void enleverProduit(ProduitFermier produit){inventaire.remove(produit);}
 }
