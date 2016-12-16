@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Classe VergerTest gérant les test unitaires effectués sur la classe Verger
- * @version 1.1
+ * Classe test de la classe Verger
+ * @author Romain COLONNA D'ISTRIA
  */
 public class VergerTest {
 
