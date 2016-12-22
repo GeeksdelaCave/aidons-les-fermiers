@@ -39,7 +39,7 @@ public class Controleur {
     /**
      * Méthode permettant le transfert de biens
      */
-    public void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
+    public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
         for ( ProduitFermier p : offre.getProduits() ){
             acheteur.ajoutProduit(p);
             vendeur.enleverProduit(p);
@@ -49,11 +49,11 @@ public class Controleur {
     /**
      * Méthode permettant de créditer une somme par rapport à une offre
      */
-    public void crediterSomme(Acheteur acheteur,Vendeur vendeur, Offre offre) throws SoldeNonDisponibleException {
-        for(ProduitFermier p : offre.getProduits()){
+    public static void crediterSomme(Acheteur acheteur,Vendeur vendeur, Offre offre) throws SoldeNonDisponibleException {
+
             acheteur.enleverSolde(offre.getPrix());
             vendeur.ajouterSolde(offre.getPrix());
-        }
+
     }
 
     /**

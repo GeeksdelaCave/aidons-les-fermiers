@@ -1,5 +1,6 @@
 package marche.traitement.marche;
 
+import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Fermier;
 import marche.traitement.participant.Vendeur;
@@ -33,9 +34,10 @@ public class Offre {
     /**
      * Constructeur de la classe
      */
-    public Offre( double prix, Collection<ProduitFermier> produits ){
+    public Offre( double prix, Collection<ProduitFermier> produits, int ID ){
         this.prix = prix;
         this.produits = produits;
+        this.IDOffre = ID;
     }
 
     /**
@@ -57,10 +59,10 @@ public class Offre {
     /**
      * Méthode acheter
      */
-    public void acheter(Acheteur acheteur){
+    public void acheter(Acheteur acheteur, Vendeur vendeur) throws SoldeNonDisponibleException {
 
-        //TODO implémenter la méthdoe
-
+        Controleur.transfererBiens(acheteur,vendeur,this);
+        Controleur.crediterSomme(acheteur,vendeur,this);
     }
 
     /**
