@@ -21,9 +21,13 @@ public class Offre {
     private double prix;
 
     /**
+     * Vendeur qui propose l'offre
+     */
+    private Vendeur vendeur;
+
+    /**
      * Produits concernés par l'offre
      */
-
     private Collection<ProduitFermier> produits;
 
     /**
@@ -59,10 +63,9 @@ public class Offre {
     /**
      * Méthode acheter
      */
-    public void acheter(Acheteur acheteur, Vendeur vendeur) throws SoldeNonDisponibleException {
-
-        Controleur.transfererBiens(acheteur,vendeur,this);
-        Controleur.crediterSomme(acheteur,vendeur,this);
+    public void acheter(Acheteur acheteur) throws SoldeNonDisponibleException {
+        Controleur.transfererBiens(acheteur,this.vendeur,this);
+        Controleur.crediterSomme(acheteur,this.vendeur,this);
     }
 
     /**
