@@ -1,5 +1,11 @@
 package marche.traitement.participant;
 
+import marche.traitement.marche.Offre;
+import marche.traitement.produits.ProduitFermier;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * Classe Vendeur
  * @author Nicolas Guigou
@@ -13,7 +19,15 @@ public class Vendeur extends Decorateur{
     public Vendeur(Acteur acteur){
         super(acteur);
     }
-    public void proposerOffreVente(/* int quantite, ProduitFermier produit*/){
-        //TODO implémenter la méthode
+    public void proposerOffreVente( int quantite, ProduitFermier produit, int prix){
+        ArrayList<ProduitFermier> temp = new ArrayList<>();
+
+        for(int i = 0; i < quantite; ++i){
+            temp.add(produit);
+        }
+
+        Offre offre = new Offre(prix,temp);
+
+        //TODO terminer la méthode
     }
 }

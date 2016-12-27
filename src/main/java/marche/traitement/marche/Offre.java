@@ -33,15 +33,16 @@ public class Offre {
     /**
      * Attribut peremettant d'identifier une offre
      */
-    private int IDOffre;
+    private static int IDOffre = 1;
 
     /**
      * Constructeur de la classe
      */
-    public Offre( double prix, Collection<ProduitFermier> produits, int ID ){
+    public Offre( double prix, Collection<ProduitFermier> produits){
+
         this.prix = prix;
         this.produits = produits;
-        this.IDOffre = ID;
+        ++this.IDOffre;
     }
 
     /**
