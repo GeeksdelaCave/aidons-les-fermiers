@@ -67,6 +67,6 @@ public class Controleur {
      * Méthode permettant d'ajouter une offre à un marché
      */
     public void ajouterOffre(Offre offre, Marche marche){
-        //TODO implémenter la méthode
+        marche.ajouterOffre(offre);
     }
 }
