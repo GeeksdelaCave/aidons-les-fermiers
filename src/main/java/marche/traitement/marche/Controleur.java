@@ -59,14 +59,14 @@ public class Controleur {
     /**
      * Méthode permettant de réguler les prix des produits en fonction du seuil définit
      */
-    public void regulerPrix(){ // prend en paramètre : ProduitFermier produit
+    public void regulerPrix(ProduitFermier produit){
         //TODO implémenter la méthode
     }
 
     /**
      * Méthode permettant d'ajouter une offre à un marché
      */
-    public void ajouterOffre(){ //prend en paramètre : Offre offre, Marche marche
+    public void ajouterOffre(Offre offre, Marche marche){
         //TODO implémenter la méthode
     }
 }

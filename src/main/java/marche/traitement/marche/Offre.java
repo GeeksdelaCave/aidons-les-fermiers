@@ -51,14 +51,6 @@ public class Offre {
     public int getIDOffre(){
         return this.IDOffre;
     }
-    /**
-     * Méthode valider
-     */
-    public boolean valider(){
-
-
-        return true;// TODO modifer le return en fonction du corps
-    }
 
     /**
      * Méthode acheter
