@@ -101,7 +101,7 @@ public abstract class ProduitFermier {
      *
      * @return la qualité du produit
      */
-    protected short getQualite() {
+    public short getQualite() {
 
         return qualite;
     }
