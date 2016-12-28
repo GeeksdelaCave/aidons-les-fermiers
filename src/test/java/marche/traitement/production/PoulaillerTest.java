@@ -1,6 +1,6 @@
 package marche.traitement.production;
 
-import marche.traitement.produits.Lait;
+
 import marche.traitement.produits.Oeuf;
 import org.junit.Test;
 
