@@ -21,11 +21,11 @@ public class EtableTest {
     }
 
     @Test
-    public void testCreerVachee_IdvacheEgal3100 () {
+    public void testCreerVachee_IdvacheEgal3000 () {
         Etable etable = new Etable(100, "PACA");
         Vache vache = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
 
-        assert (vache.getIdVache() == 3100);
+        assert (vache.getIdVache() == 3000);
     }
 
     @Test

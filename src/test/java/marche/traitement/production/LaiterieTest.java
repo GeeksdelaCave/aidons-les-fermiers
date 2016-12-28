@@ -21,13 +21,11 @@ public class LaiterieTest {
     }
 
     @Test
-    public void testCreerPackLait_IdPackEgal600 () {
+    public void testCreerPackLait_IdPackEgal500 () {
         Laiterie laiterie = new Laiterie(100, "PACA");
         Lait packLait = laiterie.creerPackLait(110, LocalDate.of(2017, Month.JANUARY, 15), (short)96, 3);
 
-        System.out.println(packLait.getIdPackLait());
-
-        assert (packLait.getIdPackLait() == 600);
+        assert (packLait.getIdPackLait() == 500);
     }
 
     @Test
@@ -36,8 +34,6 @@ public class LaiterieTest {
         Lait packLait1 = laiterie.creerPackLait(110, LocalDate.of(2017, Month.JANUARY, 15), (short)96, 3);
         Lait packLait2 = laiterie.creerPackLait(110, LocalDate.of(2017, Month.JANUARY, 15), (short)96, 3);
 
-        System.out.println(packLait1.getIdPackLait());
-        System.out.println(packLait2.getIdPackLait());
         assert (packLait1.getIdPackLait() != packLait2.getIdPackLait());
     }
 

@@ -21,11 +21,11 @@ public class FromagerieTest {
     }
 
     @Test
-    public void testCreerfromage_IdFromageEgal350 () {
+    public void testCreerfromage_IdFromageEgal250 () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
         Fromage fromage = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
 
-        assert (fromage.getIdFromage() == 350);
+        assert (fromage.getIdFromage() == 250);
     }
 
     @Test

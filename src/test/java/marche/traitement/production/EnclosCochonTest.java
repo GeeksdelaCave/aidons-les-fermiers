@@ -21,11 +21,11 @@ public class EnclosCochonTest {
     }
 
     @Test
-    public void testCreerCochon_IdCochonEgal2100 () {
+    public void testCreerCochon_IdCochonEgal2000 () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
         Cochon cochon = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96,245, "Nain");
 
-        assert (cochon.getIdCochon() == 2100);
+        assert (cochon.getIdCochon() == 2000);
     }
 
     @Test
