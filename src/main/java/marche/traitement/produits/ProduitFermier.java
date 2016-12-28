@@ -137,9 +137,9 @@ public abstract class ProduitFermier {
         try
         {
             this.getDatePeremption();
-            if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()) {
-                if (this.isCommercialisable())
-                    this.ajouterLabel(new LabelAOC(idLabel, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
+            if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()
+                    && this.isCommercialisable()){
+                this.ajouterLabel(new LabelAOC(idLabel, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
                 ++idLabel;
             }
             if(this.getClass().getCanonicalName() == this.getUniteDeProduction().getRegionCreationProduit())
