@@ -22,7 +22,7 @@ public class PoulaillerTest {
     }
 
     @Test
-    public void testCreerPackOeuf_IdPackEgal200 () {
+    public void testCreerPackOeuf_IdPackEgal100 () {
         Poulailler poulailler = new Poulailler(1000, "PACA");
         Oeuf packOeuf = poulailler.creerPackOeuf(110, LocalDate.of(2017, Month.FEBRUARY, 2), (short)96);
 
