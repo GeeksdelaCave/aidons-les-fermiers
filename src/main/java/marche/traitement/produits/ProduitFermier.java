@@ -192,6 +192,6 @@ public abstract class ProduitFermier {
     protected void displayLabels()
     {
         for(Label label : getLabels())
-            label.toString();
+            System.out.println(label.toString());
     }
 }
