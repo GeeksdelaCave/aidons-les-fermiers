@@ -21,15 +21,15 @@ public class FromagerieTest {
     }
 
     @Test
-    public void testCreerfromage_IdFromageEgal250 () {
+    public void testCreerfromage_IdFromageEgal350 () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
-        Fromage fromage1 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
+        Fromage fromage = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
 
-        assert (fromage1.getIdFromage() == 250);
+        assert (fromage.getIdFromage() == 350);
     }
 
     @Test
-    public void testCreerfromage_verifIdFromage () {
+    public void testCreerfromage_IDsFromagesDifferents () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
         Fromage fromage1 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
         Fromage fromage2 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Emmentale", 300);
@@ -40,7 +40,7 @@ public class FromagerieTest {
     @Test
     public void testCreerfromage_inventaireIsNotNull () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");
-        Fromage fromage1 = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
+        fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
 
         assert (fromagerie.getInventaireUniteDeProduction() != null);
     }

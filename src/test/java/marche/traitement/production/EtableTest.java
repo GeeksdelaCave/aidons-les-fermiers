@@ -21,15 +21,15 @@ public class EtableTest {
     }
 
     @Test
-    public void testCreerVachee_IdvacheEgal250 () {
+    public void testCreerVachee_IdvacheEgal3100 () {
         Etable etable = new Etable(100, "PACA");
         Vache vache = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
 
-        assert (vache.getIdVache() == 3000);
+        assert (vache.getIdVache() == 3100);
     }
 
     @Test
-    public void testCreerVache_verifIdVache () {
+    public void testCreerVache_IDsVachesDifferents () {
         Etable etable = new Etable(100, "PACA");
         Vache vache1 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Jean-Luc", 245);
         Vache vache2 = etable.creerVache(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Robert", 300);

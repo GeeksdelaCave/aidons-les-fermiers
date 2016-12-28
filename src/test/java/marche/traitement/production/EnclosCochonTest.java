@@ -21,15 +21,15 @@ public class EnclosCochonTest {
     }
 
     @Test
-    public void testCreerfromage_IdFromageEgal2000 () {
+    public void testCreerCochon_IdCochonEgal2100 () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
         Cochon cochon = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96,245, "Nain");
 
-        assert (cochon.getIdCochon() == 2000);
+        assert (cochon.getIdCochon() == 2100);
     }
 
     @Test
-    public void testCreerCochon_verifIdCochon () {
+    public void testCreerCochon_IdsCochonsDifferents () {
         EnclosCochon enclos = new EnclosCochon(100, "PACA");
         Cochon cochon1 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
         Cochon cochon2 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 300, "cochon");
