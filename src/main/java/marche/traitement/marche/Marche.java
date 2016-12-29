@@ -14,12 +14,12 @@ public abstract class Marche {
     /**
      * Donnée membre permettant d'identifier un marché
       */
-    private String nomMarche;
+    protected String nomMarche;
 
     /**
      * Catalogue peremttant de répertorier les offre
      */
-    private Collection<Offre> catalogue;
+    protected Collection<Offre> catalogue;
 
     /**
      * Constructeur
