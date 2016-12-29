@@ -5,6 +5,8 @@ import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
+import java.util.ArrayList;
+
 /**
  * Singleton Controleur représentant le système
  * @author Nicolas Guigou
@@ -32,8 +34,11 @@ public class Controleur {
     /**
      * Méthode permettant de selectionner les acheteurs
      */
-    public void choisirAcheteur(){ //prend en paramètre : Collection<IAcheteur> acheteurs
-        //TODO implémenter la méthode
+    public Acheteur choisirAcheteur(Offre offre){
+        ArrayList<Acheteur> liste = new ArrayList();
+        liste = offre.getAcheteursPotentiels();
+        return liste.get(0); //Le controleur choisit pour l'instant le premier élément de la liste
+        //TODO revoir cette méthode
     }
 
     /**

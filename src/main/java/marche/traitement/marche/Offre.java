@@ -6,6 +6,7 @@ import marche.traitement.participant.Fermier;
 import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -33,7 +34,7 @@ public class Offre {
     /**
      * Liste regroupant tous les acheteurs potentiels
      */
-    private Collection<Acheteur> acheteursPotentiels;
+    private ArrayList<Acheteur> acheteursPotentiels;
     /**
      * Attribut peremettant d'identifier une offre
      */
@@ -93,7 +94,7 @@ public class Offre {
      * Permet de récupérer les acheteurs potentiels d'une offre
      * @return Collection<Acheteur> acheteursPotentiels
      */
-    public Collection<Acheteur> getAcheteursPotentiels(){
+    public ArrayList<Acheteur> getAcheteursPotentiels(){
         return this.acheteursPotentiels;
     }
 
