@@ -81,5 +81,12 @@ public class Offre {
         return this.prix;
     }
 
+    /**
+     * Permet d'ajouter un acheteur potentiel à l'offre
+     * @param acheteur
+     */
+    public void ajouterAcheteur(Acheteur acheteur){
+        this.acheteursPotentiels.add(acheteur);
+    }
 
 }

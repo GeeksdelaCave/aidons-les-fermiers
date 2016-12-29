@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.traitement.marche.Offre;
 import marche.traitement.produits.ProduitFermier;
 
 /**
@@ -15,7 +16,12 @@ public class Acheteur extends Decorateur {
     public Acheteur(Acteur acteur){
         super(acteur);
     }
-    public void proposerOffreAchat( int quantite, ProduitFermier produit){
-        //TODO implémenter la méthode
+
+    /**
+     * Permet de proposer une offre d'achat
+     * @param offre
+     */
+    public void proposerOffreAchat( Offre offre){
+        offre.ajouterAcheteur(this);
     }
 }
