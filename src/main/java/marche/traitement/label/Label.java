@@ -11,6 +11,10 @@ public abstract class Label {
      */
     protected int idLabel;
 
+    protected Label(int idLabel) {
+        this.idLabel = idLabel;
+    }
+
     /** Retourne l'identifiant d'un label
      *
      * @return l'identifiant d'un label

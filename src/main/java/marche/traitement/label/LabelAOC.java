@@ -26,7 +26,7 @@ public class LabelAOC extends Label {
      * @param authenticiteProduit désigne le fait qu'un produit soit authentique ou non. Elle n'est pas modifiable.
      */
     public LabelAOC(int idLabel,String regionCreationProduit,boolean authenticiteProduit) {
-        this.idLabel = idLabel;
+        super(idLabel);
         this.regionCreationProduit = regionCreationProduit;
         this.authenticiteProduit = authenticiteProduit;
 

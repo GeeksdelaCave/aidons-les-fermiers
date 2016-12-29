@@ -18,7 +18,7 @@ public class LabelRouge extends Label {
      * @param qualiteSuperieureProduit désigne si un produit est de qualité supérieure ou non. Elle n'est pas modifiable
      */
     public LabelRouge(int idLabel,boolean qualiteSuperieureProduit) {
-        this.idLabel = idLabel;
+        super(idLabel);
         this.qualiteSuperieureProduit = qualiteSuperieureProduit;
     }
 

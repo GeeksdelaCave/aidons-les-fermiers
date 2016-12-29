@@ -19,7 +19,7 @@ public class LabelIGP extends Label {
      * @param lieuGeographiqueProduit désigne le lieu dans lequel a été conçu un produit. Elle n'est pas modifiable
      */
     public LabelIGP(int idLabel,String lieuGeographiqueProduit) {
-        this.idLabel = idLabel;
+        super(idLabel);
         this.lieuGeographiqueProduit = lieuGeographiqueProduit;
     }
 
