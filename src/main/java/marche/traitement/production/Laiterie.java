@@ -32,6 +32,7 @@ public class Laiterie extends UniteDeProduction {
      * @return un pack de lait crée et ajouté à l'inventaire ou null si on retourne une exception
      */
     public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Lait packLait = new Lait(prixPack, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsPackLait, this);
             ++UniteDeProduction.idProduitFermiercree;

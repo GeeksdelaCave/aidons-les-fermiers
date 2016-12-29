@@ -30,6 +30,7 @@ public class Poulailler extends UniteDeProduction {
      * @return un oeuf qui est née et a été ajoutée à l'inventaire ou null si on retourne une exception
      */
     public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Oeuf oeuf = new Oeuf(prix, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, this);
             ++UniteDeProduction.idProduitFermiercree;

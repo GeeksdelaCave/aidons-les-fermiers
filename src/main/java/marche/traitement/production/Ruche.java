@@ -32,6 +32,7 @@ public class Ruche extends UniteDeProduction{
      * @return un poids de miel crée et ajouté à l'inventaire ou null si on retourne une exception
      */
     public Miel creerPotMiel(float prixPot,LocalDate datePeremption,short qualite,float poidsPot,String typeMiel){
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Miel potMiel = new Miel(prixPot, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsPot, typeMiel, this);
             ++UniteDeProduction.idProduitFermiercree;

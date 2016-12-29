@@ -33,6 +33,7 @@ public class Verger extends UniteDeProduction {
      * @return une cagette de pomme crée et ajoutée à l'inventaire ou null si on retourne une exception
      */
     public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite,float poidsCagette,String typePomme,int nbPommes) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Pomme cagette = new Pomme(prix, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsCagette, typePomme, nbPommes, this);
             inventaireUniteDeProduction.add(cagette);

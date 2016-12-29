@@ -33,6 +33,7 @@ public class Etable extends Enclos {
      * @return une vache crée et l'ajoute à l'inventaire ou null si on retourne une exception
      */
     public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Vache vacheNee = new Vache(prixVache, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, nomVache, poidsVache, this);
             ++UniteDeProduction.idProduitFermiercree;

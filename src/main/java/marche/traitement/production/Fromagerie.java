@@ -34,6 +34,7 @@ public class Fromagerie extends UniteDeProduction {
      * @return un fromage créé et ajouté à l'inventaire ou null si on retourne une exception
      */
     public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Fromage fromageCree = new Fromage(prixFromage, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, nomFromage, poidsFromage, this);
             ++UniteDeProduction.idProduitFermiercree;

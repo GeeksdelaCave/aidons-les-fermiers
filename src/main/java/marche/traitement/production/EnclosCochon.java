@@ -32,6 +32,7 @@ public class EnclosCochon extends Enclos {
      * @return un cochon créé et l'ajoute à l'inventaire ou null si on retourne une exception
      */
     public Cochon creerCochon(float prixCochon,LocalDate datePeremption,short qualite,float poidsCochon,String typeCochon) {
+        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
             Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsCochon, typeCochon, this);
             ++UniteDeProduction.idProduitFermiercree;
