@@ -31,6 +31,10 @@ public class Offre {
     private Collection<ProduitFermier> produits;
 
     /**
+     * Liste regroupant tous les acheteurs potentiels
+     */
+    private Collection<Acheteur> acheteursPotentiels;
+    /**
      * Attribut peremettant d'identifier une offre
      */
     private static int IDOffre = 1;
