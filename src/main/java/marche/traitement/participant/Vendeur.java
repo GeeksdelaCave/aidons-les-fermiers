@@ -19,6 +19,13 @@ public class Vendeur extends Decorateur{
     public Vendeur(Acteur acteur){
         super(acteur);
     }
+
+    /**
+     * Méthode permettant de proposer une offre
+     * @param quantite
+     * @param produit
+     * @param prix
+     */
     public void proposerOffreVente( int quantite, ProduitFermier produit, int prix){
         ArrayList<ProduitFermier> temp = new ArrayList<>();
 

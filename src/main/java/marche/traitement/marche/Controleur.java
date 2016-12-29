@@ -74,4 +74,6 @@ public class Controleur {
     public void ajouterOffre(Offre offre, Marche marche){
         marche.ajouterOffre(offre);
     }
+
+    //TODO Ajouter la méthode valider
 }
