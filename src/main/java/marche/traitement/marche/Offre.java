@@ -89,4 +89,12 @@ public class Offre {
         this.acheteursPotentiels.add(acheteur);
     }
 
+    /**
+     * Permet de récupérer les acheteurs potentiels d'une offre
+     * @return Collection<Acheteur> acheteursPotentiels
+     */
+    public Collection<Acheteur> getAcheteursPotentiels(){
+        return this.acheteursPotentiels;
+    }
+
 }
