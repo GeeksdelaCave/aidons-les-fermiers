@@ -75,5 +75,16 @@ public class Controleur {
         marche.ajouterOffre(offre);
     }
 
-    //TODO Ajouter la méthode valider
+    /**
+     * Méthode permettant de valider une offre si son prix n'est pas trop élever
+     * @param offre
+     * @return
+     */
+    public boolean valider(Offre offre){
+        if(offre.getPrix()> 100000){
+            return false;
+        }
+        return true;
+        //TODO méthode à revoir
+    }
 }
