@@ -14,7 +14,7 @@ public class LivreMarche {
     private static ArrayList<String> historique;
 
     /**
-     * Méthode permettant d'ajouter une transaction à notre historique
+     * Méthode permettant d'ajouter une transaction à notre historique de transaction
      * @param str
      */
     public static void ajouterTransaction(String str){
