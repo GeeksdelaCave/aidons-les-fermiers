@@ -44,13 +44,14 @@ public class VacheTest {
     }
 
     /**
-     * Teste si la vache est commercialisable
+     * Teste si la vache est commercialisable et que l'exception est bien géré
      */
     @Test
     public void testGetIsCommercialise(){
-        Vache vache = new Vache(150.0f, LocalDate.of(2017, Month.FEBRUARY, 10), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
-        assertTrue(vache.isCommercialisable());
+        Vache vache = new Vache(150.0f, LocalDate.of(2016,Month.DECEMBER,29), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
+        assertTrue(!vache.isCommercialisable());
     }
+
 
     /**
      * Teste l'identifiant de la vache
