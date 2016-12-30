@@ -2,7 +2,6 @@ package marche.traitement.marche;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.Acheteur;
-import marche.traitement.participant.Fermier;
 import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
@@ -13,53 +12,103 @@ import java.util.Collection;
  * Classe Offre
  * @author Nicolas Guigou
  *
+ * @version 1.1
+ *
+ * @see Vendeur
+ * @see Acheteur
+ * @see ProduitFermier
  */
 public class Offre {
 
     /**
-     *  Le prix de l'offre
+     *  Le prix de l'offre.
+     *
+     *  @see Offre#getPrix()
      */
     private double prix;
 
     /**
-     * Vendeur qui propose l'offre
+     * Vendeur qui propose l'offre.
+     *
+     * @see Vendeur
      */
     private Vendeur vendeur;
 
     /**
-     * Produits concernés par l'offre
+     * Produits concernés par l'offre.
+     * Liste des produits qui composent l'offre.
+     *
+     * @see ProduitFermier
+     * @see Offre#getProduits()
      */
     private Collection<ProduitFermier> produits;
 
     /**
      * Liste regroupant tous les acheteurs potentiels
+     *
+     * @see Acheteur
      */
     private ArrayList<Acheteur> acheteursPotentiels;
-    /**
-     * Attribut peremettant d'identifier une offre
-     */
-    private static int IDOffre = 1;
 
     /**
-     * Constructeur de la classe
+     * Attribut général des offres.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les offres de manière unique.
+     *
+     * @see Offre#Offre(double, Collection)
+     * @see Offre#IDOffre
      */
-    public Offre( double prix, Collection<ProduitFermier> produits){
+    private static int IDOffreGeneral = 1;
 
+    /**
+     * Identifiant de l'offre.
+     * Cette valeur est définie à la création de l'offre en fonction de la valeur d'IDOffreGeneral, permettant d'obtenir
+     * un identifiant unique.
+     *
+     * @see Offre#getIDOffre()
+     * @see Offre#Offre(double, Collection)
+     * @see Offre#IDOffreGeneral
+     */
+    private int IDOffre;
+
+    /**
+     * Constructeur de la classe Offre.
+     * @param prix Le prix demande par le vendeur au moment de la création de l'offre.
+     * @param produits Les produits proposés à la vente par le vendeur.
+     */
+    public Offre( double prix, Collection<ProduitFermier> produits) {
         this.prix = prix;
         this.produits = produits;
-        ++this.IDOffre;
+        this.IDOffre = this.IDOffreGeneral;
+        ++this.IDOffreGeneral;
     }
 
     /**
      * Méthode permettant de récupérer l'id de l'offre
+     *
      * @return int IDOffre
+     *
+     * @see Offre#IDOffre
      */
     public int getIDOffre(){
         return this.IDOffre;
     }
 
     /**
-     * Méthode acheter
+     * Valide l'offre et effectue les transferts de biens et d'argent.
+     *
+     * @param acheteur Acheteur faisant partie de la liste des acheteurs potentiels dont l'offre d'achat est acceptée.
+     *
+     * @throws SoldeNonDisponibleException Si le solde n'est pas disponible sur le compte de l'acheteur pour cette offre.
+     *
+     * @see Vendeur
+     * @see Acheteur
+     * @see Offre#acheteursPotentiels
+     * @see Offre#vendeur
+     * @see Offre#produits
+     * @see Offre#prix
+     * @see Controleur#transfererBiens(Acheteur, Vendeur, Offre)
+     * @see Controleur#crediterSomme(Acheteur, Vendeur, Offre)
+     * @see SoldeNonDisponibleException
      */
     public void acheter(Acheteur acheteur) throws SoldeNonDisponibleException {
         Controleur.transfererBiens(acheteur,this.vendeur,this);
@@ -68,7 +117,10 @@ public class Offre {
 
     /**
      * Peremet de retourner la collection de produit
+     *
      * @return Collection<ProduitFermier> ProduitFermier produits
+     *
+     * @see Offre#produits
      */
     public Collection<ProduitFermier> getProduits(){
         return this.produits;
@@ -76,7 +128,10 @@ public class Offre {
 
     /**
      * Reourne le prix d'une offre
+     *
      * @return double prix
+     *
+     * @see Offre#prix
      */
     public double getPrix(){
         return this.prix;
@@ -84,7 +139,11 @@ public class Offre {
 
     /**
      * Permet d'ajouter un acheteur potentiel à l'offre
-     * @param acheteur
+     *
+     * @param acheteur L'acheteur qui achète les produits de cette offre.
+     *
+     * @see Acheteur
+     * @see Offre#acheteursPotentiels
      */
     public void ajouterAcheteur(Acheteur acheteur){
         this.acheteursPotentiels.add(acheteur);
@@ -92,7 +151,11 @@ public class Offre {
 
     /**
      * Permet de récupérer les acheteurs potentiels d'une offre
+     *
      * @return Collection<Acheteur> acheteursPotentiels
+     *
+     * @see Acheteur
+     * @see Offre#acheteursPotentiels
      */
     public ArrayList<Acheteur> getAcheteursPotentiels(){
         return this.acheteursPotentiels;
