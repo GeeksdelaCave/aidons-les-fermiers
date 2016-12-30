@@ -22,6 +22,15 @@ public abstract class Acteur {
     protected Collection<ProduitFermier> inventaire;
 
     /**
+     * Nom de l'acteur
+     */
+    protected String nomActeur;
+
+    /**
+     * Prenom de l'acteur
+     */
+    protected String prenomActeur;
+    /**
      * Empêchement d'instancier un acteur
      */
     protected Acteur() { }
@@ -76,4 +85,16 @@ public abstract class Acteur {
      * @param produit Produit à enlever de l'inventaire de l'acteur
      */
     public void enleverProduit(ProduitFermier produit){inventaire.remove(produit);}
+
+    /**
+     * Méthode permettant de récupérer le nom d'un acteur
+     * @return nom de l'acteur
+     */
+    public String getNomActeur(){return this.nomActeur;}
+
+    /**
+     * Méthode permettant de récupérer le prénom d'un acteur
+     * @return prénom de l'acteur
+     */
+    public String getPrenomActeur(){return this.prenomActeur;}
 }
