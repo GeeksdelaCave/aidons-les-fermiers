@@ -1,7 +1,5 @@
 package marche.traitement.marche;
 
-import marche.traitement.produits.ProduitFermier;
-
 import java.util.Collection;
 
 /**
@@ -37,3 +35,8 @@ public abstract class Marche {
         catalogue.add(offre);
     }
 }
+
+//
+// On a un pb : le nom/prenom ne s'applique pas pour tous les acteurs (ex : centrale d'achat, grossiste...
+// Go fb stp ;)
+//
