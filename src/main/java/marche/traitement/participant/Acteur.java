@@ -22,6 +22,15 @@ public abstract class Acteur {
     protected Collection<ProduitFermier> inventaire;
 
     /**
+     * Nom de l'acteur
+     */
+    protected String nomActeur;
+
+    /**
+     * Prenom de l'acteur
+     */
+    protected String prenomActeur;
+    /**
      * Empêchement d'instancier un acteur
      */
     protected Acteur() { }
