@@ -6,6 +6,7 @@ import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Singleton Controleur représentant le système
@@ -35,10 +36,12 @@ public class Controleur {
      * Méthode permettant de selectionner les acheteurs
      */
     public Acheteur choisirAcheteur(Offre offre){
+        Random random= new Random();
         ArrayList<Acheteur> liste = new ArrayList();
         liste = offre.getAcheteursPotentiels();
-        return liste.get(0); //Le controleur choisit pour l'instant le premier élément de la liste
-        //TODO revoir cette méthode
+        int index = random.nextInt(liste.size());
+        return liste.get(index); //Le controleur choisit un élément aléatoire de la liste
+        //TODO ajouter une deuxième algorithme
     }
 
     /**
