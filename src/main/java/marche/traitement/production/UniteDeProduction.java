@@ -45,8 +45,7 @@ public abstract class UniteDeProduction {
     /**
      *  Permet d'afficher l'inventaire de produit fermier présent dans une unitée de production
      */
-    protected void displayInventaire()
-    {
+    public void displayInventaire() {
         for(ProduitFermier produitFermier : inventaireUniteDeProduction)
             System.out.println(produitFermier.toString());
     }
@@ -65,14 +64,15 @@ public abstract class UniteDeProduction {
     /** Retourne la capacitée maximale de produit fermier à accueillir
      * @return la capacitée maximale de produit fermier à accueillir
      */
-    protected int getCapaciteeProduction() {
+    public int getCapaciteeProduction() {
         return capaciteeProduction;
     }
 
     /** Retourne la région où est implanté l'unité de production
      * @return la région où est implanté l'unité de production
      */
-    protected String getRegionCreationProduit() {
+    public String getRegionCreationProduit() {
+
         return regionCreationProduit;
     }
 }
