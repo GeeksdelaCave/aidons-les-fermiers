@@ -81,7 +81,7 @@ public abstract class ProduitFermier {
      *
      * @return le prix du produit
      */
-    protected float getPrix(){
+    public float getPrix(){
 
         return prix;
     }
@@ -90,7 +90,7 @@ public abstract class ProduitFermier {
      *
      * @return la date de peremption
      */
-    protected LocalDate getDatePeremption() throws ProduitPerimeException {
+    public LocalDate getDatePeremption() throws ProduitPerimeException {
         if (datePeremption.isAfter(LocalDate.now()))
             return datePeremption;
         else
@@ -110,7 +110,7 @@ public abstract class ProduitFermier {
      *
      * @return si le produit est commercialisable ou pas
      */
-    protected boolean isCommercialisable() {
+    public boolean isCommercialisable() {
         try {
             return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
         }
@@ -125,7 +125,7 @@ public abstract class ProduitFermier {
      *
      * @return l'unité de production associé à un produit fermier
      */
-    protected UniteDeProduction getUniteDeProduction() {
+    public UniteDeProduction getUniteDeProduction() {
 
         return uniteDeProduction;
     }
@@ -133,33 +133,27 @@ public abstract class ProduitFermier {
     /**
      * Valider le choix d'un label en fonction des caractéristiques du produit fermier avec la gestion de l'exception ProduitPerimeException.
      */
-    protected void validerLabel() {
-        try
-        {
-            this.getDatePeremption();
-            if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()
-                    && this.isCommercialisable()){
-                this.ajouterLabel(new LabelAOC(idLabel, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
-                ++idLabel;
-            }
-            if(this.getClass().getCanonicalName() == this.getUniteDeProduction().getRegionCreationProduit())
-                this.ajouterLabel(new LabelAOP(idLabel, this.getUniteDeProduction().getRegionCreationProduit()));
-            ++idLabel;
-            if(this.getQualite() > 70)
-                this.ajouterLabel(new LabelRouge(idLabel,true));
+    public void validerLabel() {
+        if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()
+                && this.isCommercialisable()){
+            this.ajouterLabel(new LabelAOC(idLabel, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
             ++idLabel;
         }
-        catch(ProduitPerimeException ppe)
-        {
-            ppe.printStackTrace();
-        }
+        if(this.getClass().getCanonicalName() == this.getUniteDeProduction().getRegionCreationProduit())
+            this.ajouterLabel(new LabelAOP(idLabel, this.getUniteDeProduction().getRegionCreationProduit()));
+        ++idLabel;
+        if(this.getQualite() > 70)
+            this.ajouterLabel(new LabelRouge(idLabel,true));
+        ++idLabel;
+
     }
 
     /** Retourne le propriétaire actuel du produit fermier
      *
      * @return le propriétaite actuel du produit fermier
      */
-    protected Fermier getProprietaire() {
+    public Fermier getProprietaire() {
+
         return proprietaire;
     }
 
@@ -167,7 +161,8 @@ public abstract class ProduitFermier {
      *
      * @param proprietaire désignant le propriétaire courant d'un produit fermier
      */
-    protected void setProprietaire(Fermier proprietaire) {
+    public void setProprietaire(Fermier proprietaire) {
+
         this.proprietaire = proprietaire;
     }
 
@@ -175,7 +170,8 @@ public abstract class ProduitFermier {
      *
      * @param label désigne le label qu'on va ajouter à un produit fermier
      */
-    protected void ajouterLabel(Label label) {
+    public void ajouterLabel(Label label) {
+
         labels.add(label);
     }
 
@@ -183,14 +179,14 @@ public abstract class ProduitFermier {
      *
      * @return les labels d'un produit fermier.
      */
-    protected ArrayList<Label> getLabels() {
-        return labels; }
+    public ArrayList<Label> getLabels() {
+        return labels;
+    }
 
     /**
      * Affiche les labels d'un produit fermier
      */
-    protected void displayLabels()
-    {
+    public void displayLabels() {
         for(Label label : getLabels())
             System.out.println(label.toString());
     }
