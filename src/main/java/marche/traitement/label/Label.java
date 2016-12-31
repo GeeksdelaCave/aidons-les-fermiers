@@ -19,7 +19,7 @@ public abstract class Label {
      *
      * @return l'identifiant d'un label
      */
-    protected int getIdLabel() {
+    public int getIdLabel() {
         return idLabel;
     }
 
