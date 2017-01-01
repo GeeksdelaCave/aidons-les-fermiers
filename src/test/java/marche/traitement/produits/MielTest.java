@@ -17,9 +17,8 @@ public class MielTest {
      * Teste l'identifiant d'un seau de miel
      */
     @Test
-    public void testGetIdMiel()
-    {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30),(short) 55.0,  1000,5.0f,"Mieldechataignier",new Ruche(20,"Loire"));
+    public void testGetIdMiel() {
+        Miel miel = new Miel(15.0f, LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
         assertTrue(miel.getIdSeauMiel() == 1000);
     }
 
@@ -27,9 +26,8 @@ public class MielTest {
      * Teste le poids d'un seau de miel
      */
     @Test
-    public void testGetPoidsSeauMiel()
-    {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
+    public void testGetPoidsSeauMiel() {
+        Miel miel = new Miel(15.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
         assertTrue(miel.getPoidsSeauMiel() == 5.0f);
     }
 
@@ -37,9 +35,8 @@ public class MielTest {
      * Teste le type d'un seau de miel
      */
     @Test
-    public void testGetTypeMiel()
-    {
-        Miel miel = new Miel(15.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
+    public void testGetTypeMiel() {
+        Miel miel = new Miel(15.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55.0,  1000,5.0f,"Mieldechataignier", new Ruche(20,"Loire"));
         assertTrue(miel.getTypeDeMiel() == "Mieldechataignier");
     }
 }

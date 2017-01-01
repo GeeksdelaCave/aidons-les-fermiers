@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Vache extends ProduitFermier {
 
@@ -53,6 +54,7 @@ public class Vache extends ProduitFermier {
      * @return l'identifiant de la vache
      */
     public int getIdVache() {
+
         return idVache;
     }
 
@@ -61,6 +63,7 @@ public class Vache extends ProduitFermier {
      * @return le nom d'une vache
      */
     public String getNomVache() {
+
         return nomVache;
     }
 
@@ -69,6 +72,7 @@ public class Vache extends ProduitFermier {
      * @return le poids d'une vache
      */
     public float getPoidsVache() {
+
         return poidsVache;
     }
 }

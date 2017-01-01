@@ -17,9 +17,8 @@ public class LaitTest {
      * Teste l'identifiant du pack de lait
      */
     @Test
-    public void testGetIdLait()
-    {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,1300,3.0f, new Laiterie(30,"Paris"));
+    public void testGetIdLait() {
+        Lait lait = new Lait(10.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,1300,3.0f, new Laiterie(30,"Paris"));
         assertTrue(lait.getIdPackLait() == 1300);
     }
 
@@ -27,9 +26,8 @@ public class LaitTest {
      * Teste le poids du pack de lait
      */
     @Test
-    public void testGetPoidsPackLait()
-    {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1300,3.0f, new Laiterie(30,"Paris"));
+    public void testGetPoidsPackLait() {
+        Lait lait = new Lait(10.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0, 1300,3.0f, new Laiterie(30,"Paris"));
         assertTrue(lait.getPoidsPackLait() == 3.0f);
     }
 

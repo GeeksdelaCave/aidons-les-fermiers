@@ -19,9 +19,8 @@ public class VacheTest {
      * Teste le prix de la vache
      */
     @Test
-    public void testGetPrix()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetPrix() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         assertTrue(vache.getPrix() == 150.0f);
     }
 
@@ -29,9 +28,8 @@ public class VacheTest {
      * Teste la date de peremption de la vache
      */
     @Test (expected = ProduitPerimeException.class)
-    public void testGetDatePeremption()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetDatePeremption() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         LocalDate ld = LocalDate.of(2016, Month.NOVEMBER,28);
         assertTrue(vache.getDatePeremption().equals(ld));
     }
@@ -40,28 +38,27 @@ public class VacheTest {
      * Teste la valeur de la qualité de la vache
      */
     @Test
-    public void testGetQualite()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetQualite() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         assertTrue(vache.getQualite() == (short) 55.0);
     }
 
     /**
-     * Teste si la vache est commercialisable
+     * Teste si la vache est commercialisable et que l'exception est bien géré
      */
-    @Test (expected = ProduitPerimeException.class)
-    public void testGetIsCommercialise() throws ProduitPerimeException {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
-        assertTrue(vache.isCommercialisable());
+    @Test
+    public void testGetIsCommercialise(){
+        Vache vache = new Vache(150.0f, LocalDate.of(2016,Month.DECEMBER,29), (short) 55.0,  1200,"vachetest",50.0f, new Etable(1245, "PACA"));
+        assertTrue(!vache.isCommercialisable());
     }
+
 
     /**
      * Teste l'identifiant de la vache
      */
     @Test
-    public void testGetIdVache()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetIdVache() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         assertTrue(vache.getIdVache() == 1200);
     }
 
@@ -69,9 +66,8 @@ public class VacheTest {
      * Teste le nom de la vache
      */
     @Test
-    public void testGetNomVache()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, 1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetNomVache() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0, 1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         assertTrue(vache.getNomVache() == "vachetest");
     }
 
@@ -79,9 +75,8 @@ public class VacheTest {
      * Teste le poids de la vache
      */
     @Test
-    public void testGetPoidsVache()
-    {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
+    public void testGetPoidsVache() {
+        Vache vache = new Vache(150.0f, LocalDate.of(2016, Month.NOVEMBER, 28), (short) 55.0,  1200,"vachetest",50.0f, new Etable(30,"Aquitaine"));
         assertTrue(vache.getPoidsVache() == 50.0f);
     }
 }

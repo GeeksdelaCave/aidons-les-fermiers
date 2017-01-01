@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Cochon représentant un cochon
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Cochon extends ProduitFermier {
 
@@ -54,6 +55,7 @@ public class Cochon extends ProduitFermier {
      * @return l'identifiant d'un cochon
      */
     public int getIdCochon() {
+
         return idCochon;
     }
 
@@ -62,6 +64,7 @@ public class Cochon extends ProduitFermier {
      * @return le poids d'un cochon
      */
     public float getPoidsCochon() {
+
         return poidsCochon;
     }
 
@@ -70,6 +73,7 @@ public class Cochon extends ProduitFermier {
      * @return le type d'un cochon
      */
     public String getTypeDeCochon() {
+
         return typeDeCochon;
     }
 }

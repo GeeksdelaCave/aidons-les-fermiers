@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Miel représentant un pot de miel
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Miel extends ProduitFermier {
     /**
@@ -39,7 +40,7 @@ public class Miel extends ProduitFermier {
      * @param typeDeMiel     désigne le type de miel
      * @param ruche          désigne la ruche associé à un pot de miel
      */
-    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel,Ruche ruche) {
+    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel, Ruche ruche) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
@@ -54,6 +55,7 @@ public class Miel extends ProduitFermier {
      * @return l'identifiant d'un seau de miel
      */
     public int getIdSeauMiel() {
+
         return idSeauMiel;
     }
 
@@ -62,6 +64,7 @@ public class Miel extends ProduitFermier {
      * @return le poids d'un seau de miel
      */
     public float getPoidsSeauMiel() {
+
         return poidsSeauMiel;
     }
 
@@ -70,6 +73,7 @@ public class Miel extends ProduitFermier {
      * @return le type de miel
      */
     public String getTypeDeMiel() {
+
         return typeDeMiel;
     }
 }

@@ -18,9 +18,8 @@ public class CochonTest {
      * Teste l'identifiant d'un cochon
      */
     @Test
-    public void testGetIdCochon()
-    {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,1200,5.0f,"Cochondelait",new EnclosCochon(150,"Alsace"));
+    public void testGetIdCochon() {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55.0,1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getIdCochon() == 1200);
     }
 
@@ -28,9 +27,8 @@ public class CochonTest {
      * Teste le poids d'un cochon
      */
     @Test
-    public void testGetPoidsCochon()
-    {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,  1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+    public void testGetPoidsCochon() {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55.0,  1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getPoidsCochon() == 5.0f);
     }
 
@@ -38,9 +36,8 @@ public class CochonTest {
      * Teste le type de cochon
      */
     @Test
-    public void testGetTypeCochon()
-    {
-        Cochon cochon = new Cochon(150.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+    public void testGetTypeCochon() {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55.0, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getTypeDeCochon() == "Cochondelait");
     }
 }

@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Lait qui représentera en réalité un pack de lait
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Lait extends ProduitFermier {
     /**
@@ -45,6 +46,7 @@ public class Lait extends ProduitFermier {
      * @return l'identifiant d'un pack de lait
      */
     public int getIdPackLait() {
+
         return idPackLait;
     }
 
@@ -53,6 +55,7 @@ public class Lait extends ProduitFermier {
      * @return le poids d'un pack de lait
      */
     public float getPoidsPackLait() {
+
         return poidsPackLait;
     }
 }
