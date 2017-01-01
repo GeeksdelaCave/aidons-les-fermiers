@@ -1,5 +1,7 @@
 package marche.traitement.participant;
 
+import marche.traitement.marche.Controleur;
+import marche.traitement.marche.Marche;
 import marche.traitement.marche.Offre;
 import marche.traitement.produits.ProduitFermier;
 
@@ -26,7 +28,7 @@ public class Vendeur extends Decorateur{
      * @param produit
      * @param prix
      */
-    public void proposerOffreVente( int quantite, ProduitFermier produit, int prix){
+    public void proposerOffreVente( int quantite, ProduitFermier produit, int prix, Marche marche){
         ArrayList<ProduitFermier> temp = new ArrayList<>();
 
         for(int i = 0; i < quantite; ++i){
@@ -35,6 +37,12 @@ public class Vendeur extends Decorateur{
 
         Offre offre = new Offre(prix,temp);
 
-        //TODO terminer la méthode
+        if(Controleur.valider(offre)){
+            Controleur.ajouterOffre(offre, marche);
+        }
+        else{
+            //TODO terminer la méthode
+        }
+
     }
 }

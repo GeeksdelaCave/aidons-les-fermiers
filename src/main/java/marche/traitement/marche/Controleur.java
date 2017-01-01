@@ -35,7 +35,7 @@ public class Controleur {
     /**
      * Méthode permettant de selectionner les acheteurs
      */
-    public Acheteur choisirAcheteur(Offre offre){
+    public static Acheteur choisirAcheteur(Offre offre){
         Random random= new Random();
         ArrayList<Acheteur> liste = new ArrayList();
         liste = offre.getAcheteursPotentiels();
@@ -71,14 +71,14 @@ public class Controleur {
     /**
      * Méthode permettant de réguler les prix des produits en fonction du seuil définit
      */
-    public void regulerPrix(ProduitFermier produit){
+    public static void regulerPrix(ProduitFermier produit){
         //TODO implémenter la méthode
     }
 
     /**
      * Méthode permettant d'ajouter une offre à un marché
      */
-    public void ajouterOffre(Offre offre, Marche marche){
+    public static void ajouterOffre(Offre offre, Marche marche){
         marche.ajouterOffre(offre);
     }
 
@@ -87,7 +87,7 @@ public class Controleur {
      * @param offre
      * @return
      */
-    public boolean valider(Offre offre){
+    public static boolean valider(Offre offre){
         if(offre.getPrix()> 100000){
             return false;
         }

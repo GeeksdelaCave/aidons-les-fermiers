@@ -106,12 +106,12 @@ public class Offre {
      * @see Offre#vendeur
      * @see Offre#produits
      * @see Offre#prix
-     * @see Controleur#transfererBiens(Acheteur, Vendeur, Offre)
+     * @see Controleur#transfererBiens(Acheteur, Vendeur, Offre,Marche)
      * @see Controleur#crediterSomme(Acheteur, Vendeur, Offre)
      * @see SoldeNonDisponibleException
      */
-    public void acheter(Acheteur acheteur) throws SoldeNonDisponibleException {
-        Controleur.transfererBiens(acheteur,this.vendeur,this);
+    public void acheter(Acheteur acheteur, Marche marche) throws SoldeNonDisponibleException {
+        Controleur.transfererBiens(acheteur,this.vendeur,this,marche);
         Controleur.crediterSomme(acheteur,this.vendeur,this);
     }
 
