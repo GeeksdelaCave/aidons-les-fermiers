@@ -9,7 +9,7 @@ import java.time.Month;
 /**
  * Classe test de la classe Etable
  * @author Romain COLONNA D'ISTRIA
- * @author Tristan Dietz
+ * @author Tristan DIETZ
  *
  * @version 1.1
  * @see Etable
@@ -25,7 +25,7 @@ public class EtableTest {
     }
 
     /**
-     * @bug Bug connu : le test marche pour 2000 lancé unitairement, mais échoue lorsque la vache créée en amont est
+     * @bug Bug connu : le test marche pour 3000 lancé unitairement, mais échoue lorsque la vache créée en amont est
      * créée. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
      * @see Etable#idVacheNee
      */
