@@ -10,12 +10,6 @@ import java.time.LocalDate;
  */
 public class Poulailler extends UniteDeProduction {
 
-    /**
-     * Identifiant d'un oeuf à la naissance statique par défaut à 100 qui s'incrémentera à chaque fois qu'on créera un oeuf pour identifiant unique.
-     * @see Poulailler#creerPackOeuf(float, LocalDate, short)
-     */
-    private static int idOeufNaissance = 100;
-
     /** Constructeur de la classe Poulailler
      *
      * @param capaciteeProduction qui désigne la capacitée maximale d'oeufs qu'un poulailler peut accueillir
@@ -34,8 +28,7 @@ public class Poulailler extends UniteDeProduction {
      * @return un oeuf qui est née et a été ajoutée à l'inventaire
      */
     public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
-        Oeuf oeuf = new Oeuf(prix,datePeremption,qualite,idOeufNaissance,this);
-        idOeufNaissance += 100;
+        Oeuf oeuf = new Oeuf(prix,datePeremption,qualite,this);
         ajoutInventaire(oeuf);
         return oeuf;
     }

@@ -11,10 +11,18 @@ import java.time.LocalDate;
 public class Oeuf extends ProduitFermier {
 
     /**
-     * L'identifiant d'un pack d'oeufs Il n'est pas modifiable
-     * @see Oeuf#getIdPackOeuf()
+     * Identifiant d'un pack d'oeuf.
+     * Cette valeur est définie à la création du pack d'oeuf en fonction de la valeur d'idPackOeufGeneral, permettant d'obtenir
+     * un identifiant unique.
      */
     private int idPackOeuf;
+
+
+    /**
+     * Attribut général d'un pack d'oeuf.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les pack d'oeuf de manière unique.
+     */
+    private static int idPackOeufGeneral = 100;
 
     /**
      * Constructeur d'un Oeuf
@@ -22,14 +30,14 @@ public class Oeuf extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param idPackOeuf     correspond a l'identifiant du pack d'oeuf
      * @param poulailler     désigne le poulailler associé avec le pack d'oeuf
      */
-    public Oeuf(float prix, LocalDate datePeremption, short qualite, int idPackOeuf, Poulailler poulailler) {
+    public Oeuf(float prix, LocalDate datePeremption, short qualite, Poulailler poulailler) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
-        this.idPackOeuf = idPackOeuf;
+        this.idPackOeuf = idPackOeufGeneral;
+        idPackOeufGeneral += 100;
         this.uniteDeProduction = poulailler;
     }
 
