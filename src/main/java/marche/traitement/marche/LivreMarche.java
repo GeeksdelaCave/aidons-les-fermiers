@@ -20,4 +20,10 @@ public class LivreMarche {
     public static void ajouterTransaction(String str){
         historique.add(str);
     }
+
+    /**
+     * Méthode permettant de récupérer l'historique des transactions
+     * @return historique
+     */
+    public ArrayList<String> getHistorique(){return historique;}
 }
