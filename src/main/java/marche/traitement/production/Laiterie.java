@@ -13,6 +13,12 @@ import java.time.LocalDate;
  */
 public class Laiterie extends UniteDeProduction {
 
+    /**
+     * Identifiant statique d'un pack de lait crée qui s'incrémentera pour chaque création car identifiant unique.
+     * @see Laiterie#creerPackLait(float, LocalDate, short, float)
+     */
+    private static int idPackLaitCree = 500;
+
     /** Constructeur de la classe Laiterie
      *
      * @param capaciteeProduction désigne la capacitée maximale de packs de lait à accueillir
@@ -34,8 +40,8 @@ public class Laiterie extends UniteDeProduction {
     public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait) {
         //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
-            Lait packLait = new Lait(prixPack, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsPackLait, this);
-            ++UniteDeProduction.idProduitFermiercree;
+            Lait packLait = new Lait(prixPack, datePeremption, qualite, idPackLaitCree, poidsPackLait, this);
+            idPackLaitCree += 100;
             ajoutInventaire(packLait);
             return packLait;
         }

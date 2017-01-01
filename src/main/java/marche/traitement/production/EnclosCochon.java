@@ -12,6 +12,12 @@ import java.time.LocalDate;
  */
 public class EnclosCochon extends Enclos {
 
+    /**
+     * Identifiant statique d'un cochon lorsqu'il néé et qui s'incrémentera à chaque création car identifiant unique.
+     * @see EnclosCochon#creerCochon(float, LocalDate, short, float, String)
+     */
+    private static int idCochonNee = 2000;
+
     /** Constructeur de la classe EnclosCochon
      *
      * @param capaciteeProduction désigne la capacitée maximale de cochons à accueillir
@@ -34,8 +40,8 @@ public class EnclosCochon extends Enclos {
     public Cochon creerCochon(float prixCochon,LocalDate datePeremption,short qualite,float poidsCochon,String typeCochon) {
         //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
-            Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, poidsCochon, typeCochon, this);
-            ++UniteDeProduction.idProduitFermiercree;
+            Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, idCochonNee, poidsCochon, typeCochon, this);
+            idCochonNee += 100;
             ajoutInventaire(cochonNee);
             return cochonNee;
         }

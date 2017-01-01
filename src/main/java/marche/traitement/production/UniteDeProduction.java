@@ -13,10 +13,6 @@ import java.util.PriorityQueue;
  */
 public abstract class UniteDeProduction {
 
-    /**
-     * Identifiant d'un produit fermier lorsque celui-ci naîtra. Par le biais du statique, chaque produit fermier n'aura pas le même identifiant.
-     */
-    protected static int idProduitFermiercree = 1;
 
     /**
      *  Capacitée maximale de produits fermiers qu'une unitée de production peut accueillir. Elle n'est pas modifiable

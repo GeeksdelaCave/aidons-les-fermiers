@@ -14,6 +14,12 @@ import java.time.LocalDate;
  */
 public class Fromagerie extends UniteDeProduction {
 
+    /**
+     * Identifiant statique d'un fromage fabriqué et qui s'incrémentera pour chaque nouvelle création car identifiant unique
+     * @see Fromagerie#ajoutInventaire(ProduitFermier)
+     */
+    private static int idFromageFabriquee = 250;
+
     /** Constructeur de la classe Fromagerie
      *
      * @param capaciteeProduction désignant la capacitée maximale de fromages à accueillir
@@ -36,8 +42,8 @@ public class Fromagerie extends UniteDeProduction {
     public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage) {
         //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
-            Fromage fromageCree = new Fromage(prixFromage, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, nomFromage, poidsFromage, this);
-            ++UniteDeProduction.idProduitFermiercree;
+            Fromage fromageCree = new Fromage(prixFromage, datePeremption, qualite, idFromageFabriquee, nomFromage, poidsFromage, this);
+            idFromageFabriquee += 100;
             ajoutInventaire(fromageCree);
             return fromageCree;
         }

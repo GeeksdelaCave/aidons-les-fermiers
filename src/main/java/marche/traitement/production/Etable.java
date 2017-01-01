@@ -13,6 +13,12 @@ import java.time.LocalDate;
  */
 public class Etable extends Enclos {
 
+    /**
+     * Identifiant statique par défaut d'une vache quand elle naîtra puis qui s'incrémentera à chaque création d'une vache car identifiant unique
+     * @see Etable#ajoutInventaire(ProduitFermier)
+     */
+    private static int idVacheNee = 3000;
+
     /** Constructeur de la classe Etable
      *
      * @param capaciteeProduction désigne la capacitée maximale de vaches à accueillir dans l'etable
@@ -35,8 +41,8 @@ public class Etable extends Enclos {
     public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache) {
         //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
         try {
-            Vache vacheNee = new Vache(prixVache, datePeremption, qualite, UniteDeProduction.idProduitFermiercree, nomVache, poidsVache, this);
-            ++UniteDeProduction.idProduitFermiercree;
+            Vache vacheNee = new Vache(prixVache, datePeremption, qualite, idVacheNee, nomVache, poidsVache, this);
+            idVacheNee += 100;
             ajoutInventaire(vacheNee);
             return vacheNee;
         }
