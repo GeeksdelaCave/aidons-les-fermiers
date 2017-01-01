@@ -1,14 +1,13 @@
 package marche.traitement.produits;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
+import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.production.EnclosCochon;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
+
+import static org.junit.Assert.*;
 
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
@@ -67,13 +66,13 @@ public class CochonTest {
 
     /**
      * Teste de l'exception ProduitPerimeException lors de l'accés a la date de péremption
+     *
+     * @see ProduitPerimeException
      */
-    @Test
-    public void testGetDatePeremption_ProduitPerimeException() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetDatePeremption_ProduitPerimeException() throws ProduitPerimeException {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
-
-        //TODO tester l'exception
     }
 
     /**
