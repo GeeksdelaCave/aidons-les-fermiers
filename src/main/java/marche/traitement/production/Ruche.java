@@ -10,12 +10,6 @@ import java.time.LocalDate;
  */
 public class Ruche extends UniteDeProduction{
 
-    /**
-     * Identifiant d'un pot de miel statique lorsqu'il celui-ci est crée et incrémenté chaque pot de miel crée car identifiant unique.
-     * @see Ruche#creerPotMiel(float, LocalDate, short, float, String)
-     */
-    private static int idPotMielCree = 1500;
-
     /** Constructeur de la classe Ruche
      *
      * @param capaciteeProduction désigne la capacitée maximale de pots de miels à accueillir
@@ -37,8 +31,7 @@ public class Ruche extends UniteDeProduction{
      * @return un poids de miel crée et ajouté à l'inventaire
      */
     public Miel creerPotMiel(float prixPot,LocalDate datePeremption,short qualite,float poidsPot,String typeMiel){
-        Miel potMiel = new Miel(prixPot,datePeremption,qualite,idPotMielCree,poidsPot,typeMiel,this);
-        idPotMielCree += 100;
+        Miel potMiel = new Miel(prixPot, datePeremption, qualite, poidsPot, typeMiel,this);
         ajoutInventaire(potMiel);
         return potMiel;
     }
