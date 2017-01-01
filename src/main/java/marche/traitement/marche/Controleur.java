@@ -47,11 +47,15 @@ public class Controleur {
     /**
      * Méthode permettant le transfert de biens
      */
-    public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
+    public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre, Marche marche){
         for ( ProduitFermier p : offre.getProduits() ){
             acheteur.ajoutProduit(p);
             vendeur.enleverProduit(p);
         }
+
+        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + "a effectué un achat de : " + offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur();
+        LivreMarche.ajouterTransaction(strTransaction);
+        marche.enleverOffre(offre);
     }
 
     /**
