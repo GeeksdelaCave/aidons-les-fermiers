@@ -1,10 +1,7 @@
 package marche.traitement.produits;
 
 import marche.traitement.exceptions.ProduitPerimeException;
-import marche.traitement.label.Label;
-import marche.traitement.label.LabelAOC;
-import marche.traitement.label.LabelAOP;
-import marche.traitement.label.LabelRouge;
+import marche.traitement.label.*;
 import marche.traitement.participant.Fermier;
 import marche.traitement.production.UniteDeProduction;
 import java.time.LocalDate;
@@ -64,7 +61,7 @@ public abstract class ProduitFermier {
      * Identifiant d'un label qui s'inceémentera au fur et à mesure de l'attribution d'un label. Il n'est pas modifiable
      * @see ProduitFermier#validerLabel()
      */
-    protected static int idLabel = 1;
+    private static int idLabelAttribue = 1;
 
     /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
@@ -134,17 +131,20 @@ public abstract class ProduitFermier {
      * Valider le choix d'un label en fonction des caractéristiques du produit fermier avec la gestion de l'exception ProduitPerimeException.
      */
     public void validerLabel() {
-        if(associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()
-                && this.isCommercialisable()){
-            this.ajouterLabel(new LabelAOC(idLabel, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
-            ++idLabel;
+        if(this.isCommercialisable()) {
+            if (associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()) {
+                this.ajouterLabel(new LabelAOC(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable())); // On lui ajoute ces 3 trois labels en même temps car ils concernent la même situation d'attribution
+                ++idLabelAttribue;
+                this.ajouterLabel(new LabelAOP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
+                ++idLabelAttribue;
+                this.ajouterLabel(new LabelIGP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
+                ++idLabelAttribue;
+            }
+            if (this.getQualite() > 70) {
+                this.ajouterLabel(new LabelRouge(idLabelAttribue, true));
+                ++idLabelAttribue;
+            }
         }
-        if(this.getClass().getCanonicalName() == this.getUniteDeProduction().getRegionCreationProduit())
-            this.ajouterLabel(new LabelAOP(idLabel, this.getUniteDeProduction().getRegionCreationProduit()));
-        ++idLabel;
-        if(this.getQualite() > 70)
-            this.ajouterLabel(new LabelRouge(idLabel,true));
-        ++idLabel;
 
     }
 
