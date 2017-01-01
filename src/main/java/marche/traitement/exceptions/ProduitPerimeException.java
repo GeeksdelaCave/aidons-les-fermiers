@@ -1,5 +1,11 @@
 package marche.traitement.exceptions;
 
+/**
+ * Exception soulevée lorsqu'un produit est périmé
+ *
+ * @author Tristan DIETZ
+ * @version 1.1
+ */
 public class ProduitPerimeException extends RuntimeException {
 
     /**
@@ -13,6 +19,7 @@ public class ProduitPerimeException extends RuntimeException {
 
     /**
      * Affichage du texte d'erreur de toString() dans la sortie standard.
+     * @see ProduitPerimeException#toString()
      */
     @Override
     public void printStackTrace() {

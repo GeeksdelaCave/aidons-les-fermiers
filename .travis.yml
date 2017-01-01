@@ -18,6 +18,7 @@ branches:
   only:
   - master
   - develop
+  - test&except
 
 # Spécification des JDK avec lesquels compiler
 jdk:
