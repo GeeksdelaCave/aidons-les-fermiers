@@ -6,7 +6,12 @@ import java.time.LocalDate;
 
 /**
  *  Classe Pomme qui représentera en réalité une cagette de pommes
+ *
+ *  @author Romain COLONNA D'ISTRIA
+ *  @author Tristan DIETZ
+ *
  *  @version 1.7
+ *  @author Thibaud CENENT
  */
 public class Pomme extends ProduitFermier {
 

@@ -6,23 +6,34 @@ import java.time.LocalDate;
 
 /**
  * Classe Miel représentant un pot de miel
- * @version 1.6
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
  */
 public class Miel extends ProduitFermier {
 
     /**
-     * Identifiant d'un seau de miel.
-     * Cette valeur est définie à la création d'un seau de miel en fonction de la valeur d'idSeauMielGeneral, permettant d'obtenir
-     * un identifiant unique.
-     */
-    private int idSeauMiel;
-
-
-    /**
      * Attribut général d'un seau de miel.
-     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les seau de miel de manière unique.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les seau de miel de manière
+     * unique.
+     *
+     * @see Miel#Miel(float, LocalDate, short, float, String, Ruche)
+     * @see Miel#idSeauMiel
      */
     private static int idSeauMielGeneral = 1500;
+
+    /**
+     * Identifiant d'un seau de miel.
+     * Cette valeur est définie à la création d'un seau de miel en fonction de la valeur d'idSeauMielGeneral, permettant
+     * d'obtenir un identifiant unique.
+     *
+     * @see Miel#getIdSeauMiel()
+     * @see Miel#Miel(float, LocalDate, short, float, String, Ruche)
+     * @see Miel#idSeauMielGeneral
+     */
+    private int idSeauMiel;
 
     /**
      * Le poids d'un seau de miel en kg. Il n'est pas modifiable
@@ -63,6 +74,7 @@ public class Miel extends ProduitFermier {
      * @return l'identifiant d'un seau de miel
      */
     public int getIdSeauMiel() {
+
         return idSeauMiel;
     }
 
@@ -71,6 +83,7 @@ public class Miel extends ProduitFermier {
      * @return le poids d'un seau de miel
      */
     public float getPoidsSeauMiel() {
+
         return poidsSeauMiel;
     }
 
@@ -79,6 +92,7 @@ public class Miel extends ProduitFermier {
      * @return le type de miel
      */
     public String getTypeDeMiel() {
+
         return typeDeMiel;
     }
 }

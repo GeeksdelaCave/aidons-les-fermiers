@@ -6,23 +6,34 @@ import java.time.LocalDate;
 
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
- * @version 1.6
+ *
+ * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
  */
 public class Vache extends ProduitFermier {
+
+    /**
+     * Attribut général d'une vache.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les vaches de manière unique.
+     *
+     * @see Vache#Vache(float, LocalDate, short, String, float, Etable)
+     * @see Vache#idVacheGeneral
+     */
+    private static int idVacheGeneral = 3000;
 
     /**
      * Identifiant d'une vache.
      * Cette valeur est définie à la création d'une vache en fonction de la valeur d'idVacheGeneral, permettant d'obtenir
      * un identifiant unique.
+     *
+     * @see Vache#getIdVache()
+     * @see Vache#Vache(float, LocalDate, short, String, float, Etable)
+     * @see Vache#idVacheGeneral
      */
     private int idVache;
-
-
-    /**
-     * Attribut général d'une vache.
-     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les vaches de manière unique.
-     */
-    private static int idVacheGeneral = 3000;
 
     /**
      * Le nom d'une vache. Il n'est pas modifiable
@@ -60,6 +71,7 @@ public class Vache extends ProduitFermier {
      * @return l'identifiant de la vache
      */
     public int getIdVache() {
+
         return idVache;
     }
 
@@ -68,6 +80,7 @@ public class Vache extends ProduitFermier {
      * @return le nom d'une vache
      */
     public String getNomVache() {
+
         return nomVache;
     }
 
@@ -76,6 +89,7 @@ public class Vache extends ProduitFermier {
      * @return le poids d'une vache
      */
     public float getPoidsVache() {
+
         return poidsVache;
     }
 }

@@ -12,12 +12,14 @@ script:
   - mvn compile
   - mvn test
   - mvn verify
+  - source 7
 
 # Branches à ajouter à la compilation
 branches:
   only:
   - master
   - develop
+  - test&except
 
 # Spécification des JDK avec lesquels compiler
 jdk:
@@ -25,4 +27,4 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - javadoc -d doc/ marche
+  - javadoc -private -sourcepath "src/main/java:src/main/ressources:src/test/java" -d /Users/pyrrha/IdeaProjects/aidons-les-fermiers/doc  marche.traitement.produits marche.traitement.marche marche.traitement.label marche.traitement.production marche.traitement.participant marche.traitement.exceptions

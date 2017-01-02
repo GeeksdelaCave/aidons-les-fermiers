@@ -5,7 +5,9 @@ import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Vendeur;
 import marche.traitement.produits.ProduitFermier;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -29,29 +31,49 @@ public class Controleur {
     /**
      * Constructeur privé
      */
+
+    private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
+        put("Vache",1300.0);
+        put("Cochon",45.0);
+        put("Fromage",8.0);
+        put("Lait",20.0);
+        put("Miel",15.0);
+        put("Oeuf",6.0);
+        put("Pomme",14.0);
+    }};
     private Controleur() {
     }
 
     /**
      * Méthode permettant de selectionner les acheteurs
      */
-    public Acheteur choisirAcheteur(Offre offre){
-        Random random= new Random();
-        ArrayList<Acheteur> liste = new ArrayList();
+    public static Acheteur choisirAcheteur(Offre offre, int val){
+        ArrayList<Acheteur> liste = new ArrayList<Acheteur>();
         liste = offre.getAcheteursPotentiels();
-        int index = random.nextInt(liste.size());
-        return liste.get(index); //Le controleur choisit un élément aléatoire de la liste
-        //TODO ajouter une deuxième algorithme
+        if(val == 1) {
+            Random random = new Random();
+            int index = random.nextInt(liste.size());
+            return liste.get(index); //Le controleur choisit un élément aléatoire de la liste
+        }
+        else{
+            return liste.get(0); // Le contrôleur choisit l'acheteur ayant proposer une offre en premier
+        }
+
     }
 
     /**
      * Méthode permettant le transfert de biens
      */
-    public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre){
+    public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre, Marche marche){
+
         for ( ProduitFermier p : offre.getProduits() ){
             acheteur.ajoutProduit(p);
             vendeur.enleverProduit(p);
         }
+
+        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + "a effectué un achat de : " + offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur() + "le :" + LocalDate.now();
+        LivreMarche.ajouterTransaction(strTransaction);
+        marche.enleverOffre(offre);
     }
 
     /**
@@ -65,16 +87,22 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant de réguler les prix des produits en fonction du seuil définit
+     * Méthode permettant de réguler le prix d'une offre
      */
-    public void regulerPrix(ProduitFermier produit){
-        //TODO implémenter la méthode
+    public static void regulerPrix(Offre offre, int quantite){
+        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+        if(prixMoyen - prixMoyen * 0.2 > offre.getPrix()){
+            offre.setPrix(prixMoyen - prixMoyen * 0.2);
+        }else{
+            offre.setPrix(prixMoyen + prixMoyen * 0.2);
+        }
+
     }
 
     /**
      * Méthode permettant d'ajouter une offre à un marché
      */
-    public void ajouterOffre(Offre offre, Marche marche){
+    public static void ajouterOffre(Offre offre, Marche marche){
         marche.ajouterOffre(offre);
     }
 
@@ -83,11 +111,27 @@ public class Controleur {
      * @param offre
      * @return
      */
-    public boolean valider(Offre offre){
-        if(offre.getPrix()> 100000){
-            return false;
+    public static boolean valider(Offre offre){
+        int quantite = 0;
+        for(ProduitFermier p : offre.getProduits()){
+            if(!p.isCommercialisable()){return false;}
         }
+        for(ProduitFermier p : offre.getVendeur().getInventaire()) {
+            if(p == offre.getProduits().get(0)){
+                ++quantite;
+            }
+        }
+
+        if(quantite <= offre.getProduits().size()){
+            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+            if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
+                Controleur.regulerPrix(offre,quantite);
+            }
+
+
+        }
+
         return true;
-        //TODO méthode à revoir
+
     }
 }

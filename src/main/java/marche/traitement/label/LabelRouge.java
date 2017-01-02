@@ -14,11 +14,10 @@ public class LabelRouge extends Label {
     /**
      * Constructeur de la classe LabelRouge
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
      * @param qualiteSuperieureProduit désigne si un produit est de qualité supérieure ou non. Elle n'est pas modifiable
      */
-    public LabelRouge(int idLabel,boolean qualiteSuperieureProduit) {
-        super(idLabel);
+    public LabelRouge(boolean qualiteSuperieureProduit) {
+        super();
         this.qualiteSuperieureProduit = qualiteSuperieureProduit;
     }
 

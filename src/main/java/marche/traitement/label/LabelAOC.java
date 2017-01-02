@@ -2,7 +2,7 @@ package marche.traitement.label;
 
 /**
  * Classe LabelAOC désignant un label qui est attribué lorsqu'un produit est authentique et typique d'une région
- * @version 1.0
+ * @version 1.1
  */
 public class LabelAOC extends Label {
 
@@ -21,14 +21,14 @@ public class LabelAOC extends Label {
     /**
      * Constructeur de la classe LabelAOC
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
      * @param regionCreationProduit désigne la région de création d'un produit qui doit être typique. Elle n'est pas modifiable.
      * @param authenticiteProduit désigne le fait qu'un produit soit authentique ou non. Elle n'est pas modifiable.
      */
-    public LabelAOC(int idLabel,String regionCreationProduit,boolean authenticiteProduit) {
-        super(idLabel);
+    public LabelAOC(String regionCreationProduit,boolean authenticiteProduit) {
+        super();
         this.regionCreationProduit = regionCreationProduit;
         this.authenticiteProduit = authenticiteProduit;
+
     }
 
     /** Retourne la région de création d'un produit associé

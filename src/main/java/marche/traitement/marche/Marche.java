@@ -34,6 +34,12 @@ public abstract class Marche {
     public void ajouterOffre(Offre offre){
         catalogue.add(offre);
     }
+
+    /**
+     * Permet de retirer une offre du catalogue
+     * @param offre
+     */
+    public void enleverOffre(Offre offre){catalogue.remove(offre);}
 }
 
 //
