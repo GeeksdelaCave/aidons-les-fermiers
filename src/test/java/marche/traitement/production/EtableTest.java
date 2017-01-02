@@ -27,7 +27,7 @@ public class EtableTest {
     /**
      * @bug Bug connu : le test marche pour 3000 lancé unitairement, mais échoue lorsque la vache créée en amont est
      * créée. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Etable
+     * @see Vache#idVacheGeneral
      *//*
     @Test
     public void testCreerVachee_IdvacheEgal3000 () {

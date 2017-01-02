@@ -27,7 +27,7 @@ public class FromagerieTest {
     /**
      * @bug Bug connu : le test marche pour 250 lancé unitairement, mais échoue lorsque le fromage créé en amont est
      * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Fromagerie#idFromageFabriquee
+     * @see Fromage#idFromageGeneral
      *//*
     @Test
     public void testCreerfromage_IdFromageEgal250 () {

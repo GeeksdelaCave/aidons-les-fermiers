@@ -28,7 +28,7 @@ public class PoulaillerTest {
     /**
      * @bug Bug connu : le test marche pour 100 lancé unitairement, mais échoue lorsque l'œuf créé en amont est
      * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Poulailler#idOeufNaissance
+     * @see Oeuf#idPackOeufGeneral
      *//*
     @Test
     public void testCreerPackOeuf_IdPackEgal100 () {
