@@ -29,7 +29,7 @@ public class Vendeur extends Decorateur{
      * @param prix
      */
     public void proposerOffreVente( int quantite, ProduitFermier produit, int prix, Marche marche){
-        ArrayList<ProduitFermier> temp = new ArrayList<>();
+        ArrayList<ProduitFermier> temp = new ArrayList<ProduitFermier>();
         int cpt = 0;
         for(ProduitFermier p : this.getInventaire()){
             if(cpt == quantite) break;
