@@ -36,13 +36,18 @@ public class Controleur {
     /**
      * Méthode permettant de selectionner les acheteurs
      */
-    public static Acheteur choisirAcheteur(Offre offre){
-        Random random= new Random();
+    public static Acheteur choisirAcheteur(Offre offre, int val){
         ArrayList<Acheteur> liste = new ArrayList<Acheteur>();
         liste = offre.getAcheteursPotentiels();
-        int index = random.nextInt(liste.size());
-        return liste.get(index); //Le controleur choisit un élément aléatoire de la liste
-        //TODO ajouter une deuxième algorithme
+        if(val == 1) {
+            Random random = new Random();
+            int index = random.nextInt(liste.size());
+            return liste.get(index); //Le controleur choisit un élément aléatoire de la liste
+        }
+        else{
+            return liste.get(0); // Le contrôleur choisit l'acheteur ayant proposer une offre en premier
+        }
+
     }
 
     /**
