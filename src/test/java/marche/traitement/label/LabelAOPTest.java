@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelAOP
- * @version 1.1
+ * @version 1.2
  */
 public class LabelAOPTest {
     /**

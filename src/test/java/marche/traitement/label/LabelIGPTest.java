@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelIGP
- * @version 1.0
+ * @version 1.1
  */
 public class LabelIGPTest {
     /**

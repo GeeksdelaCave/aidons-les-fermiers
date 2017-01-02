@@ -9,7 +9,7 @@ public abstract class Label {
      * Identifiant d'un label. Il n'est pas modifiable.
      * @see Label#getIdLabel()
      */
-    protected int idLabel;
+    private int idLabel;
 
     /**
      * Identifiant statique qui va permettre d'initialiser en interne la donnée membre idLabel. S'incrémente pour différencier les labels entre eux
