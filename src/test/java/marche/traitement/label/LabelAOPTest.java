@@ -16,7 +16,7 @@ public class LabelAOPTest {
     public void testGetIdLabel()
    {
        Label label = new LabelAOP("Roquefort");
-       assert label.getIdLabel() == 1000;
+       assert label.getIdLabel() == 1;
    }
 
     /**
