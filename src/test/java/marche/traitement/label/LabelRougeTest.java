@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelRouge
- * @version 1.0
+ * @version 1.1
  */
 public class LabelRougeTest {
     /**
@@ -15,7 +15,7 @@ public class LabelRougeTest {
     @Test
     public void testGetIsQualiteSuperieureProduit()
     {
-        LabelRouge labelRouge = new LabelRouge(750,true);
+        LabelRouge labelRouge = new LabelRouge(true);
         assert labelRouge.isQualiteSuperieureProduit();
     }
 }

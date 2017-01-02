@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Miel représentant un pot de miel
  * @version 1.6
+ * @author Thibaud CENENT
  */
 public class Miel extends ProduitFermier {
     /**
