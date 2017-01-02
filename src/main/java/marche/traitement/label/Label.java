@@ -2,7 +2,7 @@ package marche.traitement.label;
 
 /**
  * Creation de la classe abstraite Label représentant une idée de qu'on peut être représenté un label
- * @version 1.0
+ * @version 1.1
  */
 public abstract class Label {
     /**
@@ -12,7 +12,7 @@ public abstract class Label {
     private int idLabel;
 
     /**
-     *
+     * Identifiant statique qui va permettre d'initialiser en interne la donnée membre idLabel. S'incrémente pour différencier les labels entre eux
      * @see Label#Label()
      */
     private static int idLabelGeneral = 1;
@@ -20,7 +20,7 @@ public abstract class Label {
     /** Constructeur de la classe abstraite Label
      *
      */
-    public Label() {
+    protected Label() {
         this.idLabel = idLabelGeneral;
         ++idLabelGeneral;
 
