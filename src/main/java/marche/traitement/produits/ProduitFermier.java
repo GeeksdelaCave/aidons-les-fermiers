@@ -58,12 +58,6 @@ public abstract class ProduitFermier {
     protected short qualite;
 
     /**
-     * Identifiant d'un label qui s'inceémentera au fur et à mesure de l'attribution d'un label. Il n'est pas modifiable
-     * @see ProduitFermier#validerLabel()
-     */
-    private static int idLabelAttribue = 1;
-
-    /**
      * Unité de production qui est propre à un produit fermier. Elle n'est pas modifiable
      * @see ProduitFermier#getUniteDeProduction()
      */
@@ -121,21 +115,20 @@ public abstract class ProduitFermier {
     }
 
     /**
-     * Valider le choix d'un label en fonction des caractéristiques du produit fermier avec la gestion de l'exception ProduitPerimeException.
+     * Valider le choix d'un label en fonction des caractéristiques du produit fermier.
      */
     public void validerLabel() {
         if(this.isCommercialisable()) {
             if (associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()) {
-                this.ajouterLabel(new LabelAOC(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable())); // On lui ajoute ces 3 trois labels en même temps car ils concernent la même situation d'attribution
-                ++idLabelAttribue;
-                this.ajouterLabel(new LabelAOP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
-                ++idLabelAttribue;
-                this.ajouterLabel(new LabelIGP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
-                ++idLabelAttribue;
+                // On lui ajoute ces deux labels en même temps car ils concernent la même situation d'attribution
+
+                //this.ajouterLabel(new LabelAOC(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
+                //this.ajouterLabel(new LabelAOP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
             }
             if (this.getQualite() > 70) {
-                this.ajouterLabel(new LabelRouge(idLabelAttribue, true));
-                ++idLabelAttribue;
+
+                //this.ajouterLabel(new LabelRouge(idLabelAttribue, true));
+                // this.ajouterLabel(new LabelIGP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit())); // Ce label n'est attribué que si on a attribué un label rouge avant
             }
         }
 
