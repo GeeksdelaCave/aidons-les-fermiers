@@ -6,6 +6,11 @@ import java.time.LocalDate;
 
 /**
  * Classe Poulailler représentant un poulailler gérant le produit fermier Oeuf
+ *
+ * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
  * @version 1.2
  */
 public class Poulailler extends UniteDeProduction {
@@ -15,7 +20,7 @@ public class Poulailler extends UniteDeProduction {
      * @param capaciteeProduction qui désigne la capacitée maximale d'oeufs qu'un poulailler peut accueillir
      * @param regionCreationProduit qui désigne la région où est implanté le poulailler
      */
-    public Poulailler(int capaciteeProduction,String regionCreationProduit) {
+    public Poulailler(int capaciteeProduction, String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -28,7 +33,7 @@ public class Poulailler extends UniteDeProduction {
      * @return un oeuf qui est née et a été ajoutée à l'inventaire
      */
     public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
-        Oeuf oeuf = new Oeuf(prix,datePeremption,qualite,this);
+        Oeuf oeuf = new Oeuf(prix, datePeremption, qualite, this);
         ajoutInventaire(oeuf);
         return oeuf;
     }

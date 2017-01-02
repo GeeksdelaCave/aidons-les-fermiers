@@ -18,8 +18,8 @@ public class OffreTest {
      * Test de la bonne incrémentation du numéro de l'offre
      */
     public void testIncrementationOffres() {
-        Offre offre1 = new Offre(10, null);
-        Offre offre2 = new Offre(40, null);
+        Offre offre1 = new Offre(10, null, null);
+        Offre offre2 = new Offre(40, null, null);
 
         assert offre1.getIDOffre() != offre2.getIDOffre();
     }

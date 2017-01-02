@@ -1,13 +1,16 @@
 package marche.traitement.production;
 
-import marche.traitement.produits.ProduitFermier;
 import marche.traitement.produits.Vache;
 
 import java.time.LocalDate;
 
 /**
  * Classe Etable représentant le lieu où vont être stockés les vaches à naître
- * @version 1.0
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
  */
 public class Etable extends Enclos {
 
@@ -16,8 +19,7 @@ public class Etable extends Enclos {
      * @param capaciteeProduction désigne la capacitée maximale de vaches à accueillir dans l'etable
      * @param regionCreationProduit désigne la région où est situé l'étable
      */
-    public Etable(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Etable(int capaciteeProduction,String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -31,11 +33,9 @@ public class Etable extends Enclos {
      * @param poidsVache désigne le poids d'une vache
      * @return une vache crée et l'ajoute à l'inventaire
      */
-    public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache)
-    {
-        Vache vacheNee = new Vache(prixVache,datePeremption,qualite,nomVache,poidsVache,this);
+    public Vache creerVache(float prixVache, LocalDate datePeremption, short qualite, String nomVache, float poidsVache) {
+        Vache vacheNee = new Vache(prixVache, datePeremption, qualite, nomVache, poidsVache, this);
         ajoutInventaire(vacheNee);
         return vacheNee;
     }
-
 }

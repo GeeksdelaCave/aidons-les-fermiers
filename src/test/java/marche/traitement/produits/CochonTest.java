@@ -11,7 +11,11 @@ import static org.junit.Assert.*;
 
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
- * @version 1.3
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.5
  */
 public class CochonTest {
 
@@ -20,7 +24,7 @@ public class CochonTest {
      */
     @Test
     public void testGetIdCochon() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55,1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f, "Cochondelait", new EnclosCochon(150, "Alsace"));
         assertEquals(1200, cochon.getIdCochon());
     }
 
@@ -28,8 +32,8 @@ public class CochonTest {
      * Teste le poids d'un cochon
      */
     @Test
-    public void testGetPoidsCochon()
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55,  1200, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+    public void testGetPoidsCochon() {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getPoidsCochon() == 5.0f);
     }
 
@@ -37,9 +41,8 @@ public class CochonTest {
      * Teste le type de cochon
      */
     @Test
-    public void testGetTypeCochon()
-    {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+    public void testGetTypeCochon() {
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f, "Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals("Cochondelait", cochon.getTypeDeCochon());
     }
 
@@ -48,7 +51,7 @@ public class CochonTest {
      */
     @Test
     public void testGetPrix() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f, "Cochondelait", new EnclosCochon(150,"Alsace"));
         assertTrue(cochon.getPrix() == 150.0f);
     }
 
@@ -57,7 +60,7 @@ public class CochonTest {
      */
     @Test
     public void testGetDatePeremption() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
     }
 
@@ -68,7 +71,7 @@ public class CochonTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption_ProduitPerimeException() throws ProduitPerimeException {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 30), (short) 55, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
     }
 
@@ -77,7 +80,7 @@ public class CochonTest {
      */
     @Test
     public void testGetQualite() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals(55, cochon.getQualite());
     }
 
@@ -87,7 +90,7 @@ public class CochonTest {
     @Test
     public void testGetUniteDeProduction() {
         EnclosCochon encloCochon = new EnclosCochon(150,"Alsace");
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", encloCochon);
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f, "Cochondelait", encloCochon);
         assertSame(encloCochon, cochon.getUniteDeProduction());
     }
 }

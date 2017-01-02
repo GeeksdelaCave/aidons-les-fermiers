@@ -1,22 +1,21 @@
 package marche.traitement.produits;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
 import marche.traitement.exceptions.ProduitPerimeException;
-
 import marche.traitement.production.Fromagerie;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * FromageTest désigne les tests unitaires effectués sur la classe Fromage
- * @version 1.3
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.4
  */
 public class FromageTest {
     /**
@@ -54,7 +53,7 @@ public class FromageTest {
      */
     @Test
     public void testGetPrix() {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertTrue(fromage.getPrix() == 20.0f);
     }
 
@@ -63,7 +62,7 @@ public class FromageTest {
      */
     @Test
     public void testGetDatePeremption() {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2100, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2100, Month.NOVEMBER,30), (short) 55.0,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), fromage.getDatePeremption());
     }
 
@@ -74,7 +73,7 @@ public class FromageTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption_ProduitPerimeException() throws ProduitPerimeException {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertEquals(LocalDate.of(2016, Month.NOVEMBER, 30), fromage.getDatePeremption());
     }
 
@@ -83,7 +82,7 @@ public class FromageTest {
      */
     @Test
     public void testGetQualite() {
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,"Fromagedechevre",3.0f, new Fromagerie(50,"Normandie"));
         assertEquals(55, fromage.getQualite());
     }
 
@@ -93,7 +92,7 @@ public class FromageTest {
     @Test
     public void testGetUniteDeProduction() {
         Fromagerie fromagerie = new Fromagerie(150,"Alsace");
-        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0, 1100,"Fromagedechevre",3.0f, fromagerie);
+        Fromage fromage = new Fromage(20.0f,LocalDate.of(2016, Month.NOVEMBER,30), (short) 55.0,"Fromagedechevre",3.0f, fromagerie);
         assertSame(fromagerie, fromage.getUniteDeProduction());
     }
 }

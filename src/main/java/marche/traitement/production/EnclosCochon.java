@@ -6,7 +6,11 @@ import java.time.LocalDate;
 
 /**
  * Classe EnclosCochon désignant le lieu où vont être naître et être stockés les cochons nés
- * @version 1.0
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
  */
 public class EnclosCochon extends Enclos {
 
@@ -15,8 +19,7 @@ public class EnclosCochon extends Enclos {
      * @param capaciteeProduction désigne la capacitée maximale de cochons à accueillir
      * @param regionCreationProduit désigne la région où est située l'enclos à cochon
      */
-    public EnclosCochon (int capaciteeProduction, String regionCreationProduit)
-    {
+    public EnclosCochon (int capaciteeProduction, String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -30,9 +33,8 @@ public class EnclosCochon extends Enclos {
      * @param typeCochon désigne le type de cochon
      * @return un cochon créé et l'ajoute à l'inventaire
      */
-    public Cochon creerCochon(float prixCochon,LocalDate datePeremption,short qualite,float poidsCochon,String typeCochon)
-    {
-        Cochon cochonNee = new Cochon(prixCochon,datePeremption,qualite,poidsCochon,typeCochon,this);
+    public Cochon creerCochon(float prixCochon, LocalDate datePeremption, short qualite, float poidsCochon, String typeCochon) {
+        Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, poidsCochon, typeCochon,this);
         ajoutInventaire(cochonNee);
         return cochonNee;
     }

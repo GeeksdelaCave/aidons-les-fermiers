@@ -6,7 +6,12 @@ import java.time.LocalDate;
 
 /**
  * Classe Verger désignant un verger où on gérera le remplissage des cagettes de pommes crées
- * @version 1.1
+ *
+ * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
 public class Verger extends UniteDeProduction {
 
@@ -15,8 +20,7 @@ public class Verger extends UniteDeProduction {
      * @param capaciteeProduction désigne la capacitée maximale de cagette de pommes à stocker
      * @param regionCreationProduit désigne la région où sont implantés les vergers
      */
-    public Verger(int capaciteeProduction,String regionCreationProduit)
-    {
+    public Verger(int capaciteeProduction, String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -31,8 +35,8 @@ public class Verger extends UniteDeProduction {
      * @param nbPomes désigne le nbre de pommes pour 1 cagette
      * @return une cagette de pomme crée et ajoutée à l'inventaire
      */
-    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite,float poidsCagette,String typePomme,int nbPomes) {
-        Pomme cagette = new Pomme(prix,datePeremption,qualite,poidsCagette,typePomme,nbPomes,this);
+    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPomes) {
+        Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPomes, this);
         inventaireUniteDeProduction.add(cagette);
         return cagette;
     }
