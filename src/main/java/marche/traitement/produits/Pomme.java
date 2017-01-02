@@ -11,6 +11,7 @@ import java.time.LocalDate;
  *  @author Tristan DIETZ
  *
  *  @version 1.7
+ *  @author Thibaud CENENT
  */
 public class Pomme extends ProduitFermier {
 

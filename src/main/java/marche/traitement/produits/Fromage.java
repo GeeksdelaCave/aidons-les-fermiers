@@ -7,10 +7,10 @@ import java.time.LocalDate;
 /**
  * Classe Fromage représentant un fromage
  *
+ * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
  * @version 1.7
- *
  */
 public class Fromage extends ProduitFermier {
 

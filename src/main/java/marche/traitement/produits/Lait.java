@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Lait qui représentera en réalité un pack de lait
  *
+ * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
  * @version 1.7

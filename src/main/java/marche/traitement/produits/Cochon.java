@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Cochon représentant un cochon
  *
+ * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
  * @version 1.7

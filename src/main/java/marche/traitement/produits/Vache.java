@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Vache qui est une fille d'un produit fermier et qui représente une vache
  *
+ * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *

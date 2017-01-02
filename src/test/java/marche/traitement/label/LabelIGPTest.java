@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelIGP
- * @version 1.0
+ * @version 1.1
  */
 public class LabelIGPTest {
     /**
@@ -15,7 +15,7 @@ public class LabelIGPTest {
     @Test
     public void testGetLieuGeographiqueProduit()
     {
-        LabelIGP labelIGP = new LabelIGP(800,"Roquefort");
+        LabelIGP labelIGP = new LabelIGP("Roquefort");
         assert labelIGP.getLieuGeographiqueProduit().equals("Roquefort");
     }
 

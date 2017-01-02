@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Oeuf représentant un pack d'oeuf
  *
+ * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *

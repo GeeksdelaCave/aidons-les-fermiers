@@ -7,6 +7,7 @@ import java.time.LocalDate;
 /**
  * Classe Miel représentant un pot de miel
  *
+ * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
  * @version 1.7
