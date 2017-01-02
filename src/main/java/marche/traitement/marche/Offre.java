@@ -41,7 +41,7 @@ public class Offre {
      * @see ProduitFermier
      * @see Offre#getProduits()
      */
-    private Collection<ProduitFermier> produits;
+    private ArrayList<ProduitFermier> produits;
 
     /**
      * Liste regroupant tous les acheteurs potentiels
@@ -54,7 +54,7 @@ public class Offre {
      * Attribut général des offres.
      * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les offres de manière unique.
      *
-     * @see Offre#Offre(double, Collection)
+     * @see Offre#Offre(double, ArrayList,Vendeur)
      * @see Offre#IDOffre
      */
     private static int IDOffreGeneral = 1;
@@ -65,7 +65,7 @@ public class Offre {
      * un identifiant unique.
      *
      * @see Offre#getIDOffre()
-     * @see Offre#Offre(double, Collection)
+     * @see Offre#Offre(double, ArrayList,Vendeur)
      * @see Offre#IDOffreGeneral
      */
     private int IDOffre;
@@ -75,9 +75,10 @@ public class Offre {
      * @param prix Le prix demande par le vendeur au moment de la création de l'offre.
      * @param produits Les produits proposés à la vente par le vendeur.
      */
-    public Offre( double prix, Collection<ProduitFermier> produits) {
+    public Offre( double prix, ArrayList<ProduitFermier> produits, Vendeur vendeur) {
         this.prix = prix;
         this.produits = produits;
+        this.vendeur = vendeur;
         this.IDOffre = this.IDOffreGeneral;
         ++this.IDOffreGeneral;
     }
@@ -122,7 +123,7 @@ public class Offre {
      *
      * @see Offre#produits
      */
-    public Collection<ProduitFermier> getProduits(){
+    public ArrayList<ProduitFermier> getProduits(){
         return this.produits;
     }
 
@@ -160,5 +161,11 @@ public class Offre {
     public ArrayList<Acheteur> getAcheteursPotentiels(){
         return this.acheteursPotentiels;
     }
+
+    /**
+     *
+     * @return Vendeur
+     */
+    public Vendeur getVendeur(){return this.vendeur;}
 
 }

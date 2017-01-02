@@ -30,14 +30,15 @@ public class Vendeur extends Decorateur{
      */
     public void proposerOffreVente( int quantite, ProduitFermier produit, int prix, Marche marche){
         ArrayList<ProduitFermier> temp = new ArrayList<>();
-
-        for(int i = 0; i < quantite; ++i){
-            temp.add(produit);
+        int cpt = 0;
+        for(ProduitFermier p : this.getInventaire()){
+            if(cpt == quantite) break;
+            temp.add(p);
+            ++cpt;
         }
+        Offre offre = new Offre(prix,temp,this);
 
-        Offre offre = new Offre(prix,temp);
-
-        if(Controleur.valider(offre)){
+            if(Controleur.valider(offre)){
             Controleur.ajouterOffre(offre, marche);
         }
         else{

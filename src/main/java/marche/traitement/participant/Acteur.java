@@ -3,6 +3,7 @@ package marche.traitement.participant;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.produits.ProduitFermier;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -19,7 +20,7 @@ public abstract class Acteur {
     /**
      * Liste des produits fermiers possédé par le fermier
      */
-    protected Collection<ProduitFermier> inventaire;
+    protected ArrayList<ProduitFermier> inventaire;
 
     /**
      * Nom de l'acteur
@@ -47,7 +48,7 @@ public abstract class Acteur {
      * Getter de l'inventaire de l'acteur
      * @return Inventaire de l'acteur
      */
-    public Collection<ProduitFermier> getInventaire () {
+    public ArrayList<ProduitFermier> getInventaire () {
         return inventaire;
     }
 

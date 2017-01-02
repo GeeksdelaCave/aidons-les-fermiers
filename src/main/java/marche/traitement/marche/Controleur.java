@@ -7,6 +7,7 @@ import marche.traitement.produits.ProduitFermier;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -30,6 +31,16 @@ public class Controleur {
     /**
      * Constructeur privé
      */
+
+    private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
+        put("Vache",1300.0);
+        put("Cochon",45.0);
+        put("Fromage",8.0);
+        put("Lait",20.0);
+        put("Miel",15.0);
+        put("Oeuf",6.0);
+        put("Pomme",14.0);
+    }};
     private Controleur() {
     }
 
@@ -76,9 +87,9 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant de réguler les prix des produits en fonction du seuil définit
+     * Méthode permettant de réguler le prix d'une offre
      */
-    public static void regulerPrix(ProduitFermier produit){
+    public static void regulerPrix(Offre offre){
         //TODO implémenter la méthode
     }
 
@@ -95,10 +106,26 @@ public class Controleur {
      * @return
      */
     public static boolean valider(Offre offre){
-        if(offre.getPrix()> 100000){
-            return false;
+        int quantite = 0;
+        for(ProduitFermier p : offre.getProduits()){
+            if(!p.isCommercialisable()){return false;}
         }
+        for(ProduitFermier p : offre.getVendeur().getInventaire()) {
+            if(p == offre.getProduits().get(0)){
+                ++quantite;
+            }
+        }
+
+        if(quantite <= offre.getProduits().size()){
+            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+            if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
+                Controleur.regulerPrix(offre);
+            }
+
+
+        }
+
         return true;
-        //TODO méthode à revoir
+
     }
 }
