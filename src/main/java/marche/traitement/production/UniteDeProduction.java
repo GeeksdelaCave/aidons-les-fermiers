@@ -27,6 +27,10 @@ public abstract class UniteDeProduction {
      */
    protected String regionCreationProduit;
 
+    public PriorityQueue<ProduitFermier> getInventaireUniteDeProduction() {
+        return inventaireUniteDeProduction;
+    }
+
     /**
      * Rangée de produits fermiers dans l'unité de production où chaque produit sera trié en fonction de sa qualité. Elle est modfiable tant qu'on est pas à la capacitée maximale
      * @see UniteDeProduction#ajoutInventaire(ProduitFermier)
@@ -71,4 +75,6 @@ public abstract class UniteDeProduction {
 
         return regionCreationProduit;
     }
+
+
 }
