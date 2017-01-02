@@ -122,13 +122,13 @@ public abstract class ProduitFermier {
             if (associationProduitRegion.get(this.getClass().getCanonicalName()) == this.getUniteDeProduction().getRegionCreationProduit()) {
                 // On lui ajoute ces deux labels en même temps car ils concernent la même situation d'attribution
 
-                //this.ajouterLabel(new LabelAOC(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
-                //this.ajouterLabel(new LabelAOP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit()));
+                this.ajouterLabel(new LabelAOC(this.getUniteDeProduction().getRegionCreationProduit(), this.isCommercialisable()));
+                this.ajouterLabel(new LabelAOP(this.getUniteDeProduction().getRegionCreationProduit()));
             }
             if (this.getQualite() > 70) {
 
-                //this.ajouterLabel(new LabelRouge(idLabelAttribue, true));
-                // this.ajouterLabel(new LabelIGP(idLabelAttribue, this.getUniteDeProduction().getRegionCreationProduit())); // Ce label n'est attribué que si on a attribué un label rouge avant
+                this.ajouterLabel(new LabelRouge(true));
+                this.ajouterLabel(new LabelIGP(this.getUniteDeProduction().getRegionCreationProduit())); // Ce label n'est attribué que si on a attribué un label rouge avant
             }
         }
 

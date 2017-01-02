@@ -11,13 +11,18 @@ public abstract class Label {
      */
     private int idLabel;
 
+    /**
+     *
+     * @see Label#Label()
+     */
+    private static int idLabelGeneral = 1;
+
     /** Constructeur de la classe abstraite Label
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
-     *
      */
-    public Label(int idLabel) {
-        this.idLabel = idLabel;
+    public Label() {
+        this.idLabel = idLabelGeneral;
+        ++idLabelGeneral;
 
     }
 

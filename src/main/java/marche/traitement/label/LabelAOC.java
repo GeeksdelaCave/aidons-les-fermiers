@@ -21,12 +21,11 @@ public class LabelAOC extends Label {
     /**
      * Constructeur de la classe LabelAOC
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
      * @param regionCreationProduit désigne la région de création d'un produit qui doit être typique. Elle n'est pas modifiable.
      * @param authenticiteProduit désigne le fait qu'un produit soit authentique ou non. Elle n'est pas modifiable.
      */
-    public LabelAOC(int idLabel,String regionCreationProduit,boolean authenticiteProduit) {
-        super(idLabel);
+    public LabelAOC(String regionCreationProduit,boolean authenticiteProduit) {
+        super();
         this.regionCreationProduit = regionCreationProduit;
         this.authenticiteProduit = authenticiteProduit;
     }

@@ -15,11 +15,10 @@ public class LabelIGP extends Label {
     /**
      * Constructeur de la classe LabelIGP
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
      * @param lieuGeographiqueProduit désigne le lieu dans lequel a été conçu un produit. Elle n'est pas modifiable
      */
-    public LabelIGP(int idLabel,String lieuGeographiqueProduit) {
-        super(idLabel);
+    public LabelIGP(String lieuGeographiqueProduit) {
+        super();
         this.lieuGeographiqueProduit = lieuGeographiqueProduit;
     }
 
