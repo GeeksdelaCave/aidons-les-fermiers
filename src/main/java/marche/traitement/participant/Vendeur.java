@@ -42,7 +42,7 @@ public class Vendeur extends Decorateur{
             Controleur.ajouterOffre(offre, marche);
         }
         else{
-            //TODO terminer la méthode
+            //TODO gerer exception
         }
 
     }

@@ -163,9 +163,15 @@ public class Offre {
     }
 
     /**
-     *
+     * Permet de récupérer le prix d'une offre
      * @return Vendeur
      */
     public Vendeur getVendeur(){return this.vendeur;}
+
+    /**
+     * Permet de modifier le prix d'une offre
+     * @param prix
+     */
+    public void setPrix(double prix){this.prix = prix;}
 
 }
