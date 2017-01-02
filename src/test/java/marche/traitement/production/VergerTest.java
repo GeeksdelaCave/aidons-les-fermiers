@@ -27,7 +27,7 @@ public class VergerTest {
     /**
      * @bug Bug connu : le test marche pour 2000 lancé unitairement, mais échoue lorsque la pomme créée en amont est
      * créée. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Verger#idCagetteCree
+     * @see Pomme#idCagetteGeneral
      *//*
     @Test
     public void testCreerCagettePomme_IdCagetteEgal1000 () {

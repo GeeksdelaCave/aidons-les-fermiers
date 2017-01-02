@@ -27,7 +27,7 @@ public class RucheTest {
     /**
      * @bug Bug connu : le test marche pour 1500 lancé unitairement, mais échoue lorsque le miel créé en amont est
      * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Ruche#idPotMielCree
+     * @see Miel#idSeauMielGeneral
      *//*
     @Test
     public void testCreerPotMiel_IdPotEgal1500 () {

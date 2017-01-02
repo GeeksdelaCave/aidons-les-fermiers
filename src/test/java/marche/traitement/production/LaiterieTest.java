@@ -27,7 +27,7 @@ public class LaiterieTest {
     /**
      * @bug Bug connu : le test marche pour 500 lancé unitairement, mais échoue lorsque le lait créé en amont est
      * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Laiterie#idPackLaitCree
+     * @see Lait#idLaitGeneral
      *//*
     @Test
     public void testCreerPackLait_IdPackEgal500 () {
