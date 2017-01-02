@@ -36,7 +36,7 @@ public class Oeuf extends ProduitFermier {
     private int idPackOeuf;
 
     /**
-     * Constructeur d'un Oeuf
+     * Constructeur d'un pack d'oeuf
      *
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
@@ -57,6 +57,7 @@ public class Oeuf extends ProduitFermier {
      * @return l'identifiant d'un pack d'oeuf
      */
     public int getIdPackOeuf() {
+
         return idPackOeuf;
     }
 }

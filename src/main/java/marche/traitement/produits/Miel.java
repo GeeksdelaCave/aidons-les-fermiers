@@ -73,6 +73,7 @@ public class Miel extends ProduitFermier {
      * @return l'identifiant d'un seau de miel
      */
     public int getIdSeauMiel() {
+
         return idSeauMiel;
     }
 
@@ -81,6 +82,7 @@ public class Miel extends ProduitFermier {
      * @return le poids d'un seau de miel
      */
     public float getPoidsSeauMiel() {
+
         return poidsSeauMiel;
     }
 
@@ -89,6 +91,7 @@ public class Miel extends ProduitFermier {
      * @return le type de miel
      */
     public String getTypeDeMiel() {
+
         return typeDeMiel;
     }
 }

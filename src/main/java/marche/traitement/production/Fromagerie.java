@@ -1,5 +1,6 @@
 package marche.traitement.production;
 
+import marche.traitement.exceptions.InventairePleinException;
 import marche.traitement.produits.Fromage;
 
 import java.time.LocalDate;
@@ -24,14 +25,14 @@ public class Fromagerie extends UniteDeProduction {
         this.regionCreationProduit = regionCreationProduit;
     }
 
-    /** Retourne un fromage créée et ajoutée à l'inventaire
+    /** Retourne un fromage créée et ajoutée à l'inventaire avec la prise en compte de l'exception InventairePlein
      *
      * @param prixFromage désigne le prix d'un fromage
      * @param datePeremption désigne la date de péremption d'un fromage
      * @param qualite désigne la qualité d'un fromage
      * @param nomFromage désigne le nom d'un fromage
      * @param poidsFromage désigne le poids d'un fromage
-     * @return un fromage créé et ajouté à l'inventaire
+     * @return un fromage créé et ajouté à l'inventaire ou null si on retourne une exception
      */
     public Fromage creerFromage(float prixFromage, LocalDate datePeremption, short qualite, String nomFromage, float poidsFromage) {
         Fromage fromageCree = new Fromage(prixFromage, datePeremption, qualite, nomFromage, poidsFromage, this);

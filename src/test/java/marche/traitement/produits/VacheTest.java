@@ -51,7 +51,7 @@ public class VacheTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetIsCommercialise() throws ProduitPerimeException {
-        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0, "vachetest",50.0f, new Etable(1245, "PACA"));
+        Vache vache = new Vache(150.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55, "vachetest",50.0f, new Etable(1245, "PACA"));
         assertTrue(vache.isCommercialisable());
     }
 

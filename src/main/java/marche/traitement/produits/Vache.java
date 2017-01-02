@@ -70,6 +70,7 @@ public class Vache extends ProduitFermier {
      * @return l'identifiant de la vache
      */
     public int getIdVache() {
+
         return idVache;
     }
 
@@ -78,6 +79,7 @@ public class Vache extends ProduitFermier {
      * @return le nom d'une vache
      */
     public String getNomVache() {
+
         return nomVache;
     }
 
@@ -86,6 +88,7 @@ public class Vache extends ProduitFermier {
      * @return le poids d'une vache
      */
     public float getPoidsVache() {
+
         return poidsVache;
     }
 }

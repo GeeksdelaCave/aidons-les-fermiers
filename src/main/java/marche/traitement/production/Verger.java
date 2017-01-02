@@ -1,5 +1,6 @@
 package marche.traitement.production;
 
+import marche.traitement.exceptions.InventairePleinException;
 import marche.traitement.produits.Pomme;
 
 import java.time.LocalDate;
@@ -25,15 +26,15 @@ public class Verger extends UniteDeProduction {
         this.regionCreationProduit = regionCreationProduit;
     }
 
-    /** Retourne une cagette de pommes créée et ajoutée à l'inventaire
+    /** Retourne une cagette de pommes créée et ajoutée à l'inventaire avec la prise en compte de l'exception Inventaire Plein
      *
      * @param prix désigne le prix d'une cagette de pommes crée
      * @param datePeremption désigne la date de péremption d'une cagette
      * @param qualite désigne la qualité d'une cagette
      * @param poidsCagette désigne le poids d'une cagette
      * @param typePomme désigne le type de pomme crée dans la cagette
-     * @param nbPomes désigne le nbre de pommes pour 1 cagette
-     * @return une cagette de pomme crée et ajoutée à l'inventaire
+     * @param nbPommes désigne le nbre de pommes pour 1 cagette
+     * @return une cagette de pomme crée et ajoutée à l'inventaire ou null si on retourne une exception
      */
     public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPomes) {
         Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPomes, this);

@@ -72,6 +72,7 @@ public class Fromage extends ProduitFermier {
      * @return l'identifiant d'un fromage
      */
     public int getIdFromage() {
+      
         return this.idFromage;
     }
 
@@ -80,6 +81,7 @@ public class Fromage extends ProduitFermier {
      * @return le nom du fromage
      */
     public String getNomFromage() {
+
         return nomFromage;
     }
 
@@ -88,6 +90,7 @@ public class Fromage extends ProduitFermier {
      * @return le poids du fromage
      */
     public float getPoidsFromage() {
+
         return poidsFromage;
     }
 }
