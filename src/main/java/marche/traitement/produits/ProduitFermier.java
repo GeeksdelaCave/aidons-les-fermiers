@@ -20,7 +20,7 @@ public abstract class ProduitFermier {
      * Map qui associe le type d'un produit à une région particulière pour l'attribution des labels. Elle n'est pas modifiable
      * @see ProduitFermier#validerLabel()
      */
-    protected static final HashMap<String, String> associationProduitRegion = new HashMap<String, String>() {{
+    private static final HashMap<String, String> associationProduitRegion = new HashMap<String, String>() {{
        put("Pomme", "Bretagne");
        put("Fromage", "Normandie");
        put("Lait", "Aquitaine");
@@ -108,14 +108,7 @@ public abstract class ProduitFermier {
      * @return si le produit est commercialisable ou pas
      */
     public boolean isCommercialisable() {
-        try {
-            return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
-        }
-        catch(ProduitPerimeException ppe)
-        {
-            ppe.printStackTrace();
-            return false;
-        }
+        return this.getQualite() >= 30 && this.getDatePeremption().isAfter(LocalDate.now());
     }
 
     /** Retourne l'unité de production associé à un produit fermier
