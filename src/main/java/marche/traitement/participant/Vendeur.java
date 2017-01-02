@@ -33,8 +33,10 @@ public class Vendeur extends Decorateur{
         int cpt = 0;
         for(ProduitFermier p : this.getInventaire()){
             if(cpt == quantite) break;
-            temp.add(p);
-            ++cpt;
+            if(p == produit) {
+                temp.add(p);
+                ++cpt;
+            }
         }
         Offre offre = new Offre(prix,temp,this);
 
@@ -43,7 +45,7 @@ public class Vendeur extends Decorateur{
         }
         else{
             //TODO gerer exception
-        }
+    }
 
     }
 }
