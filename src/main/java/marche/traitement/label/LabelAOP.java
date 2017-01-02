@@ -14,11 +14,10 @@ public class LabelAOP extends Label {
     /**
      * Constructeur de la classe LabelAOP
      *
-     * @param idLabel désigne l'identifiant d'un label. Il n'est pas modifiable.
      * @param nomLieuCreation désigne le nom du lieu d'où provient le produit fermier associé. Il n'est pas modifiable
      */
-    public LabelAOP(int idLabel,String nomLieuCreation) {
-        super(idLabel);
+    public LabelAOP(String nomLieuCreation) {
+        super();
         this.nomLieuCreation = nomLieuCreation;
 
     }

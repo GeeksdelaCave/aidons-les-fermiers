@@ -11,8 +11,18 @@ public abstract class Label {
      */
     protected int idLabel;
 
-    protected Label(int idLabel) {
-        this.idLabel = idLabel;
+    /**
+     * Identifiant statique qui va permettre d'initialiser en interne la donnée membre idLabel. S'incrémente pour différencier les labels entre eux
+     * @see Label#Label()
+     */
+    private static int idLabelGeneral = 1;
+
+    /** Constructeur de la classe abstraite Label
+     *
+     */
+    protected Label() {
+        this.idLabel = idLabelGeneral;
+        ++idLabelGeneral;
     }
 
     /** Retourne l'identifiant d'un label
