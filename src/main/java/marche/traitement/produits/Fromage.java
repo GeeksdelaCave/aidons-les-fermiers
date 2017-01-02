@@ -9,11 +9,26 @@ import java.time.LocalDate;
  * @version 1.6
  */
 public class Fromage extends ProduitFermier {
+
     /**
-     * L'identifiant d'un fromage. Il n'est pas modifiable
-     * @see Fromage#getIdFromage()
+     * Attribut général des cochons.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les cochons de manière unique.
+     *
+     * @see Fromage#Fromage(float, LocalDate, short, String, float, Fromagerie)
+     * @see Fromage#IDFromage
      */
-    private int idFromage;
+    private static int IDFromageGeneral = 250;
+
+    /**
+     * Identifiant du cochon.
+     * Cette valeur est définie à la création du cochon en fonction de la valeur d'IDFromageGeneral, permettant d'obtenir
+     * un identifiant unique.
+     *
+     * @see Fromage#getIdFromage()
+     * @see Fromage#Fromage(float, LocalDate, short, String, float, Fromagerie)
+     * @see Fromage#IDFromageGeneral
+     */
+    private int IDFromage;
 
     /**
      * Le nom d'un fromage. Il n'est pas modifiable
@@ -33,16 +48,16 @@ public class Fromage extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param idFromage      désigne l'identifiant d'un fromage
      * @param nomFromage     désigne le nom d'un fromage
      * @param poidsFromage   désigne le poids d'un fromage en kg
      * @param fromagerie     désigne une fromagerie associè à un fromage
      */
-    public Fromage(float prix, LocalDate datePeremption, short qualite, int idFromage, String nomFromage, float poidsFromage, Fromagerie fromagerie) {
+    public Fromage(float prix, LocalDate datePeremption, short qualite, String nomFromage, float poidsFromage, Fromagerie fromagerie) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
-        this.idFromage = idFromage;
+        this.IDFromage = IDFromageGeneral;
+        IDFromageGeneral += 100;
         this.nomFromage = nomFromage;
         this.poidsFromage = poidsFromage;
         this.uniteDeProduction = fromagerie;
@@ -53,7 +68,7 @@ public class Fromage extends ProduitFermier {
      * @return l'identifiant d'un fromage
      */
     public int getIdFromage() {
-        return idFromage;
+        return this.IDFromage;
     }
 
     /** Retourne le nom du fromage

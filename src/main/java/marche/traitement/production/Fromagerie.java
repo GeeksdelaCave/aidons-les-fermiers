@@ -2,7 +2,6 @@ package marche.traitement.production;
 
 
 import marche.traitement.produits.Fromage;
-import marche.traitement.produits.ProduitFermier;
 
 import java.time.LocalDate;
 
@@ -11,12 +10,6 @@ import java.time.LocalDate;
  * @version 1.0
  */
 public class Fromagerie extends UniteDeProduction {
-
-    /**
-     * Identifiant statique d'un fromage fabriqué et qui s'incrémentera pour chaque nouvelle création car identifiant unique
-     * @see Fromagerie#ajoutInventaire(ProduitFermier)
-     */
-    private static int idFromageFabriquee = 250;
 
     /** Constructeur de la classe Fromagerie
      *
@@ -40,8 +33,7 @@ public class Fromagerie extends UniteDeProduction {
      */
     public Fromage creerFromage(float prixFromage,LocalDate datePeremption,short qualite,String nomFromage,float poidsFromage)
     {
-        Fromage fromageCree = new Fromage(prixFromage,datePeremption,qualite,idFromageFabriquee,nomFromage,poidsFromage,this);
-        idFromageFabriquee+= 100;
+        Fromage fromageCree = new Fromage(prixFromage, datePeremption, qualite, nomFromage, poidsFromage, this);
         ajoutInventaire(fromageCree);
         return fromageCree;
     }
