@@ -12,6 +12,7 @@ script:
   - mvn compile
   - mvn test
   - mvn verify
+  - source set
 
 # Branches à ajouter à la compilation
 branches:
