@@ -2,11 +2,13 @@ package marche.traitement.label;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-
 /**
  * Tests unitaires de la classe LabelAOC
- * @version 1.2
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.3
  */
 public class LabelAOCTest {
     /**

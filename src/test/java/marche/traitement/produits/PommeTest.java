@@ -1,12 +1,13 @@
 package marche.traitement.produits;
 
-import static org.junit.Assert.assertTrue;
-
 import marche.traitement.production.Verger;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 /**
  * PommeTest désigne le test unitaire effectué sur la classe Pomme sur tous ces getter() crées
  * @version 1.6
@@ -19,7 +20,7 @@ public class PommeTest {
     public void testGetIdCagette()
     {
         Pomme pomme = new Pomme(20.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,  6.0f, "Reinette",8, new Verger(50,"Normandie"));
-        assertTrue(pomme.getIdCagette() == 1500);
+        assertEquals(pomme.getIdCagette(), 1000);
     }
 
     /**

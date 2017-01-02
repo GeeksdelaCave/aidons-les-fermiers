@@ -7,9 +7,16 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.Month;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Classe test de la classe Oeuf
+ *
  * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
+ * @see Oeuf
  */
 public class OeufTest {
 
@@ -17,7 +24,7 @@ public class OeufTest {
     public void testConstructeurOeufAvecIdPackOeuf() {
         Poulailler poulailler = new Poulailler(65432, "PACA");
         Oeuf oeuf = new Oeuf(3.8f, LocalDate.of(2017, Month.DECEMBER, 31), (short) 50, poulailler);
-        assert oeuf.getIdPackOeuf() == 34786543;
+        assertTrue(oeuf.getIdPackOeuf() == 100 || oeuf.getIdPackOeuf() == 200); //car idOeufGeneral = 100
     }
 
     @Test (expected = ProduitPerimeException.class)

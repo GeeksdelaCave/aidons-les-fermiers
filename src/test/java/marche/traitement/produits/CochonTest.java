@@ -27,7 +27,7 @@ public class CochonTest {
     @Test
     public void testGetIdCochon() {
         Cochon cochon = new Cochon(150.0f, LocalDate.of(2016, Month.NOVEMBER, 30), (short) 55, 5.0f, "Cochondelait", new EnclosCochon(150, "Alsace"));
-        assertEquals(1200, cochon.getIdCochon());
+        assertEquals(2000, cochon.getIdCochon()); //car idCochonGeneral = 1 initialement
     }
 
     /**

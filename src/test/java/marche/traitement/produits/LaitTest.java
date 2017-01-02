@@ -51,7 +51,7 @@ public class LaitTest {
      */
     @Test
     public void testGetDatePeremption() {
-        Lait lait = new Lait(10.0f,LocalDate.of(2016, Month.NOVEMBER,28), (short) 55.0,3.0f, new Laiterie(30,"Paris"));
+        Lait lait = new Lait(10.0f,LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55.0,3.0f, new Laiterie(30,"Paris"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), lait.getDatePeremption());
     }
 
