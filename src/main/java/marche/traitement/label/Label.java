@@ -9,7 +9,7 @@ public abstract class Label {
      * Identifiant d'un label. Il n'est pas modifiable.
      * @see Label#getIdLabel()
      */
-    private int idLabel;
+    protected int idLabel;
 
     /**
      * Identifiant statique qui va permettre d'initialiser en interne la donnée membre idLabel. S'incrémente pour différencier les labels entre eux
@@ -23,7 +23,6 @@ public abstract class Label {
     protected Label() {
         this.idLabel = idLabelGeneral;
         ++idLabelGeneral;
-
     }
 
     /** Retourne l'identifiant d'un label
