@@ -2,7 +2,7 @@ package marche.traitement.label;
 
 /**
  * Classe LabelAOC désignant un label qui est attribué lorsqu'un produit est authentique et typique d'une région
- * @version 1.0
+ * @version 1.1
  */
 public class LabelAOC extends Label {
 
@@ -28,6 +28,7 @@ public class LabelAOC extends Label {
         super();
         this.regionCreationProduit = regionCreationProduit;
         this.authenticiteProduit = authenticiteProduit;
+
     }
 
     /** Retourne la région de création d'un produit associé

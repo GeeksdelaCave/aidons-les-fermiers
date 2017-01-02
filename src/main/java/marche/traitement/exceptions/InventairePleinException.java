@@ -1,5 +1,11 @@
 package marche.traitement.exceptions;
 
+/**
+ * Exception soulevée lorsque l'inventaire est plein.
+ *
+ * @author Tristan DIETZ
+ * @version 1.1
+ */
 public class InventairePleinException extends RuntimeException {
 
     /**
@@ -13,6 +19,7 @@ public class InventairePleinException extends RuntimeException {
 
     /**
      * Affichage du texte d'erreur de toString() dans la sortie standard.
+     * @see InventairePleinException#toString()
      */
     @Override
     public void printStackTrace() {
