@@ -7,6 +7,10 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.Month;
 
+/**
+ * Classe test de la classe Oeuf
+ * @author Romain COLONNA D'ISTRIA
+ */
 public class OeufTest {
 
     @Test

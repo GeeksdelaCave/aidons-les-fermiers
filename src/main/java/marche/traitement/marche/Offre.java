@@ -2,7 +2,9 @@ package marche.traitement.marche;
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.Acheteur;
+
 import marche.traitement.participant.Vendeur;
+
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import java.util.Collection;
 
 /**
  * Classe Offre
+
  * @author Nicolas Guigou
  *
  * @version 1.1
@@ -17,6 +20,7 @@ import java.util.Collection;
  * @see Vendeur
  * @see Acheteur
  * @see ProduitFermier
+
  */
 public class Offre {
 
@@ -117,11 +121,13 @@ public class Offre {
     }
 
     /**
+
      * Peremet de retourner la collection de produit
      *
      * @return Collection<ProduitFermier> ProduitFermier produits
      *
      * @see Offre#produits
+
      */
     public ArrayList<ProduitFermier> getProduits(){
         return this.produits;
