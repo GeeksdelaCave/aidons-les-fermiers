@@ -11,7 +11,13 @@ import static org.junit.Assert.*;
 
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
- * @version 1.3
+ *
+ * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.4
+ * @see Cochon
+ * @see EnclosCochon
  */
 public class CochonTest {
 
@@ -67,7 +73,7 @@ public class CochonTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption_ProduitPerimeException() throws ProduitPerimeException {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
+        Cochon cochon = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
         assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
     }
 
