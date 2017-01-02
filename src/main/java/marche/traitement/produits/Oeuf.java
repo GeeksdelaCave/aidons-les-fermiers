@@ -6,23 +6,34 @@ import java.time.LocalDate;
 
 /**
  * Classe Oeuf représentant un pack d'oeuf
- * @version 1.6
+ *
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
  */
 public class Oeuf extends ProduitFermier {
+
+    /**
+     * Attribut général d'un pack d'oeuf.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les packs d'oeufs de manière
+     * unique.
+     *
+     * @see Oeuf#Oeuf(float, LocalDate, short, Poulailler)
+     * @see Oeuf#idPackOeuf
+     */
+    private static int idPackOeufGeneral = 100;
 
     /**
      * Identifiant d'un pack d'oeuf.
      * Cette valeur est définie à la création du pack d'oeuf en fonction de la valeur d'idPackOeufGeneral, permettant d'obtenir
      * un identifiant unique.
+     *
+     * @see Oeuf#getIdPackOeuf()
+     * @see Oeuf#Oeuf(float, LocalDate, short, Poulailler)
+     * @see Oeuf#idPackOeufGeneral
      */
     private int idPackOeuf;
-
-
-    /**
-     * Attribut général d'un pack d'oeuf.
-     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les pack d'oeuf de manière unique.
-     */
-    private static int idPackOeufGeneral = 100;
 
     /**
      * Constructeur d'un Oeuf

@@ -6,7 +6,11 @@ import java.time.LocalDate;
 
 /**
  * Classe Fromage représentant un fromage
- * @version 1.6
+ *
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
+ *
  */
 public class Fromage extends ProduitFermier {
 
@@ -15,20 +19,20 @@ public class Fromage extends ProduitFermier {
      * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les cochons de manière unique.
      *
      * @see Fromage#Fromage(float, LocalDate, short, String, float, Fromagerie)
-     * @see Fromage#IDFromage
+     * @see Fromage#idFromage
      */
-    private static int IDFromageGeneral = 250;
+    private static int idFromageGeneral = 250;
 
     /**
      * Identifiant du cochon.
-     * Cette valeur est définie à la création du cochon en fonction de la valeur d'IDFromageGeneral, permettant d'obtenir
+     * Cette valeur est définie à la création du cochon en fonction de la valeur d'idFromageGeneral, permettant d'obtenir
      * un identifiant unique.
      *
      * @see Fromage#getIdFromage()
      * @see Fromage#Fromage(float, LocalDate, short, String, float, Fromagerie)
-     * @see Fromage#IDFromageGeneral
+     * @see Fromage#idFromageGeneral
      */
-    private int IDFromage;
+    private int idFromage;
 
     /**
      * Le nom d'un fromage. Il n'est pas modifiable
@@ -56,8 +60,8 @@ public class Fromage extends ProduitFermier {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
-        this.IDFromage = IDFromageGeneral;
-        IDFromageGeneral += 100;
+        this.idFromage = idFromageGeneral;
+        idFromageGeneral += 100;
         this.nomFromage = nomFromage;
         this.poidsFromage = poidsFromage;
         this.uniteDeProduction = fromagerie;
@@ -68,7 +72,7 @@ public class Fromage extends ProduitFermier {
      * @return l'identifiant d'un fromage
      */
     public int getIdFromage() {
-        return this.IDFromage;
+        return this.idFromage;
     }
 
     /** Retourne le nom du fromage

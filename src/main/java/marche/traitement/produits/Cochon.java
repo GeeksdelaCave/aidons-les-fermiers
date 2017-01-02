@@ -6,7 +6,10 @@ import java.time.LocalDate;
 
 /**
  * Classe Cochon représentant un cochon
- * @version 1.6
+ *
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
  */
 public class Cochon extends ProduitFermier {
 
@@ -15,20 +18,20 @@ public class Cochon extends ProduitFermier {
      * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les cochons de manière unique.
      *
      * @see Cochon#Cochon(float, LocalDate, short, float, String, EnclosCochon)
-     * @see Cochon#IDCochon
+     * @see Cochon#idCochon
      */
-    private static int IDCochonGeneral = 2000;
+    private static int idCochonGeneral = 2000;
 
     /**
      * Identifiant du cochon.
-     * Cette valeur est définie à la création du cochon en fonction de la valeur d'IDCochonGeneral, permettant d'obtenir
+     * Cette valeur est définie à la création du cochon en fonction de la valeur d'idCochonGeneral, permettant d'obtenir
      * un identifiant unique.
      *
      * @see Cochon#getIdCochon()
      * @see Cochon#Cochon(float, LocalDate, short, float, String, EnclosCochon)
-     * @see Cochon#IDCochonGeneral
+     * @see Cochon#idCochonGeneral
      */
-    private int IDCochon;
+    private int idCochon;
 
     /**
      *  Le poids d'un cochon en kg. Il n'est pas modifiable
@@ -56,7 +59,8 @@ public class Cochon extends ProduitFermier {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
-        this.IDCochon = IDCochonGeneral;
+        this.idCochon = idCochonGeneral;
+        idCochonGeneral += 100;
         this.poidsCochon = poidsCochon;
         this.typeDeCochon = typeDeCochon;
         this.uniteDeProduction = enclosCochon;
@@ -67,7 +71,7 @@ public class Cochon extends ProduitFermier {
      * @return l'identifiant d'un cochon
      */
     public int getIdCochon() {
-        return IDCochon;
+        return idCochon;
     }
 
     /** Retourne le poids d'un cochon
