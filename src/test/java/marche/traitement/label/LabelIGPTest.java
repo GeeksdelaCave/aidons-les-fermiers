@@ -15,7 +15,7 @@ public class LabelIGPTest {
     @Test
     public void testGetLieuGeographiqueProduit()
     {
-        LabelIGP labelIGP = new LabelIGP(800,"Roquefort");
+        LabelIGP labelIGP = new LabelIGP("Roquefort");
         assert labelIGP.getLieuGeographiqueProduit().equals("Roquefort");
     }
 

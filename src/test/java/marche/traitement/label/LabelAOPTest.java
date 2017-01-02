@@ -15,7 +15,7 @@ public class LabelAOPTest {
    @Test
     public void testGetIdLabel()
    {
-       Label label = new LabelAOP(1000,"Roquefort");
+       Label label = new LabelAOP("Roquefort");
        assert label.getIdLabel() == 1000;
    }
 
@@ -25,7 +25,7 @@ public class LabelAOPTest {
    @Test
     public void testGetNomLieuCreation()
    {
-       LabelAOP labelAOP = new LabelAOP(1100,"Champagne");
+       LabelAOP labelAOP = new LabelAOP("Champagne");
        assert labelAOP.getNomLieuCreation().equals("Champagne");
    }
 }
