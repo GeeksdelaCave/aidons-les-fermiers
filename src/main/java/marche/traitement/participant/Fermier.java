@@ -30,7 +30,7 @@ public abstract class Fermier extends Acteur {
      * @param uniteDeProductions Liste des unités de production attribuées au fermier lors de sa création
      * @param solde Solde à attribuer au fermier lors de sa création
      */
-    public Fermier (ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde) {
+    public Fermier (ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, double solde) {
         this.inventaire = inventaire;
         this.uniteDeProductions = uniteDeProductions;
         this.solde = solde;

@@ -22,7 +22,7 @@ public class Arboriculteur extends Fermier implements Visitable {
      * @param uniteDeProductions unités de productions dont dispose un fermier à sa création
      * @param solde Gain dont dispose un fermier lors de sa création
      */
-    public Arboriculteur(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
+    public Arboriculteur(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, double solde){
         super(inventaire,uniteDeProductions,solde);
     }
 
@@ -32,6 +32,7 @@ public class Arboriculteur extends Fermier implements Visitable {
      * @return le nouveau solde de l'arboriculteur après la cotisation
      */
     public double payerCotisation(Cotisation cotisation) {
+
         return cotisation.calculMontantCotisation(this);
     }
 }

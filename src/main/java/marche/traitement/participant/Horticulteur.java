@@ -22,7 +22,7 @@ public class Horticulteur extends Fermier implements Visitable {
      * @param uniteDeProductions unités de productions dont dispose un fermier à sa création
      * @param solde Gain dont dispose un fermier lors de sa création
      */
-    public Horticulteur(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
+    public Horticulteur(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, double solde){
         super(inventaire,uniteDeProductions,solde);
     }
 
