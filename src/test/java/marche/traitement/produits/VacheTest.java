@@ -4,10 +4,12 @@ import marche.traitement.exceptions.ProduitPerimeException;
 import marche.traitement.production.Etable;
 import org.junit.Test;
 
+import java.security.PublicKey;
 import java.time.LocalDate;
 import java.time.Month;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -21,15 +23,42 @@ import static org.junit.Assert.assertTrue;
  */
 public class VacheTest {
 
-    Vache vache1 = new Vache(150.0f,LocalDate.of(2100, Month.NOVEMBER,28), (short) 55.0, "vachetest",50.0f, new Etable(30,"Aquitaine"));
-    Vache vache2 = new Vache(150.0f,LocalDate.of(2000, Month.NOVEMBER,28), (short) 55.0, "vachetest",50.0f, new Etable(30,"Aquitaine"));
+    Etable etable = new Etable(30,"Aquitaine");
+    Vache vacheNonPerime = new Vache(150.0f,LocalDate.of(2100, Month.NOVEMBER,28), (short) 55, "vachetest",50.0f, etable);
+    Vache vachePerime    = new Vache(150.0f,LocalDate.of(2000, Month.NOVEMBER,28), (short) 55, "vachetest",50.0f, etable);
+
+    /**
+     * Teste l'identifiant de la vache.
+     * La première condition sert pour quand le test est lancé seul, la seconde
+     * pour quand tout les tests sont lancés ensembles.
+     */
+    @Test
+    public void testGetIdVache() {
+        assertTrue(vacheNonPerime.getIdVache() == 3000 || vacheNonPerime.getIdVache() == 4500); //car 15 autres vaches instanciée avant
+    }
+
+    /**
+     * Teste le nom de la vache
+     */
+    @Test
+    public void testGetNomVache() {
+        assertTrue(vacheNonPerime.getNomVache() == "vachetest");
+    }
+
+    /**
+     * Teste le poids de la vache
+     */
+    @Test
+    public void testGetPoidsVache() {
+        assertTrue(vacheNonPerime.getPoidsVache() == 50.0f);
+    }
 
     /**
      * Teste le prix de la vache
      */
     @Test
     public void testGetPrix() {
-        assertTrue(vache1.getPrix() == 150.0f);
+        assertTrue(vacheNonPerime.getPrix() == 150.0f);
     }
 
     /**
@@ -38,47 +67,46 @@ public class VacheTest {
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption() {
         LocalDate ld = LocalDate.of(2000, Month.NOVEMBER,28);
-        assertEquals(vache2.getDatePeremption(), ld);
+        assertEquals(vachePerime.getDatePeremption(), ld);
     }
 
     /**
-     * Teste la valeur de la qualité de la vache
+     * Teste l'exception ProduitPerimeException lors de l'accès a la date de péremption
+     */
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetDatePeremption_ProduitPerimeException() {
+        assertEquals(LocalDate.of(2000, Month.NOVEMBER,28), vachePerime.getDatePeremption());
+    }
+
+    /**
+     * Teste la valeur de la qualité de la vache.
      */
     @Test
     public void testGetQualite() {
-        assertTrue(vache1.getQualite() == (short) 55.0);
+        assertTrue(vacheNonPerime.getQualite() == (short) 55.0);
     }
 
     /**
-     * Teste si la vache est commercialisable et que l'exception est bien géré
+     * Test l'unité de production d'une vache
+     */
+    @Test
+    public void testGetUniteDeProduction() {
+        assertSame(etable, vacheNonPerime.getUniteDeProduction());
+    }
+
+    /**
+     * Teste si la vache est commercialisable
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetIsCommercialise() throws ProduitPerimeException {
-        assertTrue(vache2.isCommercialisable());
-    }
-
-
-    /**
-     * Teste l'identifiant de la vache
-     */
-    @Test
-    public void testGetIdVache() {
-        assertTrue(vache1.getIdVache() == 3000 || vache1.getIdVache() == 3800);
+        assertTrue(vachePerime.isCommercialisable());
     }
 
     /**
-     * Teste le nom de la vache
+     * Teste de l'exception ProduitPerimeException de la vérification pour la commercialisation
      */
-    @Test
-    public void testGetNomVache() {
-        assertTrue(vache1.getNomVache() == "vachetest");
-    }
-
-    /**
-     * Teste le poids de la vache
-     */
-    @Test
-    public void testGetPoidsVache() {
-        assertTrue(vache1.getPoidsVache() == 50.0f);
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetIsCommercialise_ProduitPerimeException() throws ProduitPerimeException {
+        assertTrue(vachePerime.isCommercialisable());
     }
 }
