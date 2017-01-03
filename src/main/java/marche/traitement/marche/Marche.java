@@ -1,5 +1,6 @@
 package marche.traitement.marche;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -17,7 +18,7 @@ public abstract class Marche {
     /**
      * Catalogue peremttant de répertorier les offre
      */
-    protected Collection<Offre> catalogue;
+    protected ArrayList<Offre> catalogue;
 
     /**
      * Constructeur
@@ -40,6 +41,12 @@ public abstract class Marche {
      * @param offre
      */
     public void enleverOffre(Offre offre){catalogue.remove(offre);}
+
+    /**
+     * Permet de récupérer le catalogue contenant les offres
+     * @return catalogue
+     */
+    public ArrayList<Offre> getCatalogue(){return this.catalogue;}
 }
 
 //
