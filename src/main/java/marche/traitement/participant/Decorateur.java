@@ -53,4 +53,21 @@ public class Decorateur extends Acteur {
     public void enleverSolde(double montant) throws SoldeNonDisponibleException {
         acteur.enleverSolde(montant);
     }
+
+    /**
+     * Permet d'ajouter un produit à l'inventaire de l'acteur
+     * @param produit Produit à ajouter a l'inventaire du fermier.
+     *
+     */
+    public void ajoutProduit(ProduitFermier produit){
+        acteur.ajoutProduit(produit);
+    }
+
+    /**
+     * Permet d'enlever un produit de l'inventaire de l'acteur
+     * @param produit Produit à enlever de l'inventaire de l'acteur
+     */
+    public void enleverProduit(ProduitFermier produit){
+        acteur.enleverProduit(produit);
+    }
 }
