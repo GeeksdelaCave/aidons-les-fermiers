@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-#set -e # En cas d'erreur, renvoi un code 0 pour ne pas faire échouer le tout
+set -e # En cas d'erreur, renvoi un code 0 pour ne pas faire échouer le tout
+
+sudo apt-get install git
 
 # Clone du repo pour travailler dedans (dossier repo_clone
 git clone https://github.com/GeeksdelaCave/aidons-les-fermiers.git repo_clone
@@ -22,7 +24,7 @@ javadoc -private -sourcepath "src/main/java:src/main/ressources" \
       marche.traitement.produits
 
 # Ajout du dossier doc nouvellement remplit
-git add doc/
+git add -A doc/
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
 
 # Push

@@ -13,6 +13,9 @@ import java.util.Random;
 /**
  * Singleton Controleur représentant le système
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
 public class Controleur {
     /**
@@ -45,10 +48,15 @@ public class Controleur {
 
     /**
      * Méthode permettant de selectionner les acheteurs
+     * Elle présente plusieurs algorithmes :
+     * - 1 : choisit aléatoirement l'acheteur
+     * Autre : choisit le premier acheteur de la liste
+     * @param offre Offre sujette à la recherche
+     * @param val Choix de l'algorithme
+     * @return L'acheteur choisit par l'algorithme <b>val</b>.
      */
     public static Acheteur choisirAcheteur(Offre offre, int val){
-        ArrayList<Acheteur> liste = new ArrayList<Acheteur>();
-        liste = offre.getAcheteursPotentiels();
+        ArrayList<Acheteur> liste = offre.getAcheteursPotentiels();
         if(val == 1) {
             Random random = new Random();
             int index = random.nextInt(liste.size());

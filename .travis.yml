@@ -4,7 +4,7 @@
 language: java
 
 # Désactivation du sudo pour le script qui suit : les conteneurs Travis-CI ne le prennent pas en compte
-sudo: false
+sudo: required
 
 # Commandes MAVEN demandées à Travis-CI
 script:
