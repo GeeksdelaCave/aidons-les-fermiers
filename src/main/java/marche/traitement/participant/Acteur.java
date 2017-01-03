@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Tristan DIETZ
  * @author Romain COLONNA D'ISTRIA
  *
- * @version 1.1
+ * @version 1.2
  */
 public abstract class Acteur {
 

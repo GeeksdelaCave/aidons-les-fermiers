@@ -1,5 +1,12 @@
 package marche.traitement.participant;
 
+/**
+ * Classe des Grossistes
+ *
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
+ */
 public class Grossiste extends Acteur {
 
     /**

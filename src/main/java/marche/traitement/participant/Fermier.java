@@ -9,7 +9,11 @@ import java.util.Collection;
 
 /**
  * Classe fermier (étand la classe Acteur)
+ *
  * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
  */
 public abstract class Fermier extends Acteur {
 
@@ -26,7 +30,7 @@ public abstract class Fermier extends Acteur {
      * @param uniteDeProductions Liste des unités de production attribuées au fermier lors de sa création
      * @param solde Solde à attribuer au fermier lors de sa création
      */
-    protected Fermier (ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde) {
+    public Fermier (ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde) {
         this.inventaire = inventaire;
         this.uniteDeProductions = uniteDeProductions;
         this.solde = solde;
