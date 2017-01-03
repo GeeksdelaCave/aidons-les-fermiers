@@ -12,7 +12,7 @@ git config user.name "Doc E. L. Brown"
 git config user.email "doc@backtothefuture.go"
 
 # Génération de la documentation
-javadoc -private -sourcepath "src/main/java:src/main/ressources:src/test/java" \
+javadoc -private -sourcepath "src/main/java:src/main/ressources" \
       -d doc \
       marche.traitement.exceptions \
       marche.traitement.label \
