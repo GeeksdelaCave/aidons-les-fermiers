@@ -3,7 +3,7 @@ package marche.traitement.cotisation;
 /**
  * Interface permettant de gérer le payement de la cotisation d'un fermier.
  * @author Thibaud CENENT
- * @version 1.0
+ * @version 1.1
  */
 public interface Visitable {
 

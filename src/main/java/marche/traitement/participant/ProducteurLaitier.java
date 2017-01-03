@@ -12,7 +12,7 @@ import java.util.Collection;
  * Classe relative à un fermier produisant du lait
  * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
- * @version 1.0
+ * @version 1.1
  */
 public class ProducteurLaitier extends Fermier implements Visitable {
 

@@ -8,7 +8,7 @@ import marche.traitement.participant.ProducteurLaitier;
 /**
  * Création d'une cotisation générale qui va gérer le calcul bien spécifique pour chaque type de fermier.
  * @author Thibaud CENENT
- * @version 1.0
+ * @version 1.1
  */
 public class CotisationGenerale implements Cotisation {
 

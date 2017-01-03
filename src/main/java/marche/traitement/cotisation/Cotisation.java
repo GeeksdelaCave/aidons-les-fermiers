@@ -8,7 +8,7 @@ import marche.traitement.participant.ProducteurLaitier;
 /**
  * Visiteur Cotisation qui va gérer le payement de la cotisation du système en fonction du type d'acteur
  * @author Thibaud CENENT
- * @version 1.0
+ * @version 1.1
  */
 public interface Cotisation {
 

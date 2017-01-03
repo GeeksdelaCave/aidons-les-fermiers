@@ -12,7 +12,7 @@ import java.util.Collection;
  * Classe relative à un fermier gérant la production de viande bovine ou cochon
  * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
- * @version 1.0
+ * @version 1.1
  */
 public class ProducteurDeViande extends Fermier implements Visitable {
 

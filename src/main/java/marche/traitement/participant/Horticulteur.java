@@ -12,7 +12,7 @@ import java.util.Collection;
  * Classe relative à un fermier gérant la culture de jardins
  * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
- * @version 1.0
+ * @version 1.1
  */
 public class Horticulteur extends Fermier implements Visitable {
 
