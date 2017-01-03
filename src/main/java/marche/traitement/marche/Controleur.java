@@ -111,28 +111,18 @@ public class Controleur {
      * Méthode permettant de valider une offre si son prix n'est pas trop élevé.
      *
      * @param offre Offre à valider par le controler
+     * @param quantite Quantité de produits contenus dans l'offre
      * @return Si l'offre est composée de produits exclusivement commercialisables, qu'ils sont dans l'inventaire et que le prix est acceptable.
      */
-    public static boolean valider(Offre offre){
-        int quantite = 0;
+    public static boolean valider(Offre offre,int quantite){
         for(ProduitFermier p : offre.getProduits()){
             if(!p.isCommercialisable())
                 return false;
         }
-
-        for(ProduitFermier p : offre.getVendeur().getInventaire()) {
-            if(p == offre.getProduits().get(0)){
-                ++quantite;
-            }
+        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
+        if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
+            Controleur.regulerPrix(offre,quantite);
         }
-
-        if(quantite <= offre.getProduits().size()){
-            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
-            if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
-                Controleur.regulerPrix(offre,quantite);
-            }
-        }
-
         return true;
 
     }
