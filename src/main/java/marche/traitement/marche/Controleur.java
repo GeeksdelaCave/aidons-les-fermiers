@@ -69,7 +69,6 @@ public class Controleur {
         int cpt = 0;
         for ( ProduitFermier p : offre.getProduits() ){
             acheteur.ajoutProduit(p);
-            vendeur.enleverProduit(p);
             ++cpt;
         }
 

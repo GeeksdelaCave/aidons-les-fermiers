@@ -35,6 +35,7 @@ public class Vendeur extends Decorateur{
             if(cpt == quantite) break;
             if(p.getClass().getCanonicalName() == NomProduit) {
                 temp.add(p);
+                this.enleverProduit(p);
                 ++cpt;
             }
         }
