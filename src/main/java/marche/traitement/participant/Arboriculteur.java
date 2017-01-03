@@ -1,5 +1,7 @@
 package marche.traitement.participant;
 
+import marche.traitement.cotisation.Cotisation;
+import marche.traitement.cotisation.Visitable;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -10,9 +12,9 @@ import java.util.Collection;
  * Classe relative à un fermier gérant la production des fruits.
  * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
- * @version 1.0
+ * @version 1.1
  */
-public class Arboriculteur extends Fermier {
+public class Arboriculteur extends Fermier implements Visitable {
 
     /** Constructeur principal de Arboriculteur
      *
@@ -22,5 +24,14 @@ public class Arboriculteur extends Fermier {
      */
     public Arboriculteur(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
         super(inventaire,uniteDeProductions,solde);
+    }
+
+    /**
+     *
+     * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
+     * @return le nouveau solde de l'arboriculteur après la cotisation
+     */
+    public double payerCotisation(Cotisation cotisation) {
+        return cotisation.calculMontantCotisation(this);
     }
 }

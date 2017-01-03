@@ -1,5 +1,7 @@
 package marche.traitement.participant;
 
+import marche.traitement.cotisation.Cotisation;
+import marche.traitement.cotisation.Visitable;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -10,9 +12,9 @@ import java.util.Collection;
  * Classe relative à un fermier produisant du lait
  * @author Thibaud CENENT
  * @author Romain COLONNA D'ISTRIA
- * @version 1.0
+ * @version 1.1
  */
-public class ProducteurLaitier extends Fermier {
+public class ProducteurLaitier extends Fermier implements Visitable {
 
     /** Constructeur principal de ProducteurLaitier
      *
@@ -22,5 +24,14 @@ public class ProducteurLaitier extends Fermier {
      */
     public ProducteurLaitier(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
         super(inventaire,uniteDeProductions,solde);
+    }
+
+    /**
+     *
+     * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
+     * @return le nouveau solde du producteur de lait après la cotisation
+     */
+    public double payerCotisation(Cotisation cotisation) {
+        return cotisation.calculMontantCotisation(this);
     }
 }
