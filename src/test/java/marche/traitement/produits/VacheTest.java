@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *
- * @version 1.7
+ * @version 1.8
  */
 public class VacheTest {
 

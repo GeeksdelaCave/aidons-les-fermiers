@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
  * PommeTest désigne le test unitaire effectué sur la classe Pomme sur tous ces getter() crées
  *
  * @author Romain COLONNA D'ISTRIA
- * @version 1.6
+ * @version 1.7
  */
 public class PommeTest {
 
@@ -63,10 +63,6 @@ public class PommeTest {
     public void testGetDatePeremption() {
         assertEquals(LocalDate.of(2100, Month.NOVEMBER,28), pommeNonPerime.getDatePeremption());
     }
-
-
-
-
 
     /**
      * Test de l'exception ProduitPerimeException lors de l'accès a la date de péremption

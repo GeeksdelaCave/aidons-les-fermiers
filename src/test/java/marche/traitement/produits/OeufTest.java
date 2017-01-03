@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.Month;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -15,22 +17,81 @@ import static org.junit.Assert.assertTrue;
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *
- * @version 1.2
+ * @version 1.3
  * @see Oeuf
  */
 public class OeufTest {
 
+
+    Poulailler poulailler = new Poulailler(50,"Normandie");
+    Oeuf oeufNonPerime = new Oeuf(20.0f, LocalDate.of(2100, Month.NOVEMBER,28), (short) 55, poulailler);
+    Oeuf oeufPerime    = new Oeuf(20.0f, LocalDate.of(2000, Month.NOVEMBER,28), (short) 55, poulailler);
+
+    /**
+     * Teste l'identifiant du pack d'oeuf.
+     * La première condition sert pour quand le test est lancé seul, la seconde
+     * pour quand tout les tests sont lancés ensembles.
+     */
     @Test
-    public void testConstructeurOeufAvecIdPackOeuf() {
-        Poulailler poulailler = new Poulailler(65432, "PACA");
-        Oeuf oeuf = new Oeuf(3.8f, LocalDate.of(2017, Month.DECEMBER, 31), (short) 50, poulailler);
-        assertTrue(oeuf.getIdPackOeuf() == 100 || oeuf.getIdPackOeuf() == 200); //car idOeufGeneral = 100
+    public void testGetIdPackOeuf() {
+        assertTrue(oeufNonPerime.getIdPackOeuf() == 100 || oeufNonPerime.getIdPackOeuf() == 1700); //Car 16 autres oeuf instanciées avant
     }
 
+    /**
+     * Test du rpix d'un pack d'oeuf
+     */
+    @Test
+    public void testGetPrix() {
+        assertTrue(oeufNonPerime.getPrix() == 20.0f);
+    }
+
+    /**
+     * Test la date de péremption d'un pack d'oeuf
+     */
+    @Test
+    public void testGetDatePeremption() {
+        assertEquals(LocalDate.of(2100, Month.NOVEMBER,28), oeufNonPerime.getDatePeremption());
+    }
+
+    /**
+     * Test de l'exception ProduitPerimeException lors de l'accès a la date de péremption
+     *
+     * @see ProduitPerimeException
+     */
     @Test (expected = ProduitPerimeException.class)
-    public void testDatePeremptionOeuf() throws ProduitPerimeException {
-        Poulailler poulailler = new Poulailler(65432, "PACA");
-        Oeuf oeuf = new Oeuf(3.9f, LocalDate.of(2002, Month.AUGUST, 4), (short) 1, poulailler);
-        assert oeuf.getDatePeremption().isBefore(LocalDate.now());
+    public void testGetDatePeremption_ProduitPerimeException() {
+        assertEquals(LocalDate.of(2000, Month.NOVEMBER,28), oeufPerime.getDatePeremption());
+    }
+
+    /**
+     * Test de la qualité d'unpack d'oeuf
+     */
+    @Test
+    public void testGetQualite() {
+        assertTrue(oeufNonPerime.getQualite() == (short) 55);
+    }
+
+    /**
+     * Test l'unité de production d'un pack d'oeuf
+     */
+    @Test
+    public void testGetUniteDeProduction() {
+        assertSame(poulailler, oeufNonPerime.getUniteDeProduction());
+    }
+
+    /**
+     * Teste si le pack d'oeuf est commercialisable
+     */
+    @Test
+    public void testGetIsCommercialise() {
+        assertTrue(oeufNonPerime.isCommercialisable());
+    }
+
+    /**
+     * Teste de l'exception ProduitPerimeException lors de la vérification pour la commercialisation
+     */
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetIsCommercialise_ProduitPerimeException() throws ProduitPerimeException {
+        assertTrue(oeufPerime.isCommercialisable());
     }
 }
