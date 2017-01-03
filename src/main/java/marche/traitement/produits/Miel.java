@@ -6,13 +6,32 @@ import java.time.LocalDate;
 
 /**
  * Classe Miel représentant un pot de miel
- * @version 1.6
+ *
  * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.7
  */
 public class Miel extends ProduitFermier {
+
     /**
-     * L'identifiant d'un seau de miel. Il n'est pas modifiable
+     * Attribut général d'un seau de miel.
+     * Cette valeur est incrémentée au fur et à mesure du code, permettant d'identifier les seau de miel de manière
+     * unique.
+     *
+     * @see Miel#Miel(float, LocalDate, short, float, String, Ruche)
+     * @see Miel#idSeauMiel
+     */
+    private static int idSeauMielGeneral = 1500;
+
+    /**
+     * Identifiant d'un seau de miel.
+     * Cette valeur est définie à la création d'un seau de miel en fonction de la valeur d'idSeauMielGeneral, permettant
+     * d'obtenir un identifiant unique.
+     *
      * @see Miel#getIdSeauMiel()
+     * @see Miel#Miel(float, LocalDate, short, float, String, Ruche)
+     * @see Miel#idSeauMielGeneral
      */
     private int idSeauMiel;
 
@@ -35,16 +54,16 @@ public class Miel extends ProduitFermier {
      * @param prix           désigne le prix du produit
      * @param datePeremption désigne la date de péremption du produit
      * @param qualite        désigne la qualité du produit sur une échelle de 1 à 100
-     * @param idSeauMiel     désigne l'identifiant d'un seau de miel
      * @param poidsSeauMiel  désigne le poids d'un seau de miel en kg
      * @param typeDeMiel     désigne le type de miel
      * @param ruche          désigne la ruche associé à un pot de miel
      */
-    public Miel(float prix, LocalDate datePeremption, short qualite, int idSeauMiel, float poidsSeauMiel, String typeDeMiel, Ruche ruche) {
+    public Miel(float prix, LocalDate datePeremption, short qualite, float poidsSeauMiel, String typeDeMiel,Ruche ruche) {
         this.prix = prix;
         this.datePeremption = datePeremption;
         this.qualite = qualite;
-        this.idSeauMiel = idSeauMiel;
+        this.idSeauMiel = idSeauMielGeneral;
+        idSeauMielGeneral += 100;
         this.poidsSeauMiel = poidsSeauMiel;
         this.typeDeMiel = typeDeMiel;
         this.uniteDeProduction = ruche;

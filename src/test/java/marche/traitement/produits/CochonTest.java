@@ -12,31 +12,26 @@ import static org.junit.Assert.*;
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
  *
+ * @author Romain COLONNA D'ISTRIA
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
- * @version 1.4
+ * @version 1.6
  * @see Cochon
  * @see EnclosCochon
  */
 public class CochonTest {
 
-    /**
-     * Teste l'identifiant d'un cochon
-     */
-    @Test
-    public void testGetIdCochon() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55,1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertEquals(1200, cochon.getIdCochon());
-    }
+    EnclosCochon encloCochon = new EnclosCochon(150,"Alsace");
+    Cochon cochonNonPerime = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", encloCochon);
+    Cochon cochonPerime    = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", encloCochon);
 
     /**
      * Teste le poids d'un cochon
      */
     @Test
     public void testGetPoidsCochon() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55,  1200, 5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertTrue(cochon.getPoidsCochon() == 5.0f);
+        assertTrue(cochonNonPerime.getPoidsCochon() == 5.0f);
     }
 
     /**
@@ -44,8 +39,7 @@ public class CochonTest {
      */
     @Test
     public void testGetTypeCochon() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertEquals("Cochondelait", cochon.getTypeDeCochon());
+        assertEquals("Cochondelait", cochonNonPerime.getTypeDeCochon());
     }
 
     /**
@@ -53,8 +47,7 @@ public class CochonTest {
      */
     @Test
     public void testGetPrix() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertTrue(cochon.getPrix() == 150.0f);
+        assertTrue(cochonNonPerime.getPrix() == 150.0f);
     }
 
     /**
@@ -62,8 +55,7 @@ public class CochonTest {
      */
     @Test
     public void testGetDatePeremption() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
+        assertEquals(LocalDate.of(2100, Month.NOVEMBER, 28), cochonNonPerime.getDatePeremption());
     }
 
     /**
@@ -73,8 +65,7 @@ public class CochonTest {
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetDatePeremption_ProduitPerimeException() throws ProduitPerimeException {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochon.getDatePeremption());
+        assertEquals(LocalDate.of(2100, Month.NOVEMBER, 30), cochonPerime.getDatePeremption());
     }
 
     /**
@@ -82,8 +73,7 @@ public class CochonTest {
      */
     @Test
     public void testGetQualite() {
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", new EnclosCochon(150,"Alsace"));
-        assertEquals(55, cochon.getQualite());
+        assertEquals(55, cochonNonPerime.getQualite());
     }
 
     /**
@@ -91,8 +81,22 @@ public class CochonTest {
      */
     @Test
     public void testGetUniteDeProduction() {
-        EnclosCochon encloCochon = new EnclosCochon(150,"Alsace");
-        Cochon cochon = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 30), (short) 55, 1200,5.0f,"Cochondelait", encloCochon);
-        assertSame(encloCochon, cochon.getUniteDeProduction());
+        assertSame(encloCochon, cochonNonPerime.getUniteDeProduction());
+    }
+
+    /**
+     * Teste si le cochon est commercialisable
+     */
+    @Test
+    public void testGetIsCommercialise() {
+        assertTrue(cochonNonPerime.isCommercialisable());
+    }
+
+    /**
+     * Teste de l'exception ProduitPerimeException lors de la vérification pour la commercialisation
+     */
+    @Test (expected = ProduitPerimeException.class)
+    public void testGetIsCommercialise_ProduitPerimeException() throws ProduitPerimeException {
+        assertTrue(cochonPerime.isCommercialisable());
     }
 }

@@ -8,16 +8,13 @@ import java.time.LocalDate;
 
 /**
  * Classe Laiterie désignant le lieu de fabrication des packs de lait
- * @version 1.2
+ *
  * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
 public class Laiterie extends UniteDeProduction {
-
-    /**
-     * Identifiant statique d'un pack de lait crée qui s'incrémentera pour chaque création car identifiant unique.
-     * @see Laiterie#creerPackLait(float, LocalDate, short, float)
-     */
-    private static int idPackLaitCree = 500;
 
     /** Constructeur de la classe Laiterie
      *
@@ -37,19 +34,9 @@ public class Laiterie extends UniteDeProduction {
      * @param poidsPackLait désigne le poids d'un pack de lait
      * @return un pack de lait crée et ajouté à l'inventaire ou null si on retourne une exception
      */
-    public Lait creerPackLait(float prixPack,LocalDate datePeremption,short qualite,float poidsPackLait) {
-        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
-        try {
-            Lait packLait = new Lait(prixPack, datePeremption, qualite, idPackLaitCree, poidsPackLait, this);
-            idPackLaitCree += 100;
-            ajoutInventaire(packLait);
-            return packLait;
-        }
-        catch(InventairePleinException ipe) {
-            ipe.printStackTrace();
-            return null;
-        }
+    public Lait creerPackLait(float prixPack, LocalDate datePeremption, short qualite, float poidsPackLait) {
+        Lait packLait = new Lait(prixPack, datePeremption, qualite, poidsPackLait, this);
+        ajoutInventaire(packLait);
+        return packLait;
     }
-
-
 }

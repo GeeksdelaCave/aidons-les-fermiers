@@ -25,19 +25,6 @@ public class PoulaillerTest {
         assert (packOeuf != null);
     }
 
-    /**
-     * @bug Bug connu : le test marche pour 100 lancé unitairement, mais échoue lorsque l'œuf créé en amont est
-     * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Poulailler#idOeufNaissance
-     *//*
-    @Test
-    public void testCreerPackOeuf_IdPackEgal100 () {
-        Poulailler poulailler = new Poulailler(1000, "PACA");
-        Oeuf packOeuf = poulailler.creerPackOeuf(110, LocalDate.of(2017, Month.FEBRUARY, 2), (short)96);
-
-        assert (packOeuf.getIdPackOeuf() == 100 || packOeuf.getIdPackOeuf() == 200);
-    }*/
-
     @Test
     public void testCreerPackOeuf_IdsPacksDifferents () {
         Poulailler poulailler = new Poulailler(1000, "PACA");

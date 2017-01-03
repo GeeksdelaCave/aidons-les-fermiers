@@ -8,16 +8,13 @@ import java.time.LocalDate;
 
 /**
  * Classe Etable représentant le lieu où vont être stockés les vaches à naître
- * @version 1.1
+ *
  * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
  */
 public class Etable extends Enclos {
-
-    /**
-     * Identifiant statique par défaut d'une vache quand elle naîtra puis qui s'incrémentera à chaque création d'une vache car identifiant unique
-     * @see Etable#ajoutInventaire(ProduitFermier)
-     */
-    private static int idVacheNee = 3000;
 
     /** Constructeur de la classe Etable
      *
@@ -38,18 +35,9 @@ public class Etable extends Enclos {
      * @param poidsVache désigne le poids d'une vache
      * @return une vache crée et l'ajoute à l'inventaire ou null si on retourne une exception
      */
-    public Vache creerVache(float prixVache,LocalDate datePeremption,short qualite,String nomVache,float poidsVache) {
-        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
-        try {
-            Vache vacheNee = new Vache(prixVache, datePeremption, qualite, idVacheNee, nomVache, poidsVache, this);
-            idVacheNee += 100;
-            ajoutInventaire(vacheNee);
-            return vacheNee;
-        }
-        catch(InventairePleinException ipe){
-            ipe.printStackTrace();
-            return null;
-        }
+    public Vache creerVache(float prixVache, LocalDate datePeremption, short qualite, String nomVache, float poidsVache) {
+        Vache vacheNee = new Vache(prixVache, datePeremption, qualite, nomVache, poidsVache, this);
+        ajoutInventaire(vacheNee);
+        return vacheNee;
     }
-
 }

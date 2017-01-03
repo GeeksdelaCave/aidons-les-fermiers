@@ -7,23 +7,21 @@ import java.time.LocalDate;
 
 /**
  * Classe Poulailler représentant un poulailler gérant le produit fermier Oeuf
- * @version 1.3
+ *
  * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.3
  */
 public class Poulailler extends UniteDeProduction {
-
-    /**
-     * Identifiant d'un oeuf à la naissance statique par défaut à 100 qui s'incrémentera à chaque fois qu'on créera un oeuf pour identifiant unique.
-     * @see Poulailler#creerPackOeuf(float, LocalDate, short)
-     */
-    private static int idOeufNaissance = 100;
 
     /** Constructeur de la classe Poulailler
      *
      * @param capaciteeProduction qui désigne la capacitée maximale d'oeufs qu'un poulailler peut accueillir
      * @param regionCreationProduit qui désigne la région où est implanté le poulailler
      */
-    public Poulailler(int capaciteeProduction,String regionCreationProduit) {
+    public Poulailler(int capaciteeProduction, String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -36,16 +34,8 @@ public class Poulailler extends UniteDeProduction {
      * @return un oeuf qui est née et a été ajoutée à l'inventaire ou null si on retourne une exception
      */
     public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
-        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
-        try {
-            Oeuf oeuf = new Oeuf(prix, datePeremption, qualite, idOeufNaissance, this);
-            idOeufNaissance += 100;
-            ajoutInventaire(oeuf);
-            return oeuf;
-        }
-        catch(InventairePleinException ipe){
-            ipe.printStackTrace();
-            return null;
-        }
+        Oeuf oeuf = new Oeuf(prix, datePeremption, qualite, this);
+        ajoutInventaire(oeuf);
+        return oeuf;
     }
 }

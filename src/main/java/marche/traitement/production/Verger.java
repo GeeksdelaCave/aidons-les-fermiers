@@ -7,23 +7,21 @@ import java.time.LocalDate;
 
 /**
  * Classe Verger désignant un verger où on gérera le remplissage des cagettes de pommes crées
- * @version 1.2
+ *
  * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
 public class Verger extends UniteDeProduction {
-
-    /**
-     * Identifiant d'une cagette de pommes qui s'incrémentera pour chaque cagette crée car identifiant unique.
-     * @see Verger#creerCagette(float, LocalDate, short, float, String, int)
-     */
-    private static int idCagetteCree = 1000;
 
     /** Constructeur de la classe Verger
      *
      * @param capaciteeProduction désigne la capacitée maximale de cagette de pommes à stocker
      * @param regionCreationProduit désigne la région où sont implantés les vergers
      */
-    public Verger(int capaciteeProduction,String regionCreationProduit) {
+    public Verger(int capaciteeProduction, String regionCreationProduit) {
         this.capaciteeProduction = capaciteeProduction;
         this.regionCreationProduit = regionCreationProduit;
     }
@@ -38,18 +36,10 @@ public class Verger extends UniteDeProduction {
      * @param nbPommes désigne le nbre de pommes pour 1 cagette
      * @return une cagette de pomme crée et ajoutée à l'inventaire ou null si on retourne une exception
      */
-    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite,float poidsCagette,String typePomme,int nbPommes) {
-        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
-        try {
-            Pomme cagette = new Pomme(prix, datePeremption, qualite, idCagetteCree, poidsCagette, typePomme, nbPommes, this);
-            inventaireUniteDeProduction.add(cagette);
-            idCagetteCree += 100;
-            return cagette;
-        }
-        catch(InventairePleinException ipe) {
-            ipe.printStackTrace();
-            return null;
-        }
+    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPomes) {
+        Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPomes, this);
+        inventaireUniteDeProduction.add(cagette);
+        return cagette;
     }
 
 }

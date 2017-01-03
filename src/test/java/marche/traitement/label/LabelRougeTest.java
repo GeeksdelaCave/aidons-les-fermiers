@@ -6,6 +6,9 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests unitaires de la classe LabelRouge
+ *
+ * @author Thibaud CENENT
+ * @author Romain COLONNA D'ISTRIA
  * @version 1.1
  */
 public class LabelRougeTest {
@@ -13,9 +16,8 @@ public class LabelRougeTest {
      * Teste si le produit a une qualité supérieure ou non
      */
     @Test
-    public void testGetIsQualiteSuperieureProduit()
-    {
+    public void testGetIsQualiteSuperieureProduit() {
         LabelRouge labelRouge = new LabelRouge(true);
-        assert labelRouge.isQualiteSuperieureProduit();
+        assertTrue(labelRouge.isQualiteSuperieureProduit());
     }
 }

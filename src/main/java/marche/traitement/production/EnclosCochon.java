@@ -7,16 +7,13 @@ import java.time.LocalDate;
 
 /**
  * Classe EnclosCochon désignant le lieu où vont être naître et être stockés les cochons nés
- * @version 1.1
+ *
  * @author Thibaud CENENT
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
  */
 public class EnclosCochon extends Enclos {
-
-    /**
-     * Identifiant statique d'un cochon lorsqu'il néé et qui s'incrémentera à chaque création car identifiant unique.
-     * @see EnclosCochon#creerCochon(float, LocalDate, short, float, String)
-     */
-    private static int idCochonNee = 2000;
 
     /** Constructeur de la classe EnclosCochon
      *
@@ -37,18 +34,10 @@ public class EnclosCochon extends Enclos {
      * @param typeCochon désigne le type de cochon
      * @return un cochon créé et l'ajoute à l'inventaire ou null si on retourne une exception
      */
-    public Cochon creerCochon(float prixCochon,LocalDate datePeremption,short qualite,float poidsCochon,String typeCochon) {
-        //TODO popup pour l'interface graphique, arrêter la génération pour cette IUP tant que l'on n'a pas repris des items
-        try {
-            Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, idCochonNee, poidsCochon, typeCochon, this);
-            idCochonNee += 100;
-            ajoutInventaire(cochonNee);
-            return cochonNee;
-        }
-        catch(InventairePleinException ipe) {
-            ipe.printStackTrace();
-            return null;
-        }
+    public Cochon creerCochon(float prixCochon, LocalDate datePeremption, short qualite, float poidsCochon, String typeCochon) {
+        Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, poidsCochon, typeCochon,this);
+        ajoutInventaire(cochonNee);
+        return cochonNee;
     }
 
 

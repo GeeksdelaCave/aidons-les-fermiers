@@ -3,7 +3,7 @@ package marche.traitement.participant;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.produits.ProduitFermier;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 /**
  * Interface générale désignant les acteurs
@@ -11,7 +11,7 @@ import java.util.Collection;
  * @author Tristan DIETZ
  * @author Romain COLONNA D'ISTRIA
  *
- * @version 1.1
+ * @version 1.2
  */
 public abstract class Acteur {
 
@@ -30,12 +30,7 @@ public abstract class Acteur {
      * @see Acteur#getInventaire()
      *
      */
-    protected Collection<ProduitFermier> inventaire;
-
-    /**
-     * Empêchement d'instancier un acteur
-     */
-    protected Acteur() { }
+    protected ArrayList<ProduitFermier> inventaire;
 
     /**
      * Getter du solde de l'acteur courant
@@ -53,7 +48,7 @@ public abstract class Acteur {
      *
      * @see Acteur#inventaire
      */
-    public Collection<ProduitFermier> getInventaire () {
+    public ArrayList<ProduitFermier> getInventaire () {
         return inventaire;
     }
 
@@ -80,13 +75,28 @@ public abstract class Acteur {
             throw new SoldeNonDisponibleException();
     }
 
+
     /**
+
      * Méthode d'ajout de produit fermier dans l'inventaire.
      * @param produit Produit à ajouter a l'inventaire du fermier.
      *
      * @see Acteur#inventaire
+
      */
     public void ajoutProduit(ProduitFermier produit) {
         inventaire.add(produit);
     }
+
+    /**
+     * Méthode permettant d'envelever un produit de l'inventaire
+     * @param produit Produit à enlever de l'inventaire de l'acteur
+     */
+    public void enleverProduit(ProduitFermier produit){inventaire.remove(produit);}
+
+    /**
+     * Méthode permettant de récupérer la dénomination d'un acteur, à implémenter dans les classes.
+     * @return nom de l'acteur
+     */
+    public abstract String getDenomination();
 }
