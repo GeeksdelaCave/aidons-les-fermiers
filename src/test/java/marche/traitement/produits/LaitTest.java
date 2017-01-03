@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
- * @version 1.5
+ * @version 1.6
  */
 public class LaitTest {
 
