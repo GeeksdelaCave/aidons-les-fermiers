@@ -92,7 +92,7 @@ public class Controleur {
      * Méthode permettant de réguler le prix d'une offre
      */
     public static void regulerPrix(Offre offre, int quantite){
-        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
         if(prixMoyen - prixMoyen * 0.2 > offre.getPrix()){
             offre.setPrix(prixMoyen - prixMoyen * 0.2);
         }else{
@@ -125,7 +125,7 @@ public class Controleur {
         }
 
         if(quantite <= offre.getProduits().size()){
-            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
             if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
                 Controleur.regulerPrix(offre,quantite);
             }
