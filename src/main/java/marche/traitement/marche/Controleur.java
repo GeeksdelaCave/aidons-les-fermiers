@@ -74,7 +74,7 @@ public class Controleur {
         }
 
         String nomProduit = offre.getProduits().get(0).getClass().getCanonicalName();
-        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + "a effectué un achat de : " + nomProduit + "au prix de "+ offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur() + "le :" + LocalDate.now();
+        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + " a effectué un achat de : " + cpt + nomProduit + "(s)" + " au prix de "+ offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur() + "le :" + LocalDate.now();
         LivreMarche.ajouterTransaction(strTransaction);
         marche.enleverOffre(offre);
     }
