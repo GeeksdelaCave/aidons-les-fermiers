@@ -44,6 +44,7 @@ public class Vendeur extends Decorateur{
             Controleur.ajouterOffre(offre, marche);
         }
         else{
+                System.out.println("La création d'offre a échouée");
             //TODO gerer exception
     }
 
