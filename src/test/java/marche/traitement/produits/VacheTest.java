@@ -97,13 +97,13 @@ public class VacheTest {
     /**
      * Teste si la vache est commercialisable
      */
-    @Test (expected = ProduitPerimeException.class)
-    public void testGetIsCommercialise() throws ProduitPerimeException {
-        assertTrue(vachePerime.isCommercialisable());
+    @Test
+    public void testGetIsCommercialise() {
+        assertTrue(vacheNonPerime.isCommercialisable());
     }
 
     /**
-     * Teste de l'exception ProduitPerimeException de la vérification pour la commercialisation
+     * Teste de l'exception ProduitPerimeException lors de la vérification pour la commercialisation
      */
     @Test (expected = ProduitPerimeException.class)
     public void testGetIsCommercialise_ProduitPerimeException() throws ProduitPerimeException {
