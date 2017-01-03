@@ -20,7 +20,7 @@ public class FermierTest {
      * Test du solde du trader avec le bon type
      */
     public void testDuSoldeDuFermier() {
-        Acteur fermier = new Fermier();
+        Acteur fermier = new ProducteurLaitier();
         fermier.ajouterSolde(50.0);
 
         assert fermier.getSolde() == 50.0;
@@ -31,7 +31,7 @@ public class FermierTest {
      * Test du solde du trader avec un int (test du cast implicite)
      */
     public void testDuSoldeDuFermierAvecInt() {
-        Acteur fermier = new Fermier();
+        Acteur fermier = new Horticulteur();
         fermier.ajouterSolde(50);
 
         assert fermier.getSolde() == 50.0;
@@ -42,7 +42,7 @@ public class FermierTest {
      * Test d'enlever du solde supérieur à ce qui est possible : soulève une exception SoldeNonDisponibleException
      */
     public void testEnleverSolde() throws SoldeNonDisponibleException {
-        Acteur fermier = new Fermier();
+        Acteur fermier = new ProducteurDeViande();
         fermier.ajouterSolde(30.0);
         fermier.enleverSolde(50.0);
     }
@@ -52,7 +52,7 @@ public class FermierTest {
      * Test d'ajout du produit fermier dans l'inventaire d'un acteur
      */
     public void testAjouterProduit() {
-        Acteur fermier = new Fermier();
+        Acteur fermier = new Arboriculteur();
         ProduitFermier pomme = new Pomme(10, LocalDate.of(1996, Month.SEPTEMBER, 13), (short)90, 1, "Reinette", 15, new Verger(50,"Normandie"));
 
 
