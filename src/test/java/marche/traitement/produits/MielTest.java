@@ -81,15 +81,6 @@ public class MielTest {
         assertTrue(mielNonPerime.getQualite() == (short) 75);
     }
 
-
-
-
-
-
-
-
-
-
     /**
      * Test l'unité de production d'une seau de miel
      */
