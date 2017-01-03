@@ -7,7 +7,11 @@ import java.util.ArrayList;
 
 /**
  * Classe Decorateur
- * @author Nicolas Guigou
+ *
+ * @author Nicolas GUIGOU
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
 public class Decorateur extends Acteur {
     /**
@@ -71,6 +75,11 @@ public class Decorateur extends Acteur {
         acteur.enleverProduit(produit);
     }
 
+    /**
+     * Définit la dénomination complète d'un Acteur.
+     *
+     * @return La dénomination de l'acteur.
+     */
     public String getDenomination() {
         return acteur.getDenomination();
     }
