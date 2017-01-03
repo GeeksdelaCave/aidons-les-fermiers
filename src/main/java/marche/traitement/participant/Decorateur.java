@@ -71,19 +71,7 @@ public class Decorateur extends Acteur {
         acteur.enleverProduit(produit);
     }
 
-    /**
-     * Permet de récupérer le nom de l'acteur
-     * @return nomActeur
-     */
-    public String getNomActeur(){
-       return acteur.getNomActeur();
-    }
-
-    /**
-     * Permet de récupérer le prenom de l'acteur
-     * @return prenomActeur
-     */
-    public String getPrenomActeur(){
-        return acteur.getPrenomActeur();
+    public String getDenomination() {
+        return acteur.getDenomination();
     }
 }
