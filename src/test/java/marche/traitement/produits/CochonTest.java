@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 /**
  * CochonTest désigne les test unitaires effectués sur la classe Cochon
  *
+ * @author Romain COLONNA D'ISTRIA
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
