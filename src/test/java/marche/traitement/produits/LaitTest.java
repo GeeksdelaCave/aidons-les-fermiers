@@ -17,6 +17,9 @@ import static org.junit.Assert.*;
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
+ * @see Lait
+ * @see Laiterie
+ *
  * @version 1.6
  */
 public class LaitTest {

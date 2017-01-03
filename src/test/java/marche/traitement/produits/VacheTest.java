@@ -19,6 +19,9 @@ import static org.junit.Assert.assertTrue;
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *
+ * @see Vache
+ * @see Etable
+ *
  * @version 1.8
  */
 public class VacheTest {

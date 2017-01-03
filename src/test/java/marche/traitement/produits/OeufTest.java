@@ -17,8 +17,10 @@ import static org.junit.Assert.assertTrue;
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *
- * @version 1.3
  * @see Oeuf
+ * @see Poulailler
+ *
+ * @version 1.3
  */
 public class OeufTest {
 
