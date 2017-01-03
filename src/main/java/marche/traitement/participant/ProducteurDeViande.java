@@ -22,7 +22,7 @@ public class ProducteurDeViande extends Fermier implements Visitable {
      * @param uniteDeProductions unités de productions dont dispose un fermier à sa création
      * @param solde Gain dont dispose un fermier lors de sa création
      */
-    public ProducteurDeViande(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
+    public ProducteurDeViande(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, double solde){
         super(inventaire,uniteDeProductions,solde);
     }
 

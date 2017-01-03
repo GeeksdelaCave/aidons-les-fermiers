@@ -31,7 +31,6 @@ public class Controleur {
     /**
      * Constructeur privé
      */
-
     private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
         put("Vache",1300.0);
         put("Cochon",45.0);
@@ -92,7 +91,7 @@ public class Controleur {
      * Méthode permettant de réguler le prix d'une offre
      */
     public static void regulerPrix(Offre offre, int quantite){
-        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
         if(prixMoyen - prixMoyen * 0.2 > offre.getPrix()){
             offre.setPrix(prixMoyen - prixMoyen * 0.2);
         }else{
@@ -109,15 +108,18 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant de valider une offre si son prix n'est pas trop élever
-     * @param offre
-     * @return
+     * Méthode permettant de valider une offre si son prix n'est pas trop élevé.
+     *
+     * @param offre Offre à valider par le controler
+     * @return Si l'offre est composée de produits exclusivement commercialisables, qu'ils sont dans l'inventaire et que le prix est acceptable.
      */
     public static boolean valider(Offre offre){
         int quantite = 0;
         for(ProduitFermier p : offre.getProduits()){
-            if(!p.isCommercialisable()){return false;}
+            if(!p.isCommercialisable())
+                return false;
         }
+
         for(ProduitFermier p : offre.getVendeur().getInventaire()) {
             if(p == offre.getProduits().get(0)){
                 ++quantite;
@@ -125,12 +127,10 @@ public class Controleur {
         }
 
         if(quantite <= offre.getProduits().size()){
-            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0));
+            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
             if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
                 Controleur.regulerPrix(offre,quantite);
             }
-
-
         }
 
         return true;
