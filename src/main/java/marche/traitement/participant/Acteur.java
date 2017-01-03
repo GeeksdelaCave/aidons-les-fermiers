@@ -4,7 +4,6 @@ import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.produits.ProduitFermier;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Interface générale désignant les acteurs
@@ -32,20 +31,6 @@ public abstract class Acteur {
      *
      */
     protected ArrayList<ProduitFermier> inventaire;
-
-    /**
-     * Nom de l'acteur
-     */
-    protected String nomActeur;
-
-    /**
-     * Prenom de l'acteur
-     */
-    protected String prenomActeur;
-    /**
-     * Empêchement d'instancier un acteur
-     */
-    protected Acteur() { }
 
     /**
      * Getter du solde de l'acteur courant
@@ -110,14 +95,8 @@ public abstract class Acteur {
     public void enleverProduit(ProduitFermier produit){inventaire.remove(produit);}
 
     /**
-     * Méthode permettant de récupérer le nom d'un acteur
+     * Méthode permettant de récupérer la dénomination d'un acteur, à implémenter dans les classes.
      * @return nom de l'acteur
      */
-    public String getNomActeur(){return this.nomActeur;}
-
-    /**
-     * Méthode permettant de récupérer le prénom d'un acteur
-     * @return prénom de l'acteur
-     */
-    public String getPrenomActeur(){return this.prenomActeur;}
+    public abstract String getDenomination();
 }

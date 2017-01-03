@@ -14,13 +14,6 @@ import java.util.Collection;
  */
 public class ProducteurLaitier extends Fermier {
 
-    /**
-     * Constructeur par défaut de ProducteurLaitier
-     */
-    public ProducteurLaitier(){
-        super();
-    }
-
     /** Constructeur principal de ProducteurLaitier
      *
      * @param inventaire liste des produits fermiers à attribuer au fermier lors de sa création

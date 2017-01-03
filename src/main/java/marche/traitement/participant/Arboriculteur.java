@@ -14,14 +14,6 @@ import java.util.Collection;
  */
 public class Arboriculteur extends Fermier {
 
-    /**
-     * Constructeur par défaut de Arboriculteur
-     */
-    public Arboriculteur()
-    {
-        super();
-    }
-
     /** Constructeur principal de Arboriculteur
      *
      * @param inventaire liste des produits fermiers à attribuer au fermier lors de sa création

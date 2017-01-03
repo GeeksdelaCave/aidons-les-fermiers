@@ -14,13 +14,6 @@ import java.util.Collection;
  */
 public class ProducteurDeViande extends Fermier {
 
-    /**
-     * Constructeur par défaut de ProducteurDeViande
-     */
-    public ProducteurDeViande(){
-        super();
-    }
-
     /** Constructeur principal de ProducteurDeViande
      *
      * @param inventaire liste des produits fermiers à attribuer au fermier lors de sa création

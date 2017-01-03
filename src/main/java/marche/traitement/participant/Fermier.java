@@ -11,21 +11,14 @@ import java.util.Collection;
  * Classe fermier (étand la classe Acteur)
  * @author Romain COLONNA D'ISTRIA
  */
-public abstract class Fermier extends Acteur{
+public abstract class Fermier extends Acteur {
 
     /**
      * Liste des unités de productions possédé par le fermier
      */
     private Collection<UniteDeProduction> uniteDeProductions;
 
-    /**
-     * Constructeur par défault de la classe
-     */
-    public Fermier () {
-        inventaire = new ArrayList<ProduitFermier>();
-        uniteDeProductions = new ArrayList<UniteDeProduction>();
-        solde = 0;
-    }
+    private String nom, prenom;
 
     /**
      * Constructeur du fermier avec caractéristiques
@@ -38,4 +31,14 @@ public abstract class Fermier extends Acteur{
         this.uniteDeProductions = uniteDeProductions;
         this.solde = solde;
     }
+
+    /**
+     * Dénomination complète du Fermier
+     *
+     * @return Le prénom et le nom du fermier.
+     */
+    public String getDenomination() {
+        return prenom + " " + nom;
+    }
+
 }

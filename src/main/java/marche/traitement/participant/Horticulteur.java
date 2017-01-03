@@ -14,13 +14,6 @@ import java.util.Collection;
  */
 public class Horticulteur extends Fermier {
 
-    /**
-     * Constructeur par défaut de Horticulteur
-     */
-    public Horticulteur(){
-        super();
-    }
-
     /** Constructeur principal de Horticulteur
      *
      * @param inventaire liste des produits fermiers à attribuer au fermier lors de sa création
