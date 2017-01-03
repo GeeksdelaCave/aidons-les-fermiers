@@ -18,7 +18,8 @@ public class CotisationGenerale implements Cotisation {
      * @return la somme à créditer au solde de l'arboriculteur
      */
     public double calculMontantCotisation(Arboriculteur arboriculteur) {
-        return (arboriculteur.getSolde()) * 0.02;
+
+        return (arboriculteur.getSolde()) * 0.05;
     }
 
     /**
@@ -27,6 +28,7 @@ public class CotisationGenerale implements Cotisation {
      * @return la somme à créditer au solde de l'horticulteur
      */
     public double calculMontantCotisation(Horticulteur horticulteur) {
+
         return (horticulteur.getSolde()) * 0.02;
     }
 
