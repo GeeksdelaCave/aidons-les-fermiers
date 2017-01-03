@@ -1,5 +1,7 @@
 package marche.traitement.participant;
 
+import marche.traitement.cotisation.Cotisation;
+import marche.traitement.cotisation.Visitable;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -12,7 +14,7 @@ import java.util.Collection;
  * @author Romain COLONNA D'ISTRIA
  * @version 1.0
  */
-public class ProducteurDeViande extends Fermier {
+public class ProducteurDeViande extends Fermier implements Visitable {
 
     /** Constructeur principal de ProducteurDeViande
      *
@@ -22,5 +24,14 @@ public class ProducteurDeViande extends Fermier {
      */
     public ProducteurDeViande(ArrayList<ProduitFermier> inventaire, Collection<UniteDeProduction> uniteDeProductions, float solde){
         super(inventaire,uniteDeProductions,solde);
+    }
+
+    /**
+     *
+     * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
+     * @return le nouveau solde du producteur de viande après la cotisation.
+     */
+    public double payerCotisation(Cotisation cotisation) {
+        return cotisation.calculMontantCotisation(this);
     }
 }
