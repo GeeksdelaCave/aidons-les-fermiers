@@ -43,11 +43,11 @@ public class Vendeur extends Decorateur{
 
             if(Controleur.valider(offre)){
             Controleur.ajouterOffre(offre, marche);
-        }
-        else{
+            }
+            else{
                 System.out.println("La création d'offre a échouée");
-            //TODO gerer exception
-    }
+                //TODO gerer exception
+            }
 
     }
 }
