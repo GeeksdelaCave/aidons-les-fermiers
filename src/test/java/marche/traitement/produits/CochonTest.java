@@ -26,16 +26,6 @@ public class CochonTest {
     Cochon cochonPerime    = new Cochon(150.0f, LocalDate.of(2000, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", encloCochon);
 
     /**
-     * Teste l'identifiant d'un cochon.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdCochon() {
-        assertTrue(cochonNonPerime.getIdCochon() == 2000 || cochonNonPerime.getIdCochon() == 2900); //car idCochonGeneral = 2000 initialement
-    }
-
-    /**
      * Teste le poids d'un cochon
      */
     @Test

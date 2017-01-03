@@ -26,16 +26,6 @@ public class LaitTest {
     Lait laitPerime    = new Lait(10.0f,LocalDate.of(2000, Month.NOVEMBER,28), (short) 55.0,3.0f, laiterie);
 
     /**
-     * Test de l'identifiant d'un pack de lait.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdPackLait() {
-        assertTrue(laitNonPerime.getIdPackLait() == 1300 || laitNonPerime.getIdPackLait() == 2700); //Car 13 autres pack de lait instancié
-    }
-
-    /**
      * Test du poids d'un pack de lait
      */
     @Test

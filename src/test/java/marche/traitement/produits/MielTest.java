@@ -24,16 +24,6 @@ public class MielTest {
     Miel mielPerime    = new Miel(15.0f, LocalDate.of(2000, Month.NOVEMBER,28), (short) 75, 5.0f,"Mieldechataignier", ruche);
 
     /**
-     * Teste l'identifiant d'un seau de miel.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdSeauMiel() {
-        assertTrue(mielNonPerime.getIdSeauMiel() == 1500 || mielNonPerime.getIdSeauMiel() == 2100); //Car 11 autres pot de miel instancié avant
-    }
-
-    /**
      * Teste le poids d'un seau de miel
      */
     @Test

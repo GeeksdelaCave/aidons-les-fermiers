@@ -24,19 +24,6 @@ public class FromagerieTest {
         assert (fromage != null);
     }
 
-    /**
-     * @bug Bug connu : le test marche pour 250 lancé unitairement, mais échoue lorsque le fromage créé en amont est
-     * créé. Résolution : prendre en compte les deux valeurs selon si le test est lancé seul ou avec les autres.
-     * @see Fromage#idFromageGeneral
-     *//*
-    @Test
-    public void testCreerfromage_IdFromageEgal250 () {
-        Fromagerie fromagerie = new Fromagerie(100, "PACA");
-        Fromage fromage = fromagerie.creerFromage(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, "Roquefort", 245);
-
-        assert (fromage.getIdFromage() == 250 || fromage.getIdFromage() == 350);
-    }*/
-
     @Test
     public void testCreerfromage_IDsFromagesDifferents () {
         Fromagerie fromagerie = new Fromagerie(100, "PACA");

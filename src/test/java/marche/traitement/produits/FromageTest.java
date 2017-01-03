@@ -25,16 +25,6 @@ public class FromageTest {
     Fromage fromagePerime    = new Fromage(20.0f, LocalDate.of(2000, Month.NOVEMBER, 28), (short) 55.0, "Fromagedechevre",3.0f, fromagerie);
 
     /**
-     * Test de l'identifiant d'un fromage.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdFromage() {
-        assertTrue(fromageNonPerime.getIdFromage() == 250 || fromageNonPerime.getIdFromage() == 1850); //Car 16 fromage instancié avant
-    }
-
-    /**
      * Test du nom d'un fromage
      */
     @Test

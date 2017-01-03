@@ -23,16 +23,6 @@ public class PommeTest {
     Pomme pommePerime    = new Pomme(20.0f, LocalDate.of(2000, Month.NOVEMBER,28), (short) 55,  6.0f, "Reinette",8, verger);
 
     /**
-     * Teste l'identifiant de la cagette de pomme.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdCagette() {
-        assertTrue(pommeNonPerime.getIdCagette() == 1000 || pommeNonPerime.getIdCagette() == 1700); //Car 7 autres pomme instanciées avant
-    }
-
-    /**
      * Teste le poids de la cagette de pommme
      */
     @Test

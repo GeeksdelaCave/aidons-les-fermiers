@@ -28,17 +28,7 @@ public class OeufTest {
     Oeuf oeufPerime    = new Oeuf(20.0f, LocalDate.of(2000, Month.NOVEMBER,28), (short) 55, poulailler);
 
     /**
-     * Teste l'identifiant du pack d'oeuf.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdPackOeuf() {
-        assertTrue(oeufNonPerime.getIdPackOeuf() == 100 || oeufNonPerime.getIdPackOeuf() == 1700); //Car 16 autres oeuf instanciées avant
-    }
-
-    /**
-     * Test du rpix d'un pack d'oeuf
+     * Test du prix d'un pack d'oeuf
      */
     @Test
     public void testGetPrix() {
