@@ -28,16 +28,6 @@ public class VacheTest {
     Vache vachePerime    = new Vache(150.0f,LocalDate.of(2000, Month.NOVEMBER,28), (short) 55, "vachetest",50.0f, etable);
 
     /**
-     * Teste l'identifiant de la vache.
-     * La première condition sert pour quand le test est lancé seul, la seconde
-     * pour quand tout les tests sont lancés ensembles.
-     */
-    @Test
-    public void testGetIdVache() {
-        assertTrue(vacheNonPerime.getIdVache() == 3000 || vacheNonPerime.getIdVache() == 4500); //car 15 autres vaches instanciée avant
-    }
-
-    /**
      * Teste le nom de la vache
      */
     @Test
