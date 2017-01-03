@@ -25,15 +25,15 @@ public class Vendeur extends Decorateur{
     /**
      * Méthode permettant de proposer une offre
      * @param quantite
-     * @param produit
+     * @param NomProduit
      * @param prix
      */
-    public void proposerOffreVente( int quantite, ProduitFermier produit, int prix, Marche marche){
+    public void proposerOffreVente( int quantite, String NomProduit, int prix, Marche marche){
         ArrayList<ProduitFermier> temp = new ArrayList<ProduitFermier>();
         int cpt = 0;
         for(ProduitFermier p : this.getInventaire()){
             if(cpt == quantite) break;
-            if(p == produit) {
+            if(p.getClass().getCanonicalName() == NomProduit) {
                 temp.add(p);
                 ++cpt;
             }

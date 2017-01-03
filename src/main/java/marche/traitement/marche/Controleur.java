@@ -66,12 +66,15 @@ public class Controleur {
      */
     public static void transfererBiens(Acheteur acheteur, Vendeur vendeur, Offre offre, Marche marche){
 
+        int cpt = 0;
         for ( ProduitFermier p : offre.getProduits() ){
             acheteur.ajoutProduit(p);
             vendeur.enleverProduit(p);
+            ++cpt;
         }
 
-        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + "a effectué un achat de : " + offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur() + "le :" + LocalDate.now();
+        String nomProduit = offre.getProduits().get(0).getClass().getCanonicalName();
+        String strTransaction = acheteur.getPrenomActeur() + acheteur.getNomActeur() + "a effectué un achat de : " + nomProduit + "au prix de "+ offre.getPrix() + " euros à " + vendeur.getPrenomActeur() + vendeur.getNomActeur() + "le :" + LocalDate.now();
         LivreMarche.ajouterTransaction(strTransaction);
         marche.enleverOffre(offre);
     }
@@ -133,5 +136,15 @@ public class Controleur {
 
         return true;
 
+    }
+
+    /**
+     * Méthode permettant d'afficher les prix moyens des produits
+     */
+    public static void affichagePrixMoyen(){
+        for(String mapKey : associationPrixMoyensProduitsFermiers.keySet()){
+            System.out.println("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
+            System.out.println();
+        }
     }
 }
