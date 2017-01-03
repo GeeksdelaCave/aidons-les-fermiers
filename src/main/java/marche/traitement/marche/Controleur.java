@@ -49,8 +49,8 @@ public class Controleur {
     /**
      * Méthode permettant de selectionner les acheteurs
      * Elle présente plusieurs algorithmes :
-     * <li><b>1 : choisit aléatoirement l'acheteur</b></li>
-     * <li><b>Autre : choisit le premier acheteur de la liste</b></li>
+     * - 1 : choisit aléatoirement l'acheteur
+     * Autre : choisit le premier acheteur de la liste
      * @param offre Offre sujette à la recherche
      * @param val Choix de l'algorithme
      * @return L'acheteur choisit par l'algorithme <b>val</b>.
