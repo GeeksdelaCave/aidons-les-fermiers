@@ -1,5 +1,7 @@
 package marche.affichage;
 
+import marche.traitement.participant.Horticulteur;
+
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
@@ -20,12 +22,18 @@ public class FenetreCreationParticipant extends FenetreGenerale {
     private JLabel labelNom = new JLabel("Nom");
     private JLabel labelPrenom = new JLabel("Prenom");
     private JLabel labelDenomination = new JLabel("Denomination");
+    private JLabel labelAcheteur = new JLabel("Acheteur");
+    private JLabel labelVendeur = new JLabel("Vendeur");
 
     private JTextField fieldNom = new JTextField();
     private JTextField fieldPrenom = new JTextField();
     private JTextField fieldDenomination = new JTextField();
 
     private JButton boutonCreer = new JButton("Créer");
+
+    private JCheckBox checkAcheteur = new JCheckBox();
+    private JCheckBox checkVendeur = new JCheckBox();
+
 
 
     public FenetreCreationParticipant(String titre)
@@ -34,7 +42,7 @@ public class FenetreCreationParticipant extends FenetreGenerale {
         panneauCreationParticipant.setLayout(new BorderLayout());
 
         JPanel panneau = new JPanel();
-        panneau.setLayout(new GridLayout(7,0));
+        panneau.setLayout(new GridLayout(13,0));
         panneau.setBorder(BorderFactory.createEmptyBorder(8,8,8,8));
 
         panneauCreationParticipant.add(panneau);
@@ -53,6 +61,14 @@ public class FenetreCreationParticipant extends FenetreGenerale {
                         labelDenomination.setVisible(true);
                         fieldDenomination.setVisible(true);
                     }
+                    if(e.getItem() == "Arboriculteur" || e.getItem() == "Horticulteur" || e.getItem() == "ProducteurDeViande" || e.getItem() == "ProducteurLaitier"){
+                        labelPrenom.setVisible(true);
+                        labelNom.setVisible(true);
+                        fieldNom.setVisible(true);
+                        fieldPrenom.setVisible(true);
+                        labelDenomination.setVisible(false);
+                        fieldDenomination.setVisible(false);
+                    }
                 }
             }
         });
@@ -66,7 +82,14 @@ public class FenetreCreationParticipant extends FenetreGenerale {
         panneau.add(labelDenomination);
         panneau.add(fieldDenomination);
 
+        panneau.add(labelAcheteur);
+        panneau.add(checkAcheteur);
+
+        panneau.add(labelVendeur);
+        panneau.add(checkVendeur);
+
         panneau.add(boutonCreer);
+
 
         this.setSize(300,300);
         this.setContentPane(panneauCreationParticipant);
