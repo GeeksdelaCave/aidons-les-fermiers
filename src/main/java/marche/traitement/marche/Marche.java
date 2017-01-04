@@ -31,6 +31,7 @@ public class Marche {
      */
     private Marche() {
         this.catalogue = new ArrayList<Offre>();
+        this.listeDesActeursDuMarche = new ArrayList<Acteur>();
     }
 
     /**
