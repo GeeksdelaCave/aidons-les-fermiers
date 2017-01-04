@@ -11,6 +11,5 @@ public abstract class FenetreGenerale extends JFrame {
     public FenetreGenerale(String title) throws HeadlessException {
         super(title);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }

@@ -35,6 +35,7 @@ public class FenetreParticipant extends FenetreGenerale {
     public FenetreParticipant(String titre)
     {
         super(titre);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         panneauAffichageParticipant.setLayout(new BorderLayout());
         JMenuItem item1 = new JMenuItem("Creer Participant");
         item1.addActionListener(new ActionListener() {
