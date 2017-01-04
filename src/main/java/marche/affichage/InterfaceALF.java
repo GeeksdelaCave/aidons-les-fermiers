@@ -21,14 +21,9 @@ public class InterfaceALF extends FenetreGenerale {
     {
         super(titre);
 
-        JPanel panneauAffichageParticipant = new JPanel();
-
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        panneauAffichageParticipant.setLayout(new BorderLayout());
-
         this.setJMenuBar(new BarreMenu());
-        this.setContentPane(panneauAffichageParticipant);
+
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(800,600);
 
         this.setLocationRelativeTo(null);
