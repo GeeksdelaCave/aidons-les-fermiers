@@ -11,9 +11,6 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 /** Tests unitaires de la classe Controleur
  *
  * @author Romain COLONNA D'ISTRIA
@@ -28,12 +25,14 @@ public class ControleurTest {
         ArrayList<UniteDeProduction> udp = new ArrayList<UniteDeProduction>();
 
         ArrayList<ProduitFermier> pf2 = new ArrayList<ProduitFermier>();
+        ArrayList<ProduitFermier> pf3 = new ArrayList<ProduitFermier>();
 
         EnclosCochon ec = new EnclosCochon(10, "PACA");
         udp.add(ec);
 
         Cochon c = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", ec);
         pf.add(c);
+        pf3.add(c);
 
         Acheteur acheteur = new Acheteur(new Horticulteur(pf2, udp, 100000000));
         acheteur.setDenomination("Colonna", "Romain");
@@ -41,13 +40,22 @@ public class ControleurTest {
         Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 123456));
         vendeur.setDenomination("Abdel", "Jean");
 
+        for (ProduitFermier p : acheteur.getInventaire())
+            System.out.println("1"+p);
+        for (ProduitFermier p : vendeur.getInventaire())
+            System.out.println("2"+p);
+
         Offre offre = new Offre(1000, vendeur.getInventaire(), vendeur);
 
         MarcheBasique marche = new MarcheBasique("Bazard");
 
         Controleur.transfererBiens(acheteur, vendeur, offre, marche);
 
-        assertTrue(acheteur.getInventaire() == pf);
+        for (ProduitFermier p : acheteur.getInventaire())
+            System.out.println("3"+p);
+        for (ProduitFermier p : vendeur.getInventaire())
+            System.out.println("4"+p);
+        assert (acheteur.getInventaire() == vendeur.getInventaire());
     }
 
 }
