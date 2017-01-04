@@ -28,7 +28,7 @@ public class FenetrePrixMoyenProduit extends JFrame {
 
     }
 
-    public static void main (String[] args){
+    /*public static void main (String[] args){
         new FenetrePrixMoyenProduit("Prix Moyen Produit");
-    }
+    }*/
 }

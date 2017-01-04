@@ -44,7 +44,8 @@ public class FenetreParticipant extends JFrame {
         JMenuItem item5 = new JMenuItem("Quitter l'application");
         item5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("5");
+                setVisible(false);
+                new FenetreQuitterApplication();
             }
         });
         menu.add(item1);
@@ -59,7 +60,8 @@ public class FenetreParticipant extends JFrame {
         this.setVisible(true);
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
+
         new FenetreParticipant("Fenêtre principal");
-    }
+    }*/
 }
