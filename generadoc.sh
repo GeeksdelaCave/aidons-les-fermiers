@@ -6,10 +6,12 @@ set -e
 # Si Git n'est pas installé
 # sudo apt-get install git
 
-# Clone du repo pour travailler dedans (dossier repo_clone
+# Clone du repo pour travailler dedans (dossier repo_clone).
 git clone git@github.com:GeeksdelaCave/aidons-les-fermiers.git repo_clone
 cd repo_clone
-git checkout develop
+
+# On se base dans la branche doc (on la créé au besoin)
+git checkout doc || git checkout --orphan doc
 
 # Emmett Lathrop "Doc" Brown, de Retour vers le Futur, nous push la doc ;)
 git config user.name "Travis CI"
@@ -30,4 +32,4 @@ git add -A doc/
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
 
 # Push
-git push git@github.com:GeeksdelaCave/aidons-les-fermiers.git develop
+git push git@github.com:GeeksdelaCave/aidons-les-fermiers.git doc
