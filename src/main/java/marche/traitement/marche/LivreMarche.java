@@ -38,7 +38,7 @@ public class LivreMarche implements Serializable {
      * Méthode permettant de récupérer l'historique des transactions
      * @return historique
      */
-    public ArrayList<String> getHistorique(){return historique;}
+    public static ArrayList<String> getHistorique(){return historique;}
 
 
     /**
@@ -51,8 +51,11 @@ public class LivreMarche implements Serializable {
             oos.writeObject(historique);
             oos.close();
             fos.close();
+            //TODO faire fenetre succe
         } catch (IOException e) {
             //TODO faire fenetre exception
         }
     }
+
+
 }
