@@ -2,6 +2,8 @@ package marche.affichage;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -11,19 +13,45 @@ public class FenetreParticipant extends JFrame {
     private JPanel panneauAffichageParticipant = new JPanel();
     private JMenuBar barreMenu = new JMenuBar();
     private JMenu menu = new JMenu("Menu");
-    private ArrayList<JMenuItem>  menuItems = new ArrayList<JMenuItem>();
-
     public FenetreParticipant(String titre)
     {
         super(titre);
         panneauAffichageParticipant.setLayout(new BorderLayout());
-        menuItems.add(new JMenuItem("Creer Participant"));
-        menuItems.add(new JMenuItem("Paramètres"));
-        menuItems.add(new JMenuItem("Documentation"));
-        menuItems.add(new JMenuItem("A propos de "));
-        menuItems.add(new JMenuItem("Quitter l'application"));
-        for(JMenuItem jMenuItem : menuItems)
-            menu.add(jMenuItem);
+        JMenuItem item1 = new JMenuItem("Creer Participant");
+        item1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("1");
+            }
+        });
+        JMenuItem item2 = new JMenuItem("Paramètres");
+        item2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("2");
+            }
+        });
+        JMenuItem item3 = new JMenuItem("Documentation");
+        item3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("3");
+            }
+        });
+        JMenuItem item4 = new JMenuItem("A propos de ");
+        item4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("4");
+            }
+        });
+        JMenuItem item5 = new JMenuItem("Quitter l'application");
+        item5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("5");
+            }
+        });
+        menu.add(item1);
+        menu.add(item2);
+        menu.add(item3);
+        menu.add(item4);
+        menu.add(item5);
         barreMenu.add(menu);
         this.setJMenuBar(barreMenu);
         this.setContentPane(panneauAffichageParticipant);

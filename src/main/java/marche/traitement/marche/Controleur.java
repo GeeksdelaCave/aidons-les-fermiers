@@ -151,8 +151,8 @@ public class Controleur {
     }
 
     /**
-     *
-     * @return un tableau de String contenant le prix moyen des produits fermiers
+     * Retourne un Array de String contenant le prix moyen des produits fermiers
+     * @return tab
      */
     public static ArrayList<String> affichagePrixMoyen(){
         ArrayList<String> tab = new ArrayList<String>();

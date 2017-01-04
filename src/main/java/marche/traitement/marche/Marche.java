@@ -47,6 +47,19 @@ public abstract class Marche {
      * @return catalogue
      */
     public ArrayList<Offre> getCatalogue(){return this.catalogue;}
+
+    /**
+     *  Permet de récupèrer un array de String contenant les offres au format String
+     * @return listeOffre
+     */
+    public ArrayList<String> afficherCatalogue()
+    {
+        ArrayList<String> listeOffre = new ArrayList<String>();
+        for(Offre offre : getCatalogue()){
+            listeOffre.add(offre.toString() + '\n' + '\n');
+        }
+        return listeOffre;
+    }
 }
 
 //
