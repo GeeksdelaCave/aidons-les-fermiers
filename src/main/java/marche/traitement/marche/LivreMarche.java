@@ -4,11 +4,13 @@ import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Vendeur;
 
 import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
  * Classe LivreMarche
  *
+ * @author Romain COLONNA D'ISTRIA
  * @author Nicolas Guigou
  * @author Tristan DIETZ
  *
@@ -37,4 +39,20 @@ public class LivreMarche implements Serializable {
      * @return historique
      */
     public ArrayList<String> getHistorique(){return historique;}
+
+
+    /**
+     * Méthode qui permet d'enregistrer dans un fichier les transactions effectuées.
+     */
+    public void enregistrer () {
+        try {
+            FileOutputStream fos = new FileOutputStream("LivreDOr.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(historique);
+            oos.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
