@@ -18,7 +18,12 @@ branches:
   only:
   - master
   - develop
+  - test&except
 
 # Spécification des JDK avec lesquels compiler
 jdk:
   - oraclejdk8
+
+#Génération de la JavaDoc
+after_success:
+  - bash ./generadoc.sh
