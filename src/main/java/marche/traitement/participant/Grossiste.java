@@ -16,7 +16,7 @@ public class Grossiste extends Acteur {
      */
     private String nomGrossiste;
 
-    public Grossiste() {
+    public Grossiste(String nomGrossiste) {
         super();
     }
 
@@ -28,4 +28,9 @@ public class Grossiste extends Acteur {
     public String getDenomination() {
         return nomGrossiste;
     }
+
+    public void setDenomination(String nom, String prenom) {
+        this.nomGrossiste = nom;
+    }
+
 }
