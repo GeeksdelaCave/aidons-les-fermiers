@@ -3,6 +3,8 @@ package marche.traitement.label;
 /**
  * Création de la classe LabelIGP consistant à attribuer un label aux produits ayant été réalisé ou produit
  * sur un lieu portant le même nom que leur lieu de création
+ *
+ * @author Thibaud CENENT
  * @version 1.1
  */
 public class LabelIGP extends Label {

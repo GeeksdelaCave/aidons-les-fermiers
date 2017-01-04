@@ -10,6 +10,8 @@ import java.util.Collection;
 
 /**
  * Classe Vendeur
+ *
+ * @author Tristan DIETZ
  * @author Nicolas Guigou
  */
 public class Vendeur extends Decorateur{

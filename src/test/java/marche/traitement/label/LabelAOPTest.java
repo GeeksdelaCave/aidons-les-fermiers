@@ -8,9 +8,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Tests unitaires de la classe LabelAOP
  *
- * @author Romain COLONNA D'ISTRIA
  * @author Thibaud CENENT
- * @author Tristan DIETZ
  *
  * @version 1.3
  * @see LabelAOP

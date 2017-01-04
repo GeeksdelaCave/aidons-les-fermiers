@@ -15,10 +15,11 @@ import static org.junit.Assert.assertTrue;
  * Classe test de la classe Oeuf
  *
  * @author Romain COLONNA D'ISTRIA
- * @author Tristan DIETZ
+ *
+ * @see Oeuf
+ * @see Poulailler
  *
  * @version 1.3
- * @see Oeuf
  */
 public class OeufTest {
 

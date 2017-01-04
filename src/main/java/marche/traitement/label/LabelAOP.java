@@ -2,6 +2,8 @@ package marche.traitement.label;
 
 /**
  * Création de la classe LabelAOP désignant un label qui est attribué en fonction du nom de produit attribué
+ *
+ * @author Thibaud CENENT
  * @version 1.1
  */
 public class LabelAOP extends Label {

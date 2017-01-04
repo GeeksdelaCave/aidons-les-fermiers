@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
+ * Classe abstraite ProduitFermier représentant une idée d'un produit fermier
  *
- *Classe abstraite ProduitFermier représentant une idée d'un produit fermier
- *@author Thibaud CENENT
+ * @author Thibaud CENENT
+ *
  * @version 2.2
  */
 public abstract class ProduitFermier {

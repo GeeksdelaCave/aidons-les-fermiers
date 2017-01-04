@@ -1,17 +1,6 @@
 package marche.traitement.participant;
 
-/** Tests unitaire de la classe Decorateur
- *
- * @author Romain COLONNA D'ISTRIA
- * @author Nicolas Guigou
- *
- * @see Decorateur
- *
- * @version 1.0
- */
-
 import marche.traitement.exceptions.SoldeNonDisponibleException;
-import marche.traitement.marche.MarcheBasique;
 import marche.traitement.marche.Offre;
 import marche.traitement.production.EnclosCochon;
 import marche.traitement.production.UniteDeProduction;
@@ -23,9 +12,17 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+/** Tests unitaire de la classe Decorateur
+ *
+ * @author Romain COLONNA D'ISTRIA
+ * @author Nicolas Guigou
+ *
+ * @see Decorateur
+ *
+ * @version 1.0
+ */
 public class DecorateurTest {
 
     @Test
