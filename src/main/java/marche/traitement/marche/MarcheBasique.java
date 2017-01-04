@@ -6,7 +6,7 @@ package marche.traitement.marche;
  */
 public class MarcheBasique extends Marche {
 
-    public void MarcheBasique(String nom){
-        this.nomMarche = nom;
+    public MarcheBasique(String nom){
+        super(nom);
     }
 }

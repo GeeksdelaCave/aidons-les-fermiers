@@ -12,7 +12,7 @@ import java.time.LocalDate;
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
  *
- * @version 1.2
+ * @version 1.3
  */
 public class Verger extends UniteDeProduction {
 
@@ -36,8 +36,8 @@ public class Verger extends UniteDeProduction {
      * @param nbPommes désigne le nbre de pommes pour 1 cagette
      * @return une cagette de pomme crée et ajoutée à l'inventaire ou null si on retourne une exception
      */
-    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPomes) {
-        Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPomes, this);
+    public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPommes) {
+        Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPommes, this);
         inventaireUniteDeProduction.add(cagette);
         return cagette;
     }

@@ -93,10 +93,11 @@ public abstract class Acteur {
      * @param produit Produit à enlever de l'inventaire de l'acteur
      */
     public void enleverProduit(ProduitFermier produit){inventaire.remove(produit);}
-
     /**
      * Méthode permettant de récupérer la dénomination d'un acteur, à implémenter dans les classes.
      * @return nom de l'acteur
      */
     public abstract String getDenomination();
+
+    public abstract void setDenomination(String nom, String prenom);
 }

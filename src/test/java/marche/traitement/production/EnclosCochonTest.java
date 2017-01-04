@@ -1,10 +1,14 @@
 package marche.traitement.production;
 
+import marche.traitement.exceptions.InventairePleinException;
 import marche.traitement.produits.Cochon;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.IllegalFormatCodePointException;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Classe test de la classe Enclos
@@ -49,5 +53,22 @@ public class EnclosCochonTest {
         enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 300, "cochon");
 
         assert (enclos.getInventaireUniteDeProduction().size() == 2);
+    }
+
+    @Test
+    public void testAjouterInventaire() {
+        EnclosCochon enclos = new EnclosCochon(100, "PACA");
+        Cochon cochon = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
+
+        enclos.ajoutInventaire(cochon);
+
+        assertTrue(enclos.getInventaireUniteDeProduction().contains(cochon));
+    }
+
+    @Test (expected = InventairePleinException.class)
+    public void testAjouterInventaire_InventairePleinException() throws InventairePleinException {
+        EnclosCochon enclos = new EnclosCochon(1, "PACA");
+        Cochon cochon1 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
+        Cochon cochon2 = enclos.creerCochon(110, LocalDate.of(2100, Month.SEPTEMBER, 12), (short)96, 245, "cochon");
     }
 }

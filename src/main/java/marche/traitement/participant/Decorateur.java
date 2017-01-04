@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @version 1.2
  */
 public class Decorateur extends Acteur {
+
     /**
      * Donnée membre acteur
      */
@@ -82,5 +83,15 @@ public class Decorateur extends Acteur {
      */
     public String getDenomination() {
         return acteur.getDenomination();
+    }
+
+
+    /** Setteur de modification du Nom et prenom
+     *@
+     * @param nom Nom de l'acteur
+     * @param prenom Prenom de l'acteur
+     */
+    public void setDenomination(String nom, String prenom) {
+        acteur.setDenomination(nom, prenom);
     }
 }

@@ -13,7 +13,7 @@ import java.time.LocalDate;
  *
  * @version 1.1
  */
-public class EnclosCochon extends Enclos {
+public class EnclosCochon extends UniteDeProduction {
 
     /** Constructeur de la classe EnclosCochon
      *
@@ -39,6 +39,4 @@ public class EnclosCochon extends Enclos {
         ajoutInventaire(cochonNee);
         return cochonNee;
     }
-
-
 }

@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.traitement.cotisation.CotisationGenerale;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.production.Verger;
 import marche.traitement.produits.Pomme;

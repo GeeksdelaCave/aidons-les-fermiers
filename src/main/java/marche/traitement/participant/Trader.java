@@ -20,4 +20,9 @@ public class Trader extends Acteur {
     public String getDenomination() {
         return prenom + " " + nom;
     }
+
+    public void setDenomination(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 }

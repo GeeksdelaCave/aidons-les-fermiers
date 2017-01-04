@@ -1,6 +1,5 @@
 package marche.traitement.marche;
 
-import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Horticulteur;
 import marche.traitement.participant.ProducteurDeViande;
@@ -15,38 +14,22 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Batterie de tests relatifs aux offres.
+ * Tests unitaire de la classe LivreMarcher
  *
- * @author Tristan Dietz
- * @author Nicolas GUIGOU
  * @author Romain COLONNA D'ISTRIA
  *
- * @version 1.0
+ * @see LivreMarche
  *
- * @see Offre
+ * @version 1.0
  */
-public class OffreTest {
+public class LivreMarcheTest {
 
-    /**
-     * Test de la bonne incrémentation du numéro de l'offre
-     */
     @Test
-    public void testIncrementationOffres() {
-        Offre offre1 = new Offre(10, null, null);
-        Offre offre2 = new Offre(40, null, null);
-
-        assert offre1.getIDOffre() != offre2.getIDOffre();
-    }
-
-    /**
-     * Test d'achat d'une offre
-     */
-    @Test
-    public void testAchat() {
+    public void testAjouterTransaction() {
         ArrayList<ProduitFermier> pf = new ArrayList<ProduitFermier>();
         ArrayList<UniteDeProduction> udp = new ArrayList<UniteDeProduction>();
 
@@ -54,22 +37,21 @@ public class OffreTest {
 
         EnclosCochon ec = new EnclosCochon(10, "PACA");
         Cochon c = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", ec);
+
+        udp.add(ec);
         pf.add(c);
 
         Acheteur acheteur = new Acheteur(new Horticulteur(pf2, udp, 1000));
+        acheteur.setDenomination("Colonna", "Romain");
         Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 1000));
+        vendeur.setDenomination("Abdel", "Jean");
 
         MarcheBasique marche = new MarcheBasique("Bazard");
 
-        Offre offre = new Offre(45,pf,vendeur);
+        Offre offre = new Offre(1000, vendeur.getInventaire(), vendeur);
 
-        try {
-            offre.acheter(acheteur,marche);
-        } catch (SoldeNonDisponibleException e) {
-            //TODO faire fenetre exception
-        }
+        Controleur.transfererBiens(acheteur, vendeur, offre, marche);
 
-        System.out.println();
-        assertTrue(acheteur.getInventaire().contains(c));
+        assertNotNull(LivreMarche.getHistorique());
     }
 }

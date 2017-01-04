@@ -26,11 +26,4 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - javadoc -private -sourcepath "src/main/java:src/main/ressources:src/test/java" \
-      -d doc \
-      marche.traitement.exceptions \
-      marche.traitement.label \
-      marche.traitement.marche \
-      marche.traitement.participant \
-      marche.traitement.production \
-      marche.traitement.produits \
+  - bash ./generadoc.sh
