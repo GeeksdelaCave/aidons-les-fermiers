@@ -1,6 +1,21 @@
 package marche.traitement.marche;
 
+import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.participant.Acheteur;
+import marche.traitement.participant.Horticulteur;
+import marche.traitement.participant.ProducteurDeViande;
+import marche.traitement.participant.Vendeur;
+import marche.traitement.production.EnclosCochon;
+import marche.traitement.production.UniteDeProduction;
+import marche.traitement.produits.Cochon;
+import marche.traitement.produits.ProduitFermier;
 import org.junit.Test;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertSame;
 
 /**
  * Batterie de tests relatifs aux offres.
@@ -13,15 +28,47 @@ import org.junit.Test;
  */
 public class OffreTest {
 
-    @Test
     /**
      * Test de la bonne incrémentation du numéro de l'offre
      */
+    @Test
     public void testIncrementationOffres() {
         Offre offre1 = new Offre(10, null, null);
         Offre offre2 = new Offre(40, null, null);
 
         assert offre1.getIDOffre() != offre2.getIDOffre();
     }
+
+    /**
+     * Test d'achat d'une offre
+     */
+    @Test
+    public void testAchat() throws SoldeNonDisponibleException {
+        ArrayList<ProduitFermier> pf = new ArrayList<ProduitFermier>();
+        ArrayList<UniteDeProduction> udp = new ArrayList<UniteDeProduction>();
+
+        ArrayList<ProduitFermier> pf2 = new ArrayList<ProduitFermier>();
+
+        EnclosCochon ec = new EnclosCochon(10, "PACA");
+        Cochon c = new Cochon(150.0f, LocalDate.of(2100, Month.NOVEMBER, 28), (short) 55, 5.0f, "Cochondelait", ec);
+        pf.add(c);
+
+        Acheteur acheteur = new Acheteur(new Horticulteur(pf2, udp, 1000));
+        Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 1000));
+
+        MarcheBasique marche = new MarcheBasique("Bazard");
+
+        Offre offre = new Offre(45,pf,vendeur);
+
+        offre.acheter(acheteur,marche);
+
+        assertSame(acheteur.getInventaire(),pf2);
+
+
+
+
+
+    }
+
 
 }
