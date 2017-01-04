@@ -30,8 +30,8 @@ public class FenetreParticipant extends FenetreGenerale {
 
     private FenetreParticipant instance;
     /**
-     *
-     * @param titre
+     * Fenêtre principale de l'application
+     * @param titre Titre de l'application
      */
     public FenetreParticipant(String titre)
     {
