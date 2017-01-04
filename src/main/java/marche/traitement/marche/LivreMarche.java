@@ -1,11 +1,19 @@
 package marche.traitement.marche;
 
+import marche.traitement.participant.Acheteur;
+import marche.traitement.participant.Vendeur;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Classe LivreMarche
+ *
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
+ * @see Controleur#transfererBiens(Acheteur, Vendeur, Offre, Marche)
  */
 public class LivreMarche implements Serializable {
 
@@ -16,9 +24,11 @@ public class LivreMarche implements Serializable {
 
     /**
      * Méthode permettant d'ajouter une transaction à notre historique de transaction
-     * @param str
+     * @param str Chaîne à ajouter au livre d'or sur une nouvelle ligne.
      */
     public static void ajouterTransaction(String str){
+        if (historique == null)
+            historique = new ArrayList<String>();
         historique.add(str);
     }
 
