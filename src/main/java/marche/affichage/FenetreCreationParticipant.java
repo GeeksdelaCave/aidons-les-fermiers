@@ -12,7 +12,7 @@ import java.awt.event.ItemListener;
  */
 public class FenetreCreationParticipant extends FenetreGenerale {
 
-    private String acteurs[] = {"Fermier","Trader","Grossiste","Centrale d'achat"};
+    private String acteurs[] = {"Arboriculteur","Trader","Grossiste","Centrale d'achat", "Horticulteur","ProducteurDeViande", "ProducteurLaitier", };
     private JPanel panneauCreationParticipant = new JPanel();
     private JComboBox comboBox = new JComboBox(acteurs);
 
@@ -62,6 +62,9 @@ public class FenetreCreationParticipant extends FenetreGenerale {
 
         panneau.add(labelPrenom);
         panneau.add(fieldPrenom);
+
+        panneau.add(labelDenomination);
+        panneau.add(fieldDenomination);
 
         panneau.add(boutonCreer);
 
