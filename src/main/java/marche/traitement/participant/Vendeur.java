@@ -47,7 +47,7 @@ public class Vendeur extends Decorateur{
 
             Offre offre = new Offre(prix, temp, this);
 
-            if (Controleur.valider(offre, quantite)) {
+            if (Controleur.valider(offre)) {
                 Controleur.ajouterOffre(offre, marche);
             } else {
                 System.out.println("La création d'offre a échouée");

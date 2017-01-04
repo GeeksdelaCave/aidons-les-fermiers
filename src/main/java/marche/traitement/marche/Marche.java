@@ -37,7 +37,7 @@ public abstract class Marche {
      * Méthode permettant d'ajouter une offre au catalogue
      * @param offre
      */
-    public void ajouterOffre(Offre offre){
+    public void ajouterOffre(Offre offre) {
         catalogue.add(offre);
     }
 

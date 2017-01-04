@@ -85,6 +85,7 @@ public class Offre {
         this.vendeur = vendeur;
         this.IDOffre = this.IDOffreGeneral;
         ++this.IDOffreGeneral;
+        this.acheteursPotentiels = new ArrayList<Acheteur>();
     }
 
     /**
@@ -153,7 +154,7 @@ public class Offre {
      * @see Offre#acheteursPotentiels
      */
     public void ajouterAcheteur(Acheteur acheteur){
-        this.acheteursPotentiels.add(acheteur);
+        acheteursPotentiels.add(acheteur);
     }
 
     /**
