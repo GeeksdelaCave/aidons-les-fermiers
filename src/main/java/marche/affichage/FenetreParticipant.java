@@ -4,15 +4,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /**
- * Created by Thibaud on 04/01/2017.
+ * Fenêtre permettant de voir l'ensemble des participants et d'accéder au Menu.
+ * @author Thibaud CENENT
+ * @version 1.0
  */
 public class FenetreParticipant extends JFrame {
+    /**
+     * Panneau composant permettant de gérer l'affichage des participants.
+     * @see FenetreParticipant#FenetreParticipant(String)
+     */
     private JPanel panneauAffichageParticipant = new JPanel();
+
+    /**
+     * Barre de Menu qui permettra l'accès au Menu.
+     * @see
+     */
     private JMenuBar barreMenu = new JMenuBar();
+
+    /**
+     * Menu permettant d'accéder aux différents choix possibles.
+     */
     private JMenu menu = new JMenu("Menu");
+
+    /**
+     *
+     * @param titre
+     */
     public FenetreParticipant(String titre)
     {
         super(titre);
