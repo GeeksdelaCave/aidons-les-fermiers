@@ -3,7 +3,8 @@
 # Si erreur, renvoi un code 0 pour ne pas faire échouer le tout
 set -e
 
-sudo apt-get install git
+# Si Git n'est pas installé
+# sudo apt-get install git
 
 # Clone du repo pour travailler dedans (dossier repo_clone
 git clone https://github.com/GeeksdelaCave/aidons-les-fermiers.git repo_clone
