@@ -271,9 +271,6 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
 
    }
 
-    public static void main(String[] args) {
-        new FenetreCreationParticipant("Fenêtre de création de participant");
-    }
 
 
 }

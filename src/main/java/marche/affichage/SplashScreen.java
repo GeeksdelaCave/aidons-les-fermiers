@@ -44,6 +44,8 @@ public class SplashScreen extends FenetreGenerale {
 
         InterfaceALF.getInstance();
 
+        new FenetrePrixMoyenProduit("");
+
         this.dispose();
     }
 

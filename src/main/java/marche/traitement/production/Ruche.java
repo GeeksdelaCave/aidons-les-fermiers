@@ -38,6 +38,7 @@ public class Ruche extends UniteDeProduction{
     public Miel creerPotMiel(float prixPot, LocalDate datePeremption, short qualite, float poidsPot, String typeMiel) {
         Miel potMiel = new Miel(prixPot, datePeremption, qualite, poidsPot, typeMiel, this);
         ajoutInventaire(potMiel);
+        potMiel.validerLabel();
         return potMiel;
     }
 }

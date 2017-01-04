@@ -39,7 +39,4 @@ public class FenetrePrixMoyenProduit extends FenetreGenerale {
 
     }
 
-    public static void main (String[] args){
-        new FenetrePrixMoyenProduit("Prix Moyen Produit");
-    }
 }

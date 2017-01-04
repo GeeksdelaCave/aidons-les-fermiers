@@ -39,6 +39,7 @@ public class Verger extends UniteDeProduction {
     public Pomme creerCagette(float prix, LocalDate datePeremption, short qualite, float poidsCagette, String typePomme, int nbPommes) {
         Pomme cagette = new Pomme(prix, datePeremption, qualite, poidsCagette, typePomme, nbPommes, this);
         inventaireUniteDeProduction.add(cagette);
+        cagette.validerLabel();
         return cagette;
     }
 
