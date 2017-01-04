@@ -32,7 +32,8 @@ public class Controleur {
     }
 
     /**
-     * Constructeur privé
+     *  Hash Map permettant d'associer un produit fermier à son prix moyen.
+     *  @see Controleur#affichagePrixMoyen()
      */
     private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
         put("Vache",1300.0);
@@ -43,6 +44,10 @@ public class Controleur {
         put("Oeuf",6.0);
         put("Pomme",14.0);
     }};
+
+    /**
+     * Constructeur privé
+     */
     private Controleur() {
     }
 
@@ -146,12 +151,14 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant d'afficher les prix moyens des produits
+     * Retourne un Array de String contenant le prix moyen des produits fermiers
+     * @return tab
      */
-    public static void affichagePrixMoyen(){
+    public static ArrayList<String> affichagePrixMoyen(){
+        ArrayList<String> tab = new ArrayList<String>();
         for(String mapKey : associationPrixMoyensProduitsFermiers.keySet()){
-            System.out.println("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
-            System.out.println();
+            tab.add("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
         }
+        return tab;
     }
 }

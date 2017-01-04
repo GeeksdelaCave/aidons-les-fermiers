@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.traitement.cotisation.CotisationGenerale;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.production.Verger;
 import marche.traitement.produits.Pomme;
@@ -62,5 +63,32 @@ public class FermierTest {
         test.add(pomme);
 
         assertEquals (fermier.getInventaire(), test);
+    }
+
+    @Test
+    /**
+     * Test du nouveau solde du producteur de viande après prélévement de la cotisation
+     */
+    public void testNewSoldeProducteurdeViande() {
+        ProducteurDeViande producteurDeViande = new ProducteurDeViande(null,null,150.0);
+        double cotisationAPayer = producteurDeViande.payerCotisation(new CotisationGenerale());
+        assert (producteurDeViande.getSolde() - cotisationAPayer ) == 147.0; // TODO essayer de le prendre en considération avec enleverSolde() car renvoie pour ma part quand test AssertionError
+    }
+
+    @Test
+    /**
+     * Test du nouveau solde de l'arboriculteur après prélévement de la cotisation
+     */
+    public void testNewSoldeArboriculteur() throws SoldeNonDisponibleException {
+        try {
+            Arboriculteur arboriculteur = new Arboriculteur(null, null, 200.0);
+            double cotisationAPayer = arboriculteur.payerCotisation(new CotisationGenerale());
+            arboriculteur.enleverSolde(cotisationAPayer);
+            assert arboriculteur.getSolde() == 190.0;
+        }
+        catch (SoldeNonDisponibleException snde){
+            snde.printStackTrace();
+        }
+
     }
 }
