@@ -36,7 +36,7 @@ public class Poulailler extends UniteDeProduction {
     public Oeuf creerPackOeuf(float prix, LocalDate datePeremption, short qualite) {
         Oeuf oeuf = new Oeuf(prix, datePeremption, qualite, this);
         ajoutInventaire(oeuf);
-        oeuf.validerLabel();
+       // oeuf.validerLabel();
         return oeuf;
     }
 }
