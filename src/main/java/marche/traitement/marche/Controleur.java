@@ -163,11 +163,4 @@ public class Controleur {
             prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getSimpleName());
         return prixMoyen;
     }
-
-    public static double calculerPrixMoyen(Offre offre) {
-        double prixMoyen = 0;
-        for (ProduitFermier pf : offre.getProduits())
-            prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getSimpleName());
-        return prixMoyen;
-    }
 }

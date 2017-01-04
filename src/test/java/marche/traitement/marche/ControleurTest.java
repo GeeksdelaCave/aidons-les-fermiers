@@ -104,7 +104,6 @@ public class ControleurTest {
 
         Controleur.regulerPrix(offre);
 
-        System.out.println(offre.getPrix());
         assertTrue(offre.getPrix() == 54);
     }
 
