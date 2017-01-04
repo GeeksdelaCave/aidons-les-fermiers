@@ -15,6 +15,8 @@ import java.util.Random;
  *
  * @author Nicolas Guigou
  * @author Tristan DIETZ
+ * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
  *
  * @version 1.2
  * @see Offre
@@ -42,7 +44,6 @@ public class Controleur {
 
     /**
      *  Hash Map permettant d'associer un produit fermier à son prix moyen.
-     *  @see Controleur#affichagePrixMoyen()
      */
     private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
         put("Vache",1300.0);
@@ -112,6 +113,7 @@ public class Controleur {
         }else{
             offre.setPrix(prixMoyen + prixMoyen * 0.2);
         }
+
     }
 
     /**
@@ -141,20 +143,9 @@ public class Controleur {
         if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
             Controleur.regulerPrix(offre);
         }
+
         return true;
 
-    }
-
-    /**
-     * Retourne un Array de String contenant le prix moyen des produits fermiers
-     * @return tab
-     */
-    public static ArrayList<String> affichagePrixMoyen(){
-        ArrayList<String> tab = new ArrayList<String>();
-        for(String mapKey : associationPrixMoyensProduitsFermiers.keySet()){
-            tab.add("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
-        }
-        return tab;
     }
 
     public static double calculerPrixMoyen(Offre offre) {
