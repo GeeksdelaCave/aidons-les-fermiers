@@ -22,22 +22,6 @@ public class BarreMenu extends JMenuBar {
     public BarreMenu() {
         this.add(addMenu());
         this.add(addLivreTransactions());
-
-
-        System.setProperty("apple.laf.useScreenMenuBar", "true");
-        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Test");
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Une erreur ? Pas de soucis ! Vous n'avez juste pas Mac ;)");
     }
 
     /**
