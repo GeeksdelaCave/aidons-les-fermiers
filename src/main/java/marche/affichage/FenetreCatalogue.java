@@ -8,7 +8,7 @@ import java.awt.*;
  * @author Thibaud CENENT
  * @version 1.0
  */
-public class FenetreCatalogue extends JFrame {
+public class FenetreCatalogue extends FenetreGenerale {
 
     /**
      * Panneau désignant le composant où va être placé la zone de texte contenant les offres du catalogue.

@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * Created by Thibaud on 04/01/2017.
  */
-public class FenetrePrixMoyenProduit extends JFrame {
+public class FenetrePrixMoyenProduit extends FenetreGenerale {
 
     private JTextArea zoneTextePrixMoyen = new JTextArea();
     private JPanel panneauPrixMoyen = new JPanel();

@@ -9,7 +9,7 @@ import java.awt.*;
 /**
  * @author Nicolas Guigou
  */
-public class FenetreCreationParticipant extends JFrame {
+public class FenetreCreationParticipant extends FenetreGenerale {
 
     private String acteurs[] = {"Fermier","Traider","Grossiste","Centrale d'achat"};
     private JPanel panneauCreationParticipant = new JPanel();

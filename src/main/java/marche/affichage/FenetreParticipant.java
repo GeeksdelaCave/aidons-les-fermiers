@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * @author Thibaud CENENT
  * @version 1.0
  */
-public class FenetreParticipant extends JFrame {
+public class FenetreParticipant extends FenetreGenerale {
     /**
      * Panneau composant permettant de gérer l'affichage des participants.
      * @see FenetreParticipant#FenetreParticipant(String)

@@ -11,12 +11,12 @@ import static javax.swing.JOptionPane.YES_NO_OPTION;
 /**
  * Created by Thibaud on 04/01/2017.
  */
-public class FenetreQuitterApplication extends JFrame {
+public class FenetreQuitterApplication extends FenetreGenerale {
 
    private JOptionPane messageConseil = new JOptionPane();
 
     public FenetreQuitterApplication(){
-        super();
+        super("Quitter");
         this.setSize(300,200);
         messageConseil.showConfirmDialog(this,"Voulez-vous vraiment quitter ?","Quitter",YES_NO_OPTION);
     }
