@@ -23,7 +23,7 @@ public abstract class Marche {
     /**
      * Constructeur
      */
-    public void Marche(String nom){
+    protected Marche(String nom){
         this.nomMarche = nom;
         this.catalogue = null;
     }

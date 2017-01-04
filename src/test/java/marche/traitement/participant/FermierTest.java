@@ -70,9 +70,10 @@ public class FermierTest {
      * Test du nouveau solde du producteur de viande après prélévement de la cotisation
      */
     public void testNewSoldeProducteurdeViande() {
+        // TODO essayer de le prendre en considération avec enleverSolde() car renvoie pour ma part quand test AssertionError
         ProducteurDeViande producteurDeViande = new ProducteurDeViande(null,null,150.0);
         double cotisationAPayer = producteurDeViande.payerCotisation(new CotisationGenerale());
-        assert (producteurDeViande.getSolde() - cotisationAPayer ) == 147.0; // TODO essayer de le prendre en considération avec enleverSolde() car renvoie pour ma part quand test AssertionError
+        assert (producteurDeViande.getSolde() - cotisationAPayer ) == 147.0;
     }
 
     @Test
