@@ -7,7 +7,7 @@ set -e
 # sudo apt-get install git
 
 # Clone du repo pour travailler dedans (dossier repo_clone
-git clone https://github.com/GeeksdelaCave/aidons-les-fermiers.git repo_clone
+git clone git@github.com:GeeksdelaCave/aidons-les-fermiers.git repo_clone
 cd repo_clone
 git checkout develop
 
