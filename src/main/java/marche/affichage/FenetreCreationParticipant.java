@@ -1,18 +1,22 @@
 package marche.affichage;
 
+import marche.traitement.marche.Controleur;
 import marche.traitement.participant.Horticulteur;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 
 /**
  * @author Nicolas Guigou
+ * Classe qui permet d'ajouter des participant par l'intermédiaire d'une IHM
  */
-public class FenetreCreationParticipant extends FenetreGenerale {
+public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener{
 
     private String acteurs[] = {"Arboriculteur","Trader","Grossiste","Centrale d'achat", "Horticulteur","ProducteurDeViande", "ProducteurLaitier", };
     private JPanel panneauCreationParticipant = new JPanel();
@@ -89,6 +93,9 @@ public class FenetreCreationParticipant extends FenetreGenerale {
         panneau.add(checkVendeur);
 
         panneau.add(boutonCreer);
+        boutonCreer.addActionListener(this);
+
+
 
 
         this.setSize(300,300);
@@ -97,6 +104,79 @@ public class FenetreCreationParticipant extends FenetreGenerale {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+
+   public void actionPerformed(ActionEvent e){
+        if(comboBox.getSelectedItem() == "Arboriculteur"){
+            if(checkAcheteur.isSelected()){
+
+            }
+            else{
+
+            }
+
+        }
+
+       if(comboBox.getSelectedItem() == "ProducteurDeViande"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+       if(comboBox.getSelectedItem() == "ProducteurDeLair"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+       if(comboBox.getSelectedItem() == "Horticulteur"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+       if(comboBox.getSelectedItem() == "Grossiste"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+       if(comboBox.getSelectedItem() == "Centrale d'achat"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+       if(comboBox.getSelectedItem() == "Trader"){
+           if(checkAcheteur.isSelected()){
+
+           }
+           else{
+
+           }
+
+       }
+
+   }
 
     public static void main(String[] args) {
         new FenetreCreationParticipant("Fenêtre de création de participant");
