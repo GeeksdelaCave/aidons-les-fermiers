@@ -27,7 +27,7 @@ public class Decorateur extends Acteur {
 
     /**
      * Permet de récupérer le solde de l'acteur
-     * @return
+     * @return Solde de l'acteur
      */
     public double getSolde(){
         return acteur.getSolde();
