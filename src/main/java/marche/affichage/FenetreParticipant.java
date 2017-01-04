@@ -7,13 +7,13 @@ import java.util.ArrayList;
 /**
  * Created by Thibaud on 04/01/2017.
  */
-public class AffichageParticipant extends JFrame {
+public class FenetreParticipant extends JFrame {
     private JPanel panneauAffichageParticipant = new JPanel();
     private JMenuBar barreMenu = new JMenuBar();
     private JMenu menu = new JMenu("Menu");
     private ArrayList<JMenuItem>  menuItems = new ArrayList<JMenuItem>();
 
-    public AffichageParticipant(String titre)
+    public FenetreParticipant(String titre)
     {
         super(titre);
         panneauAffichageParticipant.setLayout(new BorderLayout());
@@ -27,11 +27,11 @@ public class AffichageParticipant extends JFrame {
         barreMenu.add(menu);
         this.setJMenuBar(barreMenu);
         this.setContentPane(panneauAffichageParticipant);
-        this.pack();
+        this.setSize(500,400);
         this.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new AffichageParticipant("Fenêtre principal");
+        new FenetreParticipant("Fenêtre principal");
     }
 }
