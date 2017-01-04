@@ -20,4 +20,18 @@ import static org.junit.Assert.assertTrue;
  */
 public class ArboriculteurTest {
 
+    /**
+     * Test du nouveau solde de l'arboriculteur après prélévement de la cotisation
+     */
+    @Test
+    public void testPayerCotisation_SoldeDebite() {
+        ArrayList<ProduitFermier> pf = new ArrayList<ProduitFermier>();
+        ArrayList<UniteDeProduction> udp = new ArrayList<UniteDeProduction>();
+
+        Arboriculteur arboriculteur = new Arboriculteur(pf,udp,150.0);
+
+        arboriculteur.payerCotisation(new CotisationGenerale());
+
+        assertTrue(arboriculteur.getSolde() == 142.5);
+    }
 }

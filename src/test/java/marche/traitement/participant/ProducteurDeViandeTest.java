@@ -31,8 +31,6 @@ public class ProducteurDeViandeTest {
 
         producteurDeViande.payerCotisation(new CotisationGenerale());
 
-        System.out.println(producteurDeViande.getSolde());
-
         assertTrue(producteurDeViande.getSolde() == 147.0);
     }
 }
