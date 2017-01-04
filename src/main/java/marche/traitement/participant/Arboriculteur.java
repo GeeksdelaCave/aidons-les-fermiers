@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.affichage.ExceptionsPopups;
 import marche.traitement.cotisation.Cotisation;
 import marche.traitement.cotisation.Visitable;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
@@ -28,15 +29,14 @@ public class Arboriculteur extends Fermier implements Visitable {
     }
 
     /**
-     *
-     * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
-     * @return le nouveau solde de l'arboriculteur après la cotisation
+     * Cotisation à payer
+     * @param cotisation Désigne la cotisation que va devoir payer un fermier en fonction de sa spécialisation.
      */
     public void payerCotisation(Cotisation cotisation) {
         try {
             enleverSolde(cotisation.calculMontantCotisation(this));
         } catch (SoldeNonDisponibleException e) {
-            //TODO faire la fenetre d'exception
+            ExceptionsPopups.soldeNonDispoPopup();
         }
     }
 }

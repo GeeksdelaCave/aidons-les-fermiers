@@ -58,4 +58,8 @@ public abstract class Fermier extends Acteur {
     }
 
     public abstract void payerCotisation(Cotisation cotisation);
+
+    public Collection<UniteDeProduction> getUniteDeProductions() {
+        return uniteDeProductions;
+    }
 }

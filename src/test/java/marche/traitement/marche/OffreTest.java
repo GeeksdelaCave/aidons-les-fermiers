@@ -59,12 +59,10 @@ public class OffreTest {
         Acheteur acheteur = new Acheteur(new Horticulteur(pf2, udp, 1000));
         Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 1000));
 
-        MarcheBasique marche = new MarcheBasique("Bazard");
-
         Offre offre = new Offre(45,pf,vendeur);
 
         try {
-            offre.acheter(acheteur,marche);
+            offre.acheter(acheteur, Marche.getMarcheInstance());
         } catch (SoldeNonDisponibleException e) {
             //TODO faire fenetre exception
         }

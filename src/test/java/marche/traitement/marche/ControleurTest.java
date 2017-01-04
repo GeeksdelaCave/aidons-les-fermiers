@@ -37,8 +37,6 @@ public class ControleurTest {
     Acheteur acheteur = new Acheteur(new Horticulteur(pf2, udp, 1000));
     Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 1000));
 
-    MarcheBasique marche = new MarcheBasique("Bazard");
-
     @Test
     public void testChoisirAcheteur_PremierDeLaListe() {
         Acheteur acheteur2 = new Acheteur(new Horticulteur(pf2, udp, 1000));
@@ -68,7 +66,7 @@ public class ControleurTest {
 
         Offre offre = new Offre(1000, vendeur.getInventaire(), vendeur);
 
-        Controleur.transfererBiens(acheteur, vendeur, offre, marche);
+        Controleur.transfererBiens(acheteur, vendeur, offre, Marche.getMarcheInstance());
 
         assertEquals(acheteur.getInventaire(), vendeur.getInventaire());
     }
@@ -117,9 +115,9 @@ public class ControleurTest {
         acheteur.setDenomination("Colonna", "Romain");
         vendeur.setDenomination("Abdel", "Jean");
 
-        marche.ajouterOffre(offre);
+        Marche.getMarcheInstance().ajouterOffre(offre);
 
-        assertTrue(marche.getCatalogue().contains(offre));
+        assertTrue(Marche.getMarcheInstance().getCatalogue().contains(offre));
     }
 
     @Test

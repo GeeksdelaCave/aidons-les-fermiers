@@ -1,5 +1,8 @@
 package marche.traitement.marche;
 
+import marche.traitement.participant.Acheteur;
+import marche.traitement.participant.Acteur;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -12,13 +15,11 @@ import java.util.Collection;
  * @see Offre
  * @version 1.2
  */
-public abstract class Marche {
+public class Marche {
 
+    private Collection<Acteur> listeDesActeursDuMarche;
 
-    /**
-     * Donnée membre permettant d'identifier un marché
-      */
-    protected String nomMarche;
+    private static Marche marche;
 
     /**
      * Catalogue peremttant de répertorier les offre
@@ -28,8 +29,7 @@ public abstract class Marche {
     /**
      * Constructeur
      */
-    public Marche(String nom) {
-        this.nomMarche = nom;
+    private Marche() {
         this.catalogue = new ArrayList<Offre>();
     }
 
@@ -55,5 +55,19 @@ public abstract class Marche {
      */
     public ArrayList<Offre> getCatalogue(){
         return this.catalogue;
+    }
+
+    public void ajouterActeur(Acteur acteur) {
+        listeDesActeursDuMarche.add(acteur);
+    }
+
+    public Collection<Acteur> getListeDesActeursDuMarche() {
+        return listeDesActeursDuMarche;
+    }
+
+    public static Marche getMarcheInstance() {
+        if (marche == null)
+            marche = new Marche();
+        return marche;
     }
 }

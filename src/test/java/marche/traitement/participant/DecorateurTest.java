@@ -11,7 +11,6 @@ package marche.traitement.participant;
  */
 
 import marche.traitement.exceptions.SoldeNonDisponibleException;
-import marche.traitement.marche.MarcheBasique;
 import marche.traitement.marche.Offre;
 import marche.traitement.production.EnclosCochon;
 import marche.traitement.production.UniteDeProduction;

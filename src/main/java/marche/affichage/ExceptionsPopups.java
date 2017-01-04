@@ -14,23 +14,56 @@ import javax.swing.*;
  */
 public class ExceptionsPopups {
 
-    public static void InventairePleinPopup() {
+    public static void inventairePleinPopup() {
         JOptionPane.showMessageDialog(new JFrame(),
                 "L'inventaire est plein.",
                 "Erreur",
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public static void ProduitPerimePopup() {
+    public static void produitPerimePopup() {
         JOptionPane.showMessageDialog(new JFrame(),
                 "Le produit est périmé.",
                 "Erreur",
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public static void SoldeNonDispoPopup() {
+    public static void soldeNonDispoPopup() {
         JOptionPane.showMessageDialog(new JFrame(),
                 "Le solde n'est pas disponible.",
+                "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void pasAssezObjets() {
+        JOptionPane.showMessageDialog(new JFrame(),
+                "Les objets n'existent pas dans" + "\n" +
+                        "l'inventaire du vendeur.",
+                "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void produitFermierNonCommercialisable() {
+        JOptionPane.showMessageDialog(new JFrame(),
+                "La qualité du produit laisse trop à" + "\n" +
+                        "désirer, ou le produit est périmé.",
+                "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void livreEnregistre() {
+        JOptionPane.showMessageDialog(new JFrame(),
+                "Le Livre des Transactions a bien" + "\n" +
+                    "été enregistré.",
+                "Message",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void livreNonEnregistre() {
+        JOptionPane.showMessageDialog(new JFrame(),
+                "Une erreur est survenue lors de" + "\n" +
+                        "l'enregistrement du Livre des" + "\n" +
+                        "Transactions.",
                 "Erreur",
                 JOptionPane.ERROR_MESSAGE);
     }

@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.affichage.ExceptionsPopups;
 import marche.traitement.marche.Controleur;
 import marche.traitement.marche.Marche;
 import marche.traitement.marche.Offre;
@@ -40,8 +41,8 @@ public class Vendeur extends Decorateur{
             }
         }
         if (cpt != quantite) {
-            System.out.println("La création de l'offre a échoué");
-            //TODO gerer l'exception
+            System.out.println("La création de l'offre a échouée.");
+            ExceptionsPopups.pasAssezObjets();
         }
         else {
 
@@ -50,8 +51,8 @@ public class Vendeur extends Decorateur{
             if (Controleur.valider(offre)) {
                 Controleur.ajouterOffre(offre, marche);
             } else {
-                System.out.println("La création d'offre a échouée");
-                //TODO gerer l'exception
+                System.out.println("La création d'offre a échouée.");
+                ExceptionsPopups.produitFermierNonCommercialisable();
             }
 
         }
