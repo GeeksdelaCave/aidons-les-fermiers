@@ -17,7 +17,12 @@ import java.util.ArrayList;
 
 
 /**Classe qui permet d'ajouter des participant par l'intermédiaire d'une IHM
+ *
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
+ * @see Acteur
  */
 public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener{
 
@@ -136,64 +141,27 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
     }
 
    public void actionPerformed(ActionEvent e){
-        if(comboBox.getSelectedItem() == "Arboriculteur"){
-            if(checkAcheteur.isSelected()){
-                Acheteur acheteur = new Acheteur(new Arboriculteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-                acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
-                Marche.getMarcheInstance().ajouterActeur(acheteur);
-            }
-            else{
-                Vendeur vendeur = new Vendeur(new Arboriculteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-                vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
-                Marche.getMarcheInstance().ajouterActeur(vendeur);
-            }
-
+        if(comboBox.getSelectedItem() == "Arboriculteur") {
+            Acteur arboriculteur = new Arboriculteur(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
+            Marche.getMarcheInstance().ajouterActeur(creerDecorateur(arboriculteur, checkAcheteur.isSelected(), checkVendeur.isSelected()));
         }
 
-       if(comboBox.getSelectedItem() == "ProducteurDeViande"){
-           if(checkAcheteur.isSelected()){
-               Acheteur acheteur = new Acheteur(new ProducteurDeViande(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
-               Marche.getMarcheInstance().ajouterActeur(acheteur);
-           }
-           else{
-               Vendeur vendeur = new Vendeur(new ProducteurDeViande(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
-               Marche.getMarcheInstance().ajouterActeur(vendeur);
-           }
-
+       if(comboBox.getSelectedItem() == "ProducteurDeViande") {
+           Acteur producteurDeViande = new ProducteurDeViande(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
+           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(producteurDeViande, checkAcheteur.isSelected(), checkVendeur.isSelected()));
        }
 
-       if(comboBox.getSelectedItem() == "ProducteurDeLait"){
-           if(checkAcheteur.isSelected()){
-               Acheteur acheteur = new Acheteur(new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
-               Marche.getMarcheInstance().ajouterActeur(acheteur);
+       if(comboBox.getSelectedItem() == "ProducteurDeLait") {
+           Acteur producteurLaitier = new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
+           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(producteurLaitier, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+        }
 
-           }
-           else{
-               Vendeur vendeur = new Vendeur(new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
-               Marche.getMarcheInstance().ajouterActeur(vendeur);
-           }
-
+       if(comboBox.getSelectedItem() == "Horticulteur") {
+           Acteur horticulteur = new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
+           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(horticulteur, checkAcheteur.isSelected(), checkVendeur.isSelected()));
        }
 
-       if(comboBox.getSelectedItem() == "Horticulteur"){
-           if(checkAcheteur.isSelected()){
-               Acheteur acheteur = new Acheteur(new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
-               Marche.getMarcheInstance().ajouterActeur(acheteur);
-           }
-           else{
-               Vendeur vendeur = new Vendeur(new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
-               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
-               Marche.getMarcheInstance().ajouterActeur(vendeur);
-           }
-
-       }
-
-       if(comboBox.getSelectedItem() == "Grossiste"){
+       if(comboBox.getSelectedItem() == "Grossiste") {
            if(checkAcheteur.isSelected()){
                Acheteur acheteur = new Acheteur(new Grossiste(fieldDenomination.getText()));
                acheteur.setDenomination(fieldDenomination.getText(),null);
@@ -207,7 +175,7 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
 
        }
 
-       if(comboBox.getSelectedItem() == "Centrale d'achat"){
+       if(comboBox.getSelectedItem() == "Centrale d'achat") {
            if(checkAcheteur.isSelected()){
                Acheteur acheteur = new Acheteur(new CentraleAchat(fieldDenomination.getText()));
                acheteur.setDenomination(fieldDenomination.getText(),null);
@@ -221,7 +189,7 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
 
        }
 
-       if(comboBox.getSelectedItem() == "Trader"){
+       if(comboBox.getSelectedItem() == "Trader") {
            if(checkAcheteur.isSelected()){
                Acheteur acheteur = new Acheteur(new Trader());
                acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
@@ -238,7 +206,15 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
    }
 
    public Acteur creerDecorateur(Acteur acteur, boolean acheteur, boolean vendeur) {
-       return null;
+       if (acheteur && vendeur)
+           return new Vendeur(new Acheteur(acteur));
+       else if (acheteur)
+           return new Acheteur(acteur);
+       else if (vendeur)
+           return new Vendeur(acteur);
+       else
+           return acteur;
+
    }
 
     public static void main(String[] args) {
