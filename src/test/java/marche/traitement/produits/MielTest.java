@@ -15,6 +15,10 @@ import java.time.Month;
  * MielTest désigne les tests unitaires effectués sur la classe Miel
  *
  * @author Romain COLONNA D'ISTRIA
+ *
+ * @see Miel
+ * @see Ruche
+ *
  * @version 1.5
  */
 public class MielTest {

@@ -2,6 +2,8 @@ package marche.traitement.label;
 
 /**
  * Classe LabelAOC désignant un label qui est attribué lorsqu'un produit est authentique et typique d'une région
+ *
+ * @author Thibaud CENENT
  * @version 1.1
  */
 public class LabelAOC extends Label {

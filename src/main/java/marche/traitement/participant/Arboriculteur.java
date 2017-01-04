@@ -11,8 +11,10 @@ import java.util.Collection;
 
 /**
  * Classe relative à un fermier gérant la production des fruits.
+ *
  * @author Thibaud CENENT
- * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
+ *
  * @version 1.1
  */
 public class Arboriculteur extends Fermier implements Visitable {

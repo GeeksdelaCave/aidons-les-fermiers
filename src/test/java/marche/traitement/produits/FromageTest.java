@@ -16,6 +16,9 @@ import static org.junit.Assert.*;
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
+ * @see Fromage
+ * @see Fromagerie
+ *
  * @version 1.5
  */
 public class FromageTest {

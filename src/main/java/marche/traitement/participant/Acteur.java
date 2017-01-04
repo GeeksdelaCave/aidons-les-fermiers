@@ -10,6 +10,7 @@ import java.util.ArrayList;
  *
  * @author Tristan DIETZ
  * @author Romain COLONNA D'ISTRIA
+ * @author Nicolas GUIGOU
  *
  * @version 1.2
  */
@@ -77,12 +78,10 @@ public abstract class Acteur {
 
 
     /**
-
      * Méthode d'ajout de produit fermier dans l'inventaire.
      * @param produit Produit à ajouter a l'inventaire du fermier.
      *
      * @see Acteur#inventaire
-
      */
     public void ajoutProduit(ProduitFermier produit) {
         inventaire.add(produit);

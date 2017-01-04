@@ -12,7 +12,7 @@ import java.util.Collection;
 
 /**
  * Classe Offre
-
+ *
  * @author Nicolas Guigou
  * @author Tristan DIETZ
  *

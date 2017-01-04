@@ -1,17 +1,19 @@
 package marche.traitement.marche;
 
-import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.participant.*;
-import marche.traitement.production.EnclosCochon;
 import marche.traitement.production.UniteDeProduction;
-import marche.traitement.produits.Cochon;
 import marche.traitement.produits.ProduitFermier;
+import marche.traitement.exceptions.SoldeNonDisponibleException;
+import marche.traitement.production.EnclosCochon;
+import marche.traitement.produits.Cochon;
 
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assert.*;
 

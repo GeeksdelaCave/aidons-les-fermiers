@@ -14,7 +14,7 @@ import java.time.LocalDate;
  *
  * @version 1.1
  */
-public class Etable extends Enclos {
+public class Etable extends UniteDeProduction {
 
     /** Constructeur de la classe Etable
      *

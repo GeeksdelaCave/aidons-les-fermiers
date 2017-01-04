@@ -16,9 +16,10 @@ import static org.junit.Assert.*;
  * @author Thibaud CENENT
  * @author Tristan DIETZ
  *
- * @version 1.6
  * @see Cochon
  * @see EnclosCochon
+ *
+ * @version 1.6
  */
 public class CochonTest {
 

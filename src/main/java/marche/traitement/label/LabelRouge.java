@@ -2,6 +2,8 @@ package marche.traitement.label;
 
 /**
  * Création de la classe LabelRouge représentant le label attribué aux produits de qualité supérieure (supérieur à 75 sur 100)
+ *
+ * @author Thibaud CENENT
  * @version 1.0
  */
 public class LabelRouge extends Label {

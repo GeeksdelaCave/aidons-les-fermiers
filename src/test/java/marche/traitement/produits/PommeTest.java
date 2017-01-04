@@ -14,6 +14,10 @@ import static org.junit.Assert.assertTrue;
  * PommeTest désigne le test unitaire effectué sur la classe Pomme sur tous ces getter() crées
  *
  * @author Romain COLONNA D'ISTRIA
+ *
+ * @see Pomme
+ * @see Verger
+ *
  * @version 1.7
  */
 public class PommeTest {
