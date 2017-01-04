@@ -7,7 +7,7 @@ set -e
 # sudo apt-get install git
 
 # Déclaration du repo à utiliser
-REPOSITORY=`git@github.com:GeeksdelaCave/aidons-les-fermiers.git`
+REPOSITORY="git@github.com:GeeksdelaCave/aidons-les-fermiers.git"
 
 # Clone du repo pour travailler dedans (dossier repo_clone).
 git clone ${REPOSITORY} repo_clone
