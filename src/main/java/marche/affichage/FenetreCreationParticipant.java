@@ -67,6 +67,8 @@ public class FenetreCreationParticipant extends FenetreGenerale {
 
         this.setSize(300,300);
         this.setContentPane(panneauCreationParticipant);
+
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 
