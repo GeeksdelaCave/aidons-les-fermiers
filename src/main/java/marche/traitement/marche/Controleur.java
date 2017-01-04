@@ -12,7 +12,12 @@ import java.util.Random;
 
 /**
  * Singleton Controleur représentant le système
+ *
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
+ *
+ * @version 1.1
+ * @see Offre
  */
 public class Controleur {
     /**
@@ -113,11 +118,15 @@ public class Controleur {
      * @return Si l'offre est composée de produits exclusivement commercialisables, qu'ils sont dans l'inventaire et que le prix est acceptable.
      */
     public static boolean valider(Offre offre,int quantite){
+
+        double prixMoyen = 0.0;
+
         for(ProduitFermier p : offre.getProduits()){
             if(!p.isCommercialisable())
                 return false;
+            prixMoyen += associationPrixMoyensProduitsFermiers.get(p.getClass().getCanonicalName());
         }
-        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
+
         if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
             Controleur.regulerPrix(offre,quantite);
         }
