@@ -7,15 +7,19 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.Thread.sleep;
 
 /**
- * Fenetre Principale de l'application où celle-ci va appeller les fenêtres principales à l'ouverture de l' application.
+ * Fenêtre splash-screen, à lancer avant la fenêtre principale de l'application.
+ *
  * @author Thibaud CENENT
- * @version 1.0
+ * @author Tristan DIETZ
+ *
+ * @version 1.2
  */
-public class FenetreHelpFarmer extends FenetreGenerale {
+public class SplashScreen extends FenetreGenerale {
 
-
-
-    public FenetreHelpFarmer() {
+    /**
+     * Constructeur du splash-screen
+     */
+    public SplashScreen() {
 
         super("Logo");
 
@@ -29,7 +33,7 @@ public class FenetreHelpFarmer extends FenetreGenerale {
         this.setVisible(true);
 
         try {
-            TimeUnit.SECONDS.sleep(4);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             JOptionPane.showMessageDialog(new JFrame(),
                     "TimeUnit n'est pas supporté sur votre distribution." + "\n\n" + "Merci de mettre à jour votre distribution ou machine virtuelle Java.",
@@ -37,16 +41,12 @@ public class FenetreHelpFarmer extends FenetreGenerale {
                     JOptionPane.ERROR_MESSAGE);
         }
 
-        new FenetreParticipant("Participants");
-        new FenetreCatalogue("Catalogue");
-        new FenetrePrixMoyenProduit("Prix moyen");
+        InterfaceALF.getInstance();
 
         this.dispose();
     }
 
-    public static void main(String[] args)
-    {
-        System.out.println(System.getProperty("user.dir"));
-        new FenetreHelpFarmer();
+    public static void main(String[] args) {
+        new SplashScreen();
     }
 }
