@@ -16,9 +16,8 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 
-/**
+/**Classe qui permet d'ajouter des participant par l'intermédiaire d'une IHM
  * @author Nicolas Guigou
- * Classe qui permet d'ajouter des participant par l'intermédiaire d'une IHM
  */
 public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener{
 
@@ -68,6 +67,12 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
                         fieldPrenom.setVisible(false);
                         labelDenomination.setVisible(true);
                         fieldDenomination.setVisible(true);
+                        labelAcheteur.setVisible(true);
+                        checkAcheteur.setVisible(true);
+                        labelVendeur.setVisible(true);
+                        checkVendeur.setVisible(true);
+                        boutonCreer.setVisible(true);
+
                     }
                     if(e.getItem() == "Arboriculteur" || e.getItem() == "Horticulteur" || e.getItem() == "ProducteurDeViande" || e.getItem() == "ProducteurLaitier"){
                         labelPrenom.setVisible(true);
@@ -76,6 +81,11 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
                         fieldPrenom.setVisible(true);
                         labelDenomination.setVisible(false);
                         fieldDenomination.setVisible(false);
+                        labelAcheteur.setVisible(true);
+                        checkAcheteur.setVisible(true);
+                        labelVendeur.setVisible(true);
+                        checkVendeur.setVisible(true);
+                        boutonCreer.setVisible(true);
                     }
                 }
             }
@@ -84,19 +94,35 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
         panneau.add(labelNom);
         panneau.add(fieldNom);
 
+        labelNom.setVisible(false);
+        fieldNom.setVisible(false);
+
         panneau.add(labelPrenom);
         panneau.add(fieldPrenom);
+
+        labelPrenom.setVisible(false);
+        fieldPrenom.setVisible(false);
 
         panneau.add(labelDenomination);
         panneau.add(fieldDenomination);
 
+        labelDenomination.setVisible(false);
+        fieldDenomination.setVisible(false);
+
         panneau.add(labelAcheteur);
         panneau.add(checkAcheteur);
+
+        labelAcheteur.setVisible(false);
+        checkAcheteur.setVisible(false);
 
         panneau.add(labelVendeur);
         panneau.add(checkVendeur);
 
+        labelVendeur.setVisible(false);
+        checkVendeur.setVisible(false);
+
         panneau.add(boutonCreer);
+        boutonCreer.setVisible(false);
         boutonCreer.addActionListener(this);
 
 
