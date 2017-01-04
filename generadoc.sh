@@ -28,7 +28,7 @@ javadoc -private -sourcepath "src/main/java:src/main/ressources" \
       marche.traitement.produits
 
 # Ajout du dossier doc nouvellement remplit
-git add -A doc/
+git add -A doc/*
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
 
 # Push
