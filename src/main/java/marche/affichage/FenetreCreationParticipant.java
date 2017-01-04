@@ -1,7 +1,10 @@
 package marche.affichage;
 
 import marche.traitement.marche.Controleur;
-import marche.traitement.participant.Horticulteur;
+import marche.traitement.marche.Marche;
+import marche.traitement.participant.*;
+import marche.traitement.production.UniteDeProduction;
+import marche.traitement.produits.ProduitFermier;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -10,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 
 /**
@@ -108,70 +112,99 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
    public void actionPerformed(ActionEvent e){
         if(comboBox.getSelectedItem() == "Arboriculteur"){
             if(checkAcheteur.isSelected()){
-
+                Acheteur acheteur = new Acheteur(new Arboriculteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+                acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
+                Marche.getMarcheInstance().ajouterActeur(acheteur);
             }
             else{
-
+                Vendeur vendeur = new Vendeur(new Arboriculteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+                vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
+                Marche.getMarcheInstance().ajouterActeur(vendeur);
             }
 
         }
 
        if(comboBox.getSelectedItem() == "ProducteurDeViande"){
            if(checkAcheteur.isSelected()){
-
+               Acheteur acheteur = new Acheteur(new ProducteurDeViande(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new ProducteurDeViande(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
 
-       if(comboBox.getSelectedItem() == "ProducteurDeLair"){
+       if(comboBox.getSelectedItem() == "ProducteurDeLait"){
            if(checkAcheteur.isSelected()){
+               Acheteur acheteur = new Acheteur(new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
 
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
 
        if(comboBox.getSelectedItem() == "Horticulteur"){
            if(checkAcheteur.isSelected()){
-
+               Acheteur acheteur = new Acheteur(new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000));
+               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
 
        if(comboBox.getSelectedItem() == "Grossiste"){
            if(checkAcheteur.isSelected()){
-
+               Acheteur acheteur = new Acheteur(new Grossiste(fieldDenomination.getText()));
+               acheteur.setDenomination(fieldDenomination.getText(),null);
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new Grossiste(fieldDenomination.getText()));
+               vendeur.setDenomination(fieldDenomination.getText(),null);
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
 
        if(comboBox.getSelectedItem() == "Centrale d'achat"){
            if(checkAcheteur.isSelected()){
-
+               Acheteur acheteur = new Acheteur(new CentraleAchat(fieldDenomination.getText()));
+               acheteur.setDenomination(fieldDenomination.getText(),null);
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new CentraleAchat(fieldDenomination.getText()));
+               vendeur.setDenomination(fieldDenomination.getText(),null);
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
 
        if(comboBox.getSelectedItem() == "Trader"){
            if(checkAcheteur.isSelected()){
-
+               Acheteur acheteur = new Acheteur(new Trader());
+               acheteur.setDenomination(fieldNom.getText(),fieldNom.getText());
+               Marche.getMarcheInstance().ajouterActeur(acheteur);
            }
            else{
-
+               Vendeur vendeur = new Vendeur(new Trader());
+               vendeur.setDenomination(fieldNom.getText(),fieldPrenom.getText());
+               Marche.getMarcheInstance().ajouterActeur(vendeur);
            }
 
        }
