@@ -54,7 +54,7 @@ Les commandes qui suivent permettent quand à elles de vérifier le bon passage 
 
 et 
 
-``$ mvn verify`
+``$ mvn verify``
 
 Enfin, pour générer un .jar utilisable, utilisez la commande :
 
