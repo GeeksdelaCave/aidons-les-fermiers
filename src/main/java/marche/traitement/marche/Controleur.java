@@ -12,10 +12,12 @@ import java.util.Random;
 
 /**
  * Singleton Controleur représentant le système
+ *
  * @author Nicolas Guigou
  * @author Tristan DIETZ
  *
  * @version 1.2
+ * @see Offre
  */
 public class Controleur {
     /**
@@ -32,6 +34,13 @@ public class Controleur {
     }
 
     /**
+     * Constructeur privé
+     */
+    private Controleur () {
+
+    }
+
+    /**
      *  Hash Map permettant d'associer un produit fermier à son prix moyen.
      *  @see Controleur#affichagePrixMoyen()
      */
@@ -44,12 +53,6 @@ public class Controleur {
         put("Oeuf",6.0);
         put("Pomme",14.0);
     }};
-
-    /**
-     * Constructeur privé
-     */
-    private Controleur() {
-    }
 
     /**
      * Méthode permettant de selectionner les acheteurs
@@ -83,9 +86,8 @@ public class Controleur {
             acheteur.ajoutProduit(p);
             ++cpt;
         }
-
-        String nomProduit = offre.getProduits().get(0).getClass().getCanonicalName();
-        String strTransaction = acheteur.getDenomination() + " a effectué un achat de : " + cpt + nomProduit + "(s)" + " au prix de "+ offre.getPrix() + " euros à " + vendeur.getDenomination() + vendeur.getDenomination() + "le :" + LocalDate.now();
+        String nomProduit = offre.getProduits().get(0).getClass().getSimpleName();
+        String strTransaction = acheteur.getDenomination() + " a effectué un achat de " + cpt + " " + nomProduit + "(s)" + " au prix de "+ offre.getPrix() + " euros à " + vendeur.getDenomination() + " le " + LocalDate.now();
         LivreMarche.ajouterTransaction(strTransaction);
         marche.enleverOffre(offre);
     }
@@ -103,14 +105,13 @@ public class Controleur {
     /**
      * Méthode permettant de réguler le prix d'une offre
      */
-    public static void regulerPrix(Offre offre, int quantite){
-        double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
+    public static void regulerPrix(Offre offre) {
+        double prixMoyen = calculerPrixMoyen(offre);
         if(prixMoyen - prixMoyen * 0.2 > offre.getPrix()){
             offre.setPrix(prixMoyen - prixMoyen * 0.2);
         }else{
             offre.setPrix(prixMoyen + prixMoyen * 0.2);
         }
-
     }
 
     /**
@@ -127,25 +128,19 @@ public class Controleur {
      * @return Si l'offre est composée de produits exclusivement commercialisables, qu'ils sont dans l'inventaire et que le prix est acceptable.
      */
     public static boolean valider(Offre offre){
-        int quantite = 0;
+
+        double prixMoyen = 0.0;
+
         for(ProduitFermier p : offre.getProduits()){
             if(!p.isCommercialisable())
                 return false;
         }
 
-        for(ProduitFermier p : offre.getVendeur().getInventaire()) {
-            if(p == offre.getProduits().get(0)){
-                ++quantite;
-            }
-        }
+        prixMoyen = calculerPrixMoyen(offre);
 
-        if(quantite <= offre.getProduits().size()){
-            double prixMoyen = quantite * associationPrixMoyensProduitsFermiers.get(offre.getProduits().get(0).getClass().getCanonicalName());
-            if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
-                Controleur.regulerPrix(offre,quantite);
-            }
+        if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
+            Controleur.regulerPrix(offre);
         }
-
         return true;
 
     }
@@ -160,5 +155,12 @@ public class Controleur {
             tab.add("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
         }
         return tab;
+    }
+
+    public static double calculerPrixMoyen(Offre offre) {
+        double prixMoyen = 0;
+        for (ProduitFermier pf : offre.getProduits())
+            prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getSimpleName());
+        return prixMoyen;
     }
 }

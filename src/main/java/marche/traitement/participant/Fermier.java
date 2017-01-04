@@ -1,6 +1,7 @@
 package marche.traitement.participant;
 
 
+import marche.traitement.cotisation.Cotisation;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -45,4 +46,16 @@ public abstract class Fermier extends Acteur {
         return prenom + " " + nom;
     }
 
+
+    /** Setteur de modification du Nom et prenom
+     *
+     * @param nom Nom de l'acteur
+     * @param prenom Prenom de l'acteur
+     */
+    public void setDenomination(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
+    public abstract void payerCotisation(Cotisation cotisation);
 }

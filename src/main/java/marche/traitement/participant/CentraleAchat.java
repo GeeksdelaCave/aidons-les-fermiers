@@ -12,4 +12,8 @@ public class CentraleAchat extends Acteur {
     public String getDenomination() {
         return null;
     }
+
+    public void setDenomination(String nom, String prenom) {
+        this.nomCentraleAchat = nom;
+    }
 }
