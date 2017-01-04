@@ -12,7 +12,7 @@ cd repo_clone
 git checkout develop
 
 # Emmett Lathrop "Doc" Brown, de Retour vers le Futur, nous push la doc ;)
-git config user.name "Doc E. L. Brown"
+git config user.name "Travis CI"
 git config user.email "doc@backtothefuture.go"
 
 # Génération de la documentation
