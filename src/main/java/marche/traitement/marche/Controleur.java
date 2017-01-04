@@ -75,7 +75,7 @@ public class Controleur {
         }
 
         String nomProduit = offre.getProduits().get(0).getClass().getCanonicalName();
-        String strTransaction = acheteur.getDenomination() + " a effectué un achat de : " + cpt + nomProduit + "(s)" + " au prix de "+ offre.getPrix() + " euros à " + vendeur.getDenomination() + vendeur.getDenomination() + "le :" + LocalDate.now();
+        String strTransaction = acheteur.getDenomination() + " a effectué un achat de : " + cpt + nomProduit + "(s)" + " au prix de "+ offre.getPrix() + " euros à " + vendeur.getDenomination() + " le :" + LocalDate.now();
         LivreMarche.ajouterTransaction(strTransaction);
         marche.enleverOffre(offre);
     }
@@ -124,8 +124,9 @@ public class Controleur {
         for(ProduitFermier p : offre.getProduits()){
             if(!p.isCommercialisable())
                 return false;
-            prixMoyen += associationPrixMoyensProduitsFermiers.get(p.getClass().getCanonicalName());
         }
+
+        prixMoyen = calculerPrixMoyen(offre);
 
         if( !( prixMoyen - prixMoyen * 0.2 <= offre.getPrix()  && offre.getPrix() <= prixMoyen + prixMoyen * 0.2)) {
             Controleur.regulerPrix(offre,quantite);
@@ -137,10 +138,17 @@ public class Controleur {
     /**
      * Méthode permettant d'afficher les prix moyens des produits
      */
-    public static void affichagePrixMoyen(){
+    public static void affichagePrixMoyen() {
         for(String mapKey : associationPrixMoyensProduitsFermiers.keySet()){
             System.out.println("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
             System.out.println();
         }
+    }
+
+    public static double calculerPrixMoyen(Offre offre) {
+        double prixMoyen = 0;
+        for (ProduitFermier pf : offre.getProduits())
+            prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getCanonicalName());
+        return prixMoyen;
     }
 }
