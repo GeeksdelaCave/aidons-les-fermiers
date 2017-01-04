@@ -10,7 +10,7 @@ public class CentraleAchat extends Acteur {
     }
 
     public String getDenomination() {
-        return null;
+        return nomCentraleAchat;
     }
 
     public void setDenomination(String nom, String prenom) {
