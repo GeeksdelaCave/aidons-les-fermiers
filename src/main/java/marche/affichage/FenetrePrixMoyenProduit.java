@@ -7,13 +7,22 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 /**
- * Création de
+ * Création de la fenêtre représentant les prix moyens des produits fermiers
+ * @author Thibaud CENENT
+ * @version 1.0
  */
 public class FenetrePrixMoyenProduit extends FenetreGenerale {
 
+    /** Constructeur de la classe FenetrePrixMoyenProduit
+     *
+     * @param titre désigne le titre du produit
+     */
     public FenetrePrixMoyenProduit(String titre) {
         super(titre);
 
+        /**
+         * On gére le remplissage des produits fermiers via un JTable
+         */
         String[][] donnees = new String[7][1];
         for(int i = 0; i < donnees.length; ++i)
         {

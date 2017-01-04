@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * @version 1.2
  * @see Acteur
  */
-public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener{
+public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener,Observable{
 
     private String acteurs[] = {"Arboriculteur","Trader","Grossiste","Centrale d'achat", "Horticulteur","ProducteurDeViande", "ProducteurLaitier", };
     private JPanel panneauCreationParticipant = new JPanel();
@@ -185,6 +185,18 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
 
    }
 
+    public void ajouterObservateur(Observateur observateur) {
+
+    }
+
+    public void enleverObservateur(Observateur observateur) {
+
+    }
+
+    public void notifierObservateur() {
+
+    }
+
    public Acteur creerDecorateur(Acteur acteur, boolean acheteur, boolean vendeur) {
        if (acheteur && vendeur)
            return new Vendeur(new Acheteur(acteur));
@@ -200,5 +212,6 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
     public static void main(String[] args) {
         new FenetreCreationParticipant("Fenêtre de création de participant");
     }
+
 
 }
