@@ -36,7 +36,8 @@ public class SplashScreen extends FenetreGenerale {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             JOptionPane.showMessageDialog(new JFrame(),
-                    "TimeUnit n'est pas supporté sur votre distribution." + "\n\n" + "Merci de mettre à jour votre distribution ou machine virtuelle Java.",
+                    "TimeUnit n'est pas supporté sur votre distribution." + "\n\n" +
+                            "Merci de mettre à jour votre distribution ou machine virtuelle Java.",
                     "Erreur",
                     JOptionPane.ERROR_MESSAGE);
         }
@@ -48,7 +49,7 @@ public class SplashScreen extends FenetreGenerale {
 
     public static void main(String[] args) {
         System.setProperty("apple.laf.useScreenMenuBar", "true");
-        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Test");
+        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Menu");
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {

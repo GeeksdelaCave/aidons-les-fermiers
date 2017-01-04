@@ -67,7 +67,7 @@ public class BarreMenu extends JMenuBar {
         /*
          * Informations supplémentaires sur l'application
          */
-        JMenuItem aPropos = new JMenuItem("A propos de ");
+        JMenuItem aPropos = new JMenuItem("A propos");
         aPropos.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(new JFrame(),
