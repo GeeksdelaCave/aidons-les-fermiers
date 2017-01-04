@@ -32,4 +32,4 @@ git add -A doc/*
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
 
 # Push
-git push git@github.com:GeeksdelaCave/aidons-les-fermiers.git doc
+git push origin doc
