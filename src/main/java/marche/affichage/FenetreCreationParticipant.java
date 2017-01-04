@@ -26,28 +26,86 @@ import java.util.ArrayList;
  */
 public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener,Observable{
 
+    /**
+     * Attribut permettant de remplir le combobox, ce sont les différents acteurs qui peuvent être créer
+     */
     private String acteurs[] = {"Arboriculteur","Trader","Grossiste","Centrale d'achat", "Horticulteur","ProducteurDeViande", "ProducteurLaitier", };
+
+    /**
+     * Panneau permettant de contenir les objets de la fenêtre
+     */
     private JPanel panneauCreationParticipant = new JPanel();
+
+    /**
+     * Liste permettant de sélectionner le type d'acteur que l'on veut créer
+     */
     private JComboBox comboBox = new JComboBox(acteurs);
 
+    /**
+     * Label permettant à l'utilisateur de savoir quoi faire
+     */
     private JLabel labelTypeActeur = new JLabel("Choisir votre type d'acteur");
+
+    /**
+     * Label permettant à l'utilisateur de connaitre le champs à remplir
+     */
     private JLabel labelNom = new JLabel("Nom");
+
+    /**
+     * Label permettant à l'utilisateur de connaitre le champas à remplir
+     */
     private JLabel labelPrenom = new JLabel("Prenom");
+
+    /**
+     * Label permettant à l'utilisateur de connaitre le champas à remplir
+     */
     private JLabel labelDenomination = new JLabel("Denomination");
+
+    /**
+     * Label permettant à l'utilisateur de connaitre le champas à remplir
+     */
     private JLabel labelAcheteur = new JLabel("Acheteur");
+
+    /**
+     * Label permettant à l'utilisateur de connaitre le champas à remplir
+     */
     private JLabel labelVendeur = new JLabel("Vendeur");
 
+    /**
+     * Zone de texte permettant de choisir le nom de l'acteur
+     */
     private JTextField fieldNom = new JTextField();
+
+    /**
+     * Zone de texte permettant de choisir le prenom de l'acteur
+     */
     private JTextField fieldPrenom = new JTextField();
+
+    /**
+     * Zone de texte permettant de choisir la dénomination de l'acteur
+     */
     private JTextField fieldDenomination = new JTextField();
 
+    /**
+     * Bouton permettant à l'utilisateur de lancer le processus de création d'un acteur
+     */
     private JButton boutonCreer = new JButton("Créer");
 
+    /**
+     * Case à cocher permettant à l'utilisateur d'indiquer qu'il veut son acteur soit capable d'acheter
+     */
     private JCheckBox checkAcheteur = new JCheckBox();
+
+    /**
+     * Case à cocher permettant à l'utilisateur d'indiquer qu'il veut son acteur soit capable de vendre
+     */
     private JCheckBox checkVendeur = new JCheckBox();
 
 
-
+    /**
+     * Constructeur de la classe FenetreCreationParticipant
+     * @param titre
+     */
     public FenetreCreationParticipant(String titre)
     {
         super(titre);
@@ -140,6 +198,10 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
         this.setVisible(true);
     }
 
+    /**
+     * Méthode permettant de créer les acteurs
+     * @param e
+     */
    public void actionPerformed(ActionEvent e) {
         Acteur acteur;
 
