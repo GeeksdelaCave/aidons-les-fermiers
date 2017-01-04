@@ -60,7 +60,7 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
         comboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED){
-                    if(e.getItem() == "Grossiste" || e.getItem() == "Trader" || e.getItem() == "Centrale d'achat"){
+                    if(e.getItem() == "Grossiste" || e.getItem() == "Centrale d'achat"){
                         labelPrenom.setVisible(false);
                         labelNom.setVisible(false);
                         fieldNom.setVisible(false);
@@ -74,7 +74,7 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
                         boutonCreer.setVisible(true);
 
                     }
-                    if(e.getItem() == "Arboriculteur" || e.getItem() == "Horticulteur" || e.getItem() == "ProducteurDeViande" || e.getItem() == "ProducteurLaitier"){
+                    if(e.getItem() == "Arboriculteur" || e.getItem() == "Horticulteur" || e.getItem() == "ProducteurDeViande" || e.getItem() == "ProducteurLaitier" || e.getItem() == "Trader"){
                         labelPrenom.setVisible(true);
                         labelNom.setVisible(true);
                         fieldNom.setVisible(true);
