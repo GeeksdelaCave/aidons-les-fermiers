@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * @author Nicolas Guigou
  * @author Tristan DIETZ
  *
- * @version 1.1
+ * @version 1.2
  * @see Acteur
  */
 public class FenetreCreationParticipant extends FenetreGenerale implements ActionListener{
@@ -140,46 +140,48 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
         this.setVisible(true);
     }
 
-   public void actionPerformed(ActionEvent e){
+   public void actionPerformed(ActionEvent e) {
+        Acteur acteur;
+
         if(comboBox.getSelectedItem() == "Arboriculteur") {
-            Acteur arboriculteur = new Arboriculteur(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
-            arboriculteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
-            Marche.getMarcheInstance().ajouterActeur(creerDecorateur(arboriculteur, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+            acteur = new Arboriculteur(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
+            acteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
         }
 
-       if(comboBox.getSelectedItem() == "ProducteurDeViande") {
-           Acteur producteurDeViande = new ProducteurDeViande(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
-           producteurDeViande.setDenomination(fieldNom.getText(), fieldPrenom.getText());
-           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(producteurDeViande, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "ProducteurDeViande") {
+           acteur = new ProducteurDeViande(new ArrayList<ProduitFermier>(), new ArrayList<UniteDeProduction>(), 1000);
+           acteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
        }
 
-       if(comboBox.getSelectedItem() == "ProducteurDeLait") {
-           Acteur producteurLaitier = new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
-           producteurLaitier.setDenomination(fieldNom.getText(), fieldPrenom.getText());
-           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(producteurLaitier, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "ProducteurDeLait") {
+           acteur = new ProducteurLaitier(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
+           acteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
         }
 
-       if(comboBox.getSelectedItem() == "Horticulteur") {
-           Acteur horticulteur = new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
-           horticulteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
-           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(horticulteur, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "Horticulteur") {
+           acteur = new Horticulteur(new ArrayList<ProduitFermier>(),new ArrayList<UniteDeProduction>(),1000);
+           acteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
        }
 
-       if(comboBox.getSelectedItem() == "Grossiste") {
-            Acteur grossiste = new Grossiste(fieldDenomination.getText());
-            Marche.getMarcheInstance().ajouterActeur(creerDecorateur(grossiste, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "Grossiste") {
+            acteur = new Grossiste(fieldDenomination.getText());
        }
 
-       if(comboBox.getSelectedItem() == "Centrale d'achat") {
-           Acteur centrale = new CentraleAchat(fieldDenomination.getText());
-           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(centrale, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "Centrale d'achat") {
+           acteur = new CentraleAchat(fieldDenomination.getText());
        }
 
-       if(comboBox.getSelectedItem() == "Trader") {
-           Acteur trader = new Trader();
-           trader.setDenomination(fieldNom.getText(), fieldPrenom.getText());
-           Marche.getMarcheInstance().ajouterActeur(creerDecorateur(trader, checkAcheteur.isSelected(), checkVendeur.isSelected()));
+       else if(comboBox.getSelectedItem() == "Trader") {
+           acteur = new Trader();
+           acteur.setDenomination(fieldNom.getText(), fieldPrenom.getText());
        }
+       /* Choix impossible mais nécessaire pour la compilation */
+       else {
+            System.out.println("Choix impossible");
+            acteur = null;
+        }
+
+       Marche.getMarcheInstance().ajouterActeur(creerDecorateur(acteur, checkAcheteur.isSelected(), checkVendeur.isSelected()));
 
    }
 
