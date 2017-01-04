@@ -5,7 +5,12 @@ import java.util.Collection;
 
 /**
  * Classe abstraite marche
+ *
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
+ *
+ * @see Offre
+ * @version 1.2
  */
 public abstract class Marche {
 
@@ -25,7 +30,7 @@ public abstract class Marche {
      */
     protected Marche(String nom){
         this.nomMarche = nom;
-        this.catalogue = null;
+        this.catalogue = new ArrayList<Offre>();
     }
 
     /**
@@ -40,7 +45,9 @@ public abstract class Marche {
      * Permet de retirer une offre du catalogue
      * @param offre
      */
-    public void enleverOffre(Offre offre){catalogue.remove(offre);}
+    public void enleverOffre(Offre offre){
+        catalogue.remove(offre);
+    }
 
     /**
      * Permet de récupérer le catalogue contenant les offres
@@ -48,8 +55,3 @@ public abstract class Marche {
      */
     public ArrayList<Offre> getCatalogue(){return this.catalogue;}
 }
-
-//
-// On a un pb : le nom/prenom ne s'applique pas pour tous les acteurs (ex : centrale d'achat, grossiste...
-// Go fb stp ;)
-//
