@@ -237,6 +237,10 @@ public class FenetreCreationParticipant extends FenetreGenerale implements Actio
 
    }
 
+   public Acteur creerDecorateur(Acteur acteur, boolean acheteur, boolean vendeur) {
+       return null;
+   }
+
     public static void main(String[] args) {
         new FenetreCreationParticipant("Fenêtre de création de participant");
     }
