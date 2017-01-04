@@ -83,8 +83,8 @@ public class Offre {
         this.prix = prix;
         this.produits = produits;
         this.vendeur = vendeur;
-        this.IDOffre = this.IDOffreGeneral;
-        ++this.IDOffreGeneral;
+        this.IDOffre = IDOffreGeneral;
+        ++IDOffreGeneral;
         this.acheteursPotentiels = new ArrayList<Acheteur>();
     }
 
