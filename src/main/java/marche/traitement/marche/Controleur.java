@@ -40,8 +40,6 @@ public class Controleur {
         put("Oeuf",6.0);
         put("Pomme",14.0);
     }};
-    private Controleur() {
-    }
 
     /**
      * Méthode permettant de selectionner les acheteurs
