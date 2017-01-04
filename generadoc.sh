@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -e # En cas d'erreur, renvoi un code 0 pour ne pas faire échouer le tout
+# Si erreur, renvoi un code 0 pour ne pas faire échouer le tout
+set -e
 
 sudo apt-get install git
 
