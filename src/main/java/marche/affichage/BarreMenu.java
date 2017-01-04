@@ -26,6 +26,10 @@ public class BarreMenu extends JMenuBar {
 
     /**
      * Fonction de création de l'onglet du menu de base.
+     * - Permet la création d'un Participant
+     * - L'accès à la page de documentation
+     * - D'afficher plus d'informations
+     * - Quitter l'application (avec message de confirmation)
      *
      * @return Le menu de base
      */
@@ -35,7 +39,7 @@ public class BarreMenu extends JMenuBar {
         JMenuItem participant = new JMenuItem("Creer Participant");
         participant.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("1");
+                new FenetreCreationParticipant("Création Participant");
             }
         });
 

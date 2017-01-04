@@ -28,7 +28,7 @@ public class Acheteur extends Decorateur {
 
     /**
      * Permet de proposer une offre d'achat.
-     * @param offre
+     * @param offre L'offre à acheter
      *
      * @see Offre
      */

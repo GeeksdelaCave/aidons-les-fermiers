@@ -37,6 +37,7 @@ public class EnclosCochon extends UniteDeProduction {
     public Cochon creerCochon(float prixCochon, LocalDate datePeremption, short qualite, float poidsCochon, String typeCochon) {
         Cochon cochonNee = new Cochon(prixCochon, datePeremption, qualite, poidsCochon, typeCochon,this);
         ajoutInventaire(cochonNee);
+        //cochonNee.validerLabel();
         return cochonNee;
     }
 }

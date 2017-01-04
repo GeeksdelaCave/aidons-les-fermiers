@@ -37,6 +37,7 @@ public class Laiterie extends UniteDeProduction {
     public Lait creerPackLait(float prixPack, LocalDate datePeremption, short qualite, float poidsPackLait) {
         Lait packLait = new Lait(prixPack, datePeremption, qualite, poidsPackLait, this);
         ajoutInventaire(packLait);
+      //  packLait.validerLabel();
         return packLait;
     }
 }

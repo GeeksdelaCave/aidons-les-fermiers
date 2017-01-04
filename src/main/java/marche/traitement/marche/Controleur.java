@@ -129,7 +129,7 @@ public class Controleur {
      * @param offre Offre à valider par le controler
      * @return Si l'offre est composée de produits exclusivement commercialisables, qu'ils sont dans l'inventaire et que le prix est acceptable.
      */
-    public static boolean valider(Offre offre){
+    public static boolean valider(Offre offre) {
 
         double prixMoyen = 0.0;
 

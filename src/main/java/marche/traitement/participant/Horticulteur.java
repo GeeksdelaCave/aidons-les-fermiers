@@ -1,5 +1,6 @@
 package marche.traitement.participant;
 
+import marche.affichage.ExceptionsPopups;
 import marche.traitement.cotisation.Cotisation;
 import marche.traitement.cotisation.Visitable;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
@@ -37,7 +38,7 @@ public class Horticulteur extends Fermier implements Visitable {
         try {
             enleverSolde(cotisation.calculMontantCotisation(this));
         } catch (SoldeNonDisponibleException e) {
-            //TODO faire fentre exception
+            ExceptionsPopups.soldeNonDispoPopup();
         }
     }
 }

@@ -3,32 +3,40 @@ package marche.affichage;
 import marche.traitement.marche.Controleur;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 /**
- * Created by Thibaud on 04/01/2017.
+ * Création de la fenêtre représentant les prix moyens des produits fermiers
+ * @author Thibaud CENENT
+ * @version 1.0
  */
 public class FenetrePrixMoyenProduit extends FenetreGenerale {
 
-    private JTextArea zoneTextePrixMoyen = new JTextArea();
-    private JPanel panneauPrixMoyen = new JPanel();
-
+    /** Constructeur de la classe FenetrePrixMoyenProduit
+     *
+     * @param titre désigne le titre du produit
+     */
     public FenetrePrixMoyenProduit(String titre) {
         super(titre);
-        this.setSize(400,500);
-        for(String str : Controleur.affichagePrixMoyen())
+
+        /**
+         * On gére le remplissage des produits fermiers via un JTable
+         */
+        String[][] donnees = new String[7][1];
+        for(int i = 0; i < donnees.length; ++i)
         {
-            zoneTextePrixMoyen.setText(zoneTextePrixMoyen.getText() + str + '\n' + '\n');
+            for(int j = 0; j < donnees[i].length; ++j)
+                donnees[i][j] = Controleur.affichagePrixMoyen().get(i);
         }
-        panneauPrixMoyen.setLayout(new BorderLayout());
-        panneauPrixMoyen.add(zoneTextePrixMoyen);
-        this.setContentPane(panneauPrixMoyen);
-        this.setLocationRelativeTo(null);
+        String[] entetes = {"Prix Moyen Produit Fermier"};
+        JTable tableau = new JTable(donnees, entetes);
+        this.getContentPane().add(tableau.getTableHeader(), BorderLayout.NORTH);
+        this.getContentPane().add(tableau,BorderLayout.CENTER);
+
+        this.setSize(300,175);
         this.setVisible(true);
 
     }
 
-    /*public static void main (String[] args){
-        new FenetrePrixMoyenProduit("Prix Moyen Produit");
-    }*/
 }

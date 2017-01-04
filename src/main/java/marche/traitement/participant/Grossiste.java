@@ -18,6 +18,7 @@ public class Grossiste extends Acteur {
 
     public Grossiste(String nomGrossiste) {
         super();
+        this.nomGrossiste = nomGrossiste;
     }
 
     /**

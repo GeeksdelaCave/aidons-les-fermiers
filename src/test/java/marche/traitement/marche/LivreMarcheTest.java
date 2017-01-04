@@ -46,11 +46,9 @@ public class LivreMarcheTest {
         Vendeur vendeur = new Vendeur(new ProducteurDeViande(pf, null, 1000));
         vendeur.setDenomination("Abdel", "Jean");
 
-        MarcheBasique marche = new MarcheBasique("Bazard");
-
         Offre offre = new Offre(1000, vendeur.getInventaire(), vendeur);
 
-        Controleur.transfererBiens(acheteur, vendeur, offre, marche);
+        Controleur.transfererBiens(acheteur, vendeur, offre, Marche.getMarcheInstance());
 
         assertNotNull(LivreMarche.getHistorique());
     }

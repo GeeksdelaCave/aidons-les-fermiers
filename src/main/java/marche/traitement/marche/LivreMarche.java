@@ -1,5 +1,6 @@
 package marche.traitement.marche;
 
+import marche.affichage.ExceptionsPopups;
 import marche.traitement.participant.Acheteur;
 import marche.traitement.participant.Vendeur;
 
@@ -46,14 +47,14 @@ public class LivreMarche implements Serializable {
      */
     public static void enregistrer () {
         try {
-            FileOutputStream fos = new FileOutputStream("LivreDOr.txt");
+            FileOutputStream fos = new FileOutputStream("LivreHistorique.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(historique);
             oos.close();
             fos.close();
-            //TODO faire fenetre succe
+            ExceptionsPopups.livreEnregistre();
         } catch (IOException e) {
-            //TODO faire fenetre exception
+            ExceptionsPopups.livreNonEnregistre();
         }
     }
 
