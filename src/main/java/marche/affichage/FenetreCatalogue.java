@@ -36,7 +36,4 @@ public class FenetreCatalogue extends FenetreGenerale {
         this.setVisible(true);
     }
 
-    /*public static void main(String[] args){
-        new FenetreCatalogue("Catalogue");
-    }*/
 }
