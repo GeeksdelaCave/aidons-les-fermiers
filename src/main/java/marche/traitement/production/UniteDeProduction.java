@@ -1,5 +1,6 @@
 package marche.traitement.production;
 
+import marche.affichage.ExceptionsPopups;
 import marche.traitement.exceptions.InventairePleinException;
 import marche.traitement.produits.ProduitFermier;
 
@@ -58,7 +59,7 @@ public abstract class UniteDeProduction {
         if(inventaireUniteDeProduction.size() < getCapaciteeProduction())
             inventaireUniteDeProduction.add(produitFermier);
         else
-            throw new InventairePleinException();
+            ExceptionsPopups.inventairePleinPopup();
     }
 
     /** Retourne la capacitée maximale de produit fermier à accueillir
