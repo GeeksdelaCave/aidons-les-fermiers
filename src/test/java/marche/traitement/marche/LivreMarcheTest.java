@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
  *
  * @version 1.0
  */
-public class LivreMarcherTest {
+public class LivreMarcheTest {
 
     @Test
     public void testAjouterTransaction() {
@@ -52,7 +52,6 @@ public class LivreMarcherTest {
 
         Controleur.transfererBiens(acheteur, vendeur, offre, marche);
 
-        System.out.println(LivreMarche.getHistorique());
         assertNotNull(LivreMarche.getHistorique());
     }
 }

@@ -28,7 +28,7 @@ public abstract class Marche {
     /**
      * Constructeur
      */
-    public Marche(String nom){
+    public Marche(String nom) {
         this.nomMarche = nom;
         this.catalogue = new ArrayList<Offre>();
     }

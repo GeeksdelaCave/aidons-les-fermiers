@@ -7,7 +7,6 @@ package marche.traitement.marche;
 public class MarcheBasique extends Marche {
 
     public MarcheBasique(String nom){
-
         super(nom);
     }
 }

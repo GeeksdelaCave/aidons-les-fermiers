@@ -55,7 +55,7 @@ public abstract class UniteDeProduction {
      * @see InventairePleinException
      */
     public void ajoutInventaire (ProduitFermier produitFermier) throws InventairePleinException {
-        if(getCapaciteeProduction() != inventaireUniteDeProduction.size())
+        if(inventaireUniteDeProduction.size() < getCapaciteeProduction())
             inventaireUniteDeProduction.add(produitFermier);
         else
             throw new InventairePleinException();
@@ -75,6 +75,4 @@ public abstract class UniteDeProduction {
 
         return regionCreationProduit;
     }
-
-
 }
