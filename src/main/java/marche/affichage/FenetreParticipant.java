@@ -28,6 +28,7 @@ public class FenetreParticipant extends FenetreGenerale {
      */
     private JMenu menu = new JMenu("Menu");
 
+    private FenetreParticipant instance;
     /**
      *
      * @param titre
@@ -36,6 +37,7 @@ public class FenetreParticipant extends FenetreGenerale {
     {
         super(titre);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        instance = this;
         panneauAffichageParticipant.setLayout(new BorderLayout());
         JMenuItem item1 = new JMenuItem("Creer Participant");
         item1.addActionListener(new ActionListener() {
@@ -65,7 +67,7 @@ public class FenetreParticipant extends FenetreGenerale {
         item5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new FenetreQuitterApplication();
+                new FenetreQuitterApplication(instance);
             }
         });
         menu.add(item1);
@@ -80,8 +82,8 @@ public class FenetreParticipant extends FenetreGenerale {
         this.setVisible(true);
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
 
         new FenetreParticipant("Fenêtre principal");
-    }*/
+    }
 }

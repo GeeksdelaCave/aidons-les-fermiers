@@ -15,10 +15,12 @@ public class FenetreQuitterApplication extends FenetreGenerale {
 
    private JOptionPane messageConseil = new JOptionPane();
 
-    public FenetreQuitterApplication(){
+    public FenetreQuitterApplication(FenetreParticipant participant){
         super("Quitter");
         this.setSize(300,200);
-        messageConseil.showConfirmDialog(this,"Voulez-vous vraiment quitter ?","Quitter",YES_NO_OPTION);
+        if(messageConseil.showConfirmDialog(this,"Voulez-vous vraiment quitter ?","",YES_NO_OPTION) != JOptionPane.YES_OPTION)
+            participant.setVisible(true);
+
     }
 
     /*public static void main(String[] args){
