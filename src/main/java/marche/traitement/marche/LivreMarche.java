@@ -1,12 +1,13 @@
 package marche.traitement.marche;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Classe LivreMarche
  * @author Nicolas Guigou
  */
-public class LivreMarche {
+public class LivreMarche implements Serializable {
 
     /**
      * Historique de toute les transactions
