@@ -28,7 +28,7 @@ public abstract class Marche {
     /**
      * Constructeur
      */
-    protected Marche(String nom){
+    public Marche(String nom) {
         this.nomMarche = nom;
         this.catalogue = new ArrayList<Offre>();
     }
@@ -53,5 +53,7 @@ public abstract class Marche {
      * Permet de récupérer le catalogue contenant les offres
      * @return catalogue
      */
-    public ArrayList<Offre> getCatalogue(){return this.catalogue;}
+    public ArrayList<Offre> getCatalogue(){
+        return this.catalogue;
+    }
 }

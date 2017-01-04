@@ -14,8 +14,9 @@ import java.util.Collection;
  * Classe Offre
 
  * @author Nicolas Guigou
+ * @author Tristan DIETZ
  *
- * @version 1.1
+ * @version 1.2
  *
  * @see Vendeur
  * @see Acheteur
@@ -122,13 +123,10 @@ public class Offre {
     }
 
     /**
-
-     * Peremet de retourner la collection de produit
-     *
-     * @return Collection<ProduitFermier> ProduitFermier produits
+     * Permet de retourner la collection de produits
+     * @return Les produits à vendre dans l'offre
      *
      * @see Offre#produits
-
      */
     public ArrayList<ProduitFermier> getProduits(){
         return this.produits;
@@ -160,7 +158,7 @@ public class Offre {
     /**
      * Permet de récupérer les acheteurs potentiels d'une offre
      *
-     * @return Collection<Acheteur> acheteursPotentiels
+     * @return La liste des acheteurs potentiels
      *
      * @see Acheteur
      * @see Offre#acheteursPotentiels

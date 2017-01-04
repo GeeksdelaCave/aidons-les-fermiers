@@ -16,7 +16,7 @@ import java.util.Random;
  * @author Nicolas Guigou
  * @author Tristan DIETZ
  *
- * @version 1.1
+ * @version 1.2
  * @see Offre
  */
 public class Controleur {
@@ -36,10 +36,14 @@ public class Controleur {
     /**
      * Constructeur privé
      */
-    private Controleur (){
+    private Controleur () {
 
     }
 
+    /**
+     *  Hash Map permettant d'associer un produit fermier à son prix moyen.
+     *  @see Controleur#affichagePrixMoyen()
+     */
     private static final HashMap<String,Double> associationPrixMoyensProduitsFermiers = new HashMap<String, Double>() {{
         put("Vache",1300.0);
         put("Cochon",45.0);
@@ -52,10 +56,15 @@ public class Controleur {
 
     /**
      * Méthode permettant de selectionner les acheteurs
+     * Elle présente plusieurs algorithmes :
+     * - 1 : choisit aléatoirement l'acheteur
+     * Autre : choisit le premier acheteur de la liste
+     * @param offre Offre sujette à la recherche
+     * @param val Choix de l'algorithme
+     * @return L'acheteur choisit par l'algorithme <b>val</b>.
      */
     public static Acheteur choisirAcheteur(Offre offre, int val){
-        ArrayList<Acheteur> liste = new ArrayList<Acheteur>();
-        liste = offre.getAcheteursPotentiels();
+        ArrayList<Acheteur> liste = offre.getAcheteursPotentiels();
         if(val == 1) {
             Random random = new Random();
             int index = random.nextInt(liste.size());
@@ -137,13 +146,22 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant d'afficher les prix moyens des produits
+     * Retourne un Array de String contenant le prix moyen des produits fermiers
+     * @return tab
      */
-    public static void affichagePrixMoyen() {
+    public static ArrayList<String> affichagePrixMoyen(){
+        ArrayList<String> tab = new ArrayList<String>();
         for(String mapKey : associationPrixMoyensProduitsFermiers.keySet()){
-            System.out.println("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
-            System.out.println();
+            tab.add("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
         }
+        return tab;
+    }
+
+    public static double calculerPrixMoyen(Offre offre) {
+        double prixMoyen = 0;
+        for (ProduitFermier pf : offre.getProduits())
+            prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getSimpleName());
+        return prixMoyen;
     }
 
     public static double calculerPrixMoyen(Offre offre) {
