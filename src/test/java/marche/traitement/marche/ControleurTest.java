@@ -5,6 +5,7 @@ import marche.traitement.production.EnclosCochon;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.Cochon;
 import marche.traitement.produits.ProduitFermier;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -14,10 +15,13 @@ import java.util.ArrayList;
 /** Tests unitaires de la classe Controleur
  *
  * @author Romain COLONNA D'ISTRIA
+ * @author Tristan DIETZ
  *
+ * @version 1.3
  * @see Controleur
  */
 public class ControleurTest {
+
 
     @Test
     public void testTransfererBiens() {
@@ -55,7 +59,8 @@ public class ControleurTest {
             System.out.println("3"+p);
         for (ProduitFermier p : vendeur.getInventaire())
             System.out.println("4"+p);
-        assert (acheteur.getInventaire() == vendeur.getInventaire());
+        assert (acheteur.getInventaire().containsAll(vendeur.getInventaire()) &&
+                vendeur.getInventaire().containsAll(acheteur.getInventaire()));
     }
 
 }
