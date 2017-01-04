@@ -44,7 +44,7 @@ public class LivreMarche implements Serializable {
     /**
      * Méthode qui permet d'enregistrer dans un fichier les transactions effectuées.
      */
-    public void enregistrer () {
+    public static void enregistrer () {
         try {
             FileOutputStream fos = new FileOutputStream("LivreDOr.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -52,7 +52,7 @@ public class LivreMarche implements Serializable {
             oos.close();
             fos.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            //TODO faire fenetre exception
         }
     }
 }
