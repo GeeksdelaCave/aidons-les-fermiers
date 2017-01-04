@@ -35,7 +35,8 @@ git add .
 
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
 
-git remote add origin ${REPOSITORY}
+# git remote add origin ${REPOSITORY}
+git remote set-url origin ${REPOSITORY}
 
 # Push
 git push -u origin doc --force
