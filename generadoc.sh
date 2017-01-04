@@ -6,8 +6,11 @@ set -e
 # Si Git n'est pas installé
 # sudo apt-get install git
 
+# Déclaration du repo à utiliser
+REPOSITORY=`git@github.com:GeeksdelaCave/aidons-les-fermiers.git`
+
 # Clone du repo pour travailler dedans (dossier repo_clone).
-git clone git@github.com:GeeksdelaCave/aidons-les-fermiers.git repo_clone
+git clone ${REPOSITORY} repo_clone
 cd repo_clone
 
 # On se base dans la branche doc (on la créé au besoin)
@@ -29,7 +32,10 @@ javadoc -private -sourcepath "src/main/java:src/main/ressources" \
 
 # Ajout du dossier doc nouvellement remplit
 git add -A doc/*
+
 git commit -m "Voilà la doc Marty ! Nom de Zeus !"
+
+git remote add origin ${REPOSITORY}
 
 # Push
 git push origin doc
