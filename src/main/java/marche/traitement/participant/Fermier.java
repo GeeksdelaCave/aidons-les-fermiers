@@ -1,6 +1,7 @@
 package marche.traitement.participant;
 
 
+import marche.traitement.cotisation.Cotisation;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -55,4 +56,6 @@ public abstract class Fermier extends Acteur {
         this.nom = nom;
         this.prenom = prenom;
     }
+
+    public abstract void payerCotisation(Cotisation cotisation);
 }

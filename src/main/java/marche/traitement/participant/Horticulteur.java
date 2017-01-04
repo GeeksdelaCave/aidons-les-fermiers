@@ -2,6 +2,7 @@ package marche.traitement.participant;
 
 import marche.traitement.cotisation.Cotisation;
 import marche.traitement.cotisation.Visitable;
+import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.production.UniteDeProduction;
 import marche.traitement.produits.ProduitFermier;
 
@@ -31,7 +32,11 @@ public class Horticulteur extends Fermier implements Visitable {
      * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
      * @return le nouveau solde de l'horticulteur après la cotisation
      */
-    public double payerCotisation(Cotisation cotisation) {
-        return cotisation.calculMontantCotisation(this);
+    public void payerCotisation(Cotisation cotisation) {
+        try {
+            enleverSolde(cotisation.calculMontantCotisation(this));
+        } catch (SoldeNonDisponibleException e) {
+            //TODO faire fentre exception
+        }
     }
 }

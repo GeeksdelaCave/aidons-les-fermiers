@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
  *
  * @author Romain COLONNA D'ISTRIA
  * @author Tristan DIETZ
+ * @author Nicolas GUIGOU
  *
  * @version 1.3
  * @see Controleur
