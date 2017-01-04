@@ -1,6 +1,5 @@
 package marche.traitement.participant;
 
-import marche.traitement.cotisation.CotisationGenerale;
 import marche.traitement.exceptions.SoldeNonDisponibleException;
 import marche.traitement.production.Verger;
 import marche.traitement.produits.Pomme;
@@ -14,6 +13,15 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/** Tests unitaire de la classe Fermier
+ *
+ * @author Romain COLONNA D'ISTRIA
+ * @author Nicolas Guigou
+ *
+ * @see Fermier
+ *
+ * @version 1.0
+ */
 public class FermierTest {
 
     @Test

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
  * Tests unitaires de la classe LabelRouge
  *
  * @author Thibaud CENENT
- * @author Romain COLONNA D'ISTRIA
+ *
  * @version 1.1
  */
 public class LabelRougeTest {

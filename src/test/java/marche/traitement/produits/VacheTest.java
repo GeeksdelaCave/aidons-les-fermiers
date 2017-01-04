@@ -17,7 +17,6 @@ import static org.junit.Assert.assertTrue;
  *
  *
  * @author Romain COLONNA D'ISTRIA
- * @author Tristan DIETZ
  *
  * @see Vache
  * @see Etable

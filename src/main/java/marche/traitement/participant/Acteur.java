@@ -10,6 +10,7 @@ import java.util.ArrayList;
  *
  * @author Tristan DIETZ
  * @author Romain COLONNA D'ISTRIA
+ * @author Nicolas GUIGOU
  *
  * @version 1.2
  */
