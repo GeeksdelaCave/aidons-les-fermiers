@@ -154,4 +154,11 @@ public class Controleur {
             prixMoyen += associationPrixMoyensProduitsFermiers.get(pf.getClass().getSimpleName());
         return prixMoyen;
     }
+
+    public static ArrayList<String> affichagePrixMoyen(){
+        ArrayList<String> tab = new ArrayList<String>();
+        for(String mapKey : associationPrixMoyensProduitsFermiers.keySet())
+            tab.add("Produit : " + mapKey + " , prix moyen : " + associationPrixMoyensProduitsFermiers.get(mapKey) + " euros") ;
+        return tab;
+    }
 }
