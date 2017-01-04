@@ -31,7 +31,6 @@ public class ProducteurLaitier extends Fermier implements Visitable {
     /**
      *
      * @param cotisation désigne la cotisation que va devoir payer un fermier en fonction de ses caractéristiques.
-     * @return le nouveau solde du producteur de lait après la cotisation
      */
     public void payerCotisation(Cotisation cotisation) {
         try {

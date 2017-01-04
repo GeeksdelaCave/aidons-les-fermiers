@@ -87,7 +87,7 @@ public class Decorateur extends Acteur {
 
 
     /** Setteur de modification du Nom et prenom
-     *@
+     *
      * @param nom Nom de l'acteur
      * @param prenom Prenom de l'acteur
      */
