@@ -16,11 +16,14 @@ import java.time.Month;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Batterie de tests relatifs aux offres.
  *
  * @author Tristan Dietz
+ * @author Nicolas GUIGOU
+ * @author Romain COLONNA D'ISTRIA
  *
  * @version 1.0
  *
@@ -43,7 +46,7 @@ public class OffreTest {
      * Test d'achat d'une offre
      */
     @Test
-    public void testAchat() throws SoldeNonDisponibleException {
+    public void testAchat() {
         ArrayList<ProduitFermier> pf = new ArrayList<ProduitFermier>();
         ArrayList<UniteDeProduction> udp = new ArrayList<UniteDeProduction>();
 
@@ -60,15 +63,13 @@ public class OffreTest {
 
         Offre offre = new Offre(45,pf,vendeur);
 
-        offre.acheter(acheteur,marche);
+        try {
+            offre.acheter(acheteur,marche);
+        } catch (SoldeNonDisponibleException e) {
+            //TODO faire fenetre exception
+        }
 
-        assertSame(acheteur.getInventaire(),pf2);
-
-
-
-
-
+        System.out.println();
+        assertTrue(acheteur.getInventaire().contains(c));
     }
-
-
 }
