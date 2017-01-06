@@ -26,4 +26,4 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - bash ./generadoc.sh
+#  - bash ./generadoc.sh
