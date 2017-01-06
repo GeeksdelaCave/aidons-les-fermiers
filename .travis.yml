@@ -26,5 +26,5 @@ jdk:
 
 #Génération de la JavaDoc
 after_success:
-  - bash ./generadoc.sh
+#  - bash ./generadoc.sh
   - bash <(curl -s https://codecov.io/bash) -t 6e42e03b-819c-41ae-bb0f-1539545f54fa
